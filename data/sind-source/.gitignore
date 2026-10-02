@@ -1,0 +1,50 @@
+.DS_Store
+*.py[cod]
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local environments and editor state
+.env
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Full datasets, generated caches, and local outputs
+datasets/SinD_dataset/*/
+datasets/SinD_dataset/output_*/
+datasets/SinD_dataset/analysis/
+!datasets/SinD_dataset/Semantic_labels/
+!datasets/SinD_dataset/Semantic_labels/schema.json
+!datasets/SinD_dataset/Semantic_labels/scenarios_sample.json
+!datasets/SinD_dataset/output_json/
+!datasets/SinD_dataset/output_json/*.json
+!datasets/SinD_dataset/Lanelet_maps_SinD/
+!datasets/SinD_dataset/Lanelet_maps_SinD/*.osm
+~/.unified_data_cache/
+.unified_data_cache/
+
+# Simulation outputs and model artifacts
+Simulation_test_toolchain/batch_outputs/
+Simulation_test_toolchain/logs/
+Simulation_test_toolchain/checkpoints/*
+!Simulation_test_toolchain/checkpoints/.gitkeep
+Simulation_test_toolchain/policies/ckpt/
+Simulation_test_toolchain/test_projects/*/trajectory_log.*
+Simulation_test_toolchain/test_projects/*/interactive.html
+Simulation_test_toolchain/test_projects/*/prediction_*
+Simulation_test_toolchain/test_projects/*/summary.csv
+*.ckpt
+*.pth
+*.pth.tar
+*.pt
+
+# Large/local archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz

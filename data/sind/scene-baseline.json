@@ -1,0 +1,95 @@
+{
+  "recording": "Tianjin/8_2_1",
+  "tracks": 677,
+  "laneletCount": 66,
+  "repairedRenderPolygonIds": [],
+  "roadAreaM2": 2253.20762309912,
+  "signalBindings": [
+    {
+      "name": "Traffic light 8",
+      "lightWay": "-124171",
+      "stopLineWay": "-124159",
+      "position": [
+        21.759160987043288,
+        34.96415003262635
+      ],
+      "stopLineCenter": [
+        18.33592729099716,
+        -2.3854974852727078
+      ]
+    },
+    {
+      "name": "Traffic light 6",
+      "lightWay": "-124170",
+      "stopLineWay": "-124127",
+      "position": [
+        30.71700777526712,
+        5.745487275570239
+      ],
+      "stopLineCenter": [
+        -4.331549564725719,
+        11.279203026106355
+      ]
+    },
+    {
+      "name": "Traffic light 2",
+      "lightWay": "-124172",
+      "stopLineWay": "-124112",
+      "position": [
+        -3.531452213152079,
+        27.396828560097397
+      ],
+      "stopLineCenter": [
+        33.534549518997665,
+        20.995737657905437
+      ]
+    },
+    {
+      "name": "Traffic light 4",
+      "lightWay": "-124169",
+      "stopLineWay": "-124117",
+      "position": [
+        5.624339094822062,
+        -0.6425687100581295
+      ],
+      "stopLineCenter": [
+        8.957113257230958,
+        34.45325212905689
+      ]
+    }
+  ],
+  "unlocatedSignalIds": [
+    1,
+    3,
+    5,
+    7
+  ],
+  "fixedFurnitureCollidingTracks": [],
+  "minConservativeClearanceM": 1.7152622478980128,
+  "designedCorners": {
+    "tianjin-ne-corner-v1": {
+      "collidingTracks": [],
+      "clearanceM": 1.7152622478980128
+    },
+    "northwest-residential": {
+      "collidingTracks": [],
+      "clearanceM": 3.11821755009883
+    },
+    "southwest-commercial": {
+      "collidingTracks": [],
+      "clearanceM": 3.242790417037549
+    },
+    "southeast-office": {
+      "collidingTracks": [],
+      "clearanceM": 8.651652623851751
+    }
+  },
+  "missingIntervalsOver250ms": 0,
+  "centerSamplesOutsideLaneUnionPlusHalfMetre": {
+    "bicycle": 105,
+    "tricycle": 12,
+    "car": 332,
+    "pedestrian": 18897
+  },
+  "note": "Outside lane union is a diagnostic, not an invalid-track or violation label. Pedestrian areas and road edges may be unmodelled. Designed scenery is not surveyed."
+}

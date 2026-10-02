@@ -1,0 +1,11 @@
+{
+  "viewport": "2560x1440",
+  "errors": [],
+  "playPauseSeek": true,
+  "objectPicking": true,
+  "signalBoundaries": true,
+  "doubleSpeed": true,
+  "screenshotExport": "SinD-Tianjin-121.1s.png",
+  "signalText": "\nX1 绿灯X2 红灯\nX3 红灯X4 绿灯\nX5 绿灯X6 红灯\nX7 红灯X8 绿灯",
+  "note": "Headless Chromium: visual/function checks only; not an RTX 4060 performance benchmark."
+}

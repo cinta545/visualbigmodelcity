@@ -1,0 +1,40 @@
+{
+  "protocol": "One-second snapshots of causal CV fixed-heading envelope candidates. Counts are pair-snapshots, not unique conflicts, accidents, labels or predictive accuracy.",
+  "config": {
+    "horizonS": 3,
+    "urgentS": 1.5,
+    "maxAgeMs": 250,
+    "parallelDeg": 30,
+    "pedestrianSizeM": 0.6
+  },
+  "frames": 1202,
+  "counts": {
+    "cross": 82,
+    "rear": 48,
+    "other": 40,
+    "vulnerable": 103,
+    "overlap": 6
+  },
+  "examples": {
+    "cross": {
+      "timeMs": 1000,
+      "key": "Tianjin/8_2_1/5|Tianjin/8_2_1/8",
+      "ttcS": 2.374998534257107
+    },
+    "rear": {
+      "timeMs": 4000,
+      "key": "Tianjin/8_2_1/4|Tianjin/8_2_1/9",
+      "ttcS": 2.9277143747028997
+    },
+    "other": {
+      "timeMs": 12000,
+      "key": "Tianjin/8_2_1/12|Tianjin/8_2_1/13",
+      "ttcS": 2.595104601435921
+    },
+    "vulnerable": {
+      "timeMs": 21000,
+      "key": "Tianjin/8_2_1/18|Tianjin/8_2_1/20",
+      "ttcS": 2.6771788490160984
+    }
+  }
+}

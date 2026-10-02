@@ -1,0 +1,40 @@
+{
+  "version": "sind-evaluation-v1",
+  "protocol": {
+    "anchorStrideMs": 1000,
+    "futureStepMs": 100,
+    "horizonsS": [
+      1,
+      2,
+      3
+    ],
+    "maxGapMs": 250,
+    "movingThresholdMps": 0.5
+  },
+  "records": [
+    {
+      "id": "Tianjin/8_2_1",
+      "path": "data/sind/replay.json",
+      "group": "Tianjin/8_2_1",
+      "split": "development"
+    },
+    {
+      "id": "Changchun/changchun_pudong_507_009",
+      "path": "data/sind/records/changchun.json",
+      "group": "Changchun/changchun_pudong_507_009",
+      "split": "development"
+    },
+    {
+      "id": "Chongqing/6_22_NR_1",
+      "path": "data/sind/records/chongqing.json",
+      "group": "Chongqing/6_22_NR_1",
+      "split": "development"
+    },
+    {
+      "id": "Xi'an/Xi'an_412_m1",
+      "path": "data/sind/records/xian.json",
+      "group": "Xi'an/Xi'an_412_m1",
+      "split": "development"
+    }
+  ]
+}

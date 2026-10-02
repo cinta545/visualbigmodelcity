@@ -1,0 +1,119 @@
+{
+  "source": "https://github.com/SOTIF-AVLab/SinD",
+  "commit": "930e4dea78d924c6e9a58ff8e378331f93bba8ec",
+  "scope": "Official public samples only; full dataset requires application",
+  "files": [
+    {
+      "path": "Data/Changchun/Changchun_Pudong.osm",
+      "bytes": 62867,
+      "sha256": "5c882f2a63ef3ecac74ad8a133e81252db676f3df22c2905c819a721173cbe7a",
+      "lfs": false,
+      "verified": true
+    },
+    {
+      "path": "Data/Changchun/changchun_pudong_507_009/Ped_smoothed_tracks.csv",
+      "bytes": 1603164,
+      "sha256": "3069fcebc85fd3f88b9dcf176f30fe6a15c0a118fdec0efdefc42002a246595d",
+      "lfs": true,
+      "verified": true
+    },
+    {
+      "path": "Data/Changchun/changchun_pudong_507_009/Traffic_Lights.csv",
+      "bytes": 1721,
+      "sha256": "ebede8df767f5c0f77f33a2df14c880f6fa734925d56474dc3cc6375af401f49",
+      "lfs": true,
+      "verified": true
+    },
+    {
+      "path": "Data/Changchun/changchun_pudong_507_009/Veh_smoothed_tracks.csv",
+      "bytes": 129987853,
+      "sha256": "f3011d7dc1786f940981a9d49c7f83c7860beda9d14ed0e06c995f7b7e590692",
+      "lfs": true,
+      "verified": true
+    },
+    {
+      "path": "Data/Chongqing/6_22_NR_1/Ped_smoothed_tracks.csv",
+      "bytes": 2427514,
+      "sha256": "c213bd13919217f2c20e03974485efb588be77188a11aab234c3865647d30207",
+      "lfs": true,
+      "verified": true
+    },
+    {
+      "path": "Data/Chongqing/6_22_NR_1/TrafficLight_06_22_NR1_add_plight.csv",
+      "bytes": 4288,
+      "sha256": "f3cd54a58e93c8349d37c2f8b2e7ce8936ad00d752164b250a8eea49a092f922",
+      "lfs": true,
+      "verified": true
+    },
+    {
+      "path": "Data/Chongqing/6_22_NR_1/Veh_smoothed_tracks.csv",
+      "bytes": 46452176,
+      "sha256": "86dbc3aa806f199872ba94a1e1abfbed067bedeaa0148f5b977d50927fa24989",
+      "lfs": true,
+      "verified": true
+    },
+    {
+      "path": "Data/Chongqing/NR_ll2.osm",
+      "bytes": 73771,
+      "sha256": "6c7c7d21bdac71b1f611f122fb74c85581bccc6fa66bd7ea11bb98ccaef6b961",
+      "lfs": false,
+      "verified": true
+    },
+    {
+      "path": "Data/Xi'an/Xi'an_412_m1/Ped_smoothed_tracks.csv",
+      "bytes": 517760,
+      "sha256": "cb6aee1703f9aa7d39b38690439be448f539fb5abb5931c8534ae65acedeafa0",
+      "lfs": true,
+      "verified": true
+    },
+    {
+      "path": "Data/Xi'an/Xi'an_412_m1/Traffic_Lights.csv",
+      "bytes": 977,
+      "sha256": "178c516fb0a2f3ed3fa90f7257f7bdd0c9a5056e17c997edd3060156fa69531d",
+      "lfs": true,
+      "verified": true
+    },
+    {
+      "path": "Data/Xi'an/Xi'an_412_m1/Veh_smoothed_tracks.csv",
+      "bytes": 33613874,
+      "sha256": "1bf5d8450577249beb9c97bc210e7510babf0796ba817f9a88c64d19a5a5e4a7",
+      "lfs": true,
+      "verified": true
+    },
+    {
+      "path": "Data/Xi'an/Xi'an_Shanglin.osm",
+      "bytes": 106279,
+      "sha256": "4972003cf4fb657d298a0629b01e43a127fbd74e3b2cc4394fc41967f5b6a591",
+      "lfs": false,
+      "verified": true
+    },
+    {
+      "path": "DATASETS.md",
+      "bytes": 2440,
+      "sha256": "8ca36291cd39f411bccd40e43b9edef6ac2f8eacb41c8998d79718e794a59714",
+      "lfs": false,
+      "verified": true
+    },
+    {
+      "path": "Format.md",
+      "bytes": 7193,
+      "sha256": "e69b82d1d19901d6d94591229cf085a6b683439ea7398c3536b294097c936095",
+      "lfs": false,
+      "verified": true
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 7097,
+      "sha256": "faebf991f2049dbf1d32765a63b3c5df0d5e046dddd95d67778dd3a9d8b3c847",
+      "lfs": false,
+      "verified": true
+    },
+    {
+      "path": "README.md",
+      "bytes": 12601,
+      "sha256": "0c32c58d620dbf0482074ced61366a42da01e35eee9782c296e8806309fc6166",
+      "lfs": false,
+      "verified": true
+    }
+  ]
+}

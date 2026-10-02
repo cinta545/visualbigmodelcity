@@ -1,0 +1,473 @@
+{
+  "protocol": {
+    "version": "causal-cost-tree-v1",
+    "target": "3s FDE",
+    "maxDepth": 2,
+    "minLeafAnchors": 200,
+    "quantiles": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+    ],
+    "minRelativeGain": 0.01,
+    "weighting": "equal recording, then equal track, then equal anchor",
+    "features": [
+      "speed",
+      "acceleration",
+      "longitudinalAcceleration",
+      "absoluteTurnRate",
+      "turnFallback"
+    ],
+    "validation": "leave one entire recording out; fixed hyperparameters; exploratory data"
+  },
+  "sources": [
+    {
+      "id": "Tianjin/8_2_1",
+      "path": "data/sind/replay.json",
+      "group": "Tianjin/8_2_1",
+      "split": "development",
+      "sha256": "7ce981d85b5399f93de7b88bab4c9baf2b25ca1717e96b3f39964f69fe50d18a"
+    },
+    {
+      "id": "Changchun/changchun_pudong_507_009",
+      "path": "data/sind/records/changchun.json",
+      "group": "Changchun/changchun_pudong_507_009",
+      "split": "development",
+      "sha256": "3e3bba645573d28d0763b3516a4a7887a63787c772c805efa82a8b07731675e3"
+    },
+    {
+      "id": "Chongqing/6_22_NR_1",
+      "path": "data/sind/records/chongqing.json",
+      "group": "Chongqing/6_22_NR_1",
+      "split": "development",
+      "sha256": "c3fa6ed53a64e8115a4e80f84eda650acd630ee0b91f834c8c8ef835bcf90781"
+    },
+    {
+      "id": "Xi'an/Xi'an_412_m1",
+      "path": "data/sind/records/xian.json",
+      "group": "Xi'an/Xi'an_412_m1",
+      "split": "development",
+      "sha256": "f718021486fda92ed01fad74040f54b22f48bef525155ca5e30c141306bf1a9f"
+    }
+  ],
+  "codeHashes": {
+    "src/sind-gate.mjs": "34ccdaefe223e821ecd80796546b6773d9ec2b548fbbd8a6e0e0b625ddcad707",
+    "src/sind-prediction.mjs": "66c6c51258731897253ce05efedc9c1843b27f9c3a18f87deb959ab7f6274720",
+    "src/sind-research.mjs": "7fbf4389ec6aa7d10e975b53c53c4a0e0e5a38e1bd901e03c6da3eb580efa838",
+    "scripts/evaluate-sind-gate.mjs": "00191e5d57c2432d9368ab8fe086e4b9500090775cd8032f007ced4c2d88bce8"
+  },
+  "status": "exploratory-leave-recording-out-not-external-test",
+  "folds": [
+    {
+      "heldOut": "Tianjin/8_2_1",
+      "trainingRecords": [
+        "Changchun/changchun_pudong_507_009",
+        "Chongqing/6_22_NR_1",
+        "Xi'an/Xi'an_412_m1"
+      ],
+      "trainingAnchors": 70005,
+      "testAnchors": 8635,
+      "tree": {
+        "feature": 2,
+        "featureName": "longitudinalAcceleration",
+        "threshold": 0.3620578532533386,
+        "n": 70005,
+        "left": {
+          "feature": 0,
+          "featureName": "speed",
+          "threshold": 2.1715422225328997,
+          "n": 56004,
+          "left": {
+            "model": "ctrv",
+            "cost": 0.2120359129555412,
+            "n": 44803
+          },
+          "right": {
+            "model": "ca",
+            "cost": 1.0414737506929566,
+            "n": 11201
+          }
+        },
+        "right": {
+          "feature": 2,
+          "featureName": "longitudinalAcceleration",
+          "threshold": 0.7948043248941078,
+          "n": 14001,
+          "left": {
+            "model": "ca",
+            "cost": 0.35443701749868023,
+            "n": 5601
+          },
+          "right": {
+            "model": "dca",
+            "cost": 0.6238280360362333,
+            "n": 8400
+          }
+        }
+      },
+      "trainingBestFixed": "dca",
+      "chosen": {
+        "cv": 0,
+        "ca": 2760,
+        "dca": 595,
+        "ctrv": 5280
+      },
+      "gate": {
+        "n": 8635,
+        "tracks": 474,
+        "adeM": 0.43810165991168526,
+        "fdeM": 1.1835413847380383,
+        "p95FdeM": 4.814802501372779,
+        "trackMacroAdeM": 0.9411332707908151,
+        "trackMacroFdeM": 2.5636881901924364
+      },
+      "dca": {
+        "n": 8635,
+        "tracks": 474,
+        "adeM": 0.44758093570654495,
+        "fdeM": 1.2125138825045703,
+        "p95FdeM": 5.002837939535817,
+        "trackMacroAdeM": 1.0043399923294636,
+        "trackMacroFdeM": 2.7749675266737848
+      },
+      "trainingFixed": {
+        "n": 8635,
+        "tracks": 474,
+        "adeM": 0.44758093570654495,
+        "fdeM": 1.2125138825045703,
+        "p95FdeM": 5.002837939535817,
+        "trackMacroAdeM": 1.0043399923294636,
+        "trackMacroFdeM": 2.7749675266737848
+      },
+      "movingGate": {
+        "n": 3927,
+        "tracks": 472,
+        "adeM": 0.8590990870527994,
+        "fdeM": 2.326219188607028,
+        "p95FdeM": 5.841528353249752,
+        "trackMacroAdeM": 1.0010003802523653,
+        "trackMacroFdeM": 2.7297868462149433
+      },
+      "movingDca": {
+        "n": 3927,
+        "tracks": 472,
+        "adeM": 0.869477158204736,
+        "fdeM": 2.359853011958987,
+        "p95FdeM": 6.049413766269281,
+        "trackMacroAdeM": 1.0602213007184358,
+        "trackMacroFdeM": 2.934021578292866
+      }
+    },
+    {
+      "heldOut": "Changchun/changchun_pudong_507_009",
+      "trainingRecords": [
+        "Tianjin/8_2_1",
+        "Chongqing/6_22_NR_1",
+        "Xi'an/Xi'an_412_m1"
+      ],
+      "trainingAnchors": 40447,
+      "testAnchors": 38193,
+      "tree": {
+        "feature": 2,
+        "featureName": "longitudinalAcceleration",
+        "threshold": 0.0737724554856917,
+        "n": 40447,
+        "left": {
+          "feature": 3,
+          "featureName": "absoluteTurnRate",
+          "threshold": 0,
+          "n": 32357,
+          "left": {
+            "model": "cv",
+            "cost": 0.059182380640771616,
+            "n": 28041
+          },
+          "right": {
+            "model": "ca",
+            "cost": 1.0579292220117946,
+            "n": 4316
+          }
+        },
+        "right": {
+          "feature": 2,
+          "featureName": "longitudinalAcceleration",
+          "threshold": 0.9058617751873225,
+          "n": 8090,
+          "left": {
+            "model": "ca",
+            "cost": 0.8033359179062887,
+            "n": 6472
+          },
+          "right": {
+            "model": "dca",
+            "cost": 0.38165091905478665,
+            "n": 1618
+          }
+        }
+      },
+      "trainingBestFixed": "dca",
+      "chosen": {
+        "cv": 11891,
+        "ca": 20230,
+        "dca": 6072,
+        "ctrv": 0
+      },
+      "gate": {
+        "n": 38193,
+        "tracks": 1336,
+        "adeM": 0.6865979892523991,
+        "fdeM": 1.9306895943195708,
+        "p95FdeM": 6.517956752698985,
+        "trackMacroAdeM": 0.9165589648476267,
+        "trackMacroFdeM": 2.5476595887946853
+      },
+      "dca": {
+        "n": 38193,
+        "tracks": 1336,
+        "adeM": 0.6818530970187443,
+        "fdeM": 1.9011257674591153,
+        "p95FdeM": 6.583621281675689,
+        "trackMacroAdeM": 0.9108493041201168,
+        "trackMacroFdeM": 2.510435182996377
+      },
+      "trainingFixed": {
+        "n": 38193,
+        "tracks": 1336,
+        "adeM": 0.6818530970187443,
+        "fdeM": 1.9011257674591153,
+        "p95FdeM": 6.583621281675689,
+        "trackMacroAdeM": 0.9108493041201168,
+        "trackMacroFdeM": 2.510435182996377
+      },
+      "movingGate": {
+        "n": 21607,
+        "tracks": 1336,
+        "adeM": 1.04580752534867,
+        "fdeM": 2.946279482515393,
+        "p95FdeM": 8.179913199317413,
+        "trackMacroAdeM": 1.1185151039729164,
+        "trackMacroFdeM": 3.1313038840366048
+      },
+      "movingDca": {
+        "n": 21607,
+        "tracks": 1336,
+        "adeM": 1.0428556903802162,
+        "fdeM": 2.917132716767075,
+        "p95FdeM": 8.137285947938595,
+        "trackMacroAdeM": 1.1188650173499834,
+        "trackMacroFdeM": 3.1117719728189646
+      }
+    },
+    {
+      "heldOut": "Chongqing/6_22_NR_1",
+      "trainingRecords": [
+        "Tianjin/8_2_1",
+        "Changchun/changchun_pudong_507_009",
+        "Xi'an/Xi'an_412_m1"
+      ],
+      "trainingAnchors": 56455,
+      "testAnchors": 22185,
+      "tree": {
+        "feature": 2,
+        "featureName": "longitudinalAcceleration",
+        "threshold": 0.5754712412373129,
+        "n": 56455,
+        "left": {
+          "feature": 0,
+          "featureName": "speed",
+          "threshold": 4.778178997886813,
+          "n": 45164,
+          "left": {
+            "model": "dca",
+            "cost": 0.6171808332263818,
+            "n": 36131
+          },
+          "right": {
+            "model": "ca",
+            "cost": 1.0481625141340867,
+            "n": 9033
+          }
+        },
+        "right": {
+          "feature": 2,
+          "featureName": "longitudinalAcceleration",
+          "threshold": 1.6325664268809723,
+          "n": 11291,
+          "left": {
+            "model": "dca",
+            "cost": 0.5619375769683481,
+            "n": 9033
+          },
+          "right": {
+            "model": "ctrv",
+            "cost": 0.18816082801163764,
+            "n": 2258
+          }
+        }
+      },
+      "trainingBestFixed": "dca",
+      "chosen": {
+        "cv": 0,
+        "ca": 285,
+        "dca": 21801,
+        "ctrv": 99
+      },
+      "gate": {
+        "n": 22185,
+        "tracks": 187,
+        "adeM": 0.0841769055628307,
+        "fdeM": 0.22605114949933813,
+        "p95FdeM": 1.4057285173730458,
+        "trackMacroAdeM": 0.7038318730781894,
+        "trackMacroFdeM": 1.899968713695835
+      },
+      "dca": {
+        "n": 22185,
+        "tracks": 187,
+        "adeM": 0.08344083730901415,
+        "fdeM": 0.22590913746600008,
+        "p95FdeM": 1.4273338029846547,
+        "trackMacroAdeM": 0.7771207614130631,
+        "trackMacroFdeM": 2.125171568371372
+      },
+      "trainingFixed": {
+        "n": 22185,
+        "tracks": 187,
+        "adeM": 0.08344083730901415,
+        "fdeM": 0.22590913746600008,
+        "p95FdeM": 1.4273338029846547,
+        "trackMacroAdeM": 0.7771207614130631,
+        "trackMacroFdeM": 2.125171568371372
+      },
+      "movingGate": {
+        "n": 1259,
+        "tracks": 163,
+        "adeM": 1.0144023975933798,
+        "fdeM": 2.77793325755551,
+        "p95FdeM": 7.292327740474529,
+        "trackMacroAdeM": 1.0851783782798519,
+        "trackMacroFdeM": 2.9431469384799733
+      },
+      "movingDca": {
+        "n": 1259,
+        "tracks": 163,
+        "adeM": 0.9993055572522712,
+        "fdeM": 2.7703267931757574,
+        "p95FdeM": 7.292327740474529,
+        "trackMacroAdeM": 1.1215444337175335,
+        "trackMacroFdeM": 3.092222019424414
+      }
+    },
+    {
+      "heldOut": "Xi'an/Xi'an_412_m1",
+      "trainingRecords": [
+        "Tianjin/8_2_1",
+        "Changchun/changchun_pudong_507_009",
+        "Chongqing/6_22_NR_1"
+      ],
+      "trainingAnchors": 69013,
+      "testAnchors": 9627,
+      "tree": {
+        "feature": 2,
+        "featureName": "longitudinalAcceleration",
+        "threshold": 0.3248646660795852,
+        "n": 69013,
+        "left": {
+          "feature": 0,
+          "featureName": "speed",
+          "threshold": 2.069441470706222,
+          "n": 55210,
+          "left": {
+            "model": "ctrv",
+            "cost": 0.20845978200469806,
+            "n": 44168
+          },
+          "right": {
+            "model": "ca",
+            "cost": 1.076944821076746,
+            "n": 11042
+          }
+        },
+        "right": {
+          "feature": 1,
+          "featureName": "acceleration",
+          "threshold": 1.694281440571139,
+          "n": 13803,
+          "left": {
+            "model": "dca",
+            "cost": 0.6678657373155129,
+            "n": 11042
+          },
+          "right": {
+            "model": "ctrv",
+            "cost": 0.34740105245082725,
+            "n": 2761
+          }
+        }
+      },
+      "trainingBestFixed": "dca",
+      "chosen": {
+        "cv": 0,
+        "ca": 2027,
+        "dca": 1968,
+        "ctrv": 5632
+      },
+      "gate": {
+        "n": 9627,
+        "tracks": 379,
+        "adeM": 0.5232816762580468,
+        "fdeM": 1.4096098942081825,
+        "p95FdeM": 5.157906190925123,
+        "trackMacroAdeM": 0.9190973295997801,
+        "trackMacroFdeM": 2.5076690822186354
+      },
+      "dca": {
+        "n": 9627,
+        "tracks": 379,
+        "adeM": 0.5300678115952022,
+        "fdeM": 1.4287503613924533,
+        "p95FdeM": 5.048650258872153,
+        "trackMacroAdeM": 0.9141762521397758,
+        "trackMacroFdeM": 2.4763586316082216
+      },
+      "trainingFixed": {
+        "n": 9627,
+        "tracks": 379,
+        "adeM": 0.5300678115952022,
+        "fdeM": 1.4287503613924533,
+        "p95FdeM": 5.048650258872153,
+        "trackMacroAdeM": 0.9141762521397758,
+        "trackMacroFdeM": 2.4763586316082216
+      },
+      "movingGate": {
+        "n": 4355,
+        "tracks": 377,
+        "adeM": 0.98309464660491,
+        "fdeM": 2.702553173487833,
+        "p95FdeM": 6.533079670973421,
+        "trackMacroAdeM": 1.0805895552842641,
+        "trackMacroFdeM": 2.9686175277929743
+      },
+      "movingDca": {
+        "n": 4355,
+        "tracks": 377,
+        "adeM": 0.9502812306600255,
+        "fdeM": 2.6182026295995753,
+        "p95FdeM": 6.277839177904678,
+        "trackMacroAdeM": 1.0512522161966815,
+        "trackMacroFdeM": 2.8844628803975763
+      }
+    }
+  ],
+  "macroMeanFdeM": {
+    "gate": 1.1874730056912826,
+    "dca": 1.1920747872055348
+  },
+  "limitations": [
+    "Previously explored public records; not pristine test cities.",
+    "One record per city, four folds only.",
+    "Train labels use future error; inference features are causal.",
+    "Risk model and homepage default unchanged."
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "sourceRoot": "D:\\论文\\dcbfb-main\\vehicle-trajectory-data\\vehicle-trajectory-data",
+  "generatedAt": "2026-10-01T08:16:09.293Z",
+  "reports": [
+    {
+      "file": "D:\\论文\\dcbfb-main\\vehicle-trajectory-data\\vehicle-trajectory-data\\0400pm-0415pm\\trajectories-0400-0415.txt",
+      "bytes": 179300362,
+      "rows": 1262678,
+      "malformed": 0,
+      "nonFinite": 0,
+      "lanes": {
+        "1": 104284,
+        "2": 240524,
+        "3": 198866,
+        "4": 244065,
+        "5": 216370,
+        "6": 228638,
+        "7": 29931
+      },
+      "classes": {
+        "1": 3685,
+        "2": 1199644,
+        "3": 59349
+      },
+      "ranges": {
+        "Local_X": {
+          "min": 0.117,
+          "max": 93.659
+        },
+        "Local_Y": {
+          "min": 0,
+          "max": 1757.488
+        },
+        "Global_Time": {
+          "min": 1113433135300,
+          "max": 1113434136500
+        },
+        "Frame_ID": {
+          "min": 4,
+          "max": 10016
+        },
+        "v_Vel": {
+          "min": 0,
+          "max": 95.3
+        },
+        "v_Acc": {
+          "min": -11.2,
+          "max": 11.2
+        },
+        "v_Length": {
+          "min": 5.4,
+          "max": 76.2
+        },
+        "v_Width": {
+          "min": 3.1,
+          "max": 8.5
+        }
+      },
+      "frameSteps": {
+        "1": 1260626
+      },
+      "timeStepsMs": {
+        "100": 1260626
+      },
+      "duplicateVehicleFrames": 0,
+      "backwardFrames": 0,
+      "backwardLongitudinalSteps": 0,
+      "fields": [
+        "Vehicle_ID",
+        "Frame_ID",
+        "Total_Frames",
+        "Global_Time",
+        "Local_X",
+        "Local_Y",
+        "Global_X",
+        "Global_Y",
+        "v_Length",
+        "v_Width",
+        "v_Class",
+        "v_Vel",
+        "v_Acc",
+        "Lane_ID",
+        "Preceding",
+        "Following",
+        "Space_Headway",
+        "Time_Headway"
+      ],
+      "vehicles": 2052,
+      "uniqueFrames": 10013,
+      "maxSimultaneousVehicles": 181,
+      "trackRows": {
+        "min": 203,
+        "median": 639,
+        "max": 1192
+      },
+      "firstUtc": "2005-04-13T22:58:55.300Z",
+      "lastUtc": "2005-04-13T23:15:36.500Z",
+      "observedSpanSeconds": 1001.2
+    },
+    {
+      "file": "D:\\论文\\dcbfb-main\\vehicle-trajectory-data\\vehicle-trajectory-data\\0500pm-0515pm\\trajectories-0500-0515.txt",
+      "bytes": 220088356,
+      "rows": 1549918,
+      "malformed": 0,
+      "nonFinite": 0,
+      "lanes": {
+        "1": 144583,
+        "2": 278312,
+        "3": 240095,
+        "4": 306111,
+        "5": 263734,
+        "6": 262396,
+        "7": 54687
+      },
+      "classes": {
+        "1": 8431,
+        "2": 1482228,
+        "3": 59259
+      },
+      "ranges": {
+        "Local_X": {
+          "min": 0,
+          "max": 94.018
+        },
+        "Local_Y": {
+          "min": 0,
+          "max": 1790.771
+        },
+        "Global_Time": {
+          "min": 1113436767500,
+          "max": 1113437746100
+        },
+        "Frame_ID": {
+          "min": 6,
+          "max": 9792
+        },
+        "v_Vel": {
+          "min": 0,
+          "max": 95.3
+        },
+        "v_Acc": {
+          "min": -11.2,
+          "max": 11.2
+        },
+        "v_Length": {
+          "min": 5.9,
+          "max": 77.7
+        },
+        "v_Width": {
+          "min": 2.7,
+          "max": 8.5
+        }
+      },
+      "frameSteps": {
+        "1": 1548082
+      },
+      "timeStepsMs": {
+        "100": 1548082
+      },
+      "duplicateVehicleFrames": 0,
+      "backwardFrames": 0,
+      "backwardLongitudinalSteps": 0,
+      "fields": [
+        "Vehicle_ID",
+        "Frame_ID",
+        "Total_Frames",
+        "Global_Time",
+        "Local_X",
+        "Local_Y",
+        "Global_X",
+        "Global_Y",
+        "v_Length",
+        "v_Width",
+        "v_Class",
+        "v_Vel",
+        "v_Acc",
+        "Lane_ID",
+        "Preceding",
+        "Following",
+        "Space_Headway",
+        "Time_Headway"
+      ],
+      "vehicles": 1836,
+      "uniqueFrames": 9787,
+      "maxSimultaneousVehicles": 252,
+      "trackRows": {
+        "min": 216,
+        "median": 764,
+        "max": 2216
+      },
+      "firstUtc": "2005-04-13T23:59:27.500Z",
+      "lastUtc": "2005-04-14T00:15:46.100Z",
+      "observedSpanSeconds": 978.6
+    },
+    {
+      "file": "D:\\论文\\dcbfb-main\\vehicle-trajectory-data\\vehicle-trajectory-data\\0515pm-0530pm\\trajectories-0515-0530.txt",
+      "bytes": 249038322,
+      "rows": 1753791,
+      "malformed": 0,
+      "nonFinite": 0,
+      "lanes": {
+        "1": 155721,
+        "2": 311854,
+        "3": 280871,
+        "4": 330013,
+        "5": 305350,
+        "6": 300203,
+        "7": 69779
+      },
+      "classes": {
+        "1": 7236,
+        "2": 1696031,
+        "3": 50524
+      },
+      "ranges": {
+        "Local_X": {
+          "min": 0,
+          "max": 96.996
+        },
+        "Local_Y": {
+          "min": 0,
+          "max": 1767.488
+        },
+        "Global_Time": {
+          "min": 1113437565600,
+          "max": 1113438734000
+        },
+        "Frame_ID": {
+          "min": 7,
+          "max": 11691
+        },
+        "v_Vel": {
+          "min": 0,
+          "max": 95.3
+        },
+        "v_Acc": {
+          "min": -11.2,
+          "max": 11.2
+        },
+        "v_Length": {
+          "min": 4.9,
+          "max": 74.2
+        },
+        "v_Width": {
+          "min": 4.1,
+          "max": 8.5
+        }
+      },
+      "frameSteps": {
+        "1": 1752001
+      },
+      "timeStepsMs": {
+        "100": 1752001
+      },
+      "duplicateVehicleFrames": 0,
+      "backwardFrames": 0,
+      "backwardLongitudinalSteps": 0,
+      "fields": [
+        "Vehicle_ID",
+        "Frame_ID",
+        "Total_Frames",
+        "Global_Time",
+        "Local_X",
+        "Local_Y",
+        "Global_X",
+        "Global_Y",
+        "v_Length",
+        "v_Width",
+        "v_Class",
+        "v_Vel",
+        "v_Acc",
+        "Lane_ID",
+        "Preceding",
+        "Following",
+        "Space_Headway",
+        "Time_Headway"
+      ],
+      "vehicles": 1790,
+      "uniqueFrames": 11685,
+      "maxSimultaneousVehicles": 248,
+      "trackRows": {
+        "min": 258,
+        "median": 903,
+        "max": 2434
+      },
+      "firstUtc": "2005-04-14T00:12:45.600Z",
+      "lastUtc": "2005-04-14T00:32:14.000Z",
+      "observedSpanSeconds": 1168.4
+    }
+  ],
+  "vehicleIdOverlapAcrossSessions": [
+    {
+      "a": "D:\\论文\\dcbfb-main\\vehicle-trajectory-data\\vehicle-trajectory-data\\0400pm-0415pm\\trajectories-0400-0415.txt",
+      "b": "D:\\论文\\dcbfb-main\\vehicle-trajectory-data\\vehicle-trajectory-data\\0500pm-0515pm\\trajectories-0500-0515.txt",
+      "sharedVehicleIds": 1113
+    },
+    {
+      "a": "D:\\论文\\dcbfb-main\\vehicle-trajectory-data\\vehicle-trajectory-data\\0400pm-0415pm\\trajectories-0400-0415.txt",
+      "b": "D:\\论文\\dcbfb-main\\vehicle-trajectory-data\\vehicle-trajectory-data\\0515pm-0530pm\\trajectories-0515-0530.txt",
+      "sharedVehicleIds": 1159
+    },
+    {
+      "a": "D:\\论文\\dcbfb-main\\vehicle-trajectory-data\\vehicle-trajectory-data\\0500pm-0515pm\\trajectories-0500-0515.txt",
+      "b": "D:\\论文\\dcbfb-main\\vehicle-trajectory-data\\vehicle-trajectory-data\\0515pm-0530pm\\trajectories-0515-0530.txt",
+      "sharedVehicleIds": 1166
+    }
+  ]
+}

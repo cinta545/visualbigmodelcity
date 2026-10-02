@@ -1,0 +1,31 @@
+HTTP/1.1 206 Partial Content
+Connection: keep-alive
+Content-Length: 1000000
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'
+Content-Type: text/plain
+ETag: "c377452a22ad0d57e2ebc9a8bccf050ef50c32c10ce35d7984a12edc24e532b5"
+Last-Modified: Thu, 01 Oct 2026 08:26:43 GMT
+Strict-Transport-Security: max-age=31557600
+timing-allow-origin: https://github.com
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+x-github-tenant: 
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 70B0:D5A65:13ABCE:286D4A:6ABE193A
+x-github-edge-region: japaneast
+Accept-Ranges: bytes
+Content-Range: bytes 4412797-5412796/36940154
+Date: Thu, 01 Oct 2026 08:30:06 GMT
+Via: 1.1 varnish
+X-Served-By: cache-nrt-rjtf7700104-NRT
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1790843407.568570,VS0,VE1
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 24d355ea3d125e456fe244b6b35aab156e6b72ef
+Expires: Thu, 01 Oct 2026 08:35:06 GMT
+Source-Age: 203
+Vary: Authorization,Accept-Encoding
+

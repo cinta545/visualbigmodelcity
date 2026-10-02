@@ -1,0 +1,198 @@
+{
+  "scope": "Additional official public samples, not full SinD",
+  "commit": "930e4dea78d924c6e9a58ff8e378331f93bba8ec",
+  "reports": [
+    {
+      "path": "Data/Changchun/changchun_pudong_507_009/Ped_smoothed_tracks.csv",
+      "rows": 10451,
+      "tracks": 49,
+      "classes": {
+        "pedestrian": 49
+      },
+      "startMs": 0.0,
+      "endMs": 1528728.7287287288,
+      "nonfiniteRows": 0,
+      "nonincreasingTimes": 0,
+      "gapsOver250Ms": 0,
+      "invalidDimensionRows": 0,
+      "columns": [
+        "track_id",
+        "frame_id",
+        "timestamp_ms",
+        "agent_type",
+        "x",
+        "y",
+        "vx",
+        "vy",
+        "ax",
+        "ay"
+      ]
+    },
+    {
+      "path": "Data/Changchun/changchun_pudong_507_009/Veh_smoothed_tracks.csv",
+      "rows": 432224,
+      "tracks": 1362,
+      "classes": {
+        "motorcycle": 96,
+        "car": 1175,
+        "bicycle": 14,
+        "truck": 70,
+        "tricycle": 7
+      },
+      "startMs": 0.0,
+      "endMs": 1541141.1411411413,
+      "nonfiniteRows": 0,
+      "nonincreasingTimes": 0,
+      "gapsOver250Ms": 0,
+      "invalidDimensionRows": 0,
+      "columns": [
+        "track_id",
+        "frame_id",
+        "timestamp_ms",
+        "agent_type",
+        "x",
+        "y",
+        "vx",
+        "vy",
+        "yaw_rad",
+        "heading_rad",
+        "length",
+        "width",
+        "ax",
+        "ay",
+        "v_lon",
+        "v_lat",
+        "a_lon",
+        "a_lat"
+      ]
+    },
+    {
+      "path": "Data/Chongqing/6_22_NR_1/Ped_smoothed_tracks.csv",
+      "rows": 15453,
+      "tracks": 40,
+      "classes": {
+        "pedestrian": 40
+      },
+      "startMs": 41241.241241241245,
+      "endMs": 1160960.960960961,
+      "nonfiniteRows": 0,
+      "nonincreasingTimes": 0,
+      "gapsOver250Ms": 0,
+      "invalidDimensionRows": 0,
+      "columns": [
+        "track_id",
+        "frame_id",
+        "timestamp_ms",
+        "agent_type",
+        "x",
+        "y",
+        "vx",
+        "vy",
+        "ax",
+        "ay"
+      ]
+    },
+    {
+      "path": "Data/Chongqing/6_22_NR_1/Veh_smoothed_tracks.csv",
+      "rows": 228549,
+      "tracks": 190,
+      "classes": {
+        "tricycle": 4,
+        "car": 147,
+        "truck": 5,
+        "motorcycle": 34
+      },
+      "startMs": 0.0,
+      "endMs": 1160960.960960961,
+      "nonfiniteRows": 0,
+      "nonincreasingTimes": 0,
+      "gapsOver250Ms": 0,
+      "invalidDimensionRows": 0,
+      "columns": [
+        "track_id",
+        "frame_id",
+        "timestamp_ms",
+        "agent_type",
+        "x",
+        "y",
+        "vx",
+        "vy",
+        "yaw_rad",
+        "heading_rad",
+        "length",
+        "width",
+        "ax",
+        "ay",
+        "v_lon",
+        "v_lat",
+        "a_lon",
+        "a_lat"
+      ]
+    },
+    {
+      "path": "Data/Xi'an/Xi'an_412_m1/Ped_smoothed_tracks.csv",
+      "rows": 3419,
+      "tracks": 16,
+      "classes": {
+        "pedestrian": 16
+      },
+      "startMs": 7607.607607607608,
+      "endMs": 834134.1341341342,
+      "nonfiniteRows": 0,
+      "nonincreasingTimes": 0,
+      "gapsOver250Ms": 0,
+      "invalidDimensionRows": 0,
+      "columns": [
+        "track_id",
+        "frame_id",
+        "timestamp_ms",
+        "agent_type",
+        "x",
+        "y",
+        "vx",
+        "vy",
+        "ax",
+        "ay"
+      ]
+    },
+    {
+      "path": "Data/Xi'an/Xi'an_412_m1/Veh_smoothed_tracks.csv",
+      "rows": 116836,
+      "tracks": 423,
+      "classes": {
+        "car": 357,
+        "motorcycle": 16,
+        "bicycle": 40,
+        "bus": 2,
+        "tricycle": 5,
+        "truck": 3
+      },
+      "startMs": 0.0,
+      "endMs": 910610.6106106108,
+      "nonfiniteRows": 0,
+      "nonincreasingTimes": 0,
+      "gapsOver250Ms": 0,
+      "invalidDimensionRows": 0,
+      "columns": [
+        "track_id",
+        "frame_id",
+        "timestamp_ms",
+        "agent_type",
+        "x",
+        "y",
+        "vx",
+        "vy",
+        "yaw_rad",
+        "heading_rad",
+        "length",
+        "width",
+        "ax",
+        "ay",
+        "v_lon",
+        "v_lat",
+        "a_lon",
+        "a_lat"
+      ]
+    }
+  ]
+}

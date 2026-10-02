@@ -1,0 +1,20 @@
+[
+  {
+    "csv": "D:\\论文\\dcbfb-main\\vehicle-trajectory-data\\vehicle-trajectory-data\\0400pm-0415pm\\trajectories-0400-0415.csv",
+    "comparedRows": 1048575,
+    "identicalNumericPrefix": true,
+    "firstMismatch": null
+  },
+  {
+    "csv": "D:\\论文\\dcbfb-main\\vehicle-trajectory-data\\vehicle-trajectory-data\\0500pm-0515pm\\trajectories-0500-0515.csv",
+    "comparedRows": 1048575,
+    "identicalNumericPrefix": true,
+    "firstMismatch": null
+  },
+  {
+    "csv": "D:\\论文\\dcbfb-main\\vehicle-trajectory-data\\vehicle-trajectory-data\\0515pm-0530pm\\trajectories-0515-0530.csv",
+    "comparedRows": 1048575,
+    "identicalNumericPrefix": true,
+    "firstMismatch": null
+  }
+]

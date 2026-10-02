@@ -1,0 +1,31 @@
+{
+  "name": "bigmodeltraffic",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Semantic traffic digital twin full-stack prototype with SQLite scene ledger",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node server/observation-server.cjs",
+    "dev": "node server/observation-server.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "sind:download": "python scripts/download-sind.py",
+    "sind:prepare": "python scripts/prepare-sind.py && python scripts/audit-sind-scene.py && node scripts/build-sind-events.mjs && node scripts/evaluate-sind-research.mjs",
+    "sind:events": "node scripts/build-sind-events.mjs",
+    "sind:evaluate": "node scripts/evaluate-sind-research.mjs",
+    "sind:public:prepare": "python scripts/prepare-sind-public.py",
+    "sind:gate": "node scripts/evaluate-sind-gate.mjs",
+    "cities:prepare": "python scripts/prepare-city-scenes.py",
+    "cities:check": "node scripts/check-city.cjs"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "socket.io": "^4.8.3",
+    "three": "^0.150.1"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.63.0"
+  }
+}

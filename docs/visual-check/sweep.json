@@ -1,0 +1,16 @@
+{
+  "passes": [
+    {
+      "modelCount": 34,
+      "samples": 82
+    },
+    {
+      "modelCount": 34,
+      "samples": 82
+    }
+  ],
+  "failures": [],
+  "durationMs": 1201601.6016016016,
+  "errors": [],
+  "note": "Two 15-second-step timeline sweeps; not a continuous 20-minute run or GPU benchmark."
+}

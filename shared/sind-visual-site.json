@@ -1,0 +1,38 @@
+{
+  "id": "tianjin-ne-corner-v1",
+  "coordinates": "SinD local metres: x east, y north; Three.js (x, height, -y)",
+  "building": {"bounds": [32, 35, 62, 50], "height": 18.4, "label": "青禾里", "provenance": "designed, not surveyed"},
+  "plaza": {"bounds": [31, 30, 65, 53], "boundaryWays": [["-124124",false],["-124131",false],["-124139",false],["-124140",true]], "outerPoints": [[67,26.5],[67,54],[20.2,54]], "provenance": "mapped curb edge with designed paving extension"},
+  "fixedFurniture": [
+    {"type": "tree", "x": 34, "y": 32, "radius": 0.85},
+    {"type": "tree", "x": 59, "y": 32, "radius": 0.85},
+    {"type": "bench", "x": 39, "y": 32, "radius": 1.25},
+    {"type": "planter", "x": 53, "y": 32, "radius": 0.8}
+  ],
+  "additionalCorners": [
+    {
+      "id": "northwest-residential",
+      "building": {"bounds": [-36, 35, -6, 51], "height": 24.5, "label": "槐序居", "kind": "residential", "color": "#b8b4a5", "shops": ["槐序面包", "社区药房", "鲜果食集"], "provenance": "designed, not surveyed"},
+      "plaza": {"bounds": [-39, 30, -4, 54], "boundaryWays": [["-124118",false],["-124121",false],["-124166",false],["-124120",false]], "outerPoints": [[-39,25.4],[-39,54],[5.1,54]], "provenance": "mapped curb edge with designed paving extension"},
+      "fixedFurniture": [{"type": "tree", "x": -30, "y": 32, "radius": 0.85}, {"type": "tree", "x": -10, "y": 32, "radius": 0.85}, {"type": "bench", "x": -21, "y": 32, "radius": 1.25}]
+    },
+    {
+      "id": "southwest-commercial",
+      "building": {"bounds": [-34, -20, -4, -4], "height": 12.3, "label": "街角生活馆", "front": "north", "color": "#b7bdb8", "shops": ["巷里餐厅", "花间生活", "社区服务"], "provenance": "designed, not surveyed"},
+      "plaza": {"bounds": [-37, -23, -2, 1], "boundaryWays": [["-124111",true],["-124150",true],["-124151",false],["-124162",true]], "outerPoints": [[-39,6.2],[-39,-26],[7.3,-26]], "provenance": "mapped curb edge with designed paving extension"},
+      "fixedFurniture": [{"type": "tree", "x": -28, "y": -1, "radius": 0.85}, {"type": "tree", "x": -8, "y": -1, "radius": 0.85}, {"type": "bench", "x": -20, "y": -1, "radius": 1.25}]
+    },
+    {
+      "id": "southeast-office",
+      "building": {"bounds": [34, -23, 64, -7], "height": 21.5, "label": "青禾商务", "kind": "office", "front": "north", "color": "#b2bac0", "shops": ["青禾商务", "轻食工坊", "城市驿站"], "provenance": "designed, not surveyed"},
+      "plaza": {"bounds": [31, -26, 67, -2], "boundaryWays": [["-124161",true],["-124156",false],["-124154",true],["-124167",false]], "outerPoints": [[67,6.6],[67,-26],[22.3,-26]], "provenance": "mapped curb edge with designed paving extension"},
+      "fixedFurniture": [{"type": "tree", "x": 39, "y": -4, "radius": 0.85}, {"type": "tree", "x": 59, "y": -4, "radius": 0.85}, {"type": "planter", "x": 50, "y": -4, "radius": 0.8}]
+    }
+  ],
+  "views": {
+    "overview": {"position": [105, 89, 91], "target": [15, 1, -15]},
+    "junction": {"position": [13, 8, 7], "target": [13, 3, -23]},
+    "street": {"position": [36, 1.8, -30.5], "target": [48, 1.85, -35]},
+    "sample": {"position": [67, 7, -7], "target": [44, 5.2, -35]}
+  }
+}

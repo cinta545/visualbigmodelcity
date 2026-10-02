@@ -1,0 +1,154 @@
+{
+  "id": "qinghe-crossing-v1",
+  "name": "清和路 · 云杉街",
+  "extent": 200,
+  "laneWidth": 3.5,
+  "roads": {
+    "eastWest": {
+      "name": "清和路",
+      "halfWidth": 11.5,
+      "lanes": 6
+    },
+    "northSouth": {
+      "name": "云杉街",
+      "halfWidth": 8,
+      "lanes": 4
+    }
+  },
+  "stopDistance": 30,
+  "buildingSetback": 26,
+  "buildings": [
+    {
+      "id": "B01",
+      "x": -55,
+      "z": -49,
+      "w": 52,
+      "d": 32,
+      "h": 14,
+      "type": "retail",
+      "name": "清和里",
+      "color": "#c9c2b4"
+    },
+    {
+      "id": "B02",
+      "x": -68,
+      "z": -76,
+      "w": 26,
+      "d": 26,
+      "h": 54,
+      "type": "office",
+      "name": "清和中心",
+      "color": "#b6c7ca"
+    },
+    {
+      "id": "B03",
+      "x": 48,
+      "z": -48,
+      "w": 35,
+      "d": 30,
+      "h": 26,
+      "type": "residential",
+      "name": "云杉公馆",
+      "color": "#ddd4c1"
+    },
+    {
+      "id": "B04",
+      "x": 90,
+      "z": -49,
+      "w": 36,
+      "d": 32,
+      "h": 33,
+      "type": "residential",
+      "name": "云杉居",
+      "color": "#cfbca4"
+    },
+    {
+      "id": "B05",
+      "x": 50,
+      "z": 48,
+      "w": 38,
+      "d": 30,
+      "h": 18,
+      "type": "office",
+      "name": "云杉创意",
+      "color": "#c8d1ce"
+    },
+    {
+      "id": "B06",
+      "x": -49,
+      "z": 47,
+      "w": 36,
+      "d": 28,
+      "h": 17,
+      "type": "retail",
+      "name": "清和商坊",
+      "color": "#bcb5a8"
+    },
+    {
+      "id": "B07",
+      "x": -88,
+      "z": 49,
+      "w": 32,
+      "d": 32,
+      "h": 27,
+      "type": "residential",
+      "name": "栖庭",
+      "color": "#d5c9b6"
+    },
+    {
+      "id": "B08",
+      "x": 50,
+      "z": -105,
+      "w": 34,
+      "d": 32,
+      "h": 42,
+      "type": "residential",
+      "name": "云杉雅苑",
+      "color": "#d4cbbc"
+    },
+    {
+      "id": "B09",
+      "x": -48,
+      "z": 109,
+      "w": 35,
+      "d": 37,
+      "h": 34,
+      "type": "residential",
+      "name": "清和家园",
+      "color": "#c8c4b8"
+    },
+    {
+      "id": "B10",
+      "x": 113,
+      "z": 103,
+      "w": 35,
+      "d": 36,
+      "h": 37,
+      "type": "office",
+      "name": "邻里中心",
+      "color": "#afbebd"
+    },
+    {
+      "id": "B11",
+      "x": -121,
+      "z": -111,
+      "w": 35,
+      "d": 36,
+      "h": 42,
+      "type": "residential",
+      "name": "清和庭",
+      "color": "#cbbda7"
+    },
+    {
+      "id": "B12",
+      "x": 137,
+      "z": -108,
+      "w": 35,
+      "d": 34,
+      "h": 34,
+      "type": "residential",
+      "name": "云杉苑",
+      "color": "#dad0bf"
+    }
+  ]
+}

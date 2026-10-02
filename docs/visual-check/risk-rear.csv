@@ -1,0 +1,2 @@
+﻿time_ms,track_a,track_b,type_a,type_b,kind,ttc_s,angle_deg,longitudinal_gap_m,closing_mps,anchor_a_ms,anchor_b_ms,assumed_pedestrian_size,horizon_s,model
+4000,Tianjin/8_2_1/4,Tianjin/8_2_1/9,motorcycle,car,rear,2.9277143747028997,0.02612156121636798,12.895703010881086,4.404699830798803,3903.903903903904,3903.903903903904,false,3,CV_fixed_heading_OBB

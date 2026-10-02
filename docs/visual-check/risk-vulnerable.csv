@@ -1,0 +1,2 @@
+﻿time_ms,track_a,track_b,type_a,type_b,kind,ttc_s,angle_deg,longitudinal_gap_m,closing_mps,anchor_a_ms,anchor_b_ms,assumed_pedestrian_size,horizon_s,model
+21000,Tianjin/8_2_1/18,Tianjin/8_2_1/20,car,bicycle,vulnerable,2.6771788490160984,58.784440297505256,,,20920.920920920922,20920.920920920922,false,3,CV_fixed_heading_OBB

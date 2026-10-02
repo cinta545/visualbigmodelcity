@@ -1,0 +1,89 @@
+{
+  "sourceSha256": "7ce981d85b5399f93de7b88bab4c9baf2b25ca1717e96b3f39964f69fe50d18a",
+  "config": {
+    "stepMs": 100,
+    "mergeGapMs": 300,
+    "version": "cv-obb-events-v1"
+  },
+  "riskConfig": {
+    "horizonS": 3,
+    "urgentS": 1.5,
+    "maxAgeMs": 250,
+    "parallelDeg": 30,
+    "pedestrianSizeM": 0.6
+  },
+  "rows": [
+    {
+      "horizonS": 1,
+      "mergeGapMs": 100,
+      "events": 26,
+      "candidateSamples": 217
+    },
+    {
+      "horizonS": 1,
+      "mergeGapMs": 300,
+      "events": 26,
+      "candidateSamples": 217
+    },
+    {
+      "horizonS": 1,
+      "mergeGapMs": 500,
+      "events": 26,
+      "candidateSamples": 217
+    },
+    {
+      "horizonS": 1.5,
+      "mergeGapMs": 100,
+      "events": 64,
+      "candidateSamples": 444
+    },
+    {
+      "horizonS": 1.5,
+      "mergeGapMs": 300,
+      "events": 64,
+      "candidateSamples": 444
+    },
+    {
+      "horizonS": 1.5,
+      "mergeGapMs": 500,
+      "events": 64,
+      "candidateSamples": 444
+    },
+    {
+      "horizonS": 2,
+      "mergeGapMs": 100,
+      "events": 120,
+      "candidateSamples": 981
+    },
+    {
+      "horizonS": 2,
+      "mergeGapMs": 300,
+      "events": 120,
+      "candidateSamples": 981
+    },
+    {
+      "horizonS": 2,
+      "mergeGapMs": 500,
+      "events": 120,
+      "candidateSamples": 981
+    },
+    {
+      "horizonS": 3,
+      "mergeGapMs": 100,
+      "events": 306,
+      "candidateSamples": 2745
+    },
+    {
+      "horizonS": 3,
+      "mergeGapMs": 300,
+      "events": 305,
+      "candidateSamples": 2745
+    },
+    {
+      "horizonS": 3,
+      "mergeGapMs": 500,
+      "events": 303,
+      "candidateSamples": 2745
+    }
+  ]
+}

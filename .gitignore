@@ -1,0 +1,12 @@
+node_modules/
+.git-source-backup/
+
+# Local runtime state and logs
+server/*.db
+server/*.db-*
+server-runtime*.log
+
+# Downloaded or oversized research datasets
+data/sind-download/
+data/sind/research-errors.csv
+data/sind-public/Data/Changchun/changchun_pudong_507_009/Veh_smoothed_tracks.csv

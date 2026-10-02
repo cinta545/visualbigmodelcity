@@ -1,0 +1,54 @@
+{
+  "recording": "Tianjin/8_2_1",
+  "protocol": "Descriptive public-sample baseline, not held-out generalization. Observation anchors at least 1000 ms apart per track. Both models use identical eligible anchors per horizon; CA requires continuous history >=500 ms. Endpoint Euclidean error in meters, not ADE. No training or future input.",
+  "motorTypes": [
+    "car",
+    "bus",
+    "truck",
+    "motorcycle",
+    "tricycle"
+  ],
+  "anchorsConsidered": 10548,
+  "results": {
+    "cv": [
+      {
+        "seconds": 1,
+        "n": 9589,
+        "meanEndpointErrorM": 0.25185603804354034,
+        "p95EndpointErrorM": 0.9545039977669126
+      },
+      {
+        "seconds": 2,
+        "n": 9112,
+        "meanEndpointErrorM": 0.7923379418141976,
+        "p95EndpointErrorM": 3.2489470808725143
+      },
+      {
+        "seconds": 3,
+        "n": 8635,
+        "meanEndpointErrorM": 1.5307263078143116,
+        "p95EndpointErrorM": 6.5950496583871505
+      }
+    ],
+    "ca": [
+      {
+        "seconds": 1,
+        "n": 9589,
+        "meanEndpointErrorM": 0.1939901551162696,
+        "p95EndpointErrorM": 0.6971738164729552
+      },
+      {
+        "seconds": 2,
+        "n": 9112,
+        "meanEndpointErrorM": 0.6280723891191308,
+        "p95EndpointErrorM": 2.333522146504339
+      },
+      {
+        "seconds": 3,
+        "n": 8635,
+        "meanEndpointErrorM": 1.3259263018175051,
+        "p95EndpointErrorM": 5.223278554995384
+      }
+    ]
+  }
+}

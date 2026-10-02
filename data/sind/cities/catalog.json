@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tianjin",
+    "name": "天津",
+    "scene": "/data/sind/cities/tianjin.json",
+    "tracks": "/data/sind/replay.json",
+    "durationMs": 1201601.6016016016,
+    "buildings": 50,
+    "flowEvents": 440
+  },
+  {
+    "id": "changchun",
+    "name": "长春",
+    "scene": "/data/sind/cities/changchun.json",
+    "tracks": "/data/sind/records/changchun.json",
+    "durationMs": 1541141.1411411413,
+    "buildings": 50,
+    "flowEvents": 1309
+  },
+  {
+    "id": "chongqing",
+    "name": "重庆",
+    "scene": "/data/sind/cities/chongqing.json",
+    "tracks": "/data/sind/records/chongqing.json",
+    "durationMs": 1160960.960960961,
+    "buildings": 50,
+    "flowEvents": 156
+  },
+  {
+    "id": "xian",
+    "name": "西安",
+    "scene": "/data/sind/cities/xian.json",
+    "tracks": "/data/sind/records/xian.json",
+    "durationMs": 910610.6106106108,
+    "buildings": 50,
+    "flowEvents": 354
+  }
+]

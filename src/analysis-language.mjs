@@ -1,0 +1,6 @@
+// Display translations preserve source identifiers, option values and exported data.
+const terms={'REAL DATA':'真实数据','DISTRICT 02':'城市街区',TIANJIN:'天津',Tianjin:'天津',Changchun:'长春',Chongqing:'重庆',"Xi’an":'西安',"Xi'an":'西安',SinD:'真实交通',CTRV:'恒速转弯',DCA:'衰减加速度',CV:'恒速',CA:'恒加速度',ADE:'平均位移误差',FDE:'终点位移误差',TTC:'预计接触时间',CSV:'表格',JSON:'数据文件',ID:'编号',BUS:'公交',pedestrian:'行人',motorcycle:'摩托车',tricycle:'三轮车',bicycle:'自行车',truck:'货车',bus:'公交车',car:'轿车'};
+function translate(value){for(const [from,to]of Object.entries(terms))value=value.split(from).join(to);return value.replace(/km\/h/g,'千米/时').replace(/m\/s/g,'米/秒').replace(/\b([ms])\b/g,(_,unit)=>unit==='m'?'米':'秒').replace(/\bx=/g,'横坐标=').replace(/\by=/g,'纵坐标=');}
+function visit(root){if(root.nodeType===3){if(['SCRIPT','STYLE','TEXTAREA'].includes(root.parentElement?.tagName))return;const value=translate(root.nodeValue);if(value!==root.nodeValue)root.nodeValue=value;return;}for(const child of root.childNodes||[])visit(child);}
+visit(document.body);
+new MutationObserver(records=>{for(const record of records){if(record.type==='characterData')visit(record.target);else for(const node of record.addedNodes)visit(node);}}).observe(document.body,{subtree:true,childList:true,characterData:true});

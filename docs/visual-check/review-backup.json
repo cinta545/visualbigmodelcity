@@ -1,0 +1,22 @@
+{
+  "format": "sind-reviews-v1",
+  "sourceSha256": "7ce981d85b5399f93de7b88bab4c9baf2b25ca1717e96b3f39964f69fe50d18a",
+  "config": {
+    "stepMs": 100,
+    "mergeGapMs": 300,
+    "version": "cv-obb-events-v1"
+  },
+  "riskConfig": {
+    "horizonS": 3,
+    "urgentS": 1.5,
+    "maxAgeMs": 250,
+    "parallelDeg": 30,
+    "pedestrianSizeM": 0.6
+  },
+  "reviews": {
+    "Tianjin/8_2_1/5|Tianjin/8_2_1/8@700": {
+      "status": "uncertain",
+      "note": "测试恢复备注"
+    }
+  }
+}

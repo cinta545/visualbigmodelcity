@@ -1,0 +1,8 @@
+{
+  "metrics": true,
+  "searchAndFilters": true,
+  "historyCsvRows": 100,
+  "csvMatchesSource": true,
+  "futureObjectJump": true,
+  "errors": []
+}

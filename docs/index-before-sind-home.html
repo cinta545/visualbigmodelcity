@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>大规模语义化交通全要素数字孪生体建模系统</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "/node_modules/three/build/three.module.js",
+          "three/addons/": "/node_modules/three/examples/jsm/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="./src/styles.css?v=district-v1" />
+  <link rel="stylesheet" href="./src/district.css?v=1">
+</head>
+  <body>
+    <div class="canvas-bg">
+      <canvas id="twin-canvas" aria-label="道路交通仿真三维场景"></canvas>
+    </div>
+
+    <div class="hud-shell">
+ <div id="scene-loading"><strong>清和街区</strong><p>正在构建城市道路与街角空间…</p></div>
+ <div class="scene-title"><div class="scene-eyebrow">URBAN INTERSECTION · 01</div><h2>清和路 × 云杉街</h2><p>从城市总览，走进街道细节。</p><span class="scene-tag">晴朗白天 / 车道级交通仿真</span><p><a href="/sind.html" style="color:inherit;pointer-events:auto">进入 SinD 真实交通回放 →</a></p></div>
+ <section class="scene-dashboard" aria-label="路口实时状态"><p class="eyebrow">INTERSECTION LIVE</p><h3>路口信号 <span id="phase-seconds">—</span></h3>
+ <div class="signal-grid">
+ <div id="lamp-W" class="signal-cell" data-color="red"><i></i><span>西进口</span><strong>红灯</strong></div>
+ <div id="lamp-E" class="signal-cell" data-color="red"><i></i><span>东进口</span><strong>红灯</strong></div>
+ <div id="lamp-N" class="signal-cell" data-color="red"><i></i><span>北进口</span><strong>红灯</strong></div>
+ <div id="lamp-S" class="signal-cell" data-color="red"><i></i><span>南进口</span><strong>红灯</strong></div></div>
+ <div class="scene-stats"><div><strong id="scene-vehicles">0</strong><span>运行车辆</span></div><div><strong id="scene-queue">0</strong><span>排队车辆</span></div></div><p class="scene-note">虚构街区 · 本地仿真<br>信号灯与车辆共享运行状态</p></section>
+ <button id="close-analysis" aria-label="收起分析面板">×</button>
+ <div class="scene-bottomline"><span id="scene-hint">拖动旋转 · 滚轮缩放 · 点击车辆查看详情</span><div class="render-status"><span>DAYLIGHT / 10:30</span><span id="scene-fps">— FPS</span></div></div>
+ <nav class="scene-tools" aria-label="场景视角"><button data-view="overview" class="active">总览</button><button data-view="junction">路口近景</button><button data-view="street">人行道</button><button data-view="shop">沿街店面</button><button id="scene-data" aria-pressed="false">交通图层</button><button id="scene-clean">沉浸模式</button><button id="scene-export">导出画面</button></nav>
+
+
+      <header class="hud-header panel">
+        <div class="brand-block">
+          <p class="eyebrow">QINGHE DISTRICT / TRAFFIC DIGITAL TWIN</p>
+          <h1>城市交通数字孪生 · 清和街区</h1>
+        </div>
+        <div class="header-status">
+          <div class="status-pill"><span>场景</span><strong id="scenario-name">加载中</strong></div>
+          <div class="status-pill"><span>当前时间</span><strong id="system-clock">--:--</strong></div>
+          <div class="status-pill"><span>运行状态</span><strong id="system-mode">初始化</strong></div>
+          <div class="status-pill"><span>后台服务</span><strong id="backend-source">连接中</strong></div>
+        </div>
+      </header>
+
+      <section class="topbar panel">
+        <div class="filter-group" id="filter-group" aria-label="对象筛选">
+          <button class="filter-chip is-active" data-filter="all">全部</button>
+          <button class="filter-chip" data-filter="roadSegment">道路</button>
+          <button class="filter-chip" data-filter="intersection">路口</button>
+          <button class="filter-chip" data-filter="signalController">红绿灯</button>
+          <button class="filter-chip" data-filter="sensor">监控</button>
+          <button class="filter-chip" data-filter="transitStop">公交</button>
+          <button class="filter-chip" data-filter="vehicle">车辆</button>
+          <button class="filter-chip" data-filter="incident">事件</button>
+          <button class="filter-chip" data-filter="trafficZone">区域</button>
+        </div>
+        <div id="filter-feedback" class="filter-feedback" aria-live="polite">找到 0 个对象</div>
+        <div class="toolbar">
+          <input id="search-input" class="search-input" type="search" placeholder="搜索道路、设备、车辆、事件" />
+          <button id="toggle-playback" class="action-btn">暂停刷新</button>
+        </div>
+      </section>
+
+      <div id="service-banner" class="service-banner hidden"></div>
+
+      <nav class="dock panel" aria-label="系统功能">
+        <button class="dock-btn active" data-target="panel-corridor" title="总览">总览</button>
+        <button class="dock-btn" data-target="panel-operations" title="运行">运行</button>
+        <button class="dock-btn" data-target="panel-explorer" title="对象">对象</button>
+        <button class="dock-btn" data-target="panel-events" title="告警">告警</button>
+        <button class="dock-btn" data-target="panel-prediction" title="预测">预测</button>
+        <button class="dock-btn" data-target="panel-control" title="调度">调度</button>
+        <button class="dock-btn" data-target="panel-diagnostics" title="诊断">诊断</button>
+      </nav>
+
+      <main class="panel-stack">
+        <section class="floating-panel panel" id="panel-corridor">
+          <div class="panel-title">
+            <div><p class="panel-kicker">道路总览</p><h2>重点道路通行情况</h2></div>
+          </div>
+          <div id="arterial-grid" class="arterial-grid"></div>
+          <div id="corridor-grid" class="corridor-grid"></div>
+          <div class="status-grid">
+            <article><span>数据概览</span><strong id="system-summary">等待数据</strong></article>
+            <article><span>实时推送</span><strong id="stream-status">连接中</strong></article>
+            <article><span>连接情况</span><strong id="connection-status">等待</strong></article>
+            <article><span>刷新方式</span><strong id="update-mode">流式</strong></article>
+          </div>
+        </section>
+
+        <section class="floating-panel panel hidden" id="panel-operations">
+          <div class="panel-title">
+            <div><p class="panel-kicker">运行情况</p><h2>当前交通指标</h2></div>
+          </div>
+          <div id="metric-grid" class="metric-grid"></div>
+          <div id="model-health" class="model-health"></div>
+        </section>
+
+        <section class="floating-panel panel hidden" id="panel-explorer">
+          <div class="panel-title">
+            <div><p class="panel-kicker">对象浏览</p><h2>对象列表与详情</h2></div>
+          </div>
+          <div id="entity-list" class="entity-list"></div>
+          <div id="detail-panel" class="detail-panel"></div>
+        </section>
+
+        <section class="floating-panel panel hidden" id="panel-events">
+          <div class="panel-title">
+            <div><p class="panel-kicker">告警提醒</p><h2>告警与处理</h2></div>
+            <div class="panel-actions">
+              <button id="focus-critical" class="action-btn">定位重点</button>
+              <button id="resolve-selected" class="action-btn">闭环选中</button>
+            </div>
+          </div>
+          <div id="alert-feed" class="alert-feed"></div>
+        </section>
+
+        <section class="floating-panel panel hidden" id="panel-prediction">
+          <div class="panel-title">
+            <div><p class="panel-kicker">趋势预测</p><h2>未来趋势预测</h2></div>
+          </div>
+          <div id="forecast-panel" class="forecast-panel"></div>
+          <div id="graph-panel" class="graph-panel"></div>
+        </section>
+
+        <section class="floating-panel panel hidden" id="panel-control">
+          <div class="panel-title">
+            <div><p class="panel-kicker">调度操作</p><h2>调度方案与指令下发</h2></div>
+          </div>
+          <div id="strategy-tabs" class="strategy-tabs"></div>
+          <div id="recommendation-list" class="recommendation-list"></div>
+          <div id="command-log" class="command-log"></div>
+        </section>
+
+        <section class="floating-panel panel hidden" id="panel-diagnostics">
+          <div class="panel-title">
+            <div><p class="panel-kicker">系统诊断</p><h2>运行诊断</h2></div>
+          </div>
+          <div id="diagnostics-panel" class="diagnostics-panel"></div>
+          <div id="history-panel" class="history-panel"></div>
+        </section>
+      </main>
+
+      <aside class="right-rail">
+        <div class="rail-card panel">
+          <p class="panel-kicker">当前选中</p>
+          <h2 id="active-entity-title">请选择对象</h2>
+          <div id="active-entity-brief" class="active-brief">点击道路、车辆、设备或告警，查看相关情况。</div>
+        </div>
+        <div class="legend panel">
+          <span><i class="dot road"></i>道路</span>
+          <span><i class="dot signal"></i>红绿灯</span>
+          <span><i class="dot sensor"></i>监控</span>
+          <span><i class="dot transit"></i>公交</span>
+          <span><i class="dot vehicle"></i>车辆</span>
+          <span><i class="dot incident"></i>事件</span>
+        </div>
+      </aside>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./src/model.js?v=district-v1"></script>
+    <script src="./src/ui.js?v=district-v1"></script>
+    <script type="module" src="./src/app.js?v=district-v1"></script>
+  </body>
+</html>

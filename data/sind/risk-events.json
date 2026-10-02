@@ -1,0 +1,4943 @@
+{
+  "sourceSha256": "7ce981d85b5399f93de7b88bab4c9baf2b25ca1717e96b3f39964f69fe50d18a",
+  "config": {
+    "stepMs": 100,
+    "mergeGapMs": 300,
+    "version": "cv-obb-events-v1"
+  },
+  "riskConfig": {
+    "horizonS": 3,
+    "urgentS": 1.5,
+    "maxAgeMs": 250,
+    "parallelDeg": 30,
+    "pedestrianSizeM": 0.6
+  },
+  "durationMs": 1201601.6016016016,
+  "events": [
+    {
+      "id": "Tianjin/8_2_1/5|Tianjin/8_2_1/8@700",
+      "pairKey": "Tianjin/8_2_1/5|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/5",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 700,
+      "endMs": 1600,
+      "minTimeMs": 1300,
+      "minTtcS": 2.058674793999418,
+      "sampleCount": 10,
+      "kinds": [
+        "cross",
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/4|Tianjin/8_2_1/9@3100",
+      "pairKey": "Tianjin/8_2_1/4|Tianjin/8_2_1/9",
+      "trackIds": [
+        "Tianjin/8_2_1/4",
+        "Tianjin/8_2_1/9"
+      ],
+      "startMs": 3100,
+      "endMs": 4000,
+      "minTimeMs": 3600,
+      "minTtcS": 2.766524746435601,
+      "sampleCount": 10,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/6|Tianjin/8_2_1/8@4100",
+      "pairKey": "Tianjin/8_2_1/6|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/6",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 4100,
+      "endMs": 5100,
+      "minTimeMs": 4800,
+      "minTtcS": 1.6328836860309437,
+      "sampleCount": 11,
+      "kinds": [
+        "cross",
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/12|Tianjin/8_2_1/13@11200",
+      "pairKey": "Tianjin/8_2_1/12|Tianjin/8_2_1/13",
+      "trackIds": [
+        "Tianjin/8_2_1/12",
+        "Tianjin/8_2_1/13"
+      ],
+      "startMs": 11200,
+      "endMs": 12000,
+      "minTimeMs": 11700,
+      "minTtcS": 2.5347222531438587,
+      "sampleCount": 9,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/17|Tianjin/8_2_1/19@15100",
+      "pairKey": "Tianjin/8_2_1/17|Tianjin/8_2_1/19",
+      "trackIds": [
+        "Tianjin/8_2_1/17",
+        "Tianjin/8_2_1/19"
+      ],
+      "startMs": 15100,
+      "endMs": 16000,
+      "minTimeMs": 15800,
+      "minTtcS": 1.3528276449422483,
+      "sampleCount": 10,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/18|Tianjin/8_2_1/20@20900",
+      "pairKey": "Tianjin/8_2_1/18|Tianjin/8_2_1/20",
+      "trackIds": [
+        "Tianjin/8_2_1/18",
+        "Tianjin/8_2_1/20"
+      ],
+      "startMs": 20900,
+      "endMs": 21000,
+      "minTimeMs": 21000,
+      "minTtcS": 2.6771788490160984,
+      "sampleCount": 2,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/25|Tianjin/8_2_1/P5@28600",
+      "pairKey": "Tianjin/8_2_1/25|Tianjin/8_2_1/P5",
+      "trackIds": [
+        "Tianjin/8_2_1/25",
+        "Tianjin/8_2_1/P5"
+      ],
+      "startMs": 28600,
+      "endMs": 29400,
+      "minTimeMs": 29300,
+      "minTtcS": 2.365075616146749,
+      "sampleCount": 9,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/26|Tianjin/8_2_1/32@34200",
+      "pairKey": "Tianjin/8_2_1/26|Tianjin/8_2_1/32",
+      "trackIds": [
+        "Tianjin/8_2_1/26",
+        "Tianjin/8_2_1/32"
+      ],
+      "startMs": 34200,
+      "endMs": 36800,
+      "minTimeMs": 36700,
+      "minTtcS": 0.587942340479104,
+      "sampleCount": 27,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/31|Tianjin/8_2_1/34@48600",
+      "pairKey": "Tianjin/8_2_1/31|Tianjin/8_2_1/34",
+      "trackIds": [
+        "Tianjin/8_2_1/31",
+        "Tianjin/8_2_1/34"
+      ],
+      "startMs": 48600,
+      "endMs": 49100,
+      "minTimeMs": 48900,
+      "minTtcS": 2.5937004056211794,
+      "sampleCount": 6,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/37|Tianjin/8_2_1/8@63100",
+      "pairKey": "Tianjin/8_2_1/37|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/37",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 63100,
+      "endMs": 65200,
+      "minTimeMs": 65200,
+      "minTtcS": 1.1601901275187863,
+      "sampleCount": 22,
+      "kinds": [
+        "rear",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/44|Tianjin/8_2_1/45@72700",
+      "pairKey": "Tianjin/8_2_1/44|Tianjin/8_2_1/45",
+      "trackIds": [
+        "Tianjin/8_2_1/44",
+        "Tianjin/8_2_1/45"
+      ],
+      "startMs": 72700,
+      "endMs": 73600,
+      "minTimeMs": 73300,
+      "minTtcS": 2.5458655542237123,
+      "sampleCount": 10,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/43|Tianjin/8_2_1/51@75800",
+      "pairKey": "Tianjin/8_2_1/43|Tianjin/8_2_1/51",
+      "trackIds": [
+        "Tianjin/8_2_1/43",
+        "Tianjin/8_2_1/51"
+      ],
+      "startMs": 75800,
+      "endMs": 76100,
+      "minTimeMs": 75900,
+      "minTtcS": 2.887179696804328,
+      "sampleCount": 4,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/35|Tianjin/8_2_1/51@77800",
+      "pairKey": "Tianjin/8_2_1/35|Tianjin/8_2_1/51",
+      "trackIds": [
+        "Tianjin/8_2_1/35",
+        "Tianjin/8_2_1/51"
+      ],
+      "startMs": 77800,
+      "endMs": 78000,
+      "minTimeMs": 78000,
+      "minTtcS": 2.910458903114138,
+      "sampleCount": 3,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/40|Tianjin/8_2_1/51@78200",
+      "pairKey": "Tianjin/8_2_1/40|Tianjin/8_2_1/51",
+      "trackIds": [
+        "Tianjin/8_2_1/40",
+        "Tianjin/8_2_1/51"
+      ],
+      "startMs": 78200,
+      "endMs": 79200,
+      "minTimeMs": 79200,
+      "minTtcS": 2.360292633075881,
+      "sampleCount": 11,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/46|Tianjin/8_2_1/47@80400",
+      "pairKey": "Tianjin/8_2_1/46|Tianjin/8_2_1/47",
+      "trackIds": [
+        "Tianjin/8_2_1/46",
+        "Tianjin/8_2_1/47"
+      ],
+      "startMs": 80400,
+      "endMs": 81100,
+      "minTimeMs": 80800,
+      "minTtcS": 2.2121159508836974,
+      "sampleCount": 8,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/35|Tianjin/8_2_1/53@80700",
+      "pairKey": "Tianjin/8_2_1/35|Tianjin/8_2_1/53",
+      "trackIds": [
+        "Tianjin/8_2_1/35",
+        "Tianjin/8_2_1/53"
+      ],
+      "startMs": 80700,
+      "endMs": 80900,
+      "minTimeMs": 80900,
+      "minTtcS": 2.729108197703501,
+      "sampleCount": 3,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/49|Tianjin/8_2_1/50@80700",
+      "pairKey": "Tianjin/8_2_1/49|Tianjin/8_2_1/50",
+      "trackIds": [
+        "Tianjin/8_2_1/49",
+        "Tianjin/8_2_1/50"
+      ],
+      "startMs": 80700,
+      "endMs": 80800,
+      "minTimeMs": 80800,
+      "minTtcS": 2.9464673142241096,
+      "sampleCount": 2,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/55|Tianjin/8_2_1/P10@83300",
+      "pairKey": "Tianjin/8_2_1/55|Tianjin/8_2_1/P10",
+      "trackIds": [
+        "Tianjin/8_2_1/55",
+        "Tianjin/8_2_1/P10"
+      ],
+      "startMs": 83300,
+      "endMs": 83400,
+      "minTimeMs": 83400,
+      "minTtcS": 2.906536172996824,
+      "sampleCount": 2,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/55|Tianjin/8_2_1/P9@83600",
+      "pairKey": "Tianjin/8_2_1/55|Tianjin/8_2_1/P9",
+      "trackIds": [
+        "Tianjin/8_2_1/55",
+        "Tianjin/8_2_1/P9"
+      ],
+      "startMs": 83600,
+      "endMs": 83700,
+      "minTimeMs": 83600,
+      "minTtcS": 2.8212401071874385,
+      "sampleCount": 2,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/50|Tianjin/8_2_1/56@84100",
+      "pairKey": "Tianjin/8_2_1/50|Tianjin/8_2_1/56",
+      "trackIds": [
+        "Tianjin/8_2_1/50",
+        "Tianjin/8_2_1/56"
+      ],
+      "startMs": 84100,
+      "endMs": 84100,
+      "minTimeMs": 84100,
+      "minTtcS": 2.9447597072476652,
+      "sampleCount": 1,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/54|Tianjin/8_2_1/P10@85500",
+      "pairKey": "Tianjin/8_2_1/54|Tianjin/8_2_1/P10",
+      "trackIds": [
+        "Tianjin/8_2_1/54",
+        "Tianjin/8_2_1/P10"
+      ],
+      "startMs": 85500,
+      "endMs": 86300,
+      "minTimeMs": 86100,
+      "minTtcS": 0,
+      "sampleCount": 9,
+      "kinds": [
+        "vulnerable",
+        "overlap"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/54|Tianjin/8_2_1/P11@86400",
+      "pairKey": "Tianjin/8_2_1/54|Tianjin/8_2_1/P11",
+      "trackIds": [
+        "Tianjin/8_2_1/54",
+        "Tianjin/8_2_1/P11"
+      ],
+      "startMs": 86400,
+      "endMs": 86700,
+      "minTimeMs": 86700,
+      "minTtcS": 2.587100605378505,
+      "sampleCount": 4,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/47|Tianjin/8_2_1/54@87500",
+      "pairKey": "Tianjin/8_2_1/47|Tianjin/8_2_1/54",
+      "trackIds": [
+        "Tianjin/8_2_1/47",
+        "Tianjin/8_2_1/54"
+      ],
+      "startMs": 87500,
+      "endMs": 88400,
+      "minTimeMs": 88400,
+      "minTtcS": 2.129145809772946,
+      "sampleCount": 10,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/3|Tianjin/8_2_1/55@88800",
+      "pairKey": "Tianjin/8_2_1/3|Tianjin/8_2_1/55",
+      "trackIds": [
+        "Tianjin/8_2_1/3",
+        "Tianjin/8_2_1/55"
+      ],
+      "startMs": 88800,
+      "endMs": 88900,
+      "minTimeMs": 88900,
+      "minTtcS": 2.881180514137165,
+      "sampleCount": 2,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/60|Tianjin/8_2_1/P10@89800",
+      "pairKey": "Tianjin/8_2_1/60|Tianjin/8_2_1/P10",
+      "trackIds": [
+        "Tianjin/8_2_1/60",
+        "Tianjin/8_2_1/P10"
+      ],
+      "startMs": 89800,
+      "endMs": 90600,
+      "minTimeMs": 90400,
+      "minTtcS": 2.764050318767529,
+      "sampleCount": 9,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/60|Tianjin/8_2_1/P9@90200",
+      "pairKey": "Tianjin/8_2_1/60|Tianjin/8_2_1/P9",
+      "trackIds": [
+        "Tianjin/8_2_1/60",
+        "Tianjin/8_2_1/P9"
+      ],
+      "startMs": 90200,
+      "endMs": 91000,
+      "minTimeMs": 90900,
+      "minTtcS": 2.654276480409882,
+      "sampleCount": 9,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/59|Tianjin/8_2_1/P11@91600",
+      "pairKey": "Tianjin/8_2_1/59|Tianjin/8_2_1/P11",
+      "trackIds": [
+        "Tianjin/8_2_1/59",
+        "Tianjin/8_2_1/P11"
+      ],
+      "startMs": 91600,
+      "endMs": 92800,
+      "minTimeMs": 92600,
+      "minTtcS": 1.872521589382738,
+      "sampleCount": 13,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/47|Tianjin/8_2_1/59@93000",
+      "pairKey": "Tianjin/8_2_1/47|Tianjin/8_2_1/59",
+      "trackIds": [
+        "Tianjin/8_2_1/47",
+        "Tianjin/8_2_1/59"
+      ],
+      "startMs": 93000,
+      "endMs": 94100,
+      "minTimeMs": 94100,
+      "minTtcS": 2.3888957033646707,
+      "sampleCount": 12,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/64|Tianjin/8_2_1/P12@107700",
+      "pairKey": "Tianjin/8_2_1/64|Tianjin/8_2_1/P12",
+      "trackIds": [
+        "Tianjin/8_2_1/64",
+        "Tianjin/8_2_1/P12"
+      ],
+      "startMs": 107700,
+      "endMs": 108800,
+      "minTimeMs": 108300,
+      "minTtcS": 2.010678161134262,
+      "sampleCount": 12,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/69|Tianjin/8_2_1/70@112600",
+      "pairKey": "Tianjin/8_2_1/69|Tianjin/8_2_1/70",
+      "trackIds": [
+        "Tianjin/8_2_1/69",
+        "Tianjin/8_2_1/70"
+      ],
+      "startMs": 112600,
+      "endMs": 113100,
+      "minTimeMs": 112800,
+      "minTtcS": 1.5313183539930355,
+      "sampleCount": 6,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/72|Tianjin/8_2_1/75@114900",
+      "pairKey": "Tianjin/8_2_1/72|Tianjin/8_2_1/75",
+      "trackIds": [
+        "Tianjin/8_2_1/72",
+        "Tianjin/8_2_1/75"
+      ],
+      "startMs": 114900,
+      "endMs": 115500,
+      "minTimeMs": 115500,
+      "minTtcS": 1.6730494664985605,
+      "sampleCount": 7,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/50|Tianjin/8_2_1/68@117600",
+      "pairKey": "Tianjin/8_2_1/50|Tianjin/8_2_1/68",
+      "trackIds": [
+        "Tianjin/8_2_1/50",
+        "Tianjin/8_2_1/68"
+      ],
+      "startMs": 117600,
+      "endMs": 117900,
+      "minTimeMs": 117700,
+      "minTtcS": 2.701673545140301,
+      "sampleCount": 4,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/50|Tianjin/8_2_1/75@119700",
+      "pairKey": "Tianjin/8_2_1/50|Tianjin/8_2_1/75",
+      "trackIds": [
+        "Tianjin/8_2_1/50",
+        "Tianjin/8_2_1/75"
+      ],
+      "startMs": 119700,
+      "endMs": 120100,
+      "minTimeMs": 120100,
+      "minTtcS": 2.4406372465828863,
+      "sampleCount": 5,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/77|Tianjin/8_2_1/80@123100",
+      "pairKey": "Tianjin/8_2_1/77|Tianjin/8_2_1/80",
+      "trackIds": [
+        "Tianjin/8_2_1/77",
+        "Tianjin/8_2_1/80"
+      ],
+      "startMs": 123100,
+      "endMs": 123200,
+      "minTimeMs": 123200,
+      "minTtcS": 2.145627380219454,
+      "sampleCount": 2,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/73|Tianjin/8_2_1/78@136500",
+      "pairKey": "Tianjin/8_2_1/73|Tianjin/8_2_1/78",
+      "trackIds": [
+        "Tianjin/8_2_1/73",
+        "Tianjin/8_2_1/78"
+      ],
+      "startMs": 136500,
+      "endMs": 137200,
+      "minTimeMs": 137000,
+      "minTtcS": 2.393093303425479,
+      "sampleCount": 8,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/70|Tianjin/8_2_1/85@139200",
+      "pairKey": "Tianjin/8_2_1/70|Tianjin/8_2_1/85",
+      "trackIds": [
+        "Tianjin/8_2_1/70",
+        "Tianjin/8_2_1/85"
+      ],
+      "startMs": 139200,
+      "endMs": 139400,
+      "minTimeMs": 139300,
+      "minTtcS": 1.497406370791502,
+      "sampleCount": 3,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/84|Tianjin/8_2_1/86@142000",
+      "pairKey": "Tianjin/8_2_1/84|Tianjin/8_2_1/86",
+      "trackIds": [
+        "Tianjin/8_2_1/84",
+        "Tianjin/8_2_1/86"
+      ],
+      "startMs": 142000,
+      "endMs": 142200,
+      "minTimeMs": 142100,
+      "minTtcS": 2.911054526859323,
+      "sampleCount": 3,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/86|Tianjin/8_2_1/88@146300",
+      "pairKey": "Tianjin/8_2_1/86|Tianjin/8_2_1/88",
+      "trackIds": [
+        "Tianjin/8_2_1/86",
+        "Tianjin/8_2_1/88"
+      ],
+      "startMs": 146300,
+      "endMs": 146800,
+      "minTimeMs": 146400,
+      "minTtcS": 2.526427142541494,
+      "sampleCount": 6,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/8|Tianjin/8_2_1/90@164100",
+      "pairKey": "Tianjin/8_2_1/8|Tianjin/8_2_1/90",
+      "trackIds": [
+        "Tianjin/8_2_1/8",
+        "Tianjin/8_2_1/90"
+      ],
+      "startMs": 164100,
+      "endMs": 164200,
+      "minTimeMs": 164200,
+      "minTtcS": 2.9411426289365394,
+      "sampleCount": 2,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/8|Tianjin/8_2_1/90@165100",
+      "pairKey": "Tianjin/8_2_1/8|Tianjin/8_2_1/90",
+      "trackIds": [
+        "Tianjin/8_2_1/8",
+        "Tianjin/8_2_1/90"
+      ],
+      "startMs": 165100,
+      "endMs": 166300,
+      "minTimeMs": 166300,
+      "minTtcS": 1.1713655276136137,
+      "sampleCount": 13,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/101|Tianjin/8_2_1/P14@182400",
+      "pairKey": "Tianjin/8_2_1/101|Tianjin/8_2_1/P14",
+      "trackIds": [
+        "Tianjin/8_2_1/101",
+        "Tianjin/8_2_1/P14"
+      ],
+      "startMs": 182400,
+      "endMs": 183600,
+      "minTimeMs": 183600,
+      "minTtcS": 2.2401617968305763,
+      "sampleCount": 13,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/100|Tianjin/8_2_1/103@183200",
+      "pairKey": "Tianjin/8_2_1/100|Tianjin/8_2_1/103",
+      "trackIds": [
+        "Tianjin/8_2_1/100",
+        "Tianjin/8_2_1/103"
+      ],
+      "startMs": 183200,
+      "endMs": 184700,
+      "minTimeMs": 184700,
+      "minTtcS": 2.4187724165317674,
+      "sampleCount": 16,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/108|Tianjin/8_2_1/P14@197500",
+      "pairKey": "Tianjin/8_2_1/108|Tianjin/8_2_1/P14",
+      "trackIds": [
+        "Tianjin/8_2_1/108",
+        "Tianjin/8_2_1/P14"
+      ],
+      "startMs": 197500,
+      "endMs": 199300,
+      "minTimeMs": 198900,
+      "minTtcS": 1.7090517776038219,
+      "sampleCount": 19,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/106|Tianjin/8_2_1/110@202600",
+      "pairKey": "Tianjin/8_2_1/106|Tianjin/8_2_1/110",
+      "trackIds": [
+        "Tianjin/8_2_1/106",
+        "Tianjin/8_2_1/110"
+      ],
+      "startMs": 202600,
+      "endMs": 203500,
+      "minTimeMs": 203000,
+      "minTtcS": 2.6344683732795118,
+      "sampleCount": 10,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/107|Tianjin/8_2_1/109@204500",
+      "pairKey": "Tianjin/8_2_1/107|Tianjin/8_2_1/109",
+      "trackIds": [
+        "Tianjin/8_2_1/107",
+        "Tianjin/8_2_1/109"
+      ],
+      "startMs": 204500,
+      "endMs": 205100,
+      "minTimeMs": 204600,
+      "minTtcS": 2.130839535202015,
+      "sampleCount": 7,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/114|Tianjin/8_2_1/P16@211700",
+      "pairKey": "Tianjin/8_2_1/114|Tianjin/8_2_1/P16",
+      "trackIds": [
+        "Tianjin/8_2_1/114",
+        "Tianjin/8_2_1/P16"
+      ],
+      "startMs": 211700,
+      "endMs": 212600,
+      "minTimeMs": 212400,
+      "minTtcS": 0.9753985348304048,
+      "sampleCount": 10,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/111|Tianjin/8_2_1/114@211800",
+      "pairKey": "Tianjin/8_2_1/111|Tianjin/8_2_1/114",
+      "trackIds": [
+        "Tianjin/8_2_1/111",
+        "Tianjin/8_2_1/114"
+      ],
+      "startMs": 211800,
+      "endMs": 212400,
+      "minTimeMs": 212300,
+      "minTtcS": 2.5698560205121814,
+      "sampleCount": 7,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/104|Tianjin/8_2_1/P17@213700",
+      "pairKey": "Tianjin/8_2_1/104|Tianjin/8_2_1/P17",
+      "trackIds": [
+        "Tianjin/8_2_1/104",
+        "Tianjin/8_2_1/P17"
+      ],
+      "startMs": 213700,
+      "endMs": 213900,
+      "minTimeMs": 213700,
+      "minTtcS": 0,
+      "sampleCount": 3,
+      "kinds": [
+        "overlap"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/115|Tianjin/8_2_1/117@215100",
+      "pairKey": "Tianjin/8_2_1/115|Tianjin/8_2_1/117",
+      "trackIds": [
+        "Tianjin/8_2_1/115",
+        "Tianjin/8_2_1/117"
+      ],
+      "startMs": 215100,
+      "endMs": 215100,
+      "minTimeMs": 215100,
+      "minTtcS": 1.449839216647706,
+      "sampleCount": 1,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/116|Tianjin/8_2_1/118@216000",
+      "pairKey": "Tianjin/8_2_1/116|Tianjin/8_2_1/118",
+      "trackIds": [
+        "Tianjin/8_2_1/116",
+        "Tianjin/8_2_1/118"
+      ],
+      "startMs": 216000,
+      "endMs": 216300,
+      "minTimeMs": 216300,
+      "minTtcS": 2.694107849242602,
+      "sampleCount": 4,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/109|Tianjin/8_2_1/119@222000",
+      "pairKey": "Tianjin/8_2_1/109|Tianjin/8_2_1/119",
+      "trackIds": [
+        "Tianjin/8_2_1/109",
+        "Tianjin/8_2_1/119"
+      ],
+      "startMs": 222000,
+      "endMs": 222400,
+      "minTimeMs": 222300,
+      "minTtcS": 2.722212831733952,
+      "sampleCount": 5,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/110|Tianjin/8_2_1/119@222300",
+      "pairKey": "Tianjin/8_2_1/110|Tianjin/8_2_1/119",
+      "trackIds": [
+        "Tianjin/8_2_1/110",
+        "Tianjin/8_2_1/119"
+      ],
+      "startMs": 222300,
+      "endMs": 223800,
+      "minTimeMs": 223300,
+      "minTtcS": 0.8102482222605201,
+      "sampleCount": 16,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/110|Tianjin/8_2_1/125@229600",
+      "pairKey": "Tianjin/8_2_1/110|Tianjin/8_2_1/125",
+      "trackIds": [
+        "Tianjin/8_2_1/110",
+        "Tianjin/8_2_1/125"
+      ],
+      "startMs": 229600,
+      "endMs": 230600,
+      "minTimeMs": 229900,
+      "minTtcS": 2.476546959397012,
+      "sampleCount": 11,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/125|Tianjin/8_2_1/P15@235200",
+      "pairKey": "Tianjin/8_2_1/125|Tianjin/8_2_1/P15",
+      "trackIds": [
+        "Tianjin/8_2_1/125",
+        "Tianjin/8_2_1/P15"
+      ],
+      "startMs": 235200,
+      "endMs": 236000,
+      "minTimeMs": 236000,
+      "minTtcS": 1.774244800283511,
+      "sampleCount": 9,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/128|Tianjin/8_2_1/131@237600",
+      "pairKey": "Tianjin/8_2_1/128|Tianjin/8_2_1/131",
+      "trackIds": [
+        "Tianjin/8_2_1/128",
+        "Tianjin/8_2_1/131"
+      ],
+      "startMs": 237600,
+      "endMs": 237700,
+      "minTimeMs": 237700,
+      "minTtcS": 2.8519291637701016,
+      "sampleCount": 2,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/127|Tianjin/8_2_1/P15@238400",
+      "pairKey": "Tianjin/8_2_1/127|Tianjin/8_2_1/P15",
+      "trackIds": [
+        "Tianjin/8_2_1/127",
+        "Tianjin/8_2_1/P15"
+      ],
+      "startMs": 238400,
+      "endMs": 238900,
+      "minTimeMs": 238900,
+      "minTtcS": 1.8640375495812294,
+      "sampleCount": 6,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/130|Tianjin/8_2_1/133@241400",
+      "pairKey": "Tianjin/8_2_1/130|Tianjin/8_2_1/133",
+      "trackIds": [
+        "Tianjin/8_2_1/130",
+        "Tianjin/8_2_1/133"
+      ],
+      "startMs": 241400,
+      "endMs": 242000,
+      "minTimeMs": 242000,
+      "minTtcS": 2.030418208251965,
+      "sampleCount": 7,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/129|Tianjin/8_2_1/134@244300",
+      "pairKey": "Tianjin/8_2_1/129|Tianjin/8_2_1/134",
+      "trackIds": [
+        "Tianjin/8_2_1/129",
+        "Tianjin/8_2_1/134"
+      ],
+      "startMs": 244300,
+      "endMs": 245200,
+      "minTimeMs": 244800,
+      "minTtcS": 2.855718379119642,
+      "sampleCount": 10,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/135|Tianjin/8_2_1/140@251900",
+      "pairKey": "Tianjin/8_2_1/135|Tianjin/8_2_1/140",
+      "trackIds": [
+        "Tianjin/8_2_1/135",
+        "Tianjin/8_2_1/140"
+      ],
+      "startMs": 251900,
+      "endMs": 253300,
+      "minTimeMs": 253000,
+      "minTtcS": 2.1230516779252318,
+      "sampleCount": 15,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/140|Tianjin/8_2_1/141@253100",
+      "pairKey": "Tianjin/8_2_1/140|Tianjin/8_2_1/141",
+      "trackIds": [
+        "Tianjin/8_2_1/140",
+        "Tianjin/8_2_1/141"
+      ],
+      "startMs": 253100,
+      "endMs": 253200,
+      "minTimeMs": 253100,
+      "minTtcS": 2.91165366469543,
+      "sampleCount": 2,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/135|Tianjin/8_2_1/141@253600",
+      "pairKey": "Tianjin/8_2_1/135|Tianjin/8_2_1/141",
+      "trackIds": [
+        "Tianjin/8_2_1/135",
+        "Tianjin/8_2_1/141"
+      ],
+      "startMs": 253600,
+      "endMs": 254400,
+      "minTimeMs": 254300,
+      "minTtcS": 2.5574102540698402,
+      "sampleCount": 9,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/141|Tianjin/8_2_1/8@256900",
+      "pairKey": "Tianjin/8_2_1/141|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/141",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 256900,
+      "endMs": 257400,
+      "minTimeMs": 257300,
+      "minTtcS": 1.8564522267298638,
+      "sampleCount": 6,
+      "kinds": [
+        "other",
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/124|Tianjin/8_2_1/134@259600",
+      "pairKey": "Tianjin/8_2_1/124|Tianjin/8_2_1/134",
+      "trackIds": [
+        "Tianjin/8_2_1/124",
+        "Tianjin/8_2_1/134"
+      ],
+      "startMs": 259600,
+      "endMs": 260400,
+      "minTimeMs": 260400,
+      "minTtcS": 2.0602002857049393,
+      "sampleCount": 9,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/135|Tianjin/8_2_1/8@261000",
+      "pairKey": "Tianjin/8_2_1/135|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/135",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 261000,
+      "endMs": 261600,
+      "minTimeMs": 261400,
+      "minTtcS": 2.817515942064257,
+      "sampleCount": 7,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/135|Tianjin/8_2_1/8@262000",
+      "pairKey": "Tianjin/8_2_1/135|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/135",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 262000,
+      "endMs": 262800,
+      "minTimeMs": 262800,
+      "minTtcS": 1.4020477221951368,
+      "sampleCount": 9,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/134|Tianjin/8_2_1/143@262500",
+      "pairKey": "Tianjin/8_2_1/134|Tianjin/8_2_1/143",
+      "trackIds": [
+        "Tianjin/8_2_1/134",
+        "Tianjin/8_2_1/143"
+      ],
+      "startMs": 262500,
+      "endMs": 262700,
+      "minTimeMs": 262700,
+      "minTtcS": 2.762765742435447,
+      "sampleCount": 3,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/137|Tianjin/8_2_1/145@267200",
+      "pairKey": "Tianjin/8_2_1/137|Tianjin/8_2_1/145",
+      "trackIds": [
+        "Tianjin/8_2_1/137",
+        "Tianjin/8_2_1/145"
+      ],
+      "startMs": 267200,
+      "endMs": 267400,
+      "minTimeMs": 267400,
+      "minTtcS": 2.6605448252552737,
+      "sampleCount": 3,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/136|Tianjin/8_2_1/P21@274100",
+      "pairKey": "Tianjin/8_2_1/136|Tianjin/8_2_1/P21",
+      "trackIds": [
+        "Tianjin/8_2_1/136",
+        "Tianjin/8_2_1/P21"
+      ],
+      "startMs": 274100,
+      "endMs": 274600,
+      "minTimeMs": 274100,
+      "minTtcS": 0,
+      "sampleCount": 6,
+      "kinds": [
+        "overlap"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/136|Tianjin/8_2_1/P21@286700",
+      "pairKey": "Tianjin/8_2_1/136|Tianjin/8_2_1/P21",
+      "trackIds": [
+        "Tianjin/8_2_1/136",
+        "Tianjin/8_2_1/P21"
+      ],
+      "startMs": 286700,
+      "endMs": 289100,
+      "minTimeMs": 288400,
+      "minTtcS": 0.30699284032148283,
+      "sampleCount": 25,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/150|Tianjin/8_2_1/154@287700",
+      "pairKey": "Tianjin/8_2_1/150|Tianjin/8_2_1/154",
+      "trackIds": [
+        "Tianjin/8_2_1/150",
+        "Tianjin/8_2_1/154"
+      ],
+      "startMs": 287700,
+      "endMs": 288700,
+      "minTimeMs": 288400,
+      "minTtcS": 2.0324075119141094,
+      "sampleCount": 11,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/150|Tianjin/8_2_1/156@287800",
+      "pairKey": "Tianjin/8_2_1/150|Tianjin/8_2_1/156",
+      "trackIds": [
+        "Tianjin/8_2_1/150",
+        "Tianjin/8_2_1/156"
+      ],
+      "startMs": 287800,
+      "endMs": 287800,
+      "minTimeMs": 287800,
+      "minTtcS": 2.9515206591219476,
+      "sampleCount": 1,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/136|Tianjin/8_2_1/P21@289500",
+      "pairKey": "Tianjin/8_2_1/136|Tianjin/8_2_1/P21",
+      "trackIds": [
+        "Tianjin/8_2_1/136",
+        "Tianjin/8_2_1/P21"
+      ],
+      "startMs": 289500,
+      "endMs": 289800,
+      "minTimeMs": 289600,
+      "minTtcS": 0.3712349561478567,
+      "sampleCount": 4,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/150|Tianjin/8_2_1/8@291600",
+      "pairKey": "Tianjin/8_2_1/150|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/150",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 291600,
+      "endMs": 291700,
+      "minTimeMs": 291700,
+      "minTtcS": 2.946731912167297,
+      "sampleCount": 2,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/159|Tianjin/8_2_1/164@309600",
+      "pairKey": "Tianjin/8_2_1/159|Tianjin/8_2_1/164",
+      "trackIds": [
+        "Tianjin/8_2_1/159",
+        "Tianjin/8_2_1/164"
+      ],
+      "startMs": 309600,
+      "endMs": 311900,
+      "minTimeMs": 310800,
+      "minTtcS": 1.5091758512590276,
+      "sampleCount": 24,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/160|Tianjin/8_2_1/8@312300",
+      "pairKey": "Tianjin/8_2_1/160|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/160",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 312300,
+      "endMs": 313400,
+      "minTimeMs": 313300,
+      "minTtcS": 1.9474575055504217,
+      "sampleCount": 12,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/168|Tianjin/8_2_1/169@327300",
+      "pairKey": "Tianjin/8_2_1/168|Tianjin/8_2_1/169",
+      "trackIds": [
+        "Tianjin/8_2_1/168",
+        "Tianjin/8_2_1/169"
+      ],
+      "startMs": 327300,
+      "endMs": 328700,
+      "minTimeMs": 328400,
+      "minTtcS": 0.8165587416053315,
+      "sampleCount": 15,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/168|Tianjin/8_2_1/176@336500",
+      "pairKey": "Tianjin/8_2_1/168|Tianjin/8_2_1/176",
+      "trackIds": [
+        "Tianjin/8_2_1/168",
+        "Tianjin/8_2_1/176"
+      ],
+      "startMs": 336500,
+      "endMs": 337600,
+      "minTimeMs": 337500,
+      "minTtcS": 1.5263148026269742,
+      "sampleCount": 12,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/186|Tianjin/8_2_1/190@361200",
+      "pairKey": "Tianjin/8_2_1/186|Tianjin/8_2_1/190",
+      "trackIds": [
+        "Tianjin/8_2_1/186",
+        "Tianjin/8_2_1/190"
+      ],
+      "startMs": 361200,
+      "endMs": 362900,
+      "minTimeMs": 362900,
+      "minTtcS": 1.2481540348520523,
+      "sampleCount": 18,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/180|Tianjin/8_2_1/189@364500",
+      "pairKey": "Tianjin/8_2_1/180|Tianjin/8_2_1/189",
+      "trackIds": [
+        "Tianjin/8_2_1/180",
+        "Tianjin/8_2_1/189"
+      ],
+      "startMs": 364500,
+      "endMs": 365100,
+      "minTimeMs": 365100,
+      "minTtcS": 2.588077020709272,
+      "sampleCount": 7,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/191|Tianjin/8_2_1/194@375600",
+      "pairKey": "Tianjin/8_2_1/191|Tianjin/8_2_1/194",
+      "trackIds": [
+        "Tianjin/8_2_1/191",
+        "Tianjin/8_2_1/194"
+      ],
+      "startMs": 375600,
+      "endMs": 375700,
+      "minTimeMs": 375700,
+      "minTtcS": 2.8264649847859356,
+      "sampleCount": 2,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/194|Tianjin/8_2_1/195@380500",
+      "pairKey": "Tianjin/8_2_1/194|Tianjin/8_2_1/195",
+      "trackIds": [
+        "Tianjin/8_2_1/194",
+        "Tianjin/8_2_1/195"
+      ],
+      "startMs": 380500,
+      "endMs": 382500,
+      "minTimeMs": 381900,
+      "minTtcS": 2.3201353407143923,
+      "sampleCount": 21,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/178|Tianjin/8_2_1/194@383500",
+      "pairKey": "Tianjin/8_2_1/178|Tianjin/8_2_1/194",
+      "trackIds": [
+        "Tianjin/8_2_1/178",
+        "Tianjin/8_2_1/194"
+      ],
+      "startMs": 383500,
+      "endMs": 384300,
+      "minTimeMs": 384200,
+      "minTtcS": 2.3106356713248646,
+      "sampleCount": 9,
+      "kinds": [
+        "rear",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/178|Tianjin/8_2_1/195@383600",
+      "pairKey": "Tianjin/8_2_1/178|Tianjin/8_2_1/195",
+      "trackIds": [
+        "Tianjin/8_2_1/178",
+        "Tianjin/8_2_1/195"
+      ],
+      "startMs": 383600,
+      "endMs": 385100,
+      "minTimeMs": 385100,
+      "minTtcS": 0.9254287237490451,
+      "sampleCount": 16,
+      "kinds": [
+        "cross",
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/196|Tianjin/8_2_1/P25@385700",
+      "pairKey": "Tianjin/8_2_1/196|Tianjin/8_2_1/P25",
+      "trackIds": [
+        "Tianjin/8_2_1/196",
+        "Tianjin/8_2_1/P25"
+      ],
+      "startMs": 385700,
+      "endMs": 386100,
+      "minTimeMs": 386100,
+      "minTtcS": 2.120329010953406,
+      "sampleCount": 5,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/201|Tianjin/8_2_1/204@390400",
+      "pairKey": "Tianjin/8_2_1/201|Tianjin/8_2_1/204",
+      "trackIds": [
+        "Tianjin/8_2_1/201",
+        "Tianjin/8_2_1/204"
+      ],
+      "startMs": 390400,
+      "endMs": 390700,
+      "minTimeMs": 390700,
+      "minTtcS": 1.0035713065952139,
+      "sampleCount": 4,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/199|Tianjin/8_2_1/200@391000",
+      "pairKey": "Tianjin/8_2_1/199|Tianjin/8_2_1/200",
+      "trackIds": [
+        "Tianjin/8_2_1/199",
+        "Tianjin/8_2_1/200"
+      ],
+      "startMs": 391000,
+      "endMs": 391700,
+      "minTimeMs": 391700,
+      "minTtcS": 2.323061415170931,
+      "sampleCount": 8,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/207|Tianjin/8_2_1/209@401000",
+      "pairKey": "Tianjin/8_2_1/207|Tianjin/8_2_1/209",
+      "trackIds": [
+        "Tianjin/8_2_1/207",
+        "Tianjin/8_2_1/209"
+      ],
+      "startMs": 401000,
+      "endMs": 401800,
+      "minTimeMs": 401500,
+      "minTtcS": 1.9845454388072803,
+      "sampleCount": 9,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/208|Tianjin/8_2_1/209@402400",
+      "pairKey": "Tianjin/8_2_1/208|Tianjin/8_2_1/209",
+      "trackIds": [
+        "Tianjin/8_2_1/208",
+        "Tianjin/8_2_1/209"
+      ],
+      "startMs": 402400,
+      "endMs": 402600,
+      "minTimeMs": 402600,
+      "minTtcS": 2.6623122831653294,
+      "sampleCount": 3,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/205|Tianjin/8_2_1/208@406900",
+      "pairKey": "Tianjin/8_2_1/205|Tianjin/8_2_1/208",
+      "trackIds": [
+        "Tianjin/8_2_1/205",
+        "Tianjin/8_2_1/208"
+      ],
+      "startMs": 406900,
+      "endMs": 408400,
+      "minTimeMs": 407600,
+      "minTtcS": 1.7182530915598648,
+      "sampleCount": 16,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/208|Tianjin/8_2_1/210@408600",
+      "pairKey": "Tianjin/8_2_1/208|Tianjin/8_2_1/210",
+      "trackIds": [
+        "Tianjin/8_2_1/208",
+        "Tianjin/8_2_1/210"
+      ],
+      "startMs": 408600,
+      "endMs": 409000,
+      "minTimeMs": 408900,
+      "minTtcS": 2.4039298851477113,
+      "sampleCount": 5,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/210|Tianjin/8_2_1/P25@410700",
+      "pairKey": "Tianjin/8_2_1/210|Tianjin/8_2_1/P25",
+      "trackIds": [
+        "Tianjin/8_2_1/210",
+        "Tianjin/8_2_1/P25"
+      ],
+      "startMs": 410700,
+      "endMs": 410800,
+      "minTimeMs": 410800,
+      "minTtcS": 2.8080254683850394,
+      "sampleCount": 2,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/221|Tianjin/8_2_1/222@426800",
+      "pairKey": "Tianjin/8_2_1/221|Tianjin/8_2_1/222",
+      "trackIds": [
+        "Tianjin/8_2_1/221",
+        "Tianjin/8_2_1/222"
+      ],
+      "startMs": 426800,
+      "endMs": 428000,
+      "minTimeMs": 427800,
+      "minTtcS": 2.726814290725716,
+      "sampleCount": 13,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/219|Tianjin/8_2_1/8@427700",
+      "pairKey": "Tianjin/8_2_1/219|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/219",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 427700,
+      "endMs": 428300,
+      "minTimeMs": 428000,
+      "minTtcS": 2.6339305984815873,
+      "sampleCount": 7,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/225|Tianjin/8_2_1/232@448000",
+      "pairKey": "Tianjin/8_2_1/225|Tianjin/8_2_1/232",
+      "trackIds": [
+        "Tianjin/8_2_1/225",
+        "Tianjin/8_2_1/232"
+      ],
+      "startMs": 448000,
+      "endMs": 448000,
+      "minTimeMs": 448000,
+      "minTtcS": 2.035281004001197,
+      "sampleCount": 1,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/230|Tianjin/8_2_1/233@460700",
+      "pairKey": "Tianjin/8_2_1/230|Tianjin/8_2_1/233",
+      "trackIds": [
+        "Tianjin/8_2_1/230",
+        "Tianjin/8_2_1/233"
+      ],
+      "startMs": 460700,
+      "endMs": 461600,
+      "minTimeMs": 461300,
+      "minTtcS": 1.583433420542889,
+      "sampleCount": 10,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/230|Tianjin/8_2_1/238@466000",
+      "pairKey": "Tianjin/8_2_1/230|Tianjin/8_2_1/238",
+      "trackIds": [
+        "Tianjin/8_2_1/230",
+        "Tianjin/8_2_1/238"
+      ],
+      "startMs": 466000,
+      "endMs": 466800,
+      "minTimeMs": 466600,
+      "minTtcS": 2.569241589575896,
+      "sampleCount": 9,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/239|Tianjin/8_2_1/P26@468000",
+      "pairKey": "Tianjin/8_2_1/239|Tianjin/8_2_1/P26",
+      "trackIds": [
+        "Tianjin/8_2_1/239",
+        "Tianjin/8_2_1/P26"
+      ],
+      "startMs": 468000,
+      "endMs": 468600,
+      "minTimeMs": 468500,
+      "minTtcS": 2.4344035503834762,
+      "sampleCount": 7,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/234|Tianjin/8_2_1/242@470400",
+      "pairKey": "Tianjin/8_2_1/234|Tianjin/8_2_1/242",
+      "trackIds": [
+        "Tianjin/8_2_1/234",
+        "Tianjin/8_2_1/242"
+      ],
+      "startMs": 470400,
+      "endMs": 470700,
+      "minTimeMs": 470700,
+      "minTtcS": 2.7367874336047744,
+      "sampleCount": 4,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/240|Tianjin/8_2_1/246@473700",
+      "pairKey": "Tianjin/8_2_1/240|Tianjin/8_2_1/246",
+      "trackIds": [
+        "Tianjin/8_2_1/240",
+        "Tianjin/8_2_1/246"
+      ],
+      "startMs": 473700,
+      "endMs": 473900,
+      "minTimeMs": 473900,
+      "minTtcS": 2.891807112580946,
+      "sampleCount": 3,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/246|Tianjin/8_2_1/P27@475100",
+      "pairKey": "Tianjin/8_2_1/246|Tianjin/8_2_1/P27",
+      "trackIds": [
+        "Tianjin/8_2_1/246",
+        "Tianjin/8_2_1/P27"
+      ],
+      "startMs": 475100,
+      "endMs": 475400,
+      "minTimeMs": 475400,
+      "minTtcS": 2.738420988172719,
+      "sampleCount": 4,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/246|Tianjin/8_2_1/248@476300",
+      "pairKey": "Tianjin/8_2_1/246|Tianjin/8_2_1/248",
+      "trackIds": [
+        "Tianjin/8_2_1/246",
+        "Tianjin/8_2_1/248"
+      ],
+      "startMs": 476300,
+      "endMs": 477000,
+      "minTimeMs": 477000,
+      "minTtcS": 2.5986460748952362,
+      "sampleCount": 8,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/237|Tianjin/8_2_1/244@477000",
+      "pairKey": "Tianjin/8_2_1/237|Tianjin/8_2_1/244",
+      "trackIds": [
+        "Tianjin/8_2_1/237",
+        "Tianjin/8_2_1/244"
+      ],
+      "startMs": 477000,
+      "endMs": 477200,
+      "minTimeMs": 477200,
+      "minTtcS": 2.752125969454225,
+      "sampleCount": 3,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/243|Tianjin/8_2_1/245@478000",
+      "pairKey": "Tianjin/8_2_1/243|Tianjin/8_2_1/245",
+      "trackIds": [
+        "Tianjin/8_2_1/243",
+        "Tianjin/8_2_1/245"
+      ],
+      "startMs": 478000,
+      "endMs": 479000,
+      "minTimeMs": 478800,
+      "minTtcS": 0.08363519851690632,
+      "sampleCount": 11,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/236|Tianjin/8_2_1/247@481500",
+      "pairKey": "Tianjin/8_2_1/236|Tianjin/8_2_1/247",
+      "trackIds": [
+        "Tianjin/8_2_1/236",
+        "Tianjin/8_2_1/247"
+      ],
+      "startMs": 481500,
+      "endMs": 482300,
+      "minTimeMs": 481800,
+      "minTtcS": 2.5342467498134855,
+      "sampleCount": 9,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/252|Tianjin/8_2_1/253@485000",
+      "pairKey": "Tianjin/8_2_1/252|Tianjin/8_2_1/253",
+      "trackIds": [
+        "Tianjin/8_2_1/252",
+        "Tianjin/8_2_1/253"
+      ],
+      "startMs": 485000,
+      "endMs": 486400,
+      "minTimeMs": 486200,
+      "minTtcS": 2.6704723751512276,
+      "sampleCount": 15,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/136|Tianjin/8_2_1/P26@490700",
+      "pairKey": "Tianjin/8_2_1/136|Tianjin/8_2_1/P26",
+      "trackIds": [
+        "Tianjin/8_2_1/136",
+        "Tianjin/8_2_1/P26"
+      ],
+      "startMs": 490700,
+      "endMs": 491600,
+      "minTimeMs": 491600,
+      "minTtcS": 2.4214120984153977,
+      "sampleCount": 10,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/240|Tianjin/8_2_1/257@491000",
+      "pairKey": "Tianjin/8_2_1/240|Tianjin/8_2_1/257",
+      "trackIds": [
+        "Tianjin/8_2_1/240",
+        "Tianjin/8_2_1/257"
+      ],
+      "startMs": 491000,
+      "endMs": 491200,
+      "minTimeMs": 491200,
+      "minTtcS": 2.7959569572570206,
+      "sampleCount": 3,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/257|Tianjin/8_2_1/8@492100",
+      "pairKey": "Tianjin/8_2_1/257|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/257",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 492100,
+      "endMs": 492700,
+      "minTimeMs": 492400,
+      "minTtcS": 2.5276223301257077,
+      "sampleCount": 7,
+      "kinds": [
+        "cross",
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/249|Tianjin/8_2_1/257@494500",
+      "pairKey": "Tianjin/8_2_1/249|Tianjin/8_2_1/257",
+      "trackIds": [
+        "Tianjin/8_2_1/249",
+        "Tianjin/8_2_1/257"
+      ],
+      "startMs": 494500,
+      "endMs": 494500,
+      "minTimeMs": 494500,
+      "minTtcS": 2.9774229625023847,
+      "sampleCount": 1,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/234|Tianjin/8_2_1/240@496200",
+      "pairKey": "Tianjin/8_2_1/234|Tianjin/8_2_1/240",
+      "trackIds": [
+        "Tianjin/8_2_1/234",
+        "Tianjin/8_2_1/240"
+      ],
+      "startMs": 496200,
+      "endMs": 496900,
+      "minTimeMs": 496400,
+      "minTtcS": 1.047236875416406,
+      "sampleCount": 8,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/255|Tianjin/8_2_1/261@497500",
+      "pairKey": "Tianjin/8_2_1/255|Tianjin/8_2_1/261",
+      "trackIds": [
+        "Tianjin/8_2_1/255",
+        "Tianjin/8_2_1/261"
+      ],
+      "startMs": 497500,
+      "endMs": 497800,
+      "minTimeMs": 497700,
+      "minTtcS": 2.296519692155094,
+      "sampleCount": 4,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/255|Tianjin/8_2_1/261@498500",
+      "pairKey": "Tianjin/8_2_1/255|Tianjin/8_2_1/261",
+      "trackIds": [
+        "Tianjin/8_2_1/255",
+        "Tianjin/8_2_1/261"
+      ],
+      "startMs": 498500,
+      "endMs": 499200,
+      "minTimeMs": 499200,
+      "minTtcS": 1.3831411239982445,
+      "sampleCount": 8,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/259|Tianjin/8_2_1/P29@498800",
+      "pairKey": "Tianjin/8_2_1/259|Tianjin/8_2_1/P29",
+      "trackIds": [
+        "Tianjin/8_2_1/259",
+        "Tianjin/8_2_1/P29"
+      ],
+      "startMs": 498800,
+      "endMs": 499400,
+      "minTimeMs": 499400,
+      "minTtcS": 2.3319850847831485,
+      "sampleCount": 7,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/136|Tianjin/8_2_1/P30@499000",
+      "pairKey": "Tianjin/8_2_1/136|Tianjin/8_2_1/P30",
+      "trackIds": [
+        "Tianjin/8_2_1/136",
+        "Tianjin/8_2_1/P30"
+      ],
+      "startMs": 499000,
+      "endMs": 499500,
+      "minTimeMs": 499100,
+      "minTtcS": 0.8367151023551471,
+      "sampleCount": 6,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/241|Tianjin/8_2_1/250@500500",
+      "pairKey": "Tianjin/8_2_1/241|Tianjin/8_2_1/250",
+      "trackIds": [
+        "Tianjin/8_2_1/241",
+        "Tianjin/8_2_1/250"
+      ],
+      "startMs": 500500,
+      "endMs": 502000,
+      "minTimeMs": 501400,
+      "minTtcS": 2.3146730872919545,
+      "sampleCount": 16,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/255|Tianjin/8_2_1/8@502400",
+      "pairKey": "Tianjin/8_2_1/255|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/255",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 502400,
+      "endMs": 503000,
+      "minTimeMs": 503000,
+      "minTtcS": 2.425650664231011,
+      "sampleCount": 7,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/240|Tianjin/8_2_1/243@502400",
+      "pairKey": "Tianjin/8_2_1/240|Tianjin/8_2_1/243",
+      "trackIds": [
+        "Tianjin/8_2_1/240",
+        "Tianjin/8_2_1/243"
+      ],
+      "startMs": 502400,
+      "endMs": 502600,
+      "minTimeMs": 502600,
+      "minTtcS": 2.6792202739777347,
+      "sampleCount": 3,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/240|Tianjin/8_2_1/243@504300",
+      "pairKey": "Tianjin/8_2_1/240|Tianjin/8_2_1/243",
+      "trackIds": [
+        "Tianjin/8_2_1/240",
+        "Tianjin/8_2_1/243"
+      ],
+      "startMs": 504300,
+      "endMs": 504300,
+      "minTimeMs": 504300,
+      "minTtcS": 2.8482079605228003,
+      "sampleCount": 1,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/254|Tianjin/8_2_1/8@504300",
+      "pairKey": "Tianjin/8_2_1/254|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/254",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 504300,
+      "endMs": 505200,
+      "minTimeMs": 505200,
+      "minTtcS": 2.299134183365771,
+      "sampleCount": 10,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/271|Tianjin/8_2_1/279@543600",
+      "pairKey": "Tianjin/8_2_1/271|Tianjin/8_2_1/279",
+      "trackIds": [
+        "Tianjin/8_2_1/271",
+        "Tianjin/8_2_1/279"
+      ],
+      "startMs": 543600,
+      "endMs": 545700,
+      "minTimeMs": 545600,
+      "minTtcS": 0.502519399701716,
+      "sampleCount": 22,
+      "kinds": [
+        "rear",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/240|Tianjin/8_2_1/274@545200",
+      "pairKey": "Tianjin/8_2_1/240|Tianjin/8_2_1/274",
+      "trackIds": [
+        "Tianjin/8_2_1/240",
+        "Tianjin/8_2_1/274"
+      ],
+      "startMs": 545200,
+      "endMs": 546100,
+      "minTimeMs": 546100,
+      "minTtcS": 1.9485524153194014,
+      "sampleCount": 10,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/276|Tianjin/8_2_1/278@546400",
+      "pairKey": "Tianjin/8_2_1/276|Tianjin/8_2_1/278",
+      "trackIds": [
+        "Tianjin/8_2_1/276",
+        "Tianjin/8_2_1/278"
+      ],
+      "startMs": 546400,
+      "endMs": 546600,
+      "minTimeMs": 546600,
+      "minTtcS": 2.768293753893113,
+      "sampleCount": 3,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/274|Tianjin/8_2_1/8@546600",
+      "pairKey": "Tianjin/8_2_1/274|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/274",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 546600,
+      "endMs": 547800,
+      "minTimeMs": 547500,
+      "minTtcS": 1.8142938075001958,
+      "sampleCount": 13,
+      "kinds": [
+        "cross",
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/270|Tianjin/8_2_1/280@547800",
+      "pairKey": "Tianjin/8_2_1/270|Tianjin/8_2_1/280",
+      "trackIds": [
+        "Tianjin/8_2_1/270",
+        "Tianjin/8_2_1/280"
+      ],
+      "startMs": 547800,
+      "endMs": 548300,
+      "minTimeMs": 548300,
+      "minTtcS": 2.63823488451787,
+      "sampleCount": 6,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/272|Tianjin/8_2_1/280@549400",
+      "pairKey": "Tianjin/8_2_1/272|Tianjin/8_2_1/280",
+      "trackIds": [
+        "Tianjin/8_2_1/272",
+        "Tianjin/8_2_1/280"
+      ],
+      "startMs": 549400,
+      "endMs": 550400,
+      "minTimeMs": 550300,
+      "minTtcS": 2.0355448225006776,
+      "sampleCount": 11,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/278|Tianjin/8_2_1/8@549600",
+      "pairKey": "Tianjin/8_2_1/278|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/278",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 549600,
+      "endMs": 550200,
+      "minTimeMs": 549800,
+      "minTtcS": 2.722814590312196,
+      "sampleCount": 7,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/279|Tianjin/8_2_1/283@553800",
+      "pairKey": "Tianjin/8_2_1/279|Tianjin/8_2_1/283",
+      "trackIds": [
+        "Tianjin/8_2_1/279",
+        "Tianjin/8_2_1/283"
+      ],
+      "startMs": 553800,
+      "endMs": 554500,
+      "minTimeMs": 554400,
+      "minTtcS": 2.0677610122374865,
+      "sampleCount": 8,
+      "kinds": [
+        "other",
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/285|Tianjin/8_2_1/288@558600",
+      "pairKey": "Tianjin/8_2_1/285|Tianjin/8_2_1/288",
+      "trackIds": [
+        "Tianjin/8_2_1/285",
+        "Tianjin/8_2_1/288"
+      ],
+      "startMs": 558600,
+      "endMs": 559100,
+      "minTimeMs": 559100,
+      "minTtcS": 1.6251193197391778,
+      "sampleCount": 6,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/240|Tianjin/8_2_1/275@558800",
+      "pairKey": "Tianjin/8_2_1/240|Tianjin/8_2_1/275",
+      "trackIds": [
+        "Tianjin/8_2_1/240",
+        "Tianjin/8_2_1/275"
+      ],
+      "startMs": 558800,
+      "endMs": 560100,
+      "minTimeMs": 560000,
+      "minTtcS": 1.3797836896043536,
+      "sampleCount": 14,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/272|Tianjin/8_2_1/285@561600",
+      "pairKey": "Tianjin/8_2_1/272|Tianjin/8_2_1/285",
+      "trackIds": [
+        "Tianjin/8_2_1/272",
+        "Tianjin/8_2_1/285"
+      ],
+      "startMs": 561600,
+      "endMs": 563400,
+      "minTimeMs": 563200,
+      "minTtcS": 1.3400769917899467,
+      "sampleCount": 19,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/288|Tianjin/8_2_1/P2@561600",
+      "pairKey": "Tianjin/8_2_1/288|Tianjin/8_2_1/P2",
+      "trackIds": [
+        "Tianjin/8_2_1/288",
+        "Tianjin/8_2_1/P2"
+      ],
+      "startMs": 561600,
+      "endMs": 561800,
+      "minTimeMs": 561800,
+      "minTtcS": 2.8480859092030375,
+      "sampleCount": 3,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/275|Tianjin/8_2_1/8@568500",
+      "pairKey": "Tianjin/8_2_1/275|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/275",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 568500,
+      "endMs": 568500,
+      "minTimeMs": 568500,
+      "minTtcS": 0,
+      "sampleCount": 1,
+      "kinds": [
+        "overlap"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/275|Tianjin/8_2_1/287@570800",
+      "pairKey": "Tianjin/8_2_1/275|Tianjin/8_2_1/287",
+      "trackIds": [
+        "Tianjin/8_2_1/275",
+        "Tianjin/8_2_1/287"
+      ],
+      "startMs": 570800,
+      "endMs": 572100,
+      "minTimeMs": 572100,
+      "minTtcS": 1.4906645991148084,
+      "sampleCount": 14,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/290|Tianjin/8_2_1/294@576400",
+      "pairKey": "Tianjin/8_2_1/290|Tianjin/8_2_1/294",
+      "trackIds": [
+        "Tianjin/8_2_1/290",
+        "Tianjin/8_2_1/294"
+      ],
+      "startMs": 576400,
+      "endMs": 577000,
+      "minTimeMs": 576700,
+      "minTtcS": 1.9119657229174258,
+      "sampleCount": 7,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/291|Tianjin/8_2_1/292@579500",
+      "pairKey": "Tianjin/8_2_1/291|Tianjin/8_2_1/292",
+      "trackIds": [
+        "Tianjin/8_2_1/291",
+        "Tianjin/8_2_1/292"
+      ],
+      "startMs": 579500,
+      "endMs": 580300,
+      "minTimeMs": 579700,
+      "minTtcS": 1.0978852143390188,
+      "sampleCount": 9,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/295|Tianjin/8_2_1/296@580400",
+      "pairKey": "Tianjin/8_2_1/295|Tianjin/8_2_1/296",
+      "trackIds": [
+        "Tianjin/8_2_1/295",
+        "Tianjin/8_2_1/296"
+      ],
+      "startMs": 580400,
+      "endMs": 580700,
+      "minTimeMs": 580600,
+      "minTtcS": 2.642044185309837,
+      "sampleCount": 4,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/300|Tianjin/8_2_1/303@591100",
+      "pairKey": "Tianjin/8_2_1/300|Tianjin/8_2_1/303",
+      "trackIds": [
+        "Tianjin/8_2_1/300",
+        "Tianjin/8_2_1/303"
+      ],
+      "startMs": 591100,
+      "endMs": 591900,
+      "minTimeMs": 591800,
+      "minTtcS": 2.0558575171243474,
+      "sampleCount": 9,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/297|Tianjin/8_2_1/302@591800",
+      "pairKey": "Tianjin/8_2_1/297|Tianjin/8_2_1/302",
+      "trackIds": [
+        "Tianjin/8_2_1/297",
+        "Tianjin/8_2_1/302"
+      ],
+      "startMs": 591800,
+      "endMs": 593900,
+      "minTimeMs": 592300,
+      "minTtcS": 2.3962254253759814,
+      "sampleCount": 22,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/298|Tianjin/8_2_1/299@593600",
+      "pairKey": "Tianjin/8_2_1/298|Tianjin/8_2_1/299",
+      "trackIds": [
+        "Tianjin/8_2_1/298",
+        "Tianjin/8_2_1/299"
+      ],
+      "startMs": 593600,
+      "endMs": 594100,
+      "minTimeMs": 594000,
+      "minTtcS": 2.654425157244044,
+      "sampleCount": 6,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/306|Tianjin/8_2_1/P36@594200",
+      "pairKey": "Tianjin/8_2_1/306|Tianjin/8_2_1/P36",
+      "trackIds": [
+        "Tianjin/8_2_1/306",
+        "Tianjin/8_2_1/P36"
+      ],
+      "startMs": 594200,
+      "endMs": 594600,
+      "minTimeMs": 594600,
+      "minTtcS": 2.1603846027490587,
+      "sampleCount": 5,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/303|Tianjin/8_2_1/8@594200",
+      "pairKey": "Tianjin/8_2_1/303|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/303",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 594200,
+      "endMs": 595400,
+      "minTimeMs": 595400,
+      "minTtcS": 1.8959962966651516,
+      "sampleCount": 13,
+      "kinds": [
+        "cross",
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/297|Tianjin/8_2_1/306@595000",
+      "pairKey": "Tianjin/8_2_1/297|Tianjin/8_2_1/306",
+      "trackIds": [
+        "Tianjin/8_2_1/297",
+        "Tianjin/8_2_1/306"
+      ],
+      "startMs": 595000,
+      "endMs": 596100,
+      "minTimeMs": 596100,
+      "minTtcS": 1.8768392317065286,
+      "sampleCount": 12,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/302|Tianjin/8_2_1/306@595900",
+      "pairKey": "Tianjin/8_2_1/302|Tianjin/8_2_1/306",
+      "trackIds": [
+        "Tianjin/8_2_1/302",
+        "Tianjin/8_2_1/306"
+      ],
+      "startMs": 595900,
+      "endMs": 596700,
+      "minTimeMs": 596500,
+      "minTtcS": 1.904569682341051,
+      "sampleCount": 9,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/299|Tianjin/8_2_1/308@596200",
+      "pairKey": "Tianjin/8_2_1/299|Tianjin/8_2_1/308",
+      "trackIds": [
+        "Tianjin/8_2_1/299",
+        "Tianjin/8_2_1/308"
+      ],
+      "startMs": 596200,
+      "endMs": 597600,
+      "minTimeMs": 597000,
+      "minTtcS": 1.5256906664598893,
+      "sampleCount": 15,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/298|Tianjin/8_2_1/312@600100",
+      "pairKey": "Tianjin/8_2_1/298|Tianjin/8_2_1/312",
+      "trackIds": [
+        "Tianjin/8_2_1/298",
+        "Tianjin/8_2_1/312"
+      ],
+      "startMs": 600100,
+      "endMs": 600100,
+      "minTimeMs": 600100,
+      "minTtcS": 2.957098048439999,
+      "sampleCount": 1,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/298|Tianjin/8_2_1/P39@601700",
+      "pairKey": "Tianjin/8_2_1/298|Tianjin/8_2_1/P39",
+      "trackIds": [
+        "Tianjin/8_2_1/298",
+        "Tianjin/8_2_1/P39"
+      ],
+      "startMs": 601700,
+      "endMs": 605900,
+      "minTimeMs": 605000,
+      "minTtcS": 2.048483002312744,
+      "sampleCount": 43,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/298|Tianjin/8_2_1/304@604900",
+      "pairKey": "Tianjin/8_2_1/298|Tianjin/8_2_1/304",
+      "trackIds": [
+        "Tianjin/8_2_1/298",
+        "Tianjin/8_2_1/304"
+      ],
+      "startMs": 604900,
+      "endMs": 606500,
+      "minTimeMs": 606500,
+      "minTtcS": 0.9999950020357219,
+      "sampleCount": 17,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/313|Tianjin/8_2_1/314@608100",
+      "pairKey": "Tianjin/8_2_1/313|Tianjin/8_2_1/314",
+      "trackIds": [
+        "Tianjin/8_2_1/313",
+        "Tianjin/8_2_1/314"
+      ],
+      "startMs": 608100,
+      "endMs": 608900,
+      "minTimeMs": 608900,
+      "minTtcS": 1.3759673868714968,
+      "sampleCount": 9,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/311|Tianjin/8_2_1/315@611500",
+      "pairKey": "Tianjin/8_2_1/311|Tianjin/8_2_1/315",
+      "trackIds": [
+        "Tianjin/8_2_1/311",
+        "Tianjin/8_2_1/315"
+      ],
+      "startMs": 611500,
+      "endMs": 611800,
+      "minTimeMs": 611800,
+      "minTtcS": 1.651936942693653,
+      "sampleCount": 4,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/317|Tianjin/8_2_1/P38@616900",
+      "pairKey": "Tianjin/8_2_1/317|Tianjin/8_2_1/P38",
+      "trackIds": [
+        "Tianjin/8_2_1/317",
+        "Tianjin/8_2_1/P38"
+      ],
+      "startMs": 616900,
+      "endMs": 617200,
+      "minTimeMs": 617200,
+      "minTtcS": 1.8829742179428681,
+      "sampleCount": 4,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/319|Tianjin/8_2_1/322@626800",
+      "pairKey": "Tianjin/8_2_1/319|Tianjin/8_2_1/322",
+      "trackIds": [
+        "Tianjin/8_2_1/319",
+        "Tianjin/8_2_1/322"
+      ],
+      "startMs": 626800,
+      "endMs": 627800,
+      "minTimeMs": 627300,
+      "minTtcS": 2.0789035698921676,
+      "sampleCount": 11,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/326|Tianjin/8_2_1/327@633300",
+      "pairKey": "Tianjin/8_2_1/326|Tianjin/8_2_1/327",
+      "trackIds": [
+        "Tianjin/8_2_1/326",
+        "Tianjin/8_2_1/327"
+      ],
+      "startMs": 633300,
+      "endMs": 633600,
+      "minTimeMs": 633600,
+      "minTtcS": 2.1368367032731435,
+      "sampleCount": 4,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/334|Tianjin/8_2_1/336@656300",
+      "pairKey": "Tianjin/8_2_1/334|Tianjin/8_2_1/336",
+      "trackIds": [
+        "Tianjin/8_2_1/334",
+        "Tianjin/8_2_1/336"
+      ],
+      "startMs": 656300,
+      "endMs": 656800,
+      "minTimeMs": 656500,
+      "minTtcS": 2.6124009401680075,
+      "sampleCount": 6,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/338|Tianjin/8_2_1/342@657000",
+      "pairKey": "Tianjin/8_2_1/338|Tianjin/8_2_1/342",
+      "trackIds": [
+        "Tianjin/8_2_1/338",
+        "Tianjin/8_2_1/342"
+      ],
+      "startMs": 657000,
+      "endMs": 658500,
+      "minTimeMs": 658100,
+      "minTtcS": 1.7095597683509671,
+      "sampleCount": 16,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/337|Tianjin/8_2_1/338@658900",
+      "pairKey": "Tianjin/8_2_1/337|Tianjin/8_2_1/338",
+      "trackIds": [
+        "Tianjin/8_2_1/337",
+        "Tianjin/8_2_1/338"
+      ],
+      "startMs": 658900,
+      "endMs": 659400,
+      "minTimeMs": 659400,
+      "minTtcS": 2.591091339494241,
+      "sampleCount": 6,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/339|Tianjin/8_2_1/345@665000",
+      "pairKey": "Tianjin/8_2_1/339|Tianjin/8_2_1/345",
+      "trackIds": [
+        "Tianjin/8_2_1/339",
+        "Tianjin/8_2_1/345"
+      ],
+      "startMs": 665000,
+      "endMs": 667000,
+      "minTimeMs": 666600,
+      "minTtcS": 1.0876014606077895,
+      "sampleCount": 21,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/349|Tianjin/8_2_1/351@669400",
+      "pairKey": "Tianjin/8_2_1/349|Tianjin/8_2_1/351",
+      "trackIds": [
+        "Tianjin/8_2_1/349",
+        "Tianjin/8_2_1/351"
+      ],
+      "startMs": 669400,
+      "endMs": 671500,
+      "minTimeMs": 670600,
+      "minTtcS": 2.4216441812049783,
+      "sampleCount": 22,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/346|Tianjin/8_2_1/350@670800",
+      "pairKey": "Tianjin/8_2_1/346|Tianjin/8_2_1/350",
+      "trackIds": [
+        "Tianjin/8_2_1/346",
+        "Tianjin/8_2_1/350"
+      ],
+      "startMs": 670800,
+      "endMs": 671600,
+      "minTimeMs": 671400,
+      "minTtcS": 2.8298752613840925,
+      "sampleCount": 9,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/351|Tianjin/8_2_1/353@673800",
+      "pairKey": "Tianjin/8_2_1/351|Tianjin/8_2_1/353",
+      "trackIds": [
+        "Tianjin/8_2_1/351",
+        "Tianjin/8_2_1/353"
+      ],
+      "startMs": 673800,
+      "endMs": 674700,
+      "minTimeMs": 674300,
+      "minTtcS": 2.7775646116274335,
+      "sampleCount": 10,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/351|Tianjin/8_2_1/355@683200",
+      "pairKey": "Tianjin/8_2_1/351|Tianjin/8_2_1/355",
+      "trackIds": [
+        "Tianjin/8_2_1/351",
+        "Tianjin/8_2_1/355"
+      ],
+      "startMs": 683200,
+      "endMs": 683400,
+      "minTimeMs": 683300,
+      "minTtcS": 2.9045988853673848,
+      "sampleCount": 3,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/354|Tianjin/8_2_1/357@683700",
+      "pairKey": "Tianjin/8_2_1/354|Tianjin/8_2_1/357",
+      "trackIds": [
+        "Tianjin/8_2_1/354",
+        "Tianjin/8_2_1/357"
+      ],
+      "startMs": 683700,
+      "endMs": 684200,
+      "minTimeMs": 684200,
+      "minTtcS": 1.0869945657842193,
+      "sampleCount": 6,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/354|Tianjin/8_2_1/355@686000",
+      "pairKey": "Tianjin/8_2_1/354|Tianjin/8_2_1/355",
+      "trackIds": [
+        "Tianjin/8_2_1/354",
+        "Tianjin/8_2_1/355"
+      ],
+      "startMs": 686000,
+      "endMs": 686400,
+      "minTimeMs": 686400,
+      "minTtcS": 2.785848245618305,
+      "sampleCount": 5,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/353|Tianjin/8_2_1/358@686400",
+      "pairKey": "Tianjin/8_2_1/353|Tianjin/8_2_1/358",
+      "trackIds": [
+        "Tianjin/8_2_1/353",
+        "Tianjin/8_2_1/358"
+      ],
+      "startMs": 686400,
+      "endMs": 689700,
+      "minTimeMs": 689100,
+      "minTtcS": 1.2230812456787812,
+      "sampleCount": 34,
+      "kinds": [
+        "other",
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/136|Tianjin/8_2_1/355@687700",
+      "pairKey": "Tianjin/8_2_1/136|Tianjin/8_2_1/355",
+      "trackIds": [
+        "Tianjin/8_2_1/136",
+        "Tianjin/8_2_1/355"
+      ],
+      "startMs": 687700,
+      "endMs": 687900,
+      "minTimeMs": 687700,
+      "minTtcS": 2.9231339435191694,
+      "sampleCount": 3,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/354|Tianjin/8_2_1/358@687800",
+      "pairKey": "Tianjin/8_2_1/354|Tianjin/8_2_1/358",
+      "trackIds": [
+        "Tianjin/8_2_1/354",
+        "Tianjin/8_2_1/358"
+      ],
+      "startMs": 687800,
+      "endMs": 688300,
+      "minTimeMs": 688300,
+      "minTtcS": 2.4552182332736616,
+      "sampleCount": 6,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/136|Tianjin/8_2_1/358@689400",
+      "pairKey": "Tianjin/8_2_1/136|Tianjin/8_2_1/358",
+      "trackIds": [
+        "Tianjin/8_2_1/136",
+        "Tianjin/8_2_1/358"
+      ],
+      "startMs": 689400,
+      "endMs": 689800,
+      "minTimeMs": 689700,
+      "minTtcS": 2.442843589335232,
+      "sampleCount": 5,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/361|Tianjin/8_2_1/365@694400",
+      "pairKey": "Tianjin/8_2_1/361|Tianjin/8_2_1/365",
+      "trackIds": [
+        "Tianjin/8_2_1/361",
+        "Tianjin/8_2_1/365"
+      ],
+      "startMs": 694400,
+      "endMs": 696100,
+      "minTimeMs": 696100,
+      "minTtcS": 1.7711685335301222,
+      "sampleCount": 18,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/362|Tianjin/8_2_1/363@697600",
+      "pairKey": "Tianjin/8_2_1/362|Tianjin/8_2_1/363",
+      "trackIds": [
+        "Tianjin/8_2_1/362",
+        "Tianjin/8_2_1/363"
+      ],
+      "startMs": 697600,
+      "endMs": 697800,
+      "minTimeMs": 697800,
+      "minTtcS": 2.582084279215126,
+      "sampleCount": 3,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/364|Tianjin/8_2_1/365@699900",
+      "pairKey": "Tianjin/8_2_1/364|Tianjin/8_2_1/365",
+      "trackIds": [
+        "Tianjin/8_2_1/364",
+        "Tianjin/8_2_1/365"
+      ],
+      "startMs": 699900,
+      "endMs": 701100,
+      "minTimeMs": 700700,
+      "minTtcS": 1.6351039673306909,
+      "sampleCount": 13,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/364|Tianjin/8_2_1/372@706800",
+      "pairKey": "Tianjin/8_2_1/364|Tianjin/8_2_1/372",
+      "trackIds": [
+        "Tianjin/8_2_1/364",
+        "Tianjin/8_2_1/372"
+      ],
+      "startMs": 706800,
+      "endMs": 707100,
+      "minTimeMs": 707100,
+      "minTtcS": 2.5885588704008238,
+      "sampleCount": 4,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/370|Tianjin/8_2_1/374@709000",
+      "pairKey": "Tianjin/8_2_1/370|Tianjin/8_2_1/374",
+      "trackIds": [
+        "Tianjin/8_2_1/370",
+        "Tianjin/8_2_1/374"
+      ],
+      "startMs": 709000,
+      "endMs": 709900,
+      "minTimeMs": 709600,
+      "minTtcS": 2.7257968196692595,
+      "sampleCount": 10,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/371|Tianjin/8_2_1/376@709500",
+      "pairKey": "Tianjin/8_2_1/371|Tianjin/8_2_1/376",
+      "trackIds": [
+        "Tianjin/8_2_1/371",
+        "Tianjin/8_2_1/376"
+      ],
+      "startMs": 709500,
+      "endMs": 709500,
+      "minTimeMs": 709500,
+      "minTtcS": 2.0482983294966077,
+      "sampleCount": 1,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/372|Tianjin/8_2_1/P42@711200",
+      "pairKey": "Tianjin/8_2_1/372|Tianjin/8_2_1/P42",
+      "trackIds": [
+        "Tianjin/8_2_1/372",
+        "Tianjin/8_2_1/P42"
+      ],
+      "startMs": 711200,
+      "endMs": 711600,
+      "minTimeMs": 711600,
+      "minTtcS": 2.5404897366877264,
+      "sampleCount": 5,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/374|Tianjin/8_2_1/376@713300",
+      "pairKey": "Tianjin/8_2_1/374|Tianjin/8_2_1/376",
+      "trackIds": [
+        "Tianjin/8_2_1/374",
+        "Tianjin/8_2_1/376"
+      ],
+      "startMs": 713300,
+      "endMs": 714600,
+      "minTimeMs": 714000,
+      "minTtcS": 2.1513336562313756,
+      "sampleCount": 14,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/375|Tianjin/8_2_1/378@713400",
+      "pairKey": "Tianjin/8_2_1/375|Tianjin/8_2_1/378",
+      "trackIds": [
+        "Tianjin/8_2_1/375",
+        "Tianjin/8_2_1/378"
+      ],
+      "startMs": 713400,
+      "endMs": 713500,
+      "minTimeMs": 713500,
+      "minTtcS": 2.793212625630007,
+      "sampleCount": 2,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/377|Tianjin/8_2_1/378@713700",
+      "pairKey": "Tianjin/8_2_1/377|Tianjin/8_2_1/378",
+      "trackIds": [
+        "Tianjin/8_2_1/377",
+        "Tianjin/8_2_1/378"
+      ],
+      "startMs": 713700,
+      "endMs": 715700,
+      "minTimeMs": 715400,
+      "minTtcS": 1.3343464280854276,
+      "sampleCount": 21,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/375|Tianjin/8_2_1/377@720300",
+      "pairKey": "Tianjin/8_2_1/375|Tianjin/8_2_1/377",
+      "trackIds": [
+        "Tianjin/8_2_1/375",
+        "Tianjin/8_2_1/377"
+      ],
+      "startMs": 720300,
+      "endMs": 720500,
+      "minTimeMs": 720500,
+      "minTtcS": 2.2622867476218222,
+      "sampleCount": 3,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/136|Tianjin/8_2_1/381@730200",
+      "pairKey": "Tianjin/8_2_1/136|Tianjin/8_2_1/381",
+      "trackIds": [
+        "Tianjin/8_2_1/136",
+        "Tianjin/8_2_1/381"
+      ],
+      "startMs": 730200,
+      "endMs": 730500,
+      "minTimeMs": 730300,
+      "minTtcS": 2.919762211117691,
+      "sampleCount": 4,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/374|Tianjin/8_2_1/382@732300",
+      "pairKey": "Tianjin/8_2_1/374|Tianjin/8_2_1/382",
+      "trackIds": [
+        "Tianjin/8_2_1/374",
+        "Tianjin/8_2_1/382"
+      ],
+      "startMs": 732300,
+      "endMs": 733300,
+      "minTimeMs": 732900,
+      "minTtcS": 1.6421975099568333,
+      "sampleCount": 11,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/385|Tianjin/8_2_1/8@735400",
+      "pairKey": "Tianjin/8_2_1/385|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/385",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 735400,
+      "endMs": 736200,
+      "minTimeMs": 736000,
+      "minTtcS": 1.5690436936647731,
+      "sampleCount": 9,
+      "kinds": [
+        "cross",
+        "other",
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/369|Tianjin/8_2_1/374@737900",
+      "pairKey": "Tianjin/8_2_1/369|Tianjin/8_2_1/374",
+      "trackIds": [
+        "Tianjin/8_2_1/369",
+        "Tianjin/8_2_1/374"
+      ],
+      "startMs": 737900,
+      "endMs": 738000,
+      "minTimeMs": 738000,
+      "minTtcS": 2.795286252820429,
+      "sampleCount": 2,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/392|Tianjin/8_2_1/P2@754100",
+      "pairKey": "Tianjin/8_2_1/392|Tianjin/8_2_1/P2",
+      "trackIds": [
+        "Tianjin/8_2_1/392",
+        "Tianjin/8_2_1/P2"
+      ],
+      "startMs": 754100,
+      "endMs": 754100,
+      "minTimeMs": 754100,
+      "minTtcS": 2.965179119750039,
+      "sampleCount": 1,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/398|Tianjin/8_2_1/399@766800",
+      "pairKey": "Tianjin/8_2_1/398|Tianjin/8_2_1/399",
+      "trackIds": [
+        "Tianjin/8_2_1/398",
+        "Tianjin/8_2_1/399"
+      ],
+      "startMs": 766800,
+      "endMs": 767900,
+      "minTimeMs": 767500,
+      "minTtcS": 2.4825693517365335,
+      "sampleCount": 12,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/401|Tianjin/8_2_1/406@780300",
+      "pairKey": "Tianjin/8_2_1/401|Tianjin/8_2_1/406",
+      "trackIds": [
+        "Tianjin/8_2_1/401",
+        "Tianjin/8_2_1/406"
+      ],
+      "startMs": 780300,
+      "endMs": 780900,
+      "minTimeMs": 780800,
+      "minTtcS": 2.1874111358420225,
+      "sampleCount": 7,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/408|Tianjin/8_2_1/409@781800",
+      "pairKey": "Tianjin/8_2_1/408|Tianjin/8_2_1/409",
+      "trackIds": [
+        "Tianjin/8_2_1/408",
+        "Tianjin/8_2_1/409"
+      ],
+      "startMs": 781800,
+      "endMs": 781900,
+      "minTimeMs": 781900,
+      "minTtcS": 2.66368684105963,
+      "sampleCount": 2,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/401|Tianjin/8_2_1/405@781800",
+      "pairKey": "Tianjin/8_2_1/401|Tianjin/8_2_1/405",
+      "trackIds": [
+        "Tianjin/8_2_1/401",
+        "Tianjin/8_2_1/405"
+      ],
+      "startMs": 781800,
+      "endMs": 783400,
+      "minTimeMs": 783300,
+      "minTtcS": 1.3251638826482426,
+      "sampleCount": 17,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/404|Tianjin/8_2_1/407@788100",
+      "pairKey": "Tianjin/8_2_1/404|Tianjin/8_2_1/407",
+      "trackIds": [
+        "Tianjin/8_2_1/404",
+        "Tianjin/8_2_1/407"
+      ],
+      "startMs": 788100,
+      "endMs": 788500,
+      "minTimeMs": 788400,
+      "minTtcS": 2.353190893008847,
+      "sampleCount": 5,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/411|Tianjin/8_2_1/413@796100",
+      "pairKey": "Tianjin/8_2_1/411|Tianjin/8_2_1/413",
+      "trackIds": [
+        "Tianjin/8_2_1/411",
+        "Tianjin/8_2_1/413"
+      ],
+      "startMs": 796100,
+      "endMs": 796100,
+      "minTimeMs": 796100,
+      "minTtcS": 2.9479676570949915,
+      "sampleCount": 1,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/402|Tianjin/8_2_1/417@805700",
+      "pairKey": "Tianjin/8_2_1/402|Tianjin/8_2_1/417",
+      "trackIds": [
+        "Tianjin/8_2_1/402",
+        "Tianjin/8_2_1/417"
+      ],
+      "startMs": 805700,
+      "endMs": 806300,
+      "minTimeMs": 806300,
+      "minTtcS": 1.8849422372311118,
+      "sampleCount": 7,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/402|Tianjin/8_2_1/410@805900",
+      "pairKey": "Tianjin/8_2_1/402|Tianjin/8_2_1/410",
+      "trackIds": [
+        "Tianjin/8_2_1/402",
+        "Tianjin/8_2_1/410"
+      ],
+      "startMs": 805900,
+      "endMs": 806300,
+      "minTimeMs": 806300,
+      "minTtcS": 2.2690579252515692,
+      "sampleCount": 5,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/136|Tianjin/8_2_1/402@806100",
+      "pairKey": "Tianjin/8_2_1/136|Tianjin/8_2_1/402",
+      "trackIds": [
+        "Tianjin/8_2_1/136",
+        "Tianjin/8_2_1/402"
+      ],
+      "startMs": 806100,
+      "endMs": 806500,
+      "minTimeMs": 806400,
+      "minTtcS": 2.5200963818120488,
+      "sampleCount": 5,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/410|Tianjin/8_2_1/412@811400",
+      "pairKey": "Tianjin/8_2_1/410|Tianjin/8_2_1/412",
+      "trackIds": [
+        "Tianjin/8_2_1/410",
+        "Tianjin/8_2_1/412"
+      ],
+      "startMs": 811400,
+      "endMs": 812000,
+      "minTimeMs": 812000,
+      "minTtcS": 2.223607433371241,
+      "sampleCount": 7,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/136|Tianjin/8_2_1/412@811700",
+      "pairKey": "Tianjin/8_2_1/136|Tianjin/8_2_1/412",
+      "trackIds": [
+        "Tianjin/8_2_1/136",
+        "Tianjin/8_2_1/412"
+      ],
+      "startMs": 811700,
+      "endMs": 812200,
+      "minTimeMs": 812000,
+      "minTtcS": 2.5075141051698893,
+      "sampleCount": 6,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/410|Tianjin/8_2_1/418@814700",
+      "pairKey": "Tianjin/8_2_1/410|Tianjin/8_2_1/418",
+      "trackIds": [
+        "Tianjin/8_2_1/410",
+        "Tianjin/8_2_1/418"
+      ],
+      "startMs": 814700,
+      "endMs": 814800,
+      "minTimeMs": 814800,
+      "minTtcS": 2.8576165608717674,
+      "sampleCount": 2,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/423|Tianjin/8_2_1/8@815100",
+      "pairKey": "Tianjin/8_2_1/423|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/423",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 815100,
+      "endMs": 817700,
+      "minTimeMs": 817700,
+      "minTtcS": 0.31896484229326433,
+      "sampleCount": 27,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/136|Tianjin/8_2_1/418@815100",
+      "pairKey": "Tianjin/8_2_1/136|Tianjin/8_2_1/418",
+      "trackIds": [
+        "Tianjin/8_2_1/136",
+        "Tianjin/8_2_1/418"
+      ],
+      "startMs": 815100,
+      "endMs": 815100,
+      "minTimeMs": 815100,
+      "minTtcS": 2.95500393202222,
+      "sampleCount": 1,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/421|Tianjin/8_2_1/427@828500",
+      "pairKey": "Tianjin/8_2_1/421|Tianjin/8_2_1/427",
+      "trackIds": [
+        "Tianjin/8_2_1/421",
+        "Tianjin/8_2_1/427"
+      ],
+      "startMs": 828500,
+      "endMs": 829600,
+      "minTimeMs": 829600,
+      "minTtcS": 1.423260526472912,
+      "sampleCount": 12,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/420|Tianjin/8_2_1/427@828800",
+      "pairKey": "Tianjin/8_2_1/420|Tianjin/8_2_1/427",
+      "trackIds": [
+        "Tianjin/8_2_1/420",
+        "Tianjin/8_2_1/427"
+      ],
+      "startMs": 828800,
+      "endMs": 830000,
+      "minTimeMs": 830000,
+      "minTtcS": 1.2785421863340312,
+      "sampleCount": 13,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/410|Tianjin/8_2_1/426@832200",
+      "pairKey": "Tianjin/8_2_1/410|Tianjin/8_2_1/426",
+      "trackIds": [
+        "Tianjin/8_2_1/410",
+        "Tianjin/8_2_1/426"
+      ],
+      "startMs": 832200,
+      "endMs": 832700,
+      "minTimeMs": 832700,
+      "minTtcS": 2.469912322216653,
+      "sampleCount": 6,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/425|Tianjin/8_2_1/430@835200",
+      "pairKey": "Tianjin/8_2_1/425|Tianjin/8_2_1/430",
+      "trackIds": [
+        "Tianjin/8_2_1/425",
+        "Tianjin/8_2_1/430"
+      ],
+      "startMs": 835200,
+      "endMs": 837200,
+      "minTimeMs": 837200,
+      "minTtcS": 1.2296134305655158,
+      "sampleCount": 21,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/430|Tianjin/8_2_1/431@845400",
+      "pairKey": "Tianjin/8_2_1/430|Tianjin/8_2_1/431",
+      "trackIds": [
+        "Tianjin/8_2_1/430",
+        "Tianjin/8_2_1/431"
+      ],
+      "startMs": 845400,
+      "endMs": 846300,
+      "minTimeMs": 846200,
+      "minTtcS": 1.2871515215261105,
+      "sampleCount": 10,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/437|Tianjin/8_2_1/442@858500",
+      "pairKey": "Tianjin/8_2_1/437|Tianjin/8_2_1/442",
+      "trackIds": [
+        "Tianjin/8_2_1/437",
+        "Tianjin/8_2_1/442"
+      ],
+      "startMs": 858500,
+      "endMs": 859400,
+      "minTimeMs": 859400,
+      "minTtcS": 1.8479293066252924,
+      "sampleCount": 10,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/443|Tianjin/8_2_1/P52@860000",
+      "pairKey": "Tianjin/8_2_1/443|Tianjin/8_2_1/P52",
+      "trackIds": [
+        "Tianjin/8_2_1/443",
+        "Tianjin/8_2_1/P52"
+      ],
+      "startMs": 860000,
+      "endMs": 860000,
+      "minTimeMs": 860000,
+      "minTtcS": 2.441412584469252,
+      "sampleCount": 1,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/443|Tianjin/8_2_1/P52@860800",
+      "pairKey": "Tianjin/8_2_1/443|Tianjin/8_2_1/P52",
+      "trackIds": [
+        "Tianjin/8_2_1/443",
+        "Tianjin/8_2_1/P52"
+      ],
+      "startMs": 860800,
+      "endMs": 861100,
+      "minTimeMs": 861100,
+      "minTtcS": 1.5571130540817744,
+      "sampleCount": 4,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/443|Tianjin/8_2_1/P50@861100",
+      "pairKey": "Tianjin/8_2_1/443|Tianjin/8_2_1/P50",
+      "trackIds": [
+        "Tianjin/8_2_1/443",
+        "Tianjin/8_2_1/P50"
+      ],
+      "startMs": 861100,
+      "endMs": 861400,
+      "minTimeMs": 861400,
+      "minTtcS": 1.7223898526682253,
+      "sampleCount": 4,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/441|Tianjin/8_2_1/444@861500",
+      "pairKey": "Tianjin/8_2_1/441|Tianjin/8_2_1/444",
+      "trackIds": [
+        "Tianjin/8_2_1/441",
+        "Tianjin/8_2_1/444"
+      ],
+      "startMs": 861500,
+      "endMs": 862400,
+      "minTimeMs": 862400,
+      "minTtcS": 1.9795391823577349,
+      "sampleCount": 10,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/445|Tianjin/8_2_1/446@865700",
+      "pairKey": "Tianjin/8_2_1/445|Tianjin/8_2_1/446",
+      "trackIds": [
+        "Tianjin/8_2_1/445",
+        "Tianjin/8_2_1/446"
+      ],
+      "startMs": 865700,
+      "endMs": 866400,
+      "minTimeMs": 866400,
+      "minTtcS": 2.6084838822611096,
+      "sampleCount": 8,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/447|Tianjin/8_2_1/P52@868100",
+      "pairKey": "Tianjin/8_2_1/447|Tianjin/8_2_1/P52",
+      "trackIds": [
+        "Tianjin/8_2_1/447",
+        "Tianjin/8_2_1/P52"
+      ],
+      "startMs": 868100,
+      "endMs": 868900,
+      "minTimeMs": 868900,
+      "minTtcS": 2.3119341640776496,
+      "sampleCount": 9,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/447|Tianjin/8_2_1/P51@869400",
+      "pairKey": "Tianjin/8_2_1/447|Tianjin/8_2_1/P51",
+      "trackIds": [
+        "Tianjin/8_2_1/447",
+        "Tianjin/8_2_1/P51"
+      ],
+      "startMs": 869400,
+      "endMs": 869900,
+      "minTimeMs": 869900,
+      "minTtcS": 2.3346242791473113,
+      "sampleCount": 6,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/441|Tianjin/8_2_1/444@871300",
+      "pairKey": "Tianjin/8_2_1/441|Tianjin/8_2_1/444",
+      "trackIds": [
+        "Tianjin/8_2_1/441",
+        "Tianjin/8_2_1/444"
+      ],
+      "startMs": 871300,
+      "endMs": 872200,
+      "minTimeMs": 871900,
+      "minTtcS": 1.383143483085999,
+      "sampleCount": 10,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/450|Tianjin/8_2_1/451@878700",
+      "pairKey": "Tianjin/8_2_1/450|Tianjin/8_2_1/451",
+      "trackIds": [
+        "Tianjin/8_2_1/450",
+        "Tianjin/8_2_1/451"
+      ],
+      "startMs": 878700,
+      "endMs": 879600,
+      "minTimeMs": 879100,
+      "minTtcS": 1.8272982944606389,
+      "sampleCount": 10,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/454|Tianjin/8_2_1/P53@887100",
+      "pairKey": "Tianjin/8_2_1/454|Tianjin/8_2_1/P53",
+      "trackIds": [
+        "Tianjin/8_2_1/454",
+        "Tianjin/8_2_1/P53"
+      ],
+      "startMs": 887100,
+      "endMs": 887700,
+      "minTimeMs": 887700,
+      "minTtcS": 2.4844578013729692,
+      "sampleCount": 7,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/450|Tianjin/8_2_1/455@888100",
+      "pairKey": "Tianjin/8_2_1/450|Tianjin/8_2_1/455",
+      "trackIds": [
+        "Tianjin/8_2_1/450",
+        "Tianjin/8_2_1/455"
+      ],
+      "startMs": 888100,
+      "endMs": 889000,
+      "minTimeMs": 888900,
+      "minTtcS": 2.1277520465192,
+      "sampleCount": 10,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/439|Tianjin/8_2_1/453@889300",
+      "pairKey": "Tianjin/8_2_1/439|Tianjin/8_2_1/453",
+      "trackIds": [
+        "Tianjin/8_2_1/439",
+        "Tianjin/8_2_1/453"
+      ],
+      "startMs": 889300,
+      "endMs": 889600,
+      "minTimeMs": 889600,
+      "minTtcS": 2.216243989097247,
+      "sampleCount": 4,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/457|Tianjin/8_2_1/459@898300",
+      "pairKey": "Tianjin/8_2_1/457|Tianjin/8_2_1/459",
+      "trackIds": [
+        "Tianjin/8_2_1/457",
+        "Tianjin/8_2_1/459"
+      ],
+      "startMs": 898300,
+      "endMs": 899500,
+      "minTimeMs": 899500,
+      "minTtcS": 1.6274004414715941,
+      "sampleCount": 13,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/454|Tianjin/8_2_1/457@899200",
+      "pairKey": "Tianjin/8_2_1/454|Tianjin/8_2_1/457",
+      "trackIds": [
+        "Tianjin/8_2_1/454",
+        "Tianjin/8_2_1/457"
+      ],
+      "startMs": 899200,
+      "endMs": 900500,
+      "minTimeMs": 900100,
+      "minTtcS": 0.5715657729624039,
+      "sampleCount": 14,
+      "kinds": [
+        "other",
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/459|Tianjin/8_2_1/466@910000",
+      "pairKey": "Tianjin/8_2_1/459|Tianjin/8_2_1/466",
+      "trackIds": [
+        "Tianjin/8_2_1/459",
+        "Tianjin/8_2_1/466"
+      ],
+      "startMs": 910000,
+      "endMs": 910000,
+      "minTimeMs": 910000,
+      "minTtcS": 1.7541411297442324,
+      "sampleCount": 1,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/465|Tianjin/8_2_1/467@913100",
+      "pairKey": "Tianjin/8_2_1/465|Tianjin/8_2_1/467",
+      "trackIds": [
+        "Tianjin/8_2_1/465",
+        "Tianjin/8_2_1/467"
+      ],
+      "startMs": 913100,
+      "endMs": 914400,
+      "minTimeMs": 914400,
+      "minTtcS": 1.068746379629311,
+      "sampleCount": 14,
+      "kinds": [
+        "other",
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/469|Tianjin/8_2_1/P54@915800",
+      "pairKey": "Tianjin/8_2_1/469|Tianjin/8_2_1/P54",
+      "trackIds": [
+        "Tianjin/8_2_1/469",
+        "Tianjin/8_2_1/P54"
+      ],
+      "startMs": 915800,
+      "endMs": 917300,
+      "minTimeMs": 916800,
+      "minTtcS": 0,
+      "sampleCount": 16,
+      "kinds": [
+        "vulnerable",
+        "overlap"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/460|Tianjin/8_2_1/P54@921200",
+      "pairKey": "Tianjin/8_2_1/460|Tianjin/8_2_1/P54",
+      "trackIds": [
+        "Tianjin/8_2_1/460",
+        "Tianjin/8_2_1/P54"
+      ],
+      "startMs": 921200,
+      "endMs": 921500,
+      "minTimeMs": 921500,
+      "minTtcS": 2.6802235458606813,
+      "sampleCount": 4,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/410|Tianjin/8_2_1/471@923500",
+      "pairKey": "Tianjin/8_2_1/410|Tianjin/8_2_1/471",
+      "trackIds": [
+        "Tianjin/8_2_1/410",
+        "Tianjin/8_2_1/471"
+      ],
+      "startMs": 923500,
+      "endMs": 924000,
+      "minTimeMs": 923900,
+      "minTtcS": 1.2083769074956632,
+      "sampleCount": 6,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/478|Tianjin/8_2_1/479@937000",
+      "pairKey": "Tianjin/8_2_1/478|Tianjin/8_2_1/479",
+      "trackIds": [
+        "Tianjin/8_2_1/478",
+        "Tianjin/8_2_1/479"
+      ],
+      "startMs": 937000,
+      "endMs": 937600,
+      "minTimeMs": 937600,
+      "minTtcS": 2.333948156800283,
+      "sampleCount": 7,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/477|Tianjin/8_2_1/478@937500",
+      "pairKey": "Tianjin/8_2_1/477|Tianjin/8_2_1/478",
+      "trackIds": [
+        "Tianjin/8_2_1/477",
+        "Tianjin/8_2_1/478"
+      ],
+      "startMs": 937500,
+      "endMs": 938800,
+      "minTimeMs": 938800,
+      "minTtcS": 1.9649519015874954,
+      "sampleCount": 14,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/471|Tianjin/8_2_1/8@942100",
+      "pairKey": "Tianjin/8_2_1/471|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/471",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 942100,
+      "endMs": 942200,
+      "minTimeMs": 942100,
+      "minTtcS": 0,
+      "sampleCount": 2,
+      "kinds": [
+        "overlap"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/477|Tianjin/8_2_1/8@942500",
+      "pairKey": "Tianjin/8_2_1/477|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/477",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 942500,
+      "endMs": 944200,
+      "minTimeMs": 944200,
+      "minTtcS": 1.3411638206200514,
+      "sampleCount": 18,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/469|Tianjin/8_2_1/486@949500",
+      "pairKey": "Tianjin/8_2_1/469|Tianjin/8_2_1/486",
+      "trackIds": [
+        "Tianjin/8_2_1/469",
+        "Tianjin/8_2_1/486"
+      ],
+      "startMs": 949500,
+      "endMs": 950200,
+      "minTimeMs": 950100,
+      "minTtcS": 1.5530818168246747,
+      "sampleCount": 8,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/481|Tianjin/8_2_1/482@951200",
+      "pairKey": "Tianjin/8_2_1/481|Tianjin/8_2_1/482",
+      "trackIds": [
+        "Tianjin/8_2_1/481",
+        "Tianjin/8_2_1/482"
+      ],
+      "startMs": 951200,
+      "endMs": 952900,
+      "minTimeMs": 952900,
+      "minTtcS": 1.3822940779786448,
+      "sampleCount": 18,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/480|Tianjin/8_2_1/482@951900",
+      "pairKey": "Tianjin/8_2_1/480|Tianjin/8_2_1/482",
+      "trackIds": [
+        "Tianjin/8_2_1/480",
+        "Tianjin/8_2_1/482"
+      ],
+      "startMs": 951900,
+      "endMs": 952500,
+      "minTimeMs": 952100,
+      "minTtcS": 2.574262285626674,
+      "sampleCount": 7,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/483|Tianjin/8_2_1/487@953700",
+      "pairKey": "Tianjin/8_2_1/483|Tianjin/8_2_1/487",
+      "trackIds": [
+        "Tianjin/8_2_1/483",
+        "Tianjin/8_2_1/487"
+      ],
+      "startMs": 953700,
+      "endMs": 954100,
+      "minTimeMs": 953900,
+      "minTtcS": 2.9529759798306405,
+      "sampleCount": 5,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/468|Tianjin/8_2_1/8@954900",
+      "pairKey": "Tianjin/8_2_1/468|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/468",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 954900,
+      "endMs": 955500,
+      "minTimeMs": 955200,
+      "minTtcS": 2.5221584278259974,
+      "sampleCount": 7,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/481|Tianjin/8_2_1/489@956100",
+      "pairKey": "Tianjin/8_2_1/481|Tianjin/8_2_1/489",
+      "trackIds": [
+        "Tianjin/8_2_1/481",
+        "Tianjin/8_2_1/489"
+      ],
+      "startMs": 956100,
+      "endMs": 958500,
+      "minTimeMs": 957600,
+      "minTtcS": 2.2481381152829574,
+      "sampleCount": 25,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/410|Tianjin/8_2_1/492@958700",
+      "pairKey": "Tianjin/8_2_1/410|Tianjin/8_2_1/492",
+      "trackIds": [
+        "Tianjin/8_2_1/410",
+        "Tianjin/8_2_1/492"
+      ],
+      "startMs": 958700,
+      "endMs": 959400,
+      "minTimeMs": 959400,
+      "minTtcS": 0.316779813608481,
+      "sampleCount": 8,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/481|Tianjin/8_2_1/490@959000",
+      "pairKey": "Tianjin/8_2_1/481|Tianjin/8_2_1/490",
+      "trackIds": [
+        "Tianjin/8_2_1/481",
+        "Tianjin/8_2_1/490"
+      ],
+      "startMs": 959000,
+      "endMs": 960100,
+      "minTimeMs": 960100,
+      "minTtcS": 1.6216657823439016,
+      "sampleCount": 12,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/480|Tianjin/8_2_1/490@959400",
+      "pairKey": "Tianjin/8_2_1/480|Tianjin/8_2_1/490",
+      "trackIds": [
+        "Tianjin/8_2_1/480",
+        "Tianjin/8_2_1/490"
+      ],
+      "startMs": 959400,
+      "endMs": 960000,
+      "minTimeMs": 959800,
+      "minTtcS": 2.4669797072913617,
+      "sampleCount": 7,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/489|Tianjin/8_2_1/490@960000",
+      "pairKey": "Tianjin/8_2_1/489|Tianjin/8_2_1/490",
+      "trackIds": [
+        "Tianjin/8_2_1/489",
+        "Tianjin/8_2_1/490"
+      ],
+      "startMs": 960000,
+      "endMs": 961000,
+      "minTimeMs": 960600,
+      "minTtcS": 1.6895582610791053,
+      "sampleCount": 11,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/489|Tianjin/8_2_1/495@962000",
+      "pairKey": "Tianjin/8_2_1/489|Tianjin/8_2_1/495",
+      "trackIds": [
+        "Tianjin/8_2_1/489",
+        "Tianjin/8_2_1/495"
+      ],
+      "startMs": 962000,
+      "endMs": 963400,
+      "minTimeMs": 963400,
+      "minTtcS": 0.3040382082679506,
+      "sampleCount": 15,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/481|Tianjin/8_2_1/495@962900",
+      "pairKey": "Tianjin/8_2_1/481|Tianjin/8_2_1/495",
+      "trackIds": [
+        "Tianjin/8_2_1/481",
+        "Tianjin/8_2_1/495"
+      ],
+      "startMs": 962900,
+      "endMs": 963300,
+      "minTimeMs": 963300,
+      "minTtcS": 2.5452536360920774,
+      "sampleCount": 5,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/484|Tianjin/8_2_1/494@963900",
+      "pairKey": "Tianjin/8_2_1/484|Tianjin/8_2_1/494",
+      "trackIds": [
+        "Tianjin/8_2_1/484",
+        "Tianjin/8_2_1/494"
+      ],
+      "startMs": 963900,
+      "endMs": 964700,
+      "minTimeMs": 964100,
+      "minTtcS": 2.4340954584700354,
+      "sampleCount": 9,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/480|Tianjin/8_2_1/500@976800",
+      "pairKey": "Tianjin/8_2_1/480|Tianjin/8_2_1/500",
+      "trackIds": [
+        "Tianjin/8_2_1/480",
+        "Tianjin/8_2_1/500"
+      ],
+      "startMs": 976800,
+      "endMs": 977400,
+      "minTimeMs": 977100,
+      "minTtcS": 2.3804830795193,
+      "sampleCount": 7,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/480|Tianjin/8_2_1/484@978600",
+      "pairKey": "Tianjin/8_2_1/480|Tianjin/8_2_1/484",
+      "trackIds": [
+        "Tianjin/8_2_1/480",
+        "Tianjin/8_2_1/484"
+      ],
+      "startMs": 978600,
+      "endMs": 979000,
+      "minTimeMs": 978900,
+      "minTtcS": 2.7414930850568537,
+      "sampleCount": 5,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/481|Tianjin/8_2_1/494@980100",
+      "pairKey": "Tianjin/8_2_1/481|Tianjin/8_2_1/494",
+      "trackIds": [
+        "Tianjin/8_2_1/481",
+        "Tianjin/8_2_1/494"
+      ],
+      "startMs": 980100,
+      "endMs": 981100,
+      "minTimeMs": 981000,
+      "minTtcS": 2.3255272213398195,
+      "sampleCount": 11,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/484|Tianjin/8_2_1/503@980600",
+      "pairKey": "Tianjin/8_2_1/484|Tianjin/8_2_1/503",
+      "trackIds": [
+        "Tianjin/8_2_1/484",
+        "Tianjin/8_2_1/503"
+      ],
+      "startMs": 980600,
+      "endMs": 980600,
+      "minTimeMs": 980600,
+      "minTtcS": 2.7299571049118545,
+      "sampleCount": 1,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/480|Tianjin/8_2_1/494@980800",
+      "pairKey": "Tianjin/8_2_1/480|Tianjin/8_2_1/494",
+      "trackIds": [
+        "Tianjin/8_2_1/480",
+        "Tianjin/8_2_1/494"
+      ],
+      "startMs": 980800,
+      "endMs": 982000,
+      "minTimeMs": 981800,
+      "minTtcS": 2.2423135152619427,
+      "sampleCount": 13,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/484|Tianjin/8_2_1/493@980900",
+      "pairKey": "Tianjin/8_2_1/484|Tianjin/8_2_1/493",
+      "trackIds": [
+        "Tianjin/8_2_1/484",
+        "Tianjin/8_2_1/493"
+      ],
+      "startMs": 980900,
+      "endMs": 982400,
+      "minTimeMs": 982300,
+      "minTtcS": 1.8357742746497085,
+      "sampleCount": 14,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/410|Tianjin/8_2_1/499@982100",
+      "pairKey": "Tianjin/8_2_1/410|Tianjin/8_2_1/499",
+      "trackIds": [
+        "Tianjin/8_2_1/410",
+        "Tianjin/8_2_1/499"
+      ],
+      "startMs": 982100,
+      "endMs": 982400,
+      "minTimeMs": 982300,
+      "minTtcS": 2.8196482719759928,
+      "sampleCount": 4,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/499|Tianjin/8_2_1/501@982400",
+      "pairKey": "Tianjin/8_2_1/499|Tianjin/8_2_1/501",
+      "trackIds": [
+        "Tianjin/8_2_1/499",
+        "Tianjin/8_2_1/501"
+      ],
+      "startMs": 982400,
+      "endMs": 983400,
+      "minTimeMs": 983100,
+      "minTtcS": 1.6207436447901569,
+      "sampleCount": 11,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/506|Tianjin/8_2_1/507@988500",
+      "pairKey": "Tianjin/8_2_1/506|Tianjin/8_2_1/507",
+      "trackIds": [
+        "Tianjin/8_2_1/506",
+        "Tianjin/8_2_1/507"
+      ],
+      "startMs": 988500,
+      "endMs": 989700,
+      "minTimeMs": 989400,
+      "minTtcS": 1.9460639080531688,
+      "sampleCount": 13,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/503|Tianjin/8_2_1/509@989100",
+      "pairKey": "Tianjin/8_2_1/503|Tianjin/8_2_1/509",
+      "trackIds": [
+        "Tianjin/8_2_1/503",
+        "Tianjin/8_2_1/509"
+      ],
+      "startMs": 989100,
+      "endMs": 989300,
+      "minTimeMs": 989300,
+      "minTtcS": 2.7545048365439633,
+      "sampleCount": 3,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/509|Tianjin/8_2_1/510@990300",
+      "pairKey": "Tianjin/8_2_1/509|Tianjin/8_2_1/510",
+      "trackIds": [
+        "Tianjin/8_2_1/509",
+        "Tianjin/8_2_1/510"
+      ],
+      "startMs": 990300,
+      "endMs": 990500,
+      "minTimeMs": 990500,
+      "minTtcS": 2.8298630982582167,
+      "sampleCount": 3,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/507|Tianjin/8_2_1/510@990900",
+      "pairKey": "Tianjin/8_2_1/507|Tianjin/8_2_1/510",
+      "trackIds": [
+        "Tianjin/8_2_1/507",
+        "Tianjin/8_2_1/510"
+      ],
+      "startMs": 990900,
+      "endMs": 991000,
+      "minTimeMs": 990900,
+      "minTtcS": 2.985478378439205,
+      "sampleCount": 2,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/506|Tianjin/8_2_1/513@993400",
+      "pairKey": "Tianjin/8_2_1/506|Tianjin/8_2_1/513",
+      "trackIds": [
+        "Tianjin/8_2_1/506",
+        "Tianjin/8_2_1/513"
+      ],
+      "startMs": 993400,
+      "endMs": 993500,
+      "minTimeMs": 993500,
+      "minTtcS": 1.2818221236960359,
+      "sampleCount": 2,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/3|Tianjin/8_2_1/514@1001900",
+      "pairKey": "Tianjin/8_2_1/3|Tianjin/8_2_1/514",
+      "trackIds": [
+        "Tianjin/8_2_1/3",
+        "Tianjin/8_2_1/514"
+      ],
+      "startMs": 1001900,
+      "endMs": 1003300,
+      "minTimeMs": 1003300,
+      "minTtcS": 1.9499336338993138,
+      "sampleCount": 15,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/410|Tianjin/8_2_1/515@1004800",
+      "pairKey": "Tianjin/8_2_1/410|Tianjin/8_2_1/515",
+      "trackIds": [
+        "Tianjin/8_2_1/410",
+        "Tianjin/8_2_1/515"
+      ],
+      "startMs": 1004800,
+      "endMs": 1005200,
+      "minTimeMs": 1005100,
+      "minTtcS": 2.7053479107723946,
+      "sampleCount": 5,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/501|Tianjin/8_2_1/515@1005100",
+      "pairKey": "Tianjin/8_2_1/501|Tianjin/8_2_1/515",
+      "trackIds": [
+        "Tianjin/8_2_1/501",
+        "Tianjin/8_2_1/515"
+      ],
+      "startMs": 1005100,
+      "endMs": 1005900,
+      "minTimeMs": 1005600,
+      "minTtcS": 1.5934763820842905,
+      "sampleCount": 9,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/504|Tianjin/8_2_1/515@1005500",
+      "pairKey": "Tianjin/8_2_1/504|Tianjin/8_2_1/515",
+      "trackIds": [
+        "Tianjin/8_2_1/504",
+        "Tianjin/8_2_1/515"
+      ],
+      "startMs": 1005500,
+      "endMs": 1005600,
+      "minTimeMs": 1005600,
+      "minTtcS": 2.8338447537763223,
+      "sampleCount": 2,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/511|Tianjin/8_2_1/516@1007900",
+      "pairKey": "Tianjin/8_2_1/511|Tianjin/8_2_1/516",
+      "trackIds": [
+        "Tianjin/8_2_1/511",
+        "Tianjin/8_2_1/516"
+      ],
+      "startMs": 1007900,
+      "endMs": 1008300,
+      "minTimeMs": 1008200,
+      "minTtcS": 1.7180251922986294,
+      "sampleCount": 5,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/516|Tianjin/8_2_1/8@1007900",
+      "pairKey": "Tianjin/8_2_1/516|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/516",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 1007900,
+      "endMs": 1008400,
+      "minTimeMs": 1008300,
+      "minTtcS": 2.2458254052937723,
+      "sampleCount": 6,
+      "kinds": [
+        "cross",
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/511|Tianjin/8_2_1/8@1008200",
+      "pairKey": "Tianjin/8_2_1/511|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/511",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 1008200,
+      "endMs": 1008400,
+      "minTimeMs": 1008300,
+      "minTtcS": 2.9396698632278615,
+      "sampleCount": 3,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/513|Tianjin/8_2_1/516@1008600",
+      "pairKey": "Tianjin/8_2_1/513|Tianjin/8_2_1/516",
+      "trackIds": [
+        "Tianjin/8_2_1/513",
+        "Tianjin/8_2_1/516"
+      ],
+      "startMs": 1008600,
+      "endMs": 1009000,
+      "minTimeMs": 1009000,
+      "minTtcS": 1.8030159129743006,
+      "sampleCount": 5,
+      "kinds": [
+        "other",
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/501|Tianjin/8_2_1/505@1013600",
+      "pairKey": "Tianjin/8_2_1/501|Tianjin/8_2_1/505",
+      "trackIds": [
+        "Tianjin/8_2_1/501",
+        "Tianjin/8_2_1/505"
+      ],
+      "startMs": 1013600,
+      "endMs": 1014200,
+      "minTimeMs": 1014100,
+      "minTtcS": 1.6171329227778934,
+      "sampleCount": 7,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/519|Tianjin/8_2_1/521@1014100",
+      "pairKey": "Tianjin/8_2_1/519|Tianjin/8_2_1/521",
+      "trackIds": [
+        "Tianjin/8_2_1/519",
+        "Tianjin/8_2_1/521"
+      ],
+      "startMs": 1014100,
+      "endMs": 1015100,
+      "minTimeMs": 1014900,
+      "minTtcS": 1.5581212905391568,
+      "sampleCount": 11,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/504|Tianjin/8_2_1/520@1017900",
+      "pairKey": "Tianjin/8_2_1/504|Tianjin/8_2_1/520",
+      "trackIds": [
+        "Tianjin/8_2_1/504",
+        "Tianjin/8_2_1/520"
+      ],
+      "startMs": 1017900,
+      "endMs": 1019000,
+      "minTimeMs": 1018600,
+      "minTtcS": 1.765002783634572,
+      "sampleCount": 12,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/527|Tianjin/8_2_1/P56@1028300",
+      "pairKey": "Tianjin/8_2_1/527|Tianjin/8_2_1/P56",
+      "trackIds": [
+        "Tianjin/8_2_1/527",
+        "Tianjin/8_2_1/P56"
+      ],
+      "startMs": 1028300,
+      "endMs": 1028700,
+      "minTimeMs": 1028600,
+      "minTtcS": 2.522765207854506,
+      "sampleCount": 5,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/530|Tianjin/8_2_1/8@1030100",
+      "pairKey": "Tianjin/8_2_1/530|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/530",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 1030100,
+      "endMs": 1031100,
+      "minTimeMs": 1030800,
+      "minTtcS": 1.407737715914593,
+      "sampleCount": 11,
+      "kinds": [
+        "cross",
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/532|Tianjin/8_2_1/534@1035800",
+      "pairKey": "Tianjin/8_2_1/532|Tianjin/8_2_1/534",
+      "trackIds": [
+        "Tianjin/8_2_1/532",
+        "Tianjin/8_2_1/534"
+      ],
+      "startMs": 1035800,
+      "endMs": 1035800,
+      "minTimeMs": 1035800,
+      "minTtcS": 2.9083685059360045,
+      "sampleCount": 1,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/528|Tianjin/8_2_1/8@1036300",
+      "pairKey": "Tianjin/8_2_1/528|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/528",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 1036300,
+      "endMs": 1037500,
+      "minTimeMs": 1037300,
+      "minTtcS": 2.171670249233723,
+      "sampleCount": 13,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/519|Tianjin/8_2_1/529@1037600",
+      "pairKey": "Tianjin/8_2_1/519|Tianjin/8_2_1/529",
+      "trackIds": [
+        "Tianjin/8_2_1/519",
+        "Tianjin/8_2_1/529"
+      ],
+      "startMs": 1037600,
+      "endMs": 1037900,
+      "minTimeMs": 1037900,
+      "minTtcS": 2.3454033015225404,
+      "sampleCount": 4,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/533|Tianjin/8_2_1/535@1038500",
+      "pairKey": "Tianjin/8_2_1/533|Tianjin/8_2_1/535",
+      "trackIds": [
+        "Tianjin/8_2_1/533",
+        "Tianjin/8_2_1/535"
+      ],
+      "startMs": 1038500,
+      "endMs": 1039200,
+      "minTimeMs": 1039000,
+      "minTtcS": 2.2848968463034756,
+      "sampleCount": 8,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/536|Tianjin/8_2_1/541@1046100",
+      "pairKey": "Tianjin/8_2_1/536|Tianjin/8_2_1/541",
+      "trackIds": [
+        "Tianjin/8_2_1/536",
+        "Tianjin/8_2_1/541"
+      ],
+      "startMs": 1046100,
+      "endMs": 1046300,
+      "minTimeMs": 1046100,
+      "minTtcS": 2.24265441312222,
+      "sampleCount": 3,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/538|Tianjin/8_2_1/541@1046300",
+      "pairKey": "Tianjin/8_2_1/538|Tianjin/8_2_1/541",
+      "trackIds": [
+        "Tianjin/8_2_1/538",
+        "Tianjin/8_2_1/541"
+      ],
+      "startMs": 1046300,
+      "endMs": 1048500,
+      "minTimeMs": 1048200,
+      "minTtcS": 0.32494433967495195,
+      "sampleCount": 23,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/536|Tianjin/8_2_1/541@1047000",
+      "pairKey": "Tianjin/8_2_1/536|Tianjin/8_2_1/541",
+      "trackIds": [
+        "Tianjin/8_2_1/536",
+        "Tianjin/8_2_1/541"
+      ],
+      "startMs": 1047000,
+      "endMs": 1050500,
+      "minTimeMs": 1050000,
+      "minTtcS": 0,
+      "sampleCount": 36,
+      "kinds": [
+        "vulnerable",
+        "overlap"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/534|Tianjin/8_2_1/541@1049400",
+      "pairKey": "Tianjin/8_2_1/534|Tianjin/8_2_1/541",
+      "trackIds": [
+        "Tianjin/8_2_1/534",
+        "Tianjin/8_2_1/541"
+      ],
+      "startMs": 1049400,
+      "endMs": 1049700,
+      "minTimeMs": 1049700,
+      "minTtcS": 2.834700270903971,
+      "sampleCount": 4,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/534|Tianjin/8_2_1/539@1049800",
+      "pairKey": "Tianjin/8_2_1/534|Tianjin/8_2_1/539",
+      "trackIds": [
+        "Tianjin/8_2_1/534",
+        "Tianjin/8_2_1/539"
+      ],
+      "startMs": 1049800,
+      "endMs": 1050600,
+      "minTimeMs": 1050500,
+      "minTtcS": 1.4609899747826678,
+      "sampleCount": 9,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/534|Tianjin/8_2_1/541@1050900",
+      "pairKey": "Tianjin/8_2_1/534|Tianjin/8_2_1/541",
+      "trackIds": [
+        "Tianjin/8_2_1/534",
+        "Tianjin/8_2_1/541"
+      ],
+      "startMs": 1050900,
+      "endMs": 1051700,
+      "minTimeMs": 1051400,
+      "minTtcS": 2.5262618265467265,
+      "sampleCount": 9,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/539|Tianjin/8_2_1/544@1056000",
+      "pairKey": "Tianjin/8_2_1/539|Tianjin/8_2_1/544",
+      "trackIds": [
+        "Tianjin/8_2_1/539",
+        "Tianjin/8_2_1/544"
+      ],
+      "startMs": 1056000,
+      "endMs": 1056400,
+      "minTimeMs": 1056400,
+      "minTtcS": 2.8816216825549095,
+      "sampleCount": 5,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/540|Tianjin/8_2_1/544@1057800",
+      "pairKey": "Tianjin/8_2_1/540|Tianjin/8_2_1/544",
+      "trackIds": [
+        "Tianjin/8_2_1/540",
+        "Tianjin/8_2_1/544"
+      ],
+      "startMs": 1057800,
+      "endMs": 1058600,
+      "minTimeMs": 1058400,
+      "minTtcS": 1.5437122736034274,
+      "sampleCount": 9,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/548|Tianjin/8_2_1/551@1059900",
+      "pairKey": "Tianjin/8_2_1/548|Tianjin/8_2_1/551",
+      "trackIds": [
+        "Tianjin/8_2_1/548",
+        "Tianjin/8_2_1/551"
+      ],
+      "startMs": 1059900,
+      "endMs": 1060700,
+      "minTimeMs": 1060200,
+      "minTtcS": 2.8611187077209275,
+      "sampleCount": 9,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/538|Tianjin/8_2_1/548@1060300",
+      "pairKey": "Tianjin/8_2_1/538|Tianjin/8_2_1/548",
+      "trackIds": [
+        "Tianjin/8_2_1/538",
+        "Tianjin/8_2_1/548"
+      ],
+      "startMs": 1060300,
+      "endMs": 1060700,
+      "minTimeMs": 1060700,
+      "minTtcS": 2.7680452256408383,
+      "sampleCount": 5,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/410|Tianjin/8_2_1/556@1068300",
+      "pairKey": "Tianjin/8_2_1/410|Tianjin/8_2_1/556",
+      "trackIds": [
+        "Tianjin/8_2_1/410",
+        "Tianjin/8_2_1/556"
+      ],
+      "startMs": 1068300,
+      "endMs": 1070700,
+      "minTimeMs": 1070000,
+      "minTtcS": 1.9120552820624372,
+      "sampleCount": 25,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/552|Tianjin/8_2_1/554@1069200",
+      "pairKey": "Tianjin/8_2_1/552|Tianjin/8_2_1/554",
+      "trackIds": [
+        "Tianjin/8_2_1/552",
+        "Tianjin/8_2_1/554"
+      ],
+      "startMs": 1069200,
+      "endMs": 1070300,
+      "minTimeMs": 1070300,
+      "minTtcS": 1.202103961443137,
+      "sampleCount": 12,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/554|Tianjin/8_2_1/558@1078900",
+      "pairKey": "Tianjin/8_2_1/554|Tianjin/8_2_1/558",
+      "trackIds": [
+        "Tianjin/8_2_1/554",
+        "Tianjin/8_2_1/558"
+      ],
+      "startMs": 1078900,
+      "endMs": 1078900,
+      "minTimeMs": 1078900,
+      "minTtcS": 2.874013400793051,
+      "sampleCount": 1,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/554|Tianjin/8_2_1/559@1080900",
+      "pairKey": "Tianjin/8_2_1/554|Tianjin/8_2_1/559",
+      "trackIds": [
+        "Tianjin/8_2_1/554",
+        "Tianjin/8_2_1/559"
+      ],
+      "startMs": 1080900,
+      "endMs": 1081300,
+      "minTimeMs": 1081100,
+      "minTtcS": 2.0274373796855887,
+      "sampleCount": 5,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/557|Tianjin/8_2_1/558@1083800",
+      "pairKey": "Tianjin/8_2_1/557|Tianjin/8_2_1/558",
+      "trackIds": [
+        "Tianjin/8_2_1/557",
+        "Tianjin/8_2_1/558"
+      ],
+      "startMs": 1083800,
+      "endMs": 1085300,
+      "minTimeMs": 1085100,
+      "minTtcS": 1.4173766922685151,
+      "sampleCount": 16,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/553|Tianjin/8_2_1/559@1084000",
+      "pairKey": "Tianjin/8_2_1/553|Tianjin/8_2_1/559",
+      "trackIds": [
+        "Tianjin/8_2_1/553",
+        "Tianjin/8_2_1/559"
+      ],
+      "startMs": 1084000,
+      "endMs": 1084900,
+      "minTimeMs": 1084300,
+      "minTtcS": 2.611234204797701,
+      "sampleCount": 10,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/552|Tianjin/8_2_1/561@1084600",
+      "pairKey": "Tianjin/8_2_1/552|Tianjin/8_2_1/561",
+      "trackIds": [
+        "Tianjin/8_2_1/552",
+        "Tianjin/8_2_1/561"
+      ],
+      "startMs": 1084600,
+      "endMs": 1086400,
+      "minTimeMs": 1086400,
+      "minTtcS": 1.161373837876666,
+      "sampleCount": 19,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/558|Tianjin/8_2_1/8@1085100",
+      "pairKey": "Tianjin/8_2_1/558|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/558",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 1085100,
+      "endMs": 1085200,
+      "minTimeMs": 1085200,
+      "minTtcS": 2.79955666951278,
+      "sampleCount": 2,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/553|Tianjin/8_2_1/564@1088100",
+      "pairKey": "Tianjin/8_2_1/553|Tianjin/8_2_1/564",
+      "trackIds": [
+        "Tianjin/8_2_1/553",
+        "Tianjin/8_2_1/564"
+      ],
+      "startMs": 1088100,
+      "endMs": 1088500,
+      "minTimeMs": 1088100,
+      "minTtcS": 2.6395996188850996,
+      "sampleCount": 5,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/553|Tianjin/8_2_1/565@1089900",
+      "pairKey": "Tianjin/8_2_1/553|Tianjin/8_2_1/565",
+      "trackIds": [
+        "Tianjin/8_2_1/553",
+        "Tianjin/8_2_1/565"
+      ],
+      "startMs": 1089900,
+      "endMs": 1090600,
+      "minTimeMs": 1090600,
+      "minTtcS": 2.5907388212287343,
+      "sampleCount": 8,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/564|Tianjin/8_2_1/565@1090800",
+      "pairKey": "Tianjin/8_2_1/564|Tianjin/8_2_1/565",
+      "trackIds": [
+        "Tianjin/8_2_1/564",
+        "Tianjin/8_2_1/565"
+      ],
+      "startMs": 1090800,
+      "endMs": 1091600,
+      "minTimeMs": 1091100,
+      "minTtcS": 2.4048778648782103,
+      "sampleCount": 9,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/560|Tianjin/8_2_1/567@1096200",
+      "pairKey": "Tianjin/8_2_1/560|Tianjin/8_2_1/567",
+      "trackIds": [
+        "Tianjin/8_2_1/560",
+        "Tianjin/8_2_1/567"
+      ],
+      "startMs": 1096200,
+      "endMs": 1096800,
+      "minTimeMs": 1096800,
+      "minTtcS": 2.361912431329699,
+      "sampleCount": 7,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/563|Tianjin/8_2_1/567@1096800",
+      "pairKey": "Tianjin/8_2_1/563|Tianjin/8_2_1/567",
+      "trackIds": [
+        "Tianjin/8_2_1/563",
+        "Tianjin/8_2_1/567"
+      ],
+      "startMs": 1096800,
+      "endMs": 1097600,
+      "minTimeMs": 1097600,
+      "minTtcS": 2.290171591355127,
+      "sampleCount": 9,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/570|Tianjin/8_2_1/8@1119100",
+      "pairKey": "Tianjin/8_2_1/570|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/570",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 1119100,
+      "endMs": 1120800,
+      "minTimeMs": 1120600,
+      "minTtcS": 1.3026823762163577,
+      "sampleCount": 18,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/571|Tianjin/8_2_1/574@1128900",
+      "pairKey": "Tianjin/8_2_1/571|Tianjin/8_2_1/574",
+      "trackIds": [
+        "Tianjin/8_2_1/571",
+        "Tianjin/8_2_1/574"
+      ],
+      "startMs": 1128900,
+      "endMs": 1129000,
+      "minTimeMs": 1129000,
+      "minTtcS": 2.7431991062579524,
+      "sampleCount": 2,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/571|Tianjin/8_2_1/578@1129600",
+      "pairKey": "Tianjin/8_2_1/571|Tianjin/8_2_1/578",
+      "trackIds": [
+        "Tianjin/8_2_1/571",
+        "Tianjin/8_2_1/578"
+      ],
+      "startMs": 1129600,
+      "endMs": 1132100,
+      "minTimeMs": 1132000,
+      "minTtcS": 1.5193606336590786,
+      "sampleCount": 26,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/571|Tianjin/8_2_1/581@1134800",
+      "pairKey": "Tianjin/8_2_1/571|Tianjin/8_2_1/581",
+      "trackIds": [
+        "Tianjin/8_2_1/571",
+        "Tianjin/8_2_1/581"
+      ],
+      "startMs": 1134800,
+      "endMs": 1135700,
+      "minTimeMs": 1135700,
+      "minTtcS": 1.9968190562412318,
+      "sampleCount": 10,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/583|Tianjin/8_2_1/585@1144900",
+      "pairKey": "Tianjin/8_2_1/583|Tianjin/8_2_1/585",
+      "trackIds": [
+        "Tianjin/8_2_1/583",
+        "Tianjin/8_2_1/585"
+      ],
+      "startMs": 1144900,
+      "endMs": 1147000,
+      "minTimeMs": 1146500,
+      "minTtcS": 2.0000247480825366,
+      "sampleCount": 22,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/584|Tianjin/8_2_1/585@1146700",
+      "pairKey": "Tianjin/8_2_1/584|Tianjin/8_2_1/585",
+      "trackIds": [
+        "Tianjin/8_2_1/584",
+        "Tianjin/8_2_1/585"
+      ],
+      "startMs": 1146700,
+      "endMs": 1147400,
+      "minTimeMs": 1146900,
+      "minTtcS": 2.319358520439339,
+      "sampleCount": 8,
+      "kinds": [
+        "cross"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/583|Tianjin/8_2_1/584@1146800",
+      "pairKey": "Tianjin/8_2_1/583|Tianjin/8_2_1/584",
+      "trackIds": [
+        "Tianjin/8_2_1/583",
+        "Tianjin/8_2_1/584"
+      ],
+      "startMs": 1146800,
+      "endMs": 1147000,
+      "minTimeMs": 1146900,
+      "minTtcS": 1.7640358120118362,
+      "sampleCount": 3,
+      "kinds": [
+        "other",
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/591|Tianjin/8_2_1/592@1154200",
+      "pairKey": "Tianjin/8_2_1/591|Tianjin/8_2_1/592",
+      "trackIds": [
+        "Tianjin/8_2_1/591",
+        "Tianjin/8_2_1/592"
+      ],
+      "startMs": 1154200,
+      "endMs": 1154700,
+      "minTimeMs": 1154700,
+      "minTtcS": 0.8415996411171766,
+      "sampleCount": 6,
+      "kinds": [
+        "cross",
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/595|Tianjin/8_2_1/597@1160500",
+      "pairKey": "Tianjin/8_2_1/595|Tianjin/8_2_1/597",
+      "trackIds": [
+        "Tianjin/8_2_1/595",
+        "Tianjin/8_2_1/597"
+      ],
+      "startMs": 1160500,
+      "endMs": 1162800,
+      "minTimeMs": 1161600,
+      "minTtcS": 2.396419645021867,
+      "sampleCount": 24,
+      "kinds": [
+        "rear"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/587|Tianjin/8_2_1/593@1162500",
+      "pairKey": "Tianjin/8_2_1/587|Tianjin/8_2_1/593",
+      "trackIds": [
+        "Tianjin/8_2_1/587",
+        "Tianjin/8_2_1/593"
+      ],
+      "startMs": 1162500,
+      "endMs": 1165100,
+      "minTimeMs": 1164900,
+      "minTtcS": 1.3097606148892116,
+      "sampleCount": 27,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/589|Tianjin/8_2_1/597@1164300",
+      "pairKey": "Tianjin/8_2_1/589|Tianjin/8_2_1/597",
+      "trackIds": [
+        "Tianjin/8_2_1/589",
+        "Tianjin/8_2_1/597"
+      ],
+      "startMs": 1164300,
+      "endMs": 1164800,
+      "minTimeMs": 1164600,
+      "minTtcS": 2.5450280368167713,
+      "sampleCount": 6,
+      "kinds": [
+        "other"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/593|Tianjin/8_2_1/P66@1184500",
+      "pairKey": "Tianjin/8_2_1/593|Tianjin/8_2_1/P66",
+      "trackIds": [
+        "Tianjin/8_2_1/593",
+        "Tianjin/8_2_1/P66"
+      ],
+      "startMs": 1184500,
+      "endMs": 1188700,
+      "minTimeMs": 1184500,
+      "minTtcS": 0,
+      "sampleCount": 43,
+      "kinds": [
+        "overlap"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/601|Tianjin/8_2_1/P62@1190100",
+      "pairKey": "Tianjin/8_2_1/601|Tianjin/8_2_1/P62",
+      "trackIds": [
+        "Tianjin/8_2_1/601",
+        "Tianjin/8_2_1/P62"
+      ],
+      "startMs": 1190100,
+      "endMs": 1191500,
+      "minTimeMs": 1191500,
+      "minTtcS": 0.8564263775648848,
+      "sampleCount": 15,
+      "kinds": [
+        "vulnerable"
+      ]
+    },
+    {
+      "id": "Tianjin/8_2_1/605|Tianjin/8_2_1/8@1199900",
+      "pairKey": "Tianjin/8_2_1/605|Tianjin/8_2_1/8",
+      "trackIds": [
+        "Tianjin/8_2_1/605",
+        "Tianjin/8_2_1/8"
+      ],
+      "startMs": 1199900,
+      "endMs": 1201100,
+      "minTimeMs": 1200900,
+      "minTtcS": 1.3474158417103748,
+      "sampleCount": 13,
+      "kinds": [
+        "other",
+        "rear"
+      ]
+    }
+  ]
+}

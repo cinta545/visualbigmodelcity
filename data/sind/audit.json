@@ -1,0 +1,48 @@
+{
+  "dataset": "SinD",
+  "recording": "Tianjin/8_2_1",
+  "commit": "930e4dea78d924c6e9a58ff8e378331f93bba8ec",
+  "source": "https://github.com/SOTIF-AVLab/SinD",
+  "mode": "historical-observation",
+  "units": {
+    "position": "m",
+    "time": "ms",
+    "velocity": "m/s",
+    "yaw": "rad"
+  },
+  "sampleColumns": [
+    "timestamp_ms",
+    "x",
+    "y",
+    "vx",
+    "vy",
+    "yaw_rad"
+  ],
+  "rows": {
+    "sind-vehicles.csv": 129273,
+    "sind-pedestrians.csv": 36792
+  },
+  "tracks": 677,
+  "classes": {
+    "motorcycle": 171,
+    "bus": 4,
+    "car": 268,
+    "bicycle": 131,
+    "tricycle": 33,
+    "truck": 4,
+    "pedestrian": 66
+  },
+  "durationMs": 1201601.6016016016,
+  "signalEvents": 122,
+  "hashes": {
+    "sind-vehicles.csv": "c377452a22ad0d57e2ebc9a8bccf050ef50c32c10ce35d7984a12edc24e532b5",
+    "sind-pedestrians.csv": "97e9b8a03e6edb0e6f7141b9edc3d42c75d0a9e0fd2981c71e60c9e288edbd02"
+  },
+  "projection": "WGS84 UTM31N minus projected (0,0)",
+  "bounds": [
+    -26.464083243452478,
+    -10.101363901008776,
+    58.03085198253393,
+    43.72450485835534
+  ]
+}
