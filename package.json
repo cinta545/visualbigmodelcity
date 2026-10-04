@@ -1,6 +1,6 @@
 {
   "name": "bigmodeltraffic",
-  "version": "0.3.0",
+  "version": "2.0.0",
   "private": true,
   "description": "Semantic traffic digital twin full-stack prototype with SQLite scene ledger",
   "engines": {
@@ -17,7 +17,9 @@
     "sind:public:prepare": "python scripts/prepare-sind-public.py",
     "sind:gate": "node scripts/evaluate-sind-gate.mjs",
     "cities:prepare": "python scripts/prepare-city-scenes.py",
-    "cities:check": "node scripts/check-city.cjs"
+    "cities:check": "node scripts/check-city.cjs",
+    "home:check": "node scripts/check-integrated-home.cjs",
+    "links:check": "node scripts/check-scene-links.cjs"
   },
   "dependencies": {
     "cors": "^2.8.6",

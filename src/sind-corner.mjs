@@ -1,11 +1,13 @@
+import {shopInterior,shopSurface} from './city-shop-interiors.mjs';
+import {shopDetails} from './city-shop-details.mjs';
 import * as THREE from 'three';
 import {box,cylinder,mat,textPanel,groundMaterial,batchStatic} from './district/materials.js';
 
 // Designed scenery. All horizontal positions use the audited site configuration.
 export function createCorner(scene,site,pavement){
  const root=new THREE.Group();root.name='Designed corner: '+site.id;scene.add(root);
- const stone=mat(site.building.color||0xd0c8b7,.85),trim=mat(0xe6e0d2,.7),metal=mat(0x475554,.37,.72),wood=mat(0x89654a,.8);
- const glass=new THREE.MeshPhysicalMaterial({color:0x9ab0b1,roughness:.13,metalness:.05,transparent:true,opacity:.25,depthWrite:false,side:THREE.DoubleSide});
+ const stone=shopSurface('stone',site.building.color||0xd0c8b7),trim=shopSurface('stone',0xe6e0d2),metal=shopSurface('metal',0x475554),wood=shopSurface('wood',0x89654a);
+ const glass=new THREE.MeshPhysicalMaterial({color:0x9ab0b1,roughness:.08,metalness:0,envMapIntensity:.65,transparent:true,opacity:.18,depthWrite:false,side:THREE.DoubleSide});
  const upperGlass=new THREE.MeshStandardMaterial({color:0x4f6970,roughness:.24,metalness:.55});
  const [x0,y0,x1,y1]=site.building.bounds,w=x1-x0,d=y1-y0,cx=(x0+x1)/2,cz=-(y0+y1)/2,h=site.building.height;
  const polygons=pavement.type==='Polygon'?[pavement.coordinates]:pavement.coordinates;
@@ -30,38 +32,29 @@ export function createCorner(scene,site,pavement){
   box(buildingRoot,left,2.25,z,.45,4.4,.65,trim);
   box(buildingRoot,right,2.25,z,.45,4.4,.65,trim);
   box(buildingRoot,mid,3.55,z+.1,w/3-.45,.7,.35,stone);
-  textPanel(buildingRoot,shops[j],mid,3.55,z+.285,w/3-1,.52,{background:signColors[j],font:105});
+  textPanel(buildingRoot,shops[j],mid,3.55,z+.285,w/3-1,.52,{background:signColors[j],font:150,proportional:true});
   // Glass bays and separately framed entrance doors.
   for(let bay=0;bay<4;bay++){
    const bx=left+.4+(bay+.5)*(w/3-.8)/4,bw=(w/3-.8)/4;
-   box(buildingRoot,bx,1.73,z+.02,bw-.065,2.9,.035,glass).castShadow=false;
+   const pane=new THREE.Mesh(new THREE.PlaneGeometry(bw-.065,2.9),glass);pane.position.set(bx,1.73,z+.04);buildingRoot.add(pane);
    box(buildingRoot,bx-bw/2,1.73,z+.05,.06,2.9,.08,metal);
    box(buildingRoot,bx,3.16,z+.05,bw,.065,.08,metal);
    box(buildingRoot,bx,.29,z+.05,bw,.065,.08,metal);
-   if(bay===2){cylinder(buildingRoot,bx+.45,1.48,z+.16,.025,.58,metal,8);}
+
   }
   box(buildingRoot,mid,3.98,z+.55,w/3-.1,.14,1.5,trim);
   for(let k=0;k<12;k++)box(buildingRoot,left+.25+k*.81,4.12,z+.4,.055,.18,1.15,wood);
-  // Store interiors: shelves, counters, tables, lights, and a visible back wall.
-  box(buildingRoot,mid,1.04,z-3.5,6.8,1.6,.6,wood);
-  box(buildingRoot,mid,1.89,z-3.5,7,.12,.82,trim);
-  for(let shelf=0;shelf<3;shelf++){
-   const sy=.8+shelf*.65;box(buildingRoot,mid,sy,z-5.8,7,.08,.45,wood);
-   for(let k=0;k<15;k++)box(buildingRoot,mid-3.1+k*.43,sy+.23,z-5.75,.22,.38,.2,mat([0xa48a6a,0x626f63,0xb7b3a0,0x91624a][(k+j)%4]));
-  }
-  for(let t=0;t<2;t++){
-   const tx=mid-2.4+t*4.6;
-   cylinder(buildingRoot,tx,.95,z-1.6,.58,.065,wood,24);cylinder(buildingRoot,tx,.5,z-1.6,.045,.9,metal,10);
-   for(const side of [-1,1]){
-    box(buildingRoot,tx+side*.72,.56,z-1.6,.4,.08,.4,wood);
-    box(buildingRoot,tx+side*.87,.87,z-1.6,.06,.55,.42,wood);
-    for(const dx of [-.14,.14])box(buildingRoot,tx+side*.72+dx,.3,z-1.6,.035,.5,.3,metal);
-   }
-  }
-  for(const offset of [-2,2]){
-   cylinder(buildingRoot,mid+offset,3.15,z-2,.014,1.25,metal,8);
-   const shade=new THREE.Mesh(new THREE.ConeGeometry(.3,.25,20,1,true),mat(0xb89a69,.5,.4));shade.position.set(mid+offset,2.6,z-2);buildingRoot.add(shade);
-  }
+  shopDetails(buildingRoot,left,right,z,j);
+  shopInterior(buildingRoot,{left,right,z,depth:d,name:shops[j]});
+ }
+ for(const xx of [x0+.22,x1-.22]){
+  cylinder(buildingRoot,xx,h/2,-y0+.38,.045,h-.3,metal,10);
+  for(let yy=1;yy<h;yy+=2.8)box(buildingRoot,xx,yy,-y0+.37,.14,.055,.13,metal);
+ }
+ for(let j=0;j<=3;j++){
+  const xx=x0+j*w/3;
+  box(buildingRoot,xx,.48,-y0+.34,.46,.48,.08,mat(0x9a9c90));
+  for(let yy=.85;yy<3.2;yy+=.55)box(buildingRoot,xx,yy,-y0+.332,.44,.012,.012,mat(0x92978c));
  }
  // Upper floor windows have recess surrounds, mullions, ledges and service details.
  for(let floor=0;floor<Math.floor((h-4.7)/3.05);floor++){

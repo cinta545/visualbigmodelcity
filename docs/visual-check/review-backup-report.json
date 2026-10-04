@@ -1,9 +1,0 @@
-{
-  "wrongVersionRejected": true,
-  "preserveDefault": true,
-  "overwriteExplicit": true,
-  "jsonRoundTrip": true,
-  "categoryFilter": true,
-  "sensitivityRows": 12,
-  "errors": []
-}

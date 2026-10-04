@@ -3,7 +3,12 @@ import {assessRisks,riskNames} from './sind-risk.mjs';
 import {predict} from './sind-prediction.mjs';
 const $=id=>document.getElementById(id),palette={car:'#92cbbd',bus:'#9daed0',truck:'#d2b58b',motorcycle:'#8fb0b8',tricycle:'#b5a6c7',bicycle:'#b8c694'},labels={car:'轿车',bus:'公交车',truck:'货车',motorcycle:'摩托车',tricycle:'三轮车',bicycle:'自行车'};
 export function createCityDashboard(handlers){
- let lastRisk=-Infinity,lastCity='',events=[],selectedEvent=null;
+ let lastRisk=-Infinity,lastCity='',events=[],selectedEvent=null,typeFilter=null;
+ function applyFilter(type){if(type)selectedEvent=null;typeFilter=type;handlers.filter?.(type);for(const b of $('vehicle-legend').querySelectorAll('[data-type]'))b.setAttribute('aria-pressed',String(b.dataset.type===type));$('vehicle-filter').hidden=!type;$('vehicle-filter-name').textContent=type?`仅显示${labels[type]}`:'';}
+ $('vehicle-legend').onclick=$('vehicle-donut').onpointerup=e=>{const item=e.target.closest('[data-type]');if(item)applyFilter(typeFilter===item.dataset.type?null:item.dataset.type);};
+ $('clear-vehicle-filter').onclick=()=>applyFilter(null);
+ function markRisk(){for(const b of $('risk-candidates').querySelectorAll('[data-risk]'))b.setAttribute('aria-pressed',String(b.dataset.risk===selectedEvent));}
+ $('clear-risk').onclick=()=>{selectedEvent=null;markRisk();handlers.risk(null,false);};
  function prediction(track,time){
   const chart=$('prediction-chart');if(!track){chart.innerHTML='';handlers.forecast([]);return;}
   const forecast=predict(track,time,$('home-prediction-model').value);
@@ -17,9 +22,9 @@ export function createCityDashboard(handlers){
  }
  return {update(data,config,time,track){
   const snapshot=trafficSnapshot(data.tracks,time),entries=Object.entries(palette).filter(([k])=>snapshot.categories[k]>0),total=snapshot.vehicles,circumference=2*Math.PI*47;let offset=0;
-  const arcs=entries.map(([k,color])=>{const length=snapshot.categories[k]/Math.max(1,total)*circumference,arc=`<circle cx="65" cy="65" r="47" fill="none" stroke="${color}" stroke-width="12" stroke-dasharray="${length} ${circumference-length}" stroke-dashoffset="${-offset}" transform="rotate(-90 65 65)"><title>${labels[k]} ${snapshot.categories[k]} 辆</title></circle>`;offset+=length;return arc;}).join('');
+  const arcs=entries.map(([k,color])=>{const length=snapshot.categories[k]/Math.max(1,total)*circumference,arc=`<circle data-type="${k}" style="cursor:pointer" cx="65" cy="65" r="47" fill="none" stroke="${color}" stroke-width="12" stroke-dasharray="${length} ${circumference-length}" stroke-dashoffset="${-offset}" transform="rotate(-90 65 65)"><title>${labels[k]} ${snapshot.categories[k]} 辆</title></circle>`;offset+=length;return arc;}).join('');
   $('vehicle-donut').innerHTML=`<circle cx="65" cy="65" r="47" fill="none" stroke="#ffffff12" stroke-width="12"/>${arcs}<text x="65" y="64" text-anchor="middle" fill="#e5eeea" font-size="26">${total}</text><text x="65" y="83" text-anchor="middle" fill="#9fb6bb" font-size="10">当前车辆</text>`;
-  $('vehicle-legend').innerHTML=entries.map(([k,color])=>`<span><i style="background:${color}"></i>${labels[k]} ${snapshot.categories[k]}</span>`).join('')||'<span>暂无车辆</span>';
+  for(const [k,color]of Object.entries(palette)){let button=$('vehicle-legend').querySelector(`[data-type="${k}"]`);if(!button){button=document.createElement('button');button.dataset.type=k;button.innerHTML=`<i style="background:${color}"></i><span></span>`;$('vehicle-legend').append(button);}button.hidden=!snapshot.categories[k]&&typeFilter!==k;button.setAttribute('aria-pressed',String(typeFilter===k));button.querySelector('span').textContent=`${labels[k]} ${snapshot.categories[k]}`;}
   $('moving-count').textContent=snapshot.moving;$('slow-count').textContent=snapshot.slow;$('mean-speed').textContent=snapshot.meanKmh===null?'—':snapshot.meanKmh.toFixed(1);
   $('motion-note').textContent=`当前行人 ${snapshot.categories.pedestrian} 名`;$('slow-count').parentElement.title='机动车速度低于每秒零点五米';
   const bins=flowTrend(config.flowEvents,time),max=Math.max(1,...bins.map(b=>b.count)),barWidth=18;
@@ -29,10 +34,10 @@ export function createCityDashboard(handlers){
    events=assessRisks(snapshot.active,time);const groups=[['cross','交叉冲突'],['rear','追尾接近'],['vulnerable','慢行交互']],counts=groups.map(([kind])=>events.filter(e=>e.kind===kind).length),peak=Math.max(1,...counts);
    $('risk-bars').innerHTML=groups.map(([kind,label],i)=>`<div class="risk-row"><span>${label}</span><span><i style="width:${counts[i]/peak*100}%"></i></span><b>${counts[i]}</b></div>`).join('');
    const candidates=events.filter(e=>['cross','rear','vulnerable'].includes(e.kind)).slice(0,3);
-   $('risk-candidates').replaceChildren(...candidates.map(e=>{const b=document.createElement('button');b.textContent=`${e.a.id.split('/').at(-1)} ↔ ${e.b.id.split('/').at(-1)} · ${e.ttcS.toFixed(1)} 秒接近`;b.title=riskNames[e.kind];b.onclick=()=>{selectedEvent=e.key;handlers.risk(e,true);};return b;}));
+   $('risk-candidates').replaceChildren(...candidates.map(e=>{const b=document.createElement('button');b.textContent=`${e.a.id.split('/').at(-1)} ↔ ${e.b.id.split('/').at(-1)} · ${e.ttcS.toFixed(1)} 秒接近`;b.title=riskNames[e.kind];b.dataset.risk=e.key;b.setAttribute('aria-pressed',String(selectedEvent===e.key));b.onclick=()=>{applyFilter(null);selectedEvent=e.key;markRisk();handlers.risk(e,true);};return b;}));
    if(!candidates.length){const p=document.createElement('p');p.textContent='当前未检出上述候选';$('risk-candidates').append(p);}
-   handlers.risk(events.find(e=>e.key===selectedEvent)||null,false);
+   const selected=events.find(e=>e.key===selectedEvent&&['cross','rear','vulnerable'].includes(e.kind))||null;if(!selected)selectedEvent=null;handlers.risk(selected,false);
   }
   prediction(track,time);return snapshot;
- },reset(){lastRisk=-Infinity;lastCity='';selectedEvent=null;handlers.risk(null,false);handlers.forecast([]);}};
+ },reset(){applyFilter(null);lastRisk=-Infinity;lastCity='';selectedEvent=null;handlers.risk(null,false);handlers.forecast([]);}};
 }

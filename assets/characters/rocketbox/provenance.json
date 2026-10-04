@@ -1,0 +1,179 @@
+{
+  "repository": "https://github.com/microsoft/Microsoft-Rocketbox",
+  "commit": "0943055db6ec570bcef9f2c8b41c9e5467c808f9",
+  "license": "MIT",
+  "animations": [
+    "Assets/Animations/all_animations_max_motextr_xy/m_walk_neutral.max.fbx",
+    "Assets/Animations/all_animations_max_motextr_static/m_idle_neutral_01.max.fbx"
+  ],
+  "textureConversion": "TGA to 1024px JPEG (quality 90) or PNG, original colors retained.",
+  "files": [
+    {
+      "file": "LICENSE.md",
+      "bytes": 1066,
+      "sha256": "17474e386e0b9e1a700cc3d06b2b0882a2c376d9c6b49c7f8274409b8f8d2352",
+      "distributed": true
+    },
+    {
+      "file": "m002_body_color.jpg",
+      "bytes": 220016,
+      "sha256": "a09ef695ca290177f1a1c369f6f5057be6c387b698fe460461fd2243a143ce69",
+      "distributed": true
+    },
+    {
+      "file": "m002_body_color.tga",
+      "bytes": 12582956,
+      "sha256": "6a048a6b2140a1f5293798ca286be64fd0de6d79572e1273ff5765bd578f463f",
+      "distributed": false
+    },
+    {
+      "file": "m002_body_normal.jpg",
+      "bytes": 126634,
+      "sha256": "446caa584d45ca5514d2c03b76010e987f0a4c85e0089034db2f67f604af2337",
+      "distributed": true
+    },
+    {
+      "file": "m002_body_normal.tga",
+      "bytes": 12582956,
+      "sha256": "c9892e80c56890f6f5365627835286c2d4d2cc34cc473f6788fe3d560a52fb69",
+      "distributed": false
+    },
+    {
+      "file": "m002_head_color.jpg",
+      "bytes": 157804,
+      "sha256": "241ffe2b86571f7602075f5beb68762634af5a8ce3b970eeb3616230da34e47b",
+      "distributed": true
+    },
+    {
+      "file": "m002_head_color.tga",
+      "bytes": 12582956,
+      "sha256": "f5b64e4894930d438f7c419c3c9d0bba1f95fa4de9af078b762ea55bfca1ab85",
+      "distributed": false
+    },
+    {
+      "file": "m002_head_normal.jpg",
+      "bytes": 111315,
+      "sha256": "53a875bc7d970ebea33eccbf420593d8b35cd1c73da52fb1a238108e15172462",
+      "distributed": true
+    },
+    {
+      "file": "m002_head_normal.tga",
+      "bytes": 12582956,
+      "sha256": "5ef5ae404c9276f17641e392d0d4bdbe5fb23e94f28238b23a381e6a357c42ea",
+      "distributed": false
+    },
+    {
+      "file": "m002_opacity_color.png",
+      "bytes": 1167512,
+      "sha256": "caf14522f5993ed6d0c307a260062477d88d3f1d5dec90e8e091da9e9fba0582",
+      "distributed": true
+    },
+    {
+      "file": "m002_opacity_color.tga",
+      "bytes": 16777260,
+      "sha256": "53818d3f45519451edd2bc60d6e59cd4057ecd381827463c5503da0439d0a5cf",
+      "distributed": false
+    },
+    {
+      "file": "m003_body_color.jpg",
+      "bytes": 171689,
+      "sha256": "7fd5e3ba97d6d5274670e7cd15af8868ccc490780c578fbae8638037a2bba98a",
+      "distributed": true
+    },
+    {
+      "file": "m003_body_color.tga",
+      "bytes": 12582956,
+      "sha256": "52ef8bad71600de972eabeab2845019cf8ce6e274f11b9c7fbd315566c51e232",
+      "distributed": false
+    },
+    {
+      "file": "m003_body_normal.jpg",
+      "bytes": 162887,
+      "sha256": "828b8f2864f397d200e4c2a7f618b51f8e56838325ea45dbb47df4b5128855c3",
+      "distributed": true
+    },
+    {
+      "file": "m003_body_normal.tga",
+      "bytes": 12582956,
+      "sha256": "531408d53eb369c8b546af69dac123ac8fb88e3238abb8e4cd7dd923580275eb",
+      "distributed": false
+    },
+    {
+      "file": "m003_head_color.jpg",
+      "bytes": 150339,
+      "sha256": "8b4569d50c644782e2e559a810d93bfc55a781a2610fb8d87b17736aa4652719",
+      "distributed": true
+    },
+    {
+      "file": "m003_head_color.tga",
+      "bytes": 12582956,
+      "sha256": "f7d7d06bc9e3bee73bb037a0c55ca2915593fa5ef7b08da3f6a59409ed5cfc8f",
+      "distributed": false
+    },
+    {
+      "file": "m003_head_normal.jpg",
+      "bytes": 141064,
+      "sha256": "f52d26dd3be378b72c043d8cd4b2bf5e5a80df1002fb3bb42d9866fe8ace6b42",
+      "distributed": true
+    },
+    {
+      "file": "m003_head_normal.tga",
+      "bytes": 12582956,
+      "sha256": "92c0dc60b1df8eec91a7528a5bde296ccc8f278c8c92945620c6d87435d67764",
+      "distributed": false
+    },
+    {
+      "file": "m003_opacity_color.png",
+      "bytes": 909289,
+      "sha256": "7a24e9011ddb20c424803b2f41d46c76e06444aafe83cbe62bc51bd7651a4a84",
+      "distributed": true
+    },
+    {
+      "file": "m003_opacity_color.tga",
+      "bytes": 16777260,
+      "sha256": "2c0751e05d78587d3898ce60bbea8b3f23e78150b7e497b7e97fe8c66e91ee1e",
+      "distributed": false
+    },
+    {
+      "file": "m_idle_neutral_01.max.fbx",
+      "bytes": 2418544,
+      "sha256": "818cc185af21390575f7fbfdeb3012ba2ce5969fbcb220ea725a2617b339a6e2",
+      "distributed": true
+    },
+    {
+      "file": "m_walk_neutral.max.fbx",
+      "bytes": 958512,
+      "sha256": "93089851a370e3a117a6bd04c002815f7133fce41c6271e9eb448ca1228b154f",
+      "distributed": true
+    },
+    {
+      "file": "Male_Adult_01.fbx",
+      "bytes": 521472,
+      "sha256": "8d1edb51b4dc3427ae2456f4407fc105532c145dd019e53cd42bab31cc948a29",
+      "distributed": true
+    },
+    {
+      "file": "Male_Adult_01.png",
+      "bytes": 450889,
+      "sha256": "54c9b5a695881c3d8aea99fb23d234282a5642c3e96f966b441ab7893461d535",
+      "distributed": false
+    },
+    {
+      "file": "Male_Adult_02.fbx",
+      "bytes": 539920,
+      "sha256": "1c65e292e9057a23f7f70969f6971c631c1316fcaaf93e575a4557201c835018",
+      "distributed": true
+    },
+    {
+      "file": "Male_Adult_02.png",
+      "bytes": 478395,
+      "sha256": "2df56390d069f322e43eeebf2bdff6f0f911769805d29c6e9595cc19f3420f36",
+      "distributed": false
+    }
+  ],
+  "characters": [
+    "Assets/Avatars/Adults/Male_Adult_01",
+    "Assets/Avatars/Adults/Male_Adult_02"
+  ],
+  "distributionNote": "Runtime assets are distributed; original TGA textures and character preview PNGs are retained locally or retrievable from the pinned repository. Per-file distributed flags identify packaged files."
+}

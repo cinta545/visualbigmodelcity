@@ -4,7 +4,7 @@ test('flow uses inward crossing events and a trailing sixty-second window; loops
  const s={approaches:[{id:'a'},{id:'b'}],flowEvents:[[0,'a'],[1,'a'],[60000,'b'],[60001,'a']]};
  assert.deepEqual(flowAt(s,60000).approaches,{a:{total:2,recent:1},b:{total:1,recent:1}});
  assert.equal(flowAt(s,59999).total,2);assert.equal(loopTime(100010,100000),10);
- assert.equal(flowAt(s,loopTime(100010,100000)).total,2);assert.equal(loopTime(0,0),0);
+ assert.equal(flowAt(s,loopTime(100010,100000)).total,2);assert.equal(loopTime(0,0),0);assert.equal(loopTime(9676.34300967634,1201601.6016),9676.34300967634);assert.equal(loopTime(-10,100),90);
 });
 test('four city events lie on finite stop lines, use observed motor tracks and are unique',async()=>{
  const {sampleTrack}=await import('../src/sind-clock.mjs');

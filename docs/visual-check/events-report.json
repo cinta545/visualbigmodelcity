@@ -1,8 +1,0 @@
-{
-  "events": 305,
-  "persistence": true,
-  "filter": true,
-  "clipAutoPause": true,
-  "export": true,
-  "errors": []
-}

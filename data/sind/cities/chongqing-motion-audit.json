@@ -1,0 +1,129 @@
+{
+  "city": "chongqing",
+  "rawVehicleRowsChecked": 228549,
+  "positionVelocityTimestampYawMismatches": 0,
+  "autoTracks": 152,
+  "autoTracksExtentUnderOneMeter": 24,
+  "stationaryTracks": [
+    {
+      "id": "Chongqing/6_22_NR_1/5",
+      "extentM": 0.0,
+      "durationS": 222.1221221221221
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/6",
+      "extentM": 0.0,
+      "durationS": 1160.9609609609608
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/7",
+      "extentM": 0.0,
+      "durationS": 1160.9609609609608
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/8",
+      "extentM": 0.0,
+      "durationS": 221.82182182182183
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/9",
+      "extentM": 0.0,
+      "durationS": 1160.9609609609608
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/10",
+      "extentM": 0.0,
+      "durationS": 1160.9609609609608
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/11",
+      "extentM": 0.0,
+      "durationS": 1160.9609609609608
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/12",
+      "extentM": 0.0,
+      "durationS": 1160.9609609609608
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/13",
+      "extentM": 0.0,
+      "durationS": 1160.9609609609608
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/14",
+      "extentM": 0.0,
+      "durationS": 1160.9609609609608
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/15",
+      "extentM": 0.0,
+      "durationS": 1160.9609609609608
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/16",
+      "extentM": 0.0,
+      "durationS": 1160.9609609609608
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/17",
+      "extentM": 0.0,
+      "durationS": 1160.9609609609608
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/18",
+      "extentM": 0.0,
+      "durationS": 1160.9609609609608
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/19",
+      "extentM": 0.0,
+      "durationS": 223.72372372372374
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/20",
+      "extentM": 0.0,
+      "durationS": 1160.9609609609608
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/21",
+      "extentM": 0.0,
+      "durationS": 222.22222222222223
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/22",
+      "extentM": 0.0,
+      "durationS": 1160.9609609609608
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/23",
+      "extentM": 0.0,
+      "durationS": 222.022022022022
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/24",
+      "extentM": 0.0,
+      "durationS": 221.82182182182183
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/25",
+      "extentM": 0.0,
+      "durationS": 222.22222222222223
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/60",
+      "extentM": 0.0,
+      "durationS": 14.114114114114141
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/65",
+      "extentM": 0.0,
+      "durationS": 3.3033033033033132
+    },
+    {
+      "id": "Chongqing/6_22_NR_1/176",
+      "extentM": 0.0,
+      "durationS": 98.09809809809806
+    }
+  ]
+}

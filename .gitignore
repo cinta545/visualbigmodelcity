@@ -10,3 +10,26 @@ server-runtime*.log
 data/sind-download/
 data/sind/research-errors.csv
 data/sind-public/Data/Changchun/changchun_pudong_507_009/Veh_smoothed_tracks.csv
+
+# Version 2: reproducible output, original inputs and local-only material
+artifacts/*
+!artifacts/.gitkeep
+docs/visual-check/*
+!docs/visual-check/.gitkeep
+_docx_images/
+*.docx
+*.log
+.env
+.env.*
+!.env.example
+data/sind-public/.parts/
+data/sind-public/Data/**/*.csv
+data/sind-vehicles.csv
+data/sind-pedestrians.csv
+data/sind-range.*
+data/sind-source/Data/**/Ped_smoothed_tracks.csv
+data/sind/gate-predictions.csv
+assets/characters/rocketbox/*.tga
+assets/characters/rocketbox/Male_Adult_*.png
+__pycache__/
+*.pyc

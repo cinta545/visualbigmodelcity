@@ -1,3 +1,4 @@
+import {pedestrianPavingMaterial} from '../city-paving.mjs';
 import * as THREE from "three";
 const colors={asphalt:0x41474a,stone:0xb9b5a8,curb:0xc6c3b8,white:0xeee9d9,yellow:0xd4a741,metal:0x697173,dark:0x222b2d,glass:0x61818b,green:0x597b41};
 const materials=new Map();
@@ -13,11 +14,11 @@ export function cylinder(parent,x,y,z,r,h,material,segments=12){
  const mesh=new THREE.Mesh(new THREE.CylinderGeometry(r,r,h,segments),typeof material==="number"?mat(material):material);
  mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;parent.add(mesh);return mesh;
 }
-export function textPanel(parent,text,x,y,z,w,h,{background="#28483e",foreground="#f3efe2",rotation=0,font=64}={}){
- const canvas=document.createElement("canvas");canvas.width=1024;canvas.height=256;
- const ctx=canvas.getContext("2d");ctx.fillStyle=background;ctx.fillRect(0,0,1024,256);
- ctx.fillStyle=foreground;ctx.textAlign="center";ctx.textBaseline="middle";ctx.font="600 "+font+"px Microsoft YaHei, sans-serif";
- ctx.fillText(text,512,130,950);
+export function textPanel(parent,text,x,y,z,w,h,{background="#28483e",foreground="#f3efe2",rotation=0,font=64,proportional=false}={}){
+ const canvas=document.createElement("canvas");canvas.width=proportional?2048:1024;canvas.height=proportional?Math.max(64,Math.round(2048*h/w)):256;
+ const ctx=canvas.getContext("2d");ctx.fillStyle=background;ctx.fillRect(0,0,canvas.width,canvas.height);
+ ctx.fillStyle=foreground;ctx.textAlign="center";ctx.textBaseline="middle";ctx.font="600 "+(font*canvas.height/256)+"px Microsoft YaHei, sans-serif";
+ ctx.fillText(text,canvas.width/2,canvas.height*.508,canvas.width*.93);
  const tex=new THREE.CanvasTexture(canvas);tex.encoding=THREE.sRGBEncoding;tex.anisotropy=8;
  const mesh=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshStandardMaterial({map:tex,roughness:.7}));
  mesh.position.set(x,y,z);mesh.rotation.y=rotation;parent.add(mesh);return mesh;
@@ -34,13 +35,14 @@ function noiseTexture(type){
  const tex=new THREE.CanvasTexture(c);tex.wrapS=tex.wrapT=THREE.RepeatWrapping;tex.anisotropy=8;tex.encoding=THREE.sRGBEncoding;return tex;
 }
 export function groundMaterial(type,repeatX,repeatY){
+ if(type==="paving")return pedestrianPavingMaterial();
  const tex=noiseTexture(type);tex.repeat.set(repeatX,repeatY);
  const material=new THREE.MeshStandardMaterial({map:tex,color:type==="asphalt"?0x9c9c9c:0xe2ddce,roughness:.94,envMapIntensity:.2});
  if(type==="asphalt"){const loader=new THREE.TextureLoader(); for(const [name,field] of [["Diffuse","map"],["nor_gl","normalMap"],["rough","roughnessMap"]]){loader.load("/assets/textures/asphalt_01/"+name+".jpg",t=>{t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(repeatX,repeatY);t.anisotropy=8;if(name==="Diffuse")t.encoding=THREE.sRGBEncoding;material[field]=t;material.normalScale.set(.3,.3);material.needsUpdate=true;});}} return material;
 }
 export function batchStatic(root){
  root.updateMatrixWorld(true);const groups=new Map(),remove=[];
- root.traverse(o=>{if(!o.isMesh||o.geometry!==cube)return;const key=o.material.uuid+":"+o.castShadow;
+ root.traverse(o=>{if(!o.isMesh||o.geometry!==cube)return;const key=(Array.isArray(o.material)?o.material.map(m=>m.uuid).join(","):o.material.uuid)+":"+o.castShadow;
  if(!groups.has(key))groups.set(key,{material:o.material,cast:o.castShadow,transforms:[]});
  groups.get(key).transforms.push(o.matrixWorld.clone());remove.push(o);
  });
