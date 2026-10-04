@@ -45,7 +45,7 @@ export function buildingDetails(root,b,height,kind,index){
  for(const xx of [x-w/2,x+w/2])box(root,xx,height+.45,z,.18,.6,d,stone);
  box(root,x+4,height+.35,z-3,5,.12,3.4,mat(0x456578,.25,.45));
 }
-export function forecourtDetails(root,b,index){
+export function forecourtDetails(root,b,index,treeOffsets=[-8,0,8]){
  const [x0,y0,x1,y1]=b.bounds,x=(x0+x1)/2,z=-(y0+y1)/2,w=x1-x0,d=y1-y0,side=b.front==='north'?-1:1,front=z+side*(d/2+3),stone=mat(0xaaa99b),wood=shopSurface('wood',0x897659),metal=mat(0x485c5b,.4,.5);
  // Bands and furnishings are restricted to each building's cleared forecourt.
  addForecourtPaving(root,x,front,w,3.5);
@@ -53,7 +53,7 @@ export function forecourtDetails(root,b,index){
  for(const dz of [-1.68,1.68])for(let offset=-w/2;offset<w/2;offset+=.6){
   const length=Math.min(.6,w/2-offset);box(root,x+offset+length/2,.04,front+dz,length-.008,.024,.12,stone);
  }
- for(const dx of [-8,0,8]){box(root,x+dx,.06,front,1.3,.1,1.3,stone);box(root,x+dx,.12,front,1.08,.025,1.08,mat(0x5d6650));for(let bar=0;bar<8;bar++)box(root,x+dx-.48+bar*.137,.14,front,.028,.025,1.03,metal);}
+ for(const dx of treeOffsets){box(root,x+dx,.06,front,1.3,.1,1.3,stone);box(root,x+dx,.12,front,1.08,.025,1.08,mat(0x5d6650));for(let bar=0;bar<8;bar++)box(root,x+dx-.48+bar*.137,.14,front,.028,.025,1.03,metal);}
  for(const dx of [-4,4]){for(let slat=0;slat<4;slat++)box(root,x+dx,.5,front-.24+slat*.15,1.9,.06,.1,wood);for(const leg of [-.7,.7]){for(const dz of [-.24,.24])box(root,x+dx+leg,.26,front+dz,.07,.48,.07,metal);box(root,x+dx+leg,.05,front,.07,.06,.58,metal);}}
  for(const dx of [-4,4]){
   for(const leg of [-.7,.7])box(root,x+dx+leg,.77,front-side*.32,.055,.6,.055,metal);

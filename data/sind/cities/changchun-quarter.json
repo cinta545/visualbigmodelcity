@@ -1,0 +1,6603 @@
+{
+  "city": "changchun",
+  "designOnly": true,
+  "planVersion": "landmark-elevated",
+  "buildings": [
+    {
+      "id": "changchun-0",
+      "bounds": [
+        -76.80984255121075,
+        -53.57588594180914,
+        -40.80984255121075,
+        -23.57588594180914
+      ],
+      "height": 24.528000000000002,
+      "kind": "commercial",
+      "front": "north",
+      "detail": true,
+      "landmark": true,
+      "verticalBoost": 1.12,
+      "quarterRole": "landmark",
+      "variant": 0
+    },
+    {
+      "id": "changchun-1",
+      "bounds": [
+        -78.80984255121075,
+        19.52411405819086,
+        -42.80984255121075,
+        49.52411405819086
+      ],
+      "height": 14.448,
+      "kind": "residential",
+      "front": "south",
+      "detail": true,
+      "landmark": true,
+      "verticalBoost": 1.12,
+      "quarterRole": "landmark",
+      "variant": 1
+    },
+    {
+      "id": "changchun-2",
+      "bounds": [
+        1.1901574487892503,
+        -54.875885941809145,
+        37.19015744878925,
+        -24.875885941809145
+      ],
+      "height": 17.136,
+      "kind": "office",
+      "front": "north",
+      "detail": true,
+      "landmark": true,
+      "verticalBoost": 1.12,
+      "quarterRole": "landmark",
+      "variant": 2
+    },
+    {
+      "id": "changchun-3",
+      "bounds": [
+        -103.44984255121075,
+        -81.47588594180914,
+        -74.16984255121075,
+        -57.07588594180913
+      ],
+      "height": 20.769280000000002,
+      "kind": "residential",
+      "front": "north",
+      "detail": true,
+      "landmark": true,
+      "verticalBoost": 1.12,
+      "quarterRole": "landmark",
+      "variant": 3
+    },
+    {
+      "id": "changchun-4",
+      "bounds": [
+        28.55015744878925,
+        49.124114058190855,
+        57.83015744878925,
+        73.52411405819086
+      ],
+      "height": 9.5648,
+      "kind": "residential",
+      "front": "south",
+      "detail": true,
+      "landmark": true,
+      "verticalBoost": 1.12,
+      "quarterRole": "landmark",
+      "variant": 4
+    },
+    {
+      "id": "changchun-5",
+      "bounds": [
+        -0.8093118009618046,
+        82.43971986359932,
+        23.190688199038195,
+        102.43971986359932
+      ],
+      "height": 5.0,
+      "kind": "commercial",
+      "front": "south",
+      "detail": true,
+      "landmark": true,
+      "baseHeight": 7.2,
+      "rotation": 0.0006001285269250248,
+      "quarterRole": "landmark",
+      "variant": 5
+    },
+    {
+      "id": "changchun-quarter-3",
+      "bounds": [
+        -0.8098425512107497,
+        19.324114058190858,
+        23.19015744878925,
+        39.32411405819086
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 6
+    },
+    {
+      "id": "changchun-quarter-6",
+      "bounds": [
+        -65.80984255121075,
+        -77.67588594180914,
+        -39.80984255121075,
+        -55.67588594180914
+      ],
+      "height": 7.0,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 7
+    },
+    {
+      "id": "changchun-quarter-7",
+      "bounds": [
+        -0.8098425512107497,
+        51.32411405819086,
+        23.19015744878925,
+        71.32411405819086
+      ],
+      "height": 5.6,
+      "kind": "residential",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 8
+    },
+    {
+      "id": "changchun-quarter-14",
+      "bounds": [
+        -128.80984255121075,
+        -44.67588594180914,
+        -104.80984255121075,
+        -24.675885941809142
+      ],
+      "height": 7.0,
+      "kind": "office",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 9
+    },
+    {
+      "id": "changchun-quarter-15",
+      "bounds": [
+        -131.30984255121075,
+        16.824114058190858,
+        -102.30984255121075,
+        41.82411405819086
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 10
+    },
+    {
+      "id": "changchun-quarter-16",
+      "bounds": [
+        -67.30984255121075,
+        -111.17588594180914,
+        -38.30984255121075,
+        -86.17588594180914
+      ],
+      "height": 7.0,
+      "kind": "residential",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 11
+    },
+    {
+      "id": "changchun-quarter-18",
+      "bounds": [
+        60.69015744878925,
+        -47.17588594180914,
+        89.69015744878925,
+        -22.175885941809142
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 12
+    },
+    {
+      "id": "changchun-quarter-20",
+      "bounds": [
+        -131.30984255121075,
+        48.82411405819086,
+        -102.30984255121075,
+        73.82411405819086
+      ],
+      "height": 8.4,
+      "kind": "office",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 13
+    },
+    {
+      "id": "changchun-quarter-21",
+      "bounds": [
+        -99.30984255121075,
+        -111.17588594180914,
+        -70.30984255121075,
+        -86.17588594180914
+      ],
+      "height": 9.8,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 14
+    },
+    {
+      "id": "changchun-quarter-23",
+      "bounds": [
+        28.69015744878925,
+        -111.17588594180914,
+        57.69015744878925,
+        -86.17588594180914
+      ],
+      "height": 7.0,
+      "kind": "office",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 15
+    },
+    {
+      "id": "changchun-quarter-25",
+      "bounds": [
+        60.69015744878925,
+        -79.17588594180914,
+        89.69015744878925,
+        -54.17588594180914
+      ],
+      "height": 8.4,
+      "kind": "residential",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 16
+    },
+    {
+      "id": "changchun-quarter-27",
+      "bounds": [
+        -67.30984255121075,
+        -143.17588594180913,
+        -38.30984255121075,
+        -118.17588594180913
+      ],
+      "height": 9.8,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 17
+    },
+    {
+      "id": "changchun-quarter-28",
+      "bounds": [
+        -163.30984255121075,
+        16.824114058190858,
+        -134.30984255121075,
+        41.82411405819086
+      ],
+      "height": 7.0,
+      "kind": "residential",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 18
+    },
+    {
+      "id": "changchun-quarter-29",
+      "bounds": [
+        -0.8098425512107497,
+        115.32411405819084,
+        23.19015744878925,
+        135.32411405819084
+      ],
+      "height": 8.4,
+      "kind": "office",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 19
+    },
+    {
+      "id": "changchun-quarter-30",
+      "bounds": [
+        92.69015744878925,
+        -47.17588594180914,
+        121.69015744878925,
+        -22.175885941809142
+      ],
+      "height": 9.8,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 20
+    },
+    {
+      "id": "changchun-quarter-31",
+      "bounds": [
+        -131.30984255121075,
+        -111.17588594180914,
+        -102.30984255121075,
+        -86.17588594180914
+      ],
+      "height": 7.0,
+      "kind": "residential",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 21
+    },
+    {
+      "id": "changchun-quarter-33",
+      "bounds": [
+        60.69015744878925,
+        -111.17588594180914,
+        89.69015744878925,
+        -86.17588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 22
+    },
+    {
+      "id": "changchun-quarter-35",
+      "bounds": [
+        -99.30984255121075,
+        -143.17588594180913,
+        -70.30984255121075,
+        -118.17588594180913
+      ],
+      "height": 9.8,
+      "kind": "office",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 23
+    },
+    {
+      "id": "changchun-quarter-36",
+      "bounds": [
+        28.69015744878925,
+        -143.17588594180913,
+        57.69015744878925,
+        -118.17588594180913
+      ],
+      "height": 7.0,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 24
+    },
+    {
+      "id": "changchun-quarter-37",
+      "bounds": [
+        -163.30984255121075,
+        -79.17588594180914,
+        -134.30984255121075,
+        -54.17588594180914
+      ],
+      "height": 8.4,
+      "kind": "residential",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 25
+    },
+    {
+      "id": "changchun-quarter-38",
+      "bounds": [
+        -163.30984255121075,
+        48.82411405819086,
+        -134.30984255121075,
+        73.82411405819086
+      ],
+      "height": 9.8,
+      "kind": "office",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 26
+    },
+    {
+      "id": "changchun-quarter-39",
+      "bounds": [
+        -99.30984255121075,
+        112.82411405819084,
+        -70.30984255121075,
+        137.82411405819084
+      ],
+      "height": 7.0,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 27
+    },
+    {
+      "id": "changchun-quarter-41",
+      "bounds": [
+        92.69015744878925,
+        -79.17588594180914,
+        121.69015744878925,
+        -54.17588594180914
+      ],
+      "height": 8.4,
+      "kind": "office",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 28
+    },
+    {
+      "id": "changchun-quarter-43",
+      "bounds": [
+        -163.30984255121075,
+        -111.17588594180914,
+        -134.30984255121075,
+        -86.17588594180914
+      ],
+      "height": 9.8,
+      "kind": "residential",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 29
+    },
+    {
+      "id": "changchun-quarter-45",
+      "bounds": [
+        -131.30984255121075,
+        -143.17588594180913,
+        -102.30984255121075,
+        -118.17588594180913
+      ],
+      "height": 7.0,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 30
+    },
+    {
+      "id": "changchun-quarter-46",
+      "bounds": [
+        -131.30984255121075,
+        112.82411405819084,
+        -102.30984255121075,
+        137.82411405819084
+      ],
+      "height": 8.4,
+      "kind": "residential",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 31
+    },
+    {
+      "id": "changchun-quarter-47",
+      "bounds": [
+        60.69015744878925,
+        -143.17588594180913,
+        89.69015744878925,
+        -118.17588594180913
+      ],
+      "height": 9.8,
+      "kind": "office",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 32
+    },
+    {
+      "id": "changchun-quarter-49",
+      "bounds": [
+        92.69015744878925,
+        -111.17588594180914,
+        121.69015744878925,
+        -86.17588594180914
+      ],
+      "height": 7.0,
+      "kind": "residential",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "street",
+      "variant": 33
+    },
+    {
+      "id": "changchun-infill-34",
+      "bounds": [
+        -90.80984255121075,
+        -33.67588594180914,
+        -80.80984255121075,
+        -23.67588594180914
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 34
+    },
+    {
+      "id": "changchun-infill-35",
+      "bounds": [
+        -51.80984255121075,
+        57.32411405819086,
+        -41.80984255121075,
+        67.32411405819086
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 35
+    },
+    {
+      "id": "changchun-infill-36",
+      "bounds": [
+        39.19015744878925,
+        18.32411405819086,
+        49.19015744878925,
+        28.32411405819086
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 36
+    },
+    {
+      "id": "changchun-infill-37",
+      "bounds": [
+        -90.80984255121075,
+        -46.67588594180914,
+        -80.80984255121075,
+        -36.67588594180914
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 37
+    },
+    {
+      "id": "changchun-infill-38",
+      "bounds": [
+        -64.80984255121075,
+        57.32411405819086,
+        -54.80984255121075,
+        67.32411405819086
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 38
+    },
+    {
+      "id": "changchun-infill-39",
+      "bounds": [
+        6.19015744878925,
+        -76.67588594180914,
+        30.19015744878925,
+        -58.67588594180914
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 39
+    },
+    {
+      "id": "changchun-infill-40",
+      "bounds": [
+        -77.80984255121075,
+        57.32411405819086,
+        -67.80984255121075,
+        67.32411405819086
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 40
+    },
+    {
+      "id": "changchun-infill-41",
+      "bounds": [
+        -64.80984255121075,
+        70.32411405819086,
+        -54.80984255121075,
+        80.32411405819086
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 41
+    },
+    {
+      "id": "changchun-infill-42",
+      "bounds": [
+        52.19015744878925,
+        31.324114058190858,
+        62.19015744878925,
+        41.32411405819086
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 42
+    },
+    {
+      "id": "changchun-infill-43",
+      "bounds": [
+        -90.80984255121075,
+        57.32411405819086,
+        -80.80984255121075,
+        67.32411405819086
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 43
+    },
+    {
+      "id": "changchun-infill-44",
+      "bounds": [
+        35.19015744878925,
+        -75.67588594180914,
+        53.19015744878925,
+        -59.67588594180914
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 44
+    },
+    {
+      "id": "changchun-infill-45",
+      "bounds": [
+        -77.80984255121075,
+        70.32411405819086,
+        -67.80984255121075,
+        80.32411405819086
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 45
+    },
+    {
+      "id": "changchun-infill-46",
+      "bounds": [
+        11.19015744878925,
+        -99.67588594180914,
+        25.19015744878925,
+        -87.67588594180914
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 46
+    },
+    {
+      "id": "changchun-infill-47",
+      "bounds": [
+        65.19015744878925,
+        31.324114058190858,
+        75.19015744878925,
+        41.32411405819086
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 47
+    },
+    {
+      "id": "changchun-infill-48",
+      "bounds": [
+        -90.80984255121075,
+        70.32411405819086,
+        -80.80984255121075,
+        80.32411405819086
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 48
+    },
+    {
+      "id": "changchun-infill-49",
+      "bounds": [
+        78.19015744878925,
+        31.324114058190858,
+        88.19015744878925,
+        41.32411405819086
+      ],
+      "height": 5.6,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 49
+    },
+    {
+      "id": "changchun-infill-50",
+      "bounds": [
+        -129.80984255121075,
+        -59.67588594180914,
+        -119.80984255121075,
+        -49.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 50
+    },
+    {
+      "id": "changchun-infill-51",
+      "bounds": [
+        -129.80984255121075,
+        -72.67588594180914,
+        -119.80984255121075,
+        -62.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 51
+    },
+    {
+      "id": "changchun-infill-52",
+      "bounds": [
+        -142.80984255121075,
+        -46.67588594180914,
+        -132.80984255121075,
+        -36.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 52
+    },
+    {
+      "id": "changchun-infill-53",
+      "bounds": [
+        -66.80984255121075,
+        108.32411405819086,
+        -52.80984255121075,
+        120.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 53
+    },
+    {
+      "id": "changchun-infill-54",
+      "bounds": [
+        11.19015744878925,
+        -125.67588594180914,
+        25.19015744878925,
+        -113.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 54
+    },
+    {
+      "id": "changchun-infill-55",
+      "bounds": [
+        91.19015744878925,
+        31.324114058190858,
+        101.19015744878925,
+        41.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 55
+    },
+    {
+      "id": "changchun-infill-56",
+      "bounds": [
+        -155.80984255121075,
+        -46.67588594180914,
+        -145.80984255121075,
+        -36.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 56
+    },
+    {
+      "id": "changchun-infill-57",
+      "bounds": [
+        104.19015744878925,
+        31.324114058190858,
+        114.19015744878925,
+        41.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 57
+    },
+    {
+      "id": "changchun-infill-58",
+      "bounds": [
+        -168.80984255121075,
+        -46.67588594180914,
+        -158.80984255121075,
+        -36.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 58
+    },
+    {
+      "id": "changchun-infill-59",
+      "bounds": [
+        -66.80984255121075,
+        134.32411405819087,
+        -52.80984255121075,
+        146.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 59
+    },
+    {
+      "id": "changchun-infill-60",
+      "bounds": [
+        11.19015744878925,
+        -151.67588594180913,
+        25.19015744878925,
+        -139.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 60
+    },
+    {
+      "id": "changchun-infill-61",
+      "bounds": [
+        117.19015744878925,
+        31.324114058190858,
+        127.19015744878925,
+        41.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 61
+    },
+    {
+      "id": "changchun-infill-62",
+      "bounds": [
+        -185.80984255121075,
+        15.324114058190862,
+        -167.80984255121075,
+        31.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 62
+    },
+    {
+      "id": "changchun-infill-63",
+      "bounds": [
+        -58.80984255121075,
+        -167.67588594180913,
+        -34.80984255121075,
+        -149.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 63
+    },
+    {
+      "id": "changchun-infill-64",
+      "bounds": [
+        -3.8098425512107497,
+        145.32411405819087,
+        14.19015744878925,
+        161.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 64
+    },
+    {
+      "id": "changchun-infill-65",
+      "bounds": [
+        126.19015744878925,
+        -36.67588594180914,
+        144.19015744878925,
+        -20.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 65
+    },
+    {
+      "id": "changchun-infill-66",
+      "bounds": [
+        -181.80984255121075,
+        -46.67588594180914,
+        -171.80984255121075,
+        -36.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 66
+    },
+    {
+      "id": "changchun-infill-67",
+      "bounds": [
+        130.19015744878925,
+        31.324114058190858,
+        140.19015744878925,
+        41.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 67
+    },
+    {
+      "id": "changchun-infill-68",
+      "bounds": [
+        -181.80984255121075,
+        -59.67588594180914,
+        -171.80984255121075,
+        -49.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 68
+    },
+    {
+      "id": "changchun-infill-69",
+      "bounds": [
+        -185.80984255121075,
+        41.32411405819086,
+        -167.80984255121075,
+        57.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 69
+    },
+    {
+      "id": "changchun-infill-70",
+      "bounds": [
+        -81.80984255121075,
+        -166.67588594180913,
+        -63.80984255121075,
+        -150.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 70
+    },
+    {
+      "id": "changchun-infill-71",
+      "bounds": [
+        126.19015744878925,
+        -62.67588594180914,
+        144.19015744878925,
+        -46.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 71
+    },
+    {
+      "id": "changchun-infill-72",
+      "bounds": [
+        -181.80984255121075,
+        -72.67588594180914,
+        -171.80984255121075,
+        -62.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 72
+    },
+    {
+      "id": "changchun-infill-73",
+      "bounds": [
+        -97.80984255121075,
+        144.32411405819087,
+        -73.80984255121075,
+        162.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 73
+    },
+    {
+      "id": "changchun-infill-74",
+      "bounds": [
+        32.19015744878925,
+        -167.67588594180913,
+        56.19015744878925,
+        -149.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 74
+    },
+    {
+      "id": "changchun-infill-75",
+      "bounds": [
+        -194.80984255121075,
+        -46.67588594180914,
+        -184.80984255121075,
+        -36.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 75
+    },
+    {
+      "id": "changchun-infill-76",
+      "bounds": [
+        -68.80984255121075,
+        158.32411405819087,
+        -50.80984255121075,
+        174.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 76
+    },
+    {
+      "id": "changchun-infill-77",
+      "bounds": [
+        9.19015744878925,
+        -179.67588594180913,
+        27.19015744878925,
+        -163.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 77
+    },
+    {
+      "id": "changchun-infill-78",
+      "bounds": [
+        143.19015744878925,
+        31.324114058190858,
+        153.19015744878925,
+        41.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 78
+    },
+    {
+      "id": "changchun-infill-79",
+      "bounds": [
+        -181.80984255121075,
+        -85.67588594180914,
+        -171.80984255121075,
+        -75.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 79
+    },
+    {
+      "id": "changchun-infill-80",
+      "bounds": [
+        -185.80984255121075,
+        67.32411405819086,
+        -167.80984255121075,
+        83.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 80
+    },
+    {
+      "id": "changchun-infill-81",
+      "bounds": [
+        -110.80984255121075,
+        -167.67588594180913,
+        -86.80984255121075,
+        -149.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 81
+    },
+    {
+      "id": "changchun-infill-82",
+      "bounds": [
+        126.19015744878925,
+        -88.67588594180914,
+        144.19015744878925,
+        -72.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 82
+    },
+    {
+      "id": "changchun-infill-83",
+      "bounds": [
+        -155.80984255121075,
+        -124.67588594180914,
+        -145.80984255121075,
+        -114.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 83
+    },
+    {
+      "id": "changchun-infill-84",
+      "bounds": [
+        -162.80984255121075,
+        105.32411405819086,
+        -138.80984255121075,
+        123.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 84
+    },
+    {
+      "id": "changchun-infill-85",
+      "bounds": [
+        104.19015744878925,
+        -124.67588594180914,
+        114.19015744878925,
+        -114.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 85
+    },
+    {
+      "id": "changchun-infill-86",
+      "bounds": [
+        -194.80984255121075,
+        -59.67588594180914,
+        -184.80984255121075,
+        -49.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 86
+    },
+    {
+      "id": "changchun-infill-87",
+      "bounds": [
+        -181.80984255121075,
+        -98.67588594180914,
+        -171.80984255121075,
+        -88.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 87
+    },
+    {
+      "id": "changchun-infill-88",
+      "bounds": [
+        -120.80984255121075,
+        145.32411405819087,
+        -102.80984255121075,
+        161.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 88
+    },
+    {
+      "id": "changchun-infill-89",
+      "bounds": [
+        61.19015744878925,
+        -166.67588594180913,
+        79.19015744878925,
+        -150.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 89
+    },
+    {
+      "id": "changchun-infill-90",
+      "bounds": [
+        -194.80984255121075,
+        -72.67588594180914,
+        -184.80984255121075,
+        -62.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 90
+    },
+    {
+      "id": "changchun-infill-91",
+      "bounds": [
+        -214.80984255121075,
+        14.324114058190862,
+        -190.80984255121075,
+        32.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 91
+    },
+    {
+      "id": "changchun-infill-92",
+      "bounds": [
+        -58.80984255121075,
+        -193.67588594180913,
+        -34.80984255121075,
+        -175.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 92
+    },
+    {
+      "id": "changchun-infill-93",
+      "bounds": [
+        -6.80984255121075,
+        170.32411405819087,
+        17.19015744878925,
+        188.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 93
+    },
+    {
+      "id": "changchun-infill-94",
+      "bounds": [
+        149.19015744878925,
+        -37.67588594180914,
+        173.19015744878925,
+        -19.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 94
+    },
+    {
+      "id": "changchun-infill-95",
+      "bounds": [
+        -168.80984255121075,
+        -124.67588594180914,
+        -158.80984255121075,
+        -114.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 95
+    },
+    {
+      "id": "changchun-infill-96",
+      "bounds": [
+        117.19015744878925,
+        -124.67588594180914,
+        127.19015744878925,
+        -114.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 96
+    },
+    {
+      "id": "changchun-infill-97",
+      "bounds": [
+        -207.80984255121075,
+        -46.67588594180914,
+        -197.80984255121075,
+        -36.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 97
+    },
+    {
+      "id": "changchun-infill-98",
+      "bounds": [
+        -194.80984255121075,
+        -85.67588594180914,
+        -184.80984255121075,
+        -75.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 98
+    },
+    {
+      "id": "changchun-infill-99",
+      "bounds": [
+        156.19015744878925,
+        31.324114058190858,
+        166.19015744878925,
+        41.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 99
+    },
+    {
+      "id": "changchun-infill-100",
+      "bounds": [
+        -181.80984255121075,
+        -111.67588594180914,
+        -171.80984255121075,
+        -101.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 100
+    },
+    {
+      "id": "changchun-infill-101",
+      "bounds": [
+        -133.80984255121075,
+        -166.67588594180913,
+        -115.80984255121075,
+        -150.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 101
+    },
+    {
+      "id": "changchun-infill-102",
+      "bounds": [
+        130.19015744878925,
+        -111.67588594180914,
+        140.19015744878925,
+        -101.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 102
+    },
+    {
+      "id": "changchun-infill-103",
+      "bounds": [
+        -207.80984255121075,
+        -59.67588594180914,
+        -197.80984255121075,
+        -49.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 103
+    },
+    {
+      "id": "changchun-infill-104",
+      "bounds": [
+        -214.80984255121075,
+        40.32411405819086,
+        -190.80984255121075,
+        58.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 104
+    },
+    {
+      "id": "changchun-infill-105",
+      "bounds": [
+        -81.80984255121075,
+        -192.67588594180913,
+        -63.80984255121075,
+        -176.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 105
+    },
+    {
+      "id": "changchun-infill-106",
+      "bounds": [
+        149.19015744878925,
+        -63.67588594180914,
+        173.19015744878925,
+        -45.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 106
+    },
+    {
+      "id": "changchun-infill-107",
+      "bounds": [
+        156.19015744878925,
+        44.32411405819086,
+        166.19015744878925,
+        54.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 107
+    },
+    {
+      "id": "changchun-infill-108",
+      "bounds": [
+        -194.80984255121075,
+        -98.67588594180914,
+        -184.80984255121075,
+        -88.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 108
+    },
+    {
+      "id": "changchun-infill-109",
+      "bounds": [
+        -207.80984255121075,
+        -72.67588594180914,
+        -197.80984255121075,
+        -62.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 109
+    },
+    {
+      "id": "changchun-infill-110",
+      "bounds": [
+        -162.80984255121075,
+        -154.67588594180913,
+        -138.80984255121075,
+        -136.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 110
+    },
+    {
+      "id": "changchun-infill-111",
+      "bounds": [
+        -162.80984255121075,
+        131.32411405819087,
+        -138.80984255121075,
+        149.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 111
+    },
+    {
+      "id": "changchun-infill-112",
+      "bounds": [
+        -97.80984255121075,
+        170.32411405819087,
+        -73.80984255121075,
+        188.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 112
+    },
+    {
+      "id": "changchun-infill-113",
+      "bounds": [
+        32.19015744878925,
+        -193.67588594180913,
+        56.19015744878925,
+        -175.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 113
+    },
+    {
+      "id": "changchun-infill-114",
+      "bounds": [
+        97.19015744878925,
+        -154.67588594180913,
+        121.19015744878925,
+        -136.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 114
+    },
+    {
+      "id": "changchun-infill-115",
+      "bounds": [
+        156.19015744878925,
+        57.32411405819086,
+        166.19015744878925,
+        67.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 115
+    },
+    {
+      "id": "changchun-infill-116",
+      "bounds": [
+        -181.80984255121075,
+        -124.67588594180914,
+        -171.80984255121075,
+        -114.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 116
+    },
+    {
+      "id": "changchun-infill-117",
+      "bounds": [
+        -185.80984255121075,
+        106.32411405819086,
+        -167.80984255121075,
+        122.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 117
+    },
+    {
+      "id": "changchun-infill-118",
+      "bounds": [
+        130.19015744878925,
+        -124.67588594180914,
+        140.19015744878925,
+        -114.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 118
+    },
+    {
+      "id": "changchun-infill-119",
+      "bounds": [
+        -207.80984255121075,
+        -85.67588594180914,
+        -197.80984255121075,
+        -75.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 119
+    },
+    {
+      "id": "changchun-infill-120",
+      "bounds": [
+        -214.80984255121075,
+        66.32411405819086,
+        -190.80984255121075,
+        84.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 120
+    },
+    {
+      "id": "changchun-infill-121",
+      "bounds": [
+        -110.80984255121075,
+        -193.67588594180913,
+        -86.80984255121075,
+        -175.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 121
+    },
+    {
+      "id": "changchun-infill-122",
+      "bounds": [
+        149.19015744878925,
+        -89.67588594180914,
+        173.19015744878925,
+        -71.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 122
+    },
+    {
+      "id": "changchun-infill-123",
+      "bounds": [
+        156.19015744878925,
+        70.32411405819086,
+        166.19015744878925,
+        80.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 123
+    },
+    {
+      "id": "changchun-infill-124",
+      "bounds": [
+        -194.80984255121075,
+        -111.67588594180914,
+        -184.80984255121075,
+        -101.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 124
+    },
+    {
+      "id": "changchun-infill-125",
+      "bounds": [
+        143.19015744878925,
+        -111.67588594180914,
+        153.19015744878925,
+        -101.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 125
+    },
+    {
+      "id": "changchun-infill-126",
+      "bounds": [
+        -207.80984255121075,
+        -98.67588594180914,
+        -197.80984255121075,
+        -88.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 126
+    },
+    {
+      "id": "changchun-infill-127",
+      "bounds": [
+        -120.80984255121075,
+        171.32411405819087,
+        -102.80984255121075,
+        187.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 127
+    },
+    {
+      "id": "changchun-infill-128",
+      "bounds": [
+        61.19015744878925,
+        -192.67588594180913,
+        79.19015744878925,
+        -176.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 128
+    },
+    {
+      "id": "changchun-infill-129",
+      "bounds": [
+        156.19015744878925,
+        83.32411405819086,
+        166.19015744878925,
+        93.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 129
+    },
+    {
+      "id": "changchun-infill-130",
+      "bounds": [
+        -194.80984255121075,
+        -124.67588594180914,
+        -184.80984255121075,
+        -114.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 130
+    },
+    {
+      "id": "changchun-infill-131",
+      "bounds": [
+        -149.80984255121075,
+        157.32411405819087,
+        -125.80984255121075,
+        175.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 131
+    },
+    {
+      "id": "changchun-infill-132",
+      "bounds": [
+        84.19015744878925,
+        -180.67588594180913,
+        108.19015744878925,
+        -162.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 132
+    },
+    {
+      "id": "changchun-infill-133",
+      "bounds": [
+        143.19015744878925,
+        -124.67588594180914,
+        153.19015744878925,
+        -114.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 133
+    },
+    {
+      "id": "changchun-infill-134",
+      "bounds": [
+        -207.80984255121075,
+        -111.67588594180914,
+        -197.80984255121075,
+        -101.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 134
+    },
+    {
+      "id": "changchun-infill-135",
+      "bounds": [
+        -133.80984255121075,
+        -192.67588594180913,
+        -115.80984255121075,
+        -176.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 135
+    },
+    {
+      "id": "changchun-infill-136",
+      "bounds": [
+        156.19015744878925,
+        -111.67588594180914,
+        166.19015744878925,
+        -101.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 136
+    },
+    {
+      "id": "changchun-infill-137",
+      "bounds": [
+        -185.80984255121075,
+        -153.67588594180913,
+        -167.80984255121075,
+        -137.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 137
+    },
+    {
+      "id": "changchun-infill-138",
+      "bounds": [
+        -185.80984255121075,
+        132.32411405819087,
+        -167.80984255121075,
+        148.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 138
+    },
+    {
+      "id": "changchun-infill-139",
+      "bounds": [
+        126.19015744878925,
+        -153.67588594180913,
+        144.19015744878925,
+        -137.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 139
+    },
+    {
+      "id": "changchun-infill-140",
+      "bounds": [
+        -162.80984255121075,
+        -180.67588594180913,
+        -138.80984255121075,
+        -162.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 140
+    },
+    {
+      "id": "changchun-infill-141",
+      "bounds": [
+        -207.80984255121075,
+        -124.67588594180914,
+        -197.80984255121075,
+        -114.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 141
+    },
+    {
+      "id": "changchun-infill-142",
+      "bounds": [
+        -209.80984255121075,
+        108.32411405819086,
+        -195.80984255121075,
+        120.32411405819086
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 142
+    },
+    {
+      "id": "changchun-infill-143",
+      "bounds": [
+        156.19015744878925,
+        -124.67588594180914,
+        166.19015744878925,
+        -114.67588594180914
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 143
+    },
+    {
+      "id": "changchun-infill-144",
+      "bounds": [
+        -172.80984255121075,
+        158.32411405819087,
+        -154.80984255121075,
+        174.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 144
+    },
+    {
+      "id": "changchun-infill-145",
+      "bounds": [
+        113.19015744878925,
+        -179.67588594180913,
+        131.19015744878925,
+        -163.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 145
+    },
+    {
+      "id": "changchun-infill-146",
+      "bounds": [
+        154.19015744878925,
+        121.32411405819086,
+        168.19015744878925,
+        133.32411405819084
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 146
+    },
+    {
+      "id": "changchun-infill-147",
+      "bounds": [
+        -185.80984255121075,
+        -179.67588594180913,
+        -167.80984255121075,
+        -163.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 147
+    },
+    {
+      "id": "changchun-infill-148",
+      "bounds": [
+        -214.80984255121075,
+        -154.67588594180913,
+        -190.80984255121075,
+        -136.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 148
+    },
+    {
+      "id": "changchun-infill-149",
+      "bounds": [
+        -214.80984255121075,
+        131.32411405819087,
+        -190.80984255121075,
+        149.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 149
+    },
+    {
+      "id": "changchun-infill-150",
+      "bounds": [
+        149.19015744878925,
+        -154.67588594180913,
+        173.19015744878925,
+        -136.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 150
+    },
+    {
+      "id": "changchun-infill-151",
+      "bounds": [
+        -201.80984255121075,
+        157.32411405819087,
+        -177.80984255121075,
+        175.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 151
+    },
+    {
+      "id": "changchun-infill-152",
+      "bounds": [
+        136.19015744878925,
+        -180.67588594180913,
+        160.19015744878925,
+        -162.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 152
+    },
+    {
+      "id": "changchun-infill-153",
+      "bounds": [
+        149.19015744878925,
+        144.32411405819087,
+        173.19015744878925,
+        162.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 153
+    },
+    {
+      "id": "changchun-infill-154",
+      "bounds": [
+        -214.80984255121075,
+        -180.67588594180913,
+        -190.80984255121075,
+        -162.67588594180913
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "north",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 154
+    },
+    {
+      "id": "changchun-infill-155",
+      "bounds": [
+        149.19015744878925,
+        170.32411405819087,
+        173.19015744878925,
+        188.32411405819087
+      ],
+      "height": 8.4,
+      "kind": "commercial",
+      "front": "south",
+      "detail": false,
+      "landmark": false,
+      "quarterRole": "infill",
+      "variant": 155
+    }
+  ],
+  "greenLand": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -245.80984255121075,
+          -227.67588594180913
+        ],
+        [
+          -245.80984255121075,
+          222.32411405819087
+        ],
+        [
+          204.19015744878925,
+          222.32411405819087
+        ],
+        [
+          204.19015744878925,
+          -227.67588594180913
+        ],
+        [
+          -245.80984255121075,
+          -227.67588594180913
+        ]
+      ],
+      [
+        [
+          -97.88250892611957,
+          -16.078232813939465
+        ],
+        [
+          -97.76905991873453,
+          -16.211591266782435
+        ],
+        [
+          -97.64319117237388,
+          -16.333296701792204
+        ],
+        [
+          -97.50609359007196,
+          -16.442197606968836
+        ],
+        [
+          -97.3590643161278,
+          -16.537263619953364
+        ],
+        [
+          -97.20349446321666,
+          -16.617595276767638
+        ],
+        [
+          -97.04085595042284,
+          -16.682432522063344
+        ],
+        [
+          -96.87268757672537,
+          -16.73116190036091
+        ],
+        [
+          -96.70058046170166,
+          -16.763322360238483
+        ],
+        [
+          -96.52616299120162,
+          -16.778609616554892
+        ],
+        [
+          -96.35108541042801,
+          -16.776879029433594
+        ],
+        [
+          -74.45773117232936,
+          -15.493806875898088
+        ],
+        [
+          -59.02177593857675,
+          -14.887802176472071
+        ],
+        [
+          -51.37832198131365,
+          -14.667418615782147
+        ],
+        [
+          -42.49987103964658,
+          -14.411416486206301
+        ],
+        [
+          -41.31747302994642,
+          -14.609202038160133
+        ],
+        [
+          -39.878598394754334,
+          -15.068374301387006
+        ],
+        [
+          -39.10380161625256,
+          -15.417408157252162
+        ],
+        [
+          -37.91423937140309,
+          -16.184535881588214
+        ],
+        [
+          -37.66696823020408,
+          -16.343997346368997
+        ],
+        [
+          -36.82375983336315,
+          -16.88776637740808
+        ],
+        [
+          -34.715333384928954,
+          -18.586693612945535
+        ],
+        [
+          -33.672359774727234,
+          -19.80191304596965
+        ],
+        [
+          -33.64425370528646,
+          -19.83388781736071
+        ],
+        [
+          -32.70062355234974,
+          -20.88214241588233
+        ],
+        [
+          -32.17885079888276,
+          -21.701026374818777
+        ],
+        [
+          -31.260719559755234,
+          -24.007280749619177
+        ],
+        [
+          -31.125743687254587,
+          -24.37518637450144
+        ],
+        [
+          -31.073764934708606,
+          -24.516865708907414
+        ],
+        [
+          -30.70634086958717,
+          -33.62988500141538
+        ],
+        [
+          -30.705809414874295,
+          -33.64204489564773
+        ],
+        [
+          -28.826138346236803,
+          -73.55565343255809
+        ],
+        [
+          -28.945889685566097,
+          -73.63601413394386
+        ],
+        [
+          -29.08221361818416,
+          -73.74834737283471
+        ],
+        [
+          -29.206870530965503,
+          -73.87350177851022
+        ],
+        [
+          -29.318659909695647,
+          -74.01027204562736
+        ],
+        [
+          -29.416505161547125,
+          -74.15734100174755
+        ],
+        [
+          -29.49946398325696,
+          -74.3132922924273
+        ],
+        [
+          -29.56673743602217,
+          -74.47662402148572
+        ],
+        [
+          -29.617677639717225,
+          -74.64576321508575
+        ],
+        [
+          -29.65179401233379,
+          -74.81908097033215
+        ],
+        [
+          -29.668757994553665,
+          -74.99490814249678
+        ],
+        [
+          -29.66840621395461,
+          -75.17155141979477
+        ],
+        [
+          -22.469721796069166,
+          -215.98172516958456
+        ],
+        [
+          -22.452057640490658,
+          -216.1574833806925
+        ],
+        [
+          -22.417251225407128,
+          -216.33066387795822
+        ],
+        [
+          -22.36563775562295,
+          -216.49959883852293
+        ],
+        [
+          -22.29771429706694,
+          -216.66266132636716
+        ],
+        [
+          -22.214134989775726,
+          -216.81828096059397
+        ],
+        [
+          -22.115704748167627,
+          -216.9649590390554
+        ],
+        [
+          -22.003371509276768,
+          -217.10128297167347
+        ],
+        [
+          -21.878217103601266,
+          -217.22593988445482
+        ],
+        [
+          -21.74144683648413,
+          -217.33772926318494
+        ],
+        [
+          -21.59437788036393,
+          -217.43557451503642
+        ],
+        [
+          -21.438426589684177,
+          -217.51853333674626
+        ],
+        [
+          -21.275094860625764,
+          -217.58580678951148
+        ],
+        [
+          -21.10595566702573,
+          -217.63674699320654
+        ],
+        [
+          -20.932637911779327,
+          -217.6708633658231
+        ],
+        [
+          -20.756810739614703,
+          -217.687827348043
+        ],
+        [
+          -20.580167462316712,
+          -217.68747556744393
+        ],
+        [
+          -0.4218192190987966,
+          -216.65691375841857
+        ],
+        [
+          -0.24606100799085923,
+          -216.63924960284007
+        ],
+        [
+          -0.07288051072515406,
+          -216.60444318775652
+        ],
+        [
+          0.09605444983956002,
+          -216.55282971797234
+        ],
+        [
+          0.2591169376838026,
+          -216.48490625941633
+        ],
+        [
+          0.41473657191060986,
+          -216.40132695212512
+        ],
+        [
+          0.5614146503720321,
+          -216.30289671051702
+        ],
+        [
+          0.6977385829900922,
+          -216.19056347162618
+        ],
+        [
+          0.8223954957714359,
+          -216.06540906595066
+        ],
+        [
+          0.9341848745015788,
+          -215.92863879883353
+        ],
+        [
+          1.0320301263530594,
+          -215.78156984271334
+        ],
+        [
+          1.1149889480628918,
+          -215.6256185520336
+        ],
+        [
+          1.1822624008281057,
+          -215.46228682297516
+        ],
+        [
+          1.233202604523162,
+          -215.29314762937514
+        ],
+        [
+          1.2673189771397297,
+          -215.11982987412873
+        ],
+        [
+          1.2842829593596043,
+          -214.9440027019641
+        ],
+        [
+          1.283931178760552,
+          -214.76735942466613
+        ],
+        [
+          -5.914753239124897,
+          -73.95718567487627
+        ],
+        [
+          -5.932417394703404,
+          -73.78142746376834
+        ],
+        [
+          -5.967223809786936,
+          -73.60824696650263
+        ],
+        [
+          -6.018837279571115,
+          -73.43931200593791
+        ],
+        [
+          -6.086760738127127,
+          -73.27624951809368
+        ],
+        [
+          -6.170340045418339,
+          -73.12062988386687
+        ],
+        [
+          -6.268770287026438,
+          -72.97395180540545
+        ],
+        [
+          -6.381103525917297,
+          -72.83762787278738
+        ],
+        [
+          -6.506257931592801,
+          -72.71297096000603
+        ],
+        [
+          -6.643028198709937,
+          -72.6011815812759
+        ],
+        [
+          -6.790097154830134,
+          -72.50333632942441
+        ],
+        [
+          -6.946048445509885,
+          -72.42037750771458
+        ],
+        [
+          -7.109380174568297,
+          -72.35310405494937
+        ],
+        [
+          -7.2785193681683324,
+          -72.30216385125432
+        ],
+        [
+          -7.451837123414735,
+          -72.26804747863774
+        ],
+        [
+          -7.627664295579358,
+          -72.25108349641788
+        ],
+        [
+          -7.804307572877346,
+          -72.25143527701692
+        ],
+        [
+          -7.867455400975568,
+          -72.2546636040195
+        ],
+        [
+          -9.54481027049736,
+          -35.617401684610854
+        ],
+        [
+          -9.853456020509261,
+          -24.91511298104349
+        ],
+        [
+          -9.284379228420812,
+          -22.533490980459405
+        ],
+        [
+          -8.669353623414125,
+          -20.877234404369457
+        ],
+        [
+          -7.384088585211096,
+          -18.687841158757
+        ],
+        [
+          -7.036705615443819,
+          -18.17041442988413
+        ],
+        [
+          -5.93863891402516,
+          -16.767841784362545
+        ],
+        [
+          -2.2973981396177443,
+          -13.644139002075233
+        ],
+        [
+          -2.254172926508507,
+          -13.605836749123096
+        ],
+        [
+          -1.7622211077331706,
+          -13.155619634855318
+        ],
+        [
+          -1.3105328380977967,
+          -13.028524993271247
+        ],
+        [
+          1.2626972287738054,
+          -12.55386184582745
+        ],
+        [
+          4.570619018992996,
+          -12.355239572267335
+        ],
+        [
+          8.099548343552394,
+          -12.253457650349564
+        ],
+        [
+          8.145102153615776,
+          -12.251566115928457
+        ],
+        [
+          14.492858539745704,
+          -11.9074075975027
+        ],
+        [
+          54.67137993591665,
+          -10.042018161906878
+        ],
+        [
+          54.70136191105665,
+          -10.114807518032654
+        ],
+        [
+          54.78432316109434,
+          -10.270757516930853
+        ],
+        [
+          54.882170702963876,
+          -10.417824949472028
+        ],
+        [
+          54.99396221134816,
+          -10.554593475885568
+        ],
+        [
+          55.11862107290999,
+          -10.679745940496831
+        ],
+        [
+          55.25494675466705,
+          -10.792077056656314
+        ],
+        [
+          55.401626365780835,
+          -10.890505014308967
+        ],
+        [
+          55.557247301413085,
+          -10.9740818984164
+        ],
+        [
+          55.720310846882604,
+          -11.042002817896886
+        ],
+        [
+          55.88924661110692,
+          -11.093613657166475
+        ],
+        [
+          56.06242765032686,
+          -11.128417375629649
+        ],
+        [
+          56.238186136464364,
+          -11.146078794451956
+        ],
+        [
+          56.41482941921856,
+          -11.146427824515428
+        ],
+        [
+          191.89657022519958,
+          -4.758955561462018
+        ],
+        [
+          192.0723971331945,
+          -4.74198884141634
+        ],
+        [
+          192.2457143571894,
+          -4.707869770050507
+        ],
+        [
+          192.41485275757236,
+          -4.656926932673155
+        ],
+        [
+          192.57818343908727,
+          -4.589650936656414
+        ],
+        [
+          192.73413343798546,
+          -4.506689686618726
+        ],
+        [
+          192.88120087052664,
+          -4.408842144749186
+        ],
+        [
+          193.01796939694017,
+          -4.297050636364905
+        ],
+        [
+          193.14312186155144,
+          -4.17239177480308
+        ],
+        [
+          193.25545297771092,
+          -4.0360660930460135
+        ],
+        [
+          193.35388093536358,
+          -3.8893864819322266
+        ],
+        [
+          193.437457819471,
+          -3.7337655462999773
+        ],
+        [
+          193.5053787389515,
+          -3.57070200083046
+        ],
+        [
+          193.55698957822108,
+          -3.4017662366061474
+        ],
+        [
+          193.59179329668424,
+          -3.2285851973862023
+        ],
+        [
+          193.60945471550656,
+          -3.052826711248699
+        ],
+        [
+          193.60980374557002,
+          -2.876183428494504
+        ],
+        [
+          192.7208838540133,
+          15.978288166126317
+        ],
+        [
+          192.70391713396762,
+          16.154115074121243
+        ],
+        [
+          192.66979806260179,
+          16.327432298116143
+        ],
+        [
+          192.61885522522445,
+          16.49657069849911
+        ],
+        [
+          192.5515792292077,
+          16.659901380014006
+        ],
+        [
+          192.46861797917,
+          16.815851378912203
+        ],
+        [
+          192.37077043730048,
+          16.96291881145338
+        ],
+        [
+          192.2589789289162,
+          17.09968733786692
+        ],
+        [
+          192.13432006735437,
+          17.224839802478186
+        ],
+        [
+          191.9979943855973,
+          17.337170918637668
+        ],
+        [
+          191.8513147744835,
+          17.43559887629032
+        ],
+        [
+          191.69569383885127,
+          17.519175760397754
+        ],
+        [
+          191.53263029338174,
+          17.58709667987824
+        ],
+        [
+          191.3636945291574,
+          17.63870751914783
+        ],
+        [
+          191.19051348993747,
+          17.673511237611
+        ],
+        [
+          191.01475500379996,
+          17.691172656433306
+        ],
+        [
+          190.83811172104578,
+          17.691521686496777
+        ],
+        [
+          55.35637091506479,
+          11.304049423443367
+        ],
+        [
+          55.18054400706986,
+          11.287082703397692
+        ],
+        [
+          55.00722678307496,
+          11.252963632031861
+        ],
+        [
+          54.838088382692,
+          11.202020794654509
+        ],
+        [
+          54.6747577011771,
+          11.134744798637769
+        ],
+        [
+          54.518807702278906,
+          11.051783548600081
+        ],
+        [
+          54.37174026973773,
+          10.953936006730542
+        ],
+        [
+          54.23497174332419,
+          10.84214449834626
+        ],
+        [
+          54.109819278712926,
+          10.717485636784435
+        ],
+        [
+          53.99748816255344,
+          10.581159955027369
+        ],
+        [
+          53.899060204900785,
+          10.434480343913581
+        ],
+        [
+          53.815483320793355,
+          10.278859408281331
+        ],
+        [
+          53.798581678531356,
+          10.23828219388877
+        ],
+        [
+          3.4075460690429837,
+          8.38295074773993
+        ],
+        [
+          -1.89777989658134,
+          8.18763836373708
+        ],
+        [
+          -2.2284767671222094,
+          8.273907644733235
+        ],
+        [
+          -2.932192220424224,
+          8.669569148543422
+        ],
+        [
+          -5.144234231149513,
+          10.169422004109157
+        ],
+        [
+          -7.063488538795128,
+          11.824548758896857
+        ],
+        [
+          -8.96495899148921,
+          13.827854518950673
+        ],
+        [
+          -10.323230490169633,
+          15.955713307447322
+        ],
+        [
+          -11.256026631568211,
+          18.254624780736258
+        ],
+        [
+          -11.806376519981582,
+          20.266918124316618
+        ],
+        [
+          -12.331123544436947,
+          32.94251031204833
+        ],
+        [
+          -13.599522818109902,
+          68.48472011136623
+        ],
+        [
+          -11.598399725181409,
+          68.57856080333708
+        ],
+        [
+          -11.422568550534526,
+          68.5954832495687
+        ],
+        [
+          -11.249242740840122,
+          68.62955867851602
+        ],
+        [
+          -11.08009151839508,
+          68.68045892517073
+        ],
+        [
+          -10.916743901939004,
+          68.74769379233267
+        ],
+        [
+          -10.76077301831326,
+          68.83061577147673
+        ],
+        [
+          -10.613680952389524,
+          68.92842627861401
+        ],
+        [
+          -10.47688428117134,
+          69.0401833450921
+        ],
+        [
+          -10.351700431383211,
+          69.1648106892682
+        ],
+        [
+          -10.239334991931045,
+          69.30110808168965
+        ],
+        [
+          -10.140870103421966,
+          69.44776290395968
+        ],
+        [
+          -10.057254036558701,
+          69.60336278997019
+        ],
+        [
+          -9.989292059774332,
+          69.76640922775933
+        ],
+        [
+          -9.937638684057092,
+          69.93533199100092
+        ],
+        [
+          -9.902791359651742,
+          70.1085042611424
+        ],
+        [
+          -9.88508568534179,
+          70.2842582945567
+        ],
+        [
+          -9.884692176449752,
+          70.46090148382511
+        ],
+        [
+          -16.437432787161196,
+          210.1960236644903
+        ],
+        [
+          -16.454355233392814,
+          210.37185483913717
+        ],
+        [
+          -16.488430662340125,
+          210.54518064883158
+        ],
+        [
+          -16.539330908994845,
+          210.7143318712766
+        ],
+        [
+          -16.60656577615678,
+          210.8776794877327
+        ],
+        [
+          -16.68948775530085,
+          211.03365037135845
+        ],
+        [
+          -16.787298262438124,
+          211.1807424372822
+        ],
+        [
+          -16.899055328916216,
+          211.31753910850037
+        ],
+        [
+          -17.02368267309231,
+          211.4427229582885
+        ],
+        [
+          -17.159980065513757,
+          211.55508839774066
+        ],
+        [
+          -17.306634887783805,
+          211.65355328624975
+        ],
+        [
+          -17.462234773794307,
+          211.737169353113
+        ],
+        [
+          -17.62528121158344,
+          211.80513132989736
+        ],
+        [
+          -17.794203974825038,
+          211.85678470561461
+        ],
+        [
+          -17.967376244966516,
+          211.89163203001996
+        ],
+        [
+          -18.143130278380813,
+          211.90933770432991
+        ],
+        [
+          -18.319773467649224,
+          211.90973121322193
+        ],
+        [
+          -38.96358544639822,
+          210.94166002967123
+        ],
+        [
+          -39.1394166210451,
+          210.92473758343962
+        ],
+        [
+          -39.31274243073951,
+          210.8906621544923
+        ],
+        [
+          -39.48189365318456,
+          210.83976190783758
+        ],
+        [
+          -39.64524126964063,
+          210.77252704067567
+        ],
+        [
+          -39.80121215326637,
+          210.68960506153158
+        ],
+        [
+          -39.94830421919011,
+          210.5917945543943
+        ],
+        [
+          -40.08510089040829,
+          210.4800374879162
+        ],
+        [
+          -40.21028474019643,
+          210.35541014374013
+        ],
+        [
+          -40.32265017964859,
+          210.21911275131868
+        ],
+        [
+          -40.42111506815767,
+          210.07245792904862
+        ],
+        [
+          -40.50473113502093,
+          209.91685804303813
+        ],
+        [
+          -40.5726931118053,
+          209.75381160524898
+        ],
+        [
+          -40.624346487522544,
+          209.5848888420074
+        ],
+        [
+          -40.65919381192789,
+          209.41171657186592
+        ],
+        [
+          -40.67689948623784,
+          209.23596253845162
+        ],
+        [
+          -40.67729299512988,
+          209.0593193491832
+        ],
+        [
+          -34.2416009843433,
+          71.82022156247014
+        ],
+        [
+          -34.31778075900985,
+          71.75741111508661
+        ],
+        [
+          -34.43996121863971,
+          71.63519361901933
+        ],
+        [
+          -34.54985816879602,
+          71.50182255241695
+        ],
+        [
+          -34.646458618023736,
+          71.35852728288819
+        ],
+        [
+          -34.728872137339295,
+          71.20662865585574
+        ],
+        [
+          -34.79633906789203,
+          71.0475268194675
+        ],
+        [
+          -34.84823752323239,
+          70.8826883185231
+        ],
+        [
+          -34.88408912164263,
+          70.71363257637942
+        ],
+        [
+          -34.903563395691336,
+          70.54191788944033
+        ],
+        [
+          -34.906480838365994,
+          70.36912706332807
+        ],
+        [
+          -34.53079525753451,
+          58.308663408498916
+        ],
+        [
+          -34.53043398318715,
+          58.29806826951095
+        ],
+        [
+          -33.86110232851371,
+          40.23080775862431
+        ],
+        [
+          -33.86026424055376,
+          40.211103658841196
+        ],
+        [
+          -33.320324051933696,
+          28.967799571336048
+        ],
+        [
+          -33.000696283814285,
+          22.05868459269101
+        ],
+        [
+          -33.07155478828672,
+          16.922229122253242
+        ],
+        [
+          -33.40232238111937,
+          15.445791146772734
+        ],
+        [
+          -33.57086375094791,
+          15.102165640938027
+        ],
+        [
+          -33.87701224141778,
+          14.563926851271916
+        ],
+        [
+          -33.903033140230036,
+          14.516537432901249
+        ],
+        [
+          -34.257661172134235,
+          13.84704775975963
+        ],
+        [
+          -35.259788608873365,
+          12.180664353623115
+        ],
+        [
+          -37.0429516105149,
+          9.995149173095943
+        ],
+        [
+          -38.64480472019731,
+          8.560660354560977
+        ],
+        [
+          -38.98558585015181,
+          8.341914763913389
+        ],
+        [
+          -40.46139285117357,
+          7.394603471089706
+        ],
+        [
+          -40.7897714497936,
+          7.204572454925763
+        ],
+        [
+          -41.4253583201333,
+          6.996796298751467
+        ],
+        [
+          -42.16532314398412,
+          6.830080607549416
+        ],
+        [
+          -42.93007222913338,
+          6.751025402051539
+        ],
+        [
+          -46.82140182727493,
+          6.479140075072282
+        ],
+        [
+          -55.18945515031773,
+          5.972671599877157
+        ],
+        [
+          -60.38167862385864,
+          5.658423420200215
+        ],
+        [
+          -60.433185151742435,
+          5.654563681038222
+        ],
+        [
+          -67.49688896378244,
+          5.023195963643319
+        ],
+        [
+          -82.2179333421168,
+          4.330730584712029
+        ],
+        [
+          -82.24138993745919,
+          4.329473761572867
+        ],
+        [
+          -83.16483994013159,
+          4.273949457498873
+        ],
+        [
+          -83.22930860588605,
+          5.811738164331415
+        ],
+        [
+          -83.24535850481026,
+          5.987651131189139
+        ],
+        [
+          -83.27857360504255,
+          6.161143863834409
+        ],
+        [
+          -83.32863402701045,
+          6.330545532411077
+        ],
+        [
+          -83.39505766148463,
+          6.494224706246376
+        ],
+        [
+          -83.47720481255422,
+          6.650605065420134
+        ],
+        [
+          -83.57428435824824,
+          6.798180581587309
+        ],
+        [
+          -83.68536136947256,
+          6.935530021854228
+        ],
+        [
+          -83.80936611388823,
+          7.061330636028278
+        ],
+        [
+          -83.94510435801864,
+          7.174370895425352
+        ],
+        [
+          -84.09126886837073,
+          7.273562160553365
+        ],
+        [
+          -84.24645200080818,
+          7.357949165305674
+        ],
+        [
+          -84.40915925693388,
+          7.426719216695883
+        ],
+        [
+          -84.57782367692649,
+          7.479210021535572
+        ],
+        [
+          -84.75082093022014,
+          7.51491606467974
+        ],
+        [
+          -84.92648495869572,
+          7.533493477414002
+        ],
+        [
+          -85.10312402173125,
+          7.534763349098279
+        ],
+        [
+          -235.02160943259662,
+          1.2497355794016711
+        ],
+        [
+          -235.19752239945436,
+          1.2336856804774603
+        ],
+        [
+          -235.37101513209961,
+          1.2004705802451707
+        ],
+        [
+          -235.54041680067627,
+          1.15041015827726
+        ],
+        [
+          -235.70409597451157,
+          1.083986523803089
+        ],
+        [
+          -235.86047633368534,
+          1.001839372733496
+        ],
+        [
+          -236.0080518498525,
+          0.9047598270394825
+        ],
+        [
+          -236.14540129011942,
+          0.7936828158151592
+        ],
+        [
+          -236.27120190429346,
+          0.6696780713994877
+        ],
+        [
+          -236.38424216369054,
+          0.5339398272690794
+        ],
+        [
+          -236.48343342881856,
+          0.38777531691698297
+        ],
+        [
+          -236.56782043357086,
+          0.23259218447953656
+        ],
+        [
+          -236.6365904849611,
+          0.06988492835384297
+        ],
+        [
+          -236.68908128980075,
+          -0.09877949163877364
+        ],
+        [
+          -236.72478733294494,
+          -0.2717767449324337
+        ],
+        [
+          -236.7433647456792,
+          -0.4474407734080008
+        ],
+        [
+          -236.74463461736346,
+          -0.6240798364435296
+        ],
+        [
+          -235.93145751639864,
+          -20.02101550874674
+        ],
+        [
+          -235.91540761747444,
+          -20.196928475604466
+        ],
+        [
+          -235.88219251724215,
+          -20.370421208249734
+        ],
+        [
+          -235.83213209527423,
+          -20.539822876826403
+        ],
+        [
+          -235.76570846080006,
+          -20.7035020506617
+        ],
+        [
+          -235.68356130973046,
+          -20.85988240983546
+        ],
+        [
+          -235.58648176403645,
+          -21.007457926002637
+        ],
+        [
+          -235.47540475281212,
+          -21.144807366269553
+        ],
+        [
+          -235.35140000839647,
+          -21.270607980443604
+        ],
+        [
+          -235.21566176426606,
+          -21.383648239840678
+        ],
+        [
+          -235.06949725391397,
+          -21.48283950496869
+        ],
+        [
+          -234.9143141214765,
+          -21.567226509721
+        ],
+        [
+          -234.75160686535082,
+          -21.63599656111121
+        ],
+        [
+          -234.58294244535819,
+          -21.688487365950895
+        ],
+        [
+          -234.40994519206453,
+          -21.724193409095065
+        ],
+        [
+          -234.23428116358897,
+          -21.742770821829325
+        ],
+        [
+          -234.05764210055344,
+          -21.7440406935136
+        ],
+        [
+          -97.91160094960489,
+          -16.036394654915394
+        ],
+        [
+          -97.88250892611957,
+          -16.078232813939465
+        ]
+      ]
+    ]
+  },
+  "forest": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          29.19015744878925,
+          51.32411405819086
+        ],
+        [
+          29.19015744878925,
+          177.32411405819087
+        ],
+        [
+          149.19015744878925,
+          177.32411405819087
+        ],
+        [
+          149.19015744878925,
+          51.32411405819086
+        ],
+        [
+          29.19015744878925,
+          51.32411405819086
+        ]
+      ]
+    ]
+  },
+  "groves": [
+    [
+      38.19,
+      85.324
+    ],
+    [
+      38.19,
+      101.324
+    ],
+    [
+      35.19,
+      109.324
+    ],
+    [
+      38.19,
+      117.324
+    ],
+    [
+      35.19,
+      125.324
+    ],
+    [
+      38.19,
+      133.324
+    ],
+    [
+      35.19,
+      141.324
+    ],
+    [
+      38.19,
+      149.324
+    ],
+    [
+      35.19,
+      157.324
+    ],
+    [
+      38.19,
+      165.324
+    ],
+    [
+      35.19,
+      173.324
+    ],
+    [
+      46.19,
+      85.324
+    ],
+    [
+      46.19,
+      101.324
+    ],
+    [
+      43.19,
+      109.324
+    ],
+    [
+      46.19,
+      117.324
+    ],
+    [
+      43.19,
+      125.324
+    ],
+    [
+      46.19,
+      133.324
+    ],
+    [
+      43.19,
+      141.324
+    ],
+    [
+      46.19,
+      149.324
+    ],
+    [
+      43.19,
+      157.324
+    ],
+    [
+      46.19,
+      165.324
+    ],
+    [
+      43.19,
+      173.324
+    ],
+    [
+      54.19,
+      85.324
+    ],
+    [
+      54.19,
+      101.324
+    ],
+    [
+      51.19,
+      109.324
+    ],
+    [
+      54.19,
+      117.324
+    ],
+    [
+      51.19,
+      125.324
+    ],
+    [
+      54.19,
+      133.324
+    ],
+    [
+      51.19,
+      141.324
+    ],
+    [
+      54.19,
+      149.324
+    ],
+    [
+      51.19,
+      157.324
+    ],
+    [
+      54.19,
+      165.324
+    ],
+    [
+      51.19,
+      173.324
+    ],
+    [
+      62.19,
+      85.324
+    ],
+    [
+      62.19,
+      101.324
+    ],
+    [
+      59.19,
+      109.324
+    ],
+    [
+      62.19,
+      117.324
+    ],
+    [
+      59.19,
+      125.324
+    ],
+    [
+      62.19,
+      133.324
+    ],
+    [
+      59.19,
+      141.324
+    ],
+    [
+      62.19,
+      149.324
+    ],
+    [
+      59.19,
+      157.324
+    ],
+    [
+      62.19,
+      165.324
+    ],
+    [
+      59.19,
+      173.324
+    ],
+    [
+      67.19,
+      61.324
+    ],
+    [
+      70.19,
+      69.324
+    ],
+    [
+      67.19,
+      77.324
+    ],
+    [
+      70.19,
+      85.324
+    ],
+    [
+      70.19,
+      101.324
+    ],
+    [
+      67.19,
+      109.324
+    ],
+    [
+      70.19,
+      117.324
+    ],
+    [
+      67.19,
+      125.324
+    ],
+    [
+      70.19,
+      133.324
+    ],
+    [
+      67.19,
+      141.324
+    ],
+    [
+      70.19,
+      149.324
+    ],
+    [
+      67.19,
+      157.324
+    ],
+    [
+      70.19,
+      165.324
+    ],
+    [
+      67.19,
+      173.324
+    ],
+    [
+      75.19,
+      61.324
+    ],
+    [
+      78.19,
+      69.324
+    ],
+    [
+      75.19,
+      77.324
+    ],
+    [
+      78.19,
+      85.324
+    ],
+    [
+      78.19,
+      101.324
+    ],
+    [
+      75.19,
+      109.324
+    ],
+    [
+      78.19,
+      117.324
+    ],
+    [
+      75.19,
+      125.324
+    ],
+    [
+      78.19,
+      133.324
+    ],
+    [
+      75.19,
+      141.324
+    ],
+    [
+      78.19,
+      149.324
+    ],
+    [
+      75.19,
+      157.324
+    ],
+    [
+      78.19,
+      165.324
+    ],
+    [
+      75.19,
+      173.324
+    ],
+    [
+      83.19,
+      61.324
+    ],
+    [
+      86.19,
+      69.324
+    ],
+    [
+      83.19,
+      77.324
+    ],
+    [
+      86.19,
+      85.324
+    ],
+    [
+      83.19,
+      109.324
+    ],
+    [
+      86.19,
+      117.324
+    ],
+    [
+      83.19,
+      125.324
+    ],
+    [
+      86.19,
+      133.324
+    ],
+    [
+      83.19,
+      141.324
+    ],
+    [
+      86.19,
+      149.324
+    ],
+    [
+      83.19,
+      157.324
+    ],
+    [
+      86.19,
+      165.324
+    ],
+    [
+      83.19,
+      173.324
+    ],
+    [
+      91.19,
+      61.324
+    ],
+    [
+      94.19,
+      69.324
+    ],
+    [
+      91.19,
+      77.324
+    ],
+    [
+      94.19,
+      85.324
+    ],
+    [
+      91.19,
+      109.324
+    ],
+    [
+      94.19,
+      117.324
+    ],
+    [
+      91.19,
+      125.324
+    ],
+    [
+      94.19,
+      133.324
+    ],
+    [
+      91.19,
+      141.324
+    ],
+    [
+      94.19,
+      149.324
+    ],
+    [
+      91.19,
+      157.324
+    ],
+    [
+      94.19,
+      165.324
+    ],
+    [
+      91.19,
+      173.324
+    ],
+    [
+      99.19,
+      61.324
+    ],
+    [
+      102.19,
+      69.324
+    ],
+    [
+      99.19,
+      77.324
+    ],
+    [
+      102.19,
+      85.324
+    ],
+    [
+      99.19,
+      109.324
+    ],
+    [
+      102.19,
+      117.324
+    ],
+    [
+      99.19,
+      125.324
+    ],
+    [
+      102.19,
+      133.324
+    ],
+    [
+      99.19,
+      141.324
+    ],
+    [
+      102.19,
+      149.324
+    ],
+    [
+      99.19,
+      157.324
+    ],
+    [
+      102.19,
+      165.324
+    ],
+    [
+      99.19,
+      173.324
+    ],
+    [
+      107.19,
+      61.324
+    ],
+    [
+      110.19,
+      69.324
+    ],
+    [
+      107.19,
+      77.324
+    ],
+    [
+      110.19,
+      85.324
+    ],
+    [
+      107.19,
+      93.324
+    ],
+    [
+      107.19,
+      109.324
+    ],
+    [
+      110.19,
+      117.324
+    ],
+    [
+      107.19,
+      125.324
+    ],
+    [
+      110.19,
+      133.324
+    ],
+    [
+      107.19,
+      141.324
+    ],
+    [
+      110.19,
+      149.324
+    ],
+    [
+      107.19,
+      157.324
+    ],
+    [
+      110.19,
+      165.324
+    ],
+    [
+      107.19,
+      173.324
+    ],
+    [
+      115.19,
+      61.324
+    ],
+    [
+      118.19,
+      69.324
+    ],
+    [
+      115.19,
+      77.324
+    ],
+    [
+      118.19,
+      85.324
+    ],
+    [
+      115.19,
+      93.324
+    ],
+    [
+      118.19,
+      117.324
+    ],
+    [
+      115.19,
+      125.324
+    ],
+    [
+      118.19,
+      133.324
+    ],
+    [
+      115.19,
+      141.324
+    ],
+    [
+      118.19,
+      149.324
+    ],
+    [
+      115.19,
+      157.324
+    ],
+    [
+      118.19,
+      165.324
+    ],
+    [
+      115.19,
+      173.324
+    ],
+    [
+      123.19,
+      61.324
+    ],
+    [
+      126.19,
+      69.324
+    ],
+    [
+      123.19,
+      77.324
+    ],
+    [
+      126.19,
+      85.324
+    ],
+    [
+      123.19,
+      93.324
+    ],
+    [
+      126.19,
+      117.324
+    ],
+    [
+      123.19,
+      125.324
+    ],
+    [
+      126.19,
+      133.324
+    ],
+    [
+      123.19,
+      141.324
+    ],
+    [
+      126.19,
+      149.324
+    ],
+    [
+      123.19,
+      157.324
+    ],
+    [
+      126.19,
+      165.324
+    ],
+    [
+      123.19,
+      173.324
+    ],
+    [
+      131.19,
+      61.324
+    ],
+    [
+      134.19,
+      69.324
+    ],
+    [
+      131.19,
+      77.324
+    ],
+    [
+      134.19,
+      85.324
+    ],
+    [
+      131.19,
+      93.324
+    ],
+    [
+      134.19,
+      117.324
+    ],
+    [
+      131.19,
+      125.324
+    ],
+    [
+      134.19,
+      133.324
+    ],
+    [
+      131.19,
+      141.324
+    ],
+    [
+      134.19,
+      149.324
+    ],
+    [
+      131.19,
+      157.324
+    ],
+    [
+      134.19,
+      165.324
+    ],
+    [
+      131.19,
+      173.324
+    ],
+    [
+      139.19,
+      61.324
+    ],
+    [
+      142.19,
+      69.324
+    ],
+    [
+      139.19,
+      77.324
+    ],
+    [
+      142.19,
+      85.324
+    ],
+    [
+      139.19,
+      93.324
+    ],
+    [
+      142.19,
+      101.324
+    ],
+    [
+      142.19,
+      117.324
+    ],
+    [
+      139.19,
+      125.324
+    ],
+    [
+      142.19,
+      133.324
+    ],
+    [
+      139.19,
+      141.324
+    ],
+    [
+      142.19,
+      149.324
+    ],
+    [
+      139.19,
+      157.324
+    ],
+    [
+      142.19,
+      165.324
+    ],
+    [
+      139.19,
+      173.324
+    ]
+  ],
+  "tramRail": [
+    [
+      -235.80984255121075,
+      105.32411405819086
+    ],
+    [
+      -233.88328005121073,
+      104.98061405819085
+    ],
+    [
+      -231.62234255121075,
+      104.55611405819086
+    ],
+    [
+      -229.05515505121076,
+      104.05961405819085
+    ],
+    [
+      -226.20984255121076,
+      103.50011405819086
+    ],
+    [
+      -223.11453005121075,
+      102.88661405819086
+    ],
+    [
+      -219.79734255121073,
+      102.22811405819085
+    ],
+    [
+      -216.28640505121075,
+      101.53361405819086
+    ],
+    [
+      -212.60984255121076,
+      100.81211405819084
+    ],
+    [
+      -208.79578005121076,
+      100.07261405819085
+    ],
+    [
+      -204.87234255121075,
+      99.32411405819084
+    ],
+    [
+      -200.86765505121073,
+      98.57561405819085
+    ],
+    [
+      -196.80984255121075,
+      97.83611405819084
+    ],
+    [
+      -192.72703005121076,
+      97.11461405819084
+    ],
+    [
+      -188.64734255121076,
+      96.42011405819083
+    ],
+    [
+      -184.59890505121075,
+      95.76161405819084
+    ],
+    [
+      -180.60984255121076,
+      95.14811405819084
+    ],
+    [
+      -176.70828005121075,
+      94.58861405819084
+    ],
+    [
+      -172.92234255121076,
+      94.09211405819083
+    ],
+    [
+      -169.28015505121078,
+      93.66761405819082
+    ],
+    [
+      -165.80984255121075,
+      93.32411405819086
+    ],
+    [
+      -162.55984255121075,
+      93.05336405819087
+    ],
+    [
+      -159.53484255121074,
+      92.83811405819087
+    ],
+    [
+      -156.69734255121077,
+      92.67386405819084
+    ],
+    [
+      -154.00984255121074,
+      92.55611405819086
+    ],
+    [
+      -151.43484255121075,
+      92.48036405819086
+    ],
+    [
+      -148.93484255121075,
+      92.44211405819085
+    ],
+    [
+      -146.47234255121074,
+      92.43686405819086
+    ],
+    [
+      -144.00984255121077,
+      92.46011405819085
+    ],
+    [
+      -141.50984255121074,
+      92.50736405819086
+    ],
+    [
+      -138.93484255121075,
+      92.57411405819086
+    ],
+    [
+      -136.24734255121075,
+      92.65586405819086
+    ],
+    [
+      -133.40984255121074,
+      92.74811405819088
+    ],
+    [
+      -130.38484255121077,
+      92.84636405819086
+    ],
+    [
+      -127.13484255121074,
+      92.94611405819086
+    ],
+    [
+      -123.62234255121075,
+      93.04286405819086
+    ],
+    [
+      -119.80984255121075,
+      93.13211405819087
+    ],
+    [
+      -115.65984255121076,
+      93.20936405819087
+    ],
+    [
+      -111.13484255121075,
+      93.27011405819087
+    ],
+    [
+      -106.19734255121074,
+      93.30986405819087
+    ],
+    [
+      -100.80984255121075,
+      93.32411405819086
+    ],
+    [
+      -94.84046755121075,
+      93.30986405819085
+    ],
+    [
+      -88.22984255121075,
+      93.27011405819086
+    ],
+    [
+      -81.04921755121076,
+      93.20936405819086
+    ],
+    [
+      -73.36984255121075,
+      93.13211405819087
+    ],
+    [
+      -65.26296755121075,
+      93.04286405819086
+    ],
+    [
+      -56.799842551210745,
+      92.94611405819087
+    ],
+    [
+      -48.05171755121075,
+      92.84636405819086
+    ],
+    [
+      -39.08984255121075,
+      92.74811405819086
+    ],
+    [
+      -29.985467551210753,
+      92.65586405819087
+    ],
+    [
+      -20.80984255121075,
+      92.57411405819086
+    ],
+    [
+      -11.634217551210746,
+      92.50736405819086
+    ],
+    [
+      -2.5298425512107485,
+      92.46011405819087
+    ],
+    [
+      6.432032448789251,
+      92.43686405819086
+    ],
+    [
+      15.180157448789245,
+      92.44211405819088
+    ],
+    [
+      23.64328244878925,
+      92.48036405819087
+    ],
+    [
+      31.750157448789246,
+      92.55611405819087
+    ],
+    [
+      39.429532448789246,
+      92.67386405819089
+    ],
+    [
+      46.61015744878924,
+      92.83811405819088
+    ],
+    [
+      53.22078244878925,
+      93.05336405819088
+    ],
+    [
+      59.19015744878925,
+      93.32411405819086
+    ],
+    [
+      64.57765744878924,
+      93.65098905819086
+    ],
+    [
+      69.51515744878925,
+      94.02911405819086
+    ],
+    [
+      74.04015744878926,
+      94.45473905819087
+    ],
+    [
+      78.19015744878925,
+      94.92411405819085
+    ],
+    [
+      82.00265744878925,
+      95.43348905819086
+    ],
+    [
+      85.51515744878924,
+      95.97911405819085
+    ],
+    [
+      88.76515744878925,
+      96.55723905819085
+    ],
+    [
+      91.79015744878926,
+      97.16411405819088
+    ],
+    [
+      94.62765744878925,
+      97.79598905819087
+    ],
+    [
+      97.31515744878925,
+      98.44911405819086
+    ],
+    [
+      99.89015744878925,
+      99.11973905819086
+    ],
+    [
+      102.39015744878925,
+      99.80411405819086
+    ],
+    [
+      104.85265744878926,
+      100.49848905819087
+    ],
+    [
+      107.31515744878925,
+      101.19911405819087
+    ],
+    [
+      109.81515744878925,
+      101.90223905819087
+    ],
+    [
+      112.39015744878924,
+      102.60411405819087
+    ],
+    [
+      115.07765744878925,
+      103.30098905819088
+    ],
+    [
+      117.91515744878924,
+      103.98911405819088
+    ],
+    [
+      120.94015744878925,
+      104.66473905819089
+    ],
+    [
+      124.19015744878925,
+      105.32411405819086
+    ],
+    [
+      127.66046994878924,
+      105.99561405819085
+    ],
+    [
+      131.30265744878926,
+      106.70611405819086
+    ],
+    [
+      135.08859494878925,
+      107.44961405819086
+    ],
+    [
+      138.99015744878923,
+      108.22011405819086
+    ],
+    [
+      142.97921994878925,
+      109.01161405819086
+    ],
+    [
+      147.02765744878926,
+      109.81811405819087
+    ],
+    [
+      151.10734494878926,
+      110.63361405819084
+    ],
+    [
+      155.19015744878925,
+      111.45211405819086
+    ],
+    [
+      159.24796994878923,
+      112.26761405819084
+    ],
+    [
+      163.25265744878925,
+      113.07411405819084
+    ],
+    [
+      167.17609494878926,
+      113.86561405819084
+    ],
+    [
+      170.99015744878926,
+      114.63611405819084
+    ],
+    [
+      174.66671994878925,
+      115.37961405819084
+    ],
+    [
+      178.17765744878923,
+      116.09011405819084
+    ],
+    [
+      181.49484494878925,
+      116.76161405819084
+    ],
+    [
+      184.59015744878923,
+      117.38811405819084
+    ],
+    [
+      187.43546994878926,
+      117.96361405819083
+    ],
+    [
+      190.00265744878925,
+      118.48211405819083
+    ],
+    [
+      192.26359494878926,
+      118.93761405819082
+    ],
+    [
+      194.19015744878925,
+      119.32411405819086
+    ]
+  ],
+  "tramRailHeight": 7.2,
+  "tramPiers": [
+    [
+      -227.948495132481,
+      103.84200132689006
+    ],
+    [
+      -210.2881254402551,
+      100.3619615492711
+    ],
+    [
+      -192.5881183051429,
+      97.09096660782996
+    ],
+    [
+      -174.80116012642438,
+      94.3385082276914
+    ],
+    [
+      -156.8822082729575,
+      92.68456509600473
+    ],
+    [
+      -138.88795110936334,
+      92.57554043042194
+    ],
+    [
+      -120.89587640215932,
+      93.1066901837785
+    ],
+    [
+      -102.89747219232183,
+      93.31859225357168
+    ],
+    [
+      -84.8977352593256,
+      93.24192354302232
+    ],
+    [
+      -66.8986536711659,
+      93.06087161180504
+    ],
+    [
+      -48.89981934159151,
+      92.85603449083676
+    ],
+    [
+      5.0983643941995,
+      92.44032402413205
+    ],
+    [
+      23.098277460028683,
+      92.47790084976371
+    ],
+    [
+      41.09657924563831,
+      92.71199617571303
+    ],
+    [
+      59.085604054515755,
+      93.31937188141363
+    ],
+    [
+      77.02214613573477,
+      94.7920091641993
+    ],
+    [
+      94.75421419858779,
+      97.82674529157214
+    ],
+    [
+      112.1267122706389,
+      102.53230606424358
+    ],
+    [
+      129.70236910957945,
+      106.39393769027774
+    ],
+    [
+      147.3606318802482,
+      109.88467323676883
+    ],
+    [
+      165.00836730489158,
+      113.42830457380502
+    ],
+    [
+      182.6513194814122,
+      116.99568777277969
+    ]
+  ],
+  "courtyardPlanting": [
+    [
+      -198.81,
+      -32.676
+    ],
+    [
+      -200.81,
+      -26.676
+    ],
+    [
+      -200.81,
+      9.324
+    ],
+    [
+      -192.81,
+      -32.676
+    ],
+    [
+      -194.81,
+      -26.676
+    ],
+    [
+      -194.81,
+      9.324
+    ],
+    [
+      -186.81,
+      -32.676
+    ],
+    [
+      -188.81,
+      -26.676
+    ],
+    [
+      -188.81,
+      9.324
+    ],
+    [
+      -186.81,
+      63.324
+    ],
+    [
+      -180.81,
+      -32.676
+    ],
+    [
+      -182.81,
+      -26.676
+    ],
+    [
+      -182.81,
+      9.324
+    ],
+    [
+      -180.81,
+      63.324
+    ],
+    [
+      -180.81,
+      87.324
+    ],
+    [
+      -174.81,
+      -32.676
+    ],
+    [
+      -176.81,
+      -26.676
+    ],
+    [
+      -176.81,
+      9.324
+    ],
+    [
+      -174.81,
+      63.324
+    ],
+    [
+      -174.81,
+      87.324
+    ],
+    [
+      -168.81,
+      -32.676
+    ],
+    [
+      -170.81,
+      -26.676
+    ],
+    [
+      -170.81,
+      9.324
+    ],
+    [
+      -168.81,
+      63.324
+    ],
+    [
+      -164.81,
+      -50.676
+    ],
+    [
+      -162.81,
+      -32.676
+    ],
+    [
+      -164.81,
+      -26.676
+    ],
+    [
+      -164.81,
+      9.324
+    ],
+    [
+      -156.81,
+      -32.676
+    ],
+    [
+      -158.81,
+      -26.676
+    ],
+    [
+      -158.81,
+      81.324
+    ],
+    [
+      -156.81,
+      99.324
+    ],
+    [
+      -150.81,
+      -128.676
+    ],
+    [
+      -150.81,
+      -32.676
+    ],
+    [
+      -152.81,
+      -26.676
+    ],
+    [
+      -152.81,
+      81.324
+    ],
+    [
+      -150.81,
+      99.324
+    ],
+    [
+      -144.81,
+      -128.676
+    ],
+    [
+      -144.81,
+      -32.676
+    ],
+    [
+      -146.81,
+      -26.676
+    ],
+    [
+      -146.81,
+      81.324
+    ],
+    [
+      -144.81,
+      99.324
+    ],
+    [
+      -138.81,
+      -128.676
+    ],
+    [
+      -140.81,
+      -122.676
+    ],
+    [
+      -138.81,
+      -116.676
+    ],
+    [
+      -138.81,
+      -32.676
+    ],
+    [
+      -140.81,
+      -26.676
+    ],
+    [
+      -140.81,
+      81.324
+    ],
+    [
+      -138.81,
+      99.324
+    ],
+    [
+      -134.81,
+      -146.676
+    ],
+    [
+      -132.81,
+      -32.676
+    ],
+    [
+      -134.81,
+      -26.676
+    ],
+    [
+      -134.81,
+      81.324
+    ],
+    [
+      -132.81,
+      99.324
+    ],
+    [
+      -134.81,
+      105.324
+    ],
+    [
+      -134.81,
+      141.324
+    ],
+    [
+      -126.81,
+      -80.676
+    ],
+    [
+      -128.81,
+      81.324
+    ],
+    [
+      -126.81,
+      99.324
+    ],
+    [
+      -128.81,
+      105.324
+    ],
+    [
+      -126.81,
+      147.324
+    ],
+    [
+      -120.81,
+      -80.676
+    ],
+    [
+      -122.81,
+      81.324
+    ],
+    [
+      -122.81,
+      105.324
+    ],
+    [
+      -114.81,
+      -80.676
+    ],
+    [
+      -114.81,
+      -68.676
+    ],
+    [
+      -114.81,
+      -56.676
+    ],
+    [
+      -116.81,
+      81.324
+    ],
+    [
+      -116.81,
+      105.324
+    ],
+    [
+      -108.81,
+      -80.676
+    ],
+    [
+      -110.81,
+      -74.676
+    ],
+    [
+      -108.81,
+      -68.676
+    ],
+    [
+      -110.81,
+      -62.676
+    ],
+    [
+      -108.81,
+      -56.676
+    ],
+    [
+      -110.81,
+      -50.676
+    ],
+    [
+      -110.81,
+      81.324
+    ],
+    [
+      -110.81,
+      105.324
+    ],
+    [
+      -104.81,
+      -50.676
+    ],
+    [
+      -104.81,
+      81.324
+    ],
+    [
+      -104.81,
+      105.324
+    ],
+    [
+      -98.81,
+      -50.676
+    ],
+    [
+      -96.81,
+      -44.676
+    ],
+    [
+      -98.81,
+      -38.676
+    ],
+    [
+      -96.81,
+      -32.676
+    ],
+    [
+      -98.81,
+      -26.676
+    ],
+    [
+      -96.81,
+      15.324
+    ],
+    [
+      -96.81,
+      27.324
+    ],
+    [
+      -96.81,
+      39.324
+    ],
+    [
+      -98.81,
+      45.324
+    ],
+    [
+      -96.81,
+      51.324
+    ],
+    [
+      -96.81,
+      63.324
+    ],
+    [
+      -96.81,
+      75.324
+    ],
+    [
+      -98.81,
+      81.324
+    ],
+    [
+      -98.81,
+      105.324
+    ],
+    [
+      -92.81,
+      -50.676
+    ],
+    [
+      -90.81,
+      15.324
+    ],
+    [
+      -92.81,
+      21.324
+    ],
+    [
+      -90.81,
+      27.324
+    ],
+    [
+      -92.81,
+      33.324
+    ],
+    [
+      -90.81,
+      39.324
+    ],
+    [
+      -92.81,
+      45.324
+    ],
+    [
+      -90.81,
+      51.324
+    ],
+    [
+      -92.81,
+      105.324
+    ],
+    [
+      -86.81,
+      -50.676
+    ],
+    [
+      -84.81,
+      15.324
+    ],
+    [
+      -86.81,
+      21.324
+    ],
+    [
+      -84.81,
+      27.324
+    ],
+    [
+      -86.81,
+      33.324
+    ],
+    [
+      -84.81,
+      39.324
+    ],
+    [
+      -86.81,
+      45.324
+    ],
+    [
+      -84.81,
+      51.324
+    ],
+    [
+      -86.81,
+      105.324
+    ],
+    [
+      -80.81,
+      -170.676
+    ],
+    [
+      -80.81,
+      -50.676
+    ],
+    [
+      -78.81,
+      15.324
+    ],
+    [
+      -80.81,
+      105.324
+    ],
+    [
+      -74.81,
+      -170.676
+    ],
+    [
+      -74.81,
+      9.324
+    ],
+    [
+      -72.81,
+      15.324
+    ],
+    [
+      -74.81,
+      105.324
+    ],
+    [
+      -68.81,
+      -170.676
+    ],
+    [
+      -68.81,
+      -146.676
+    ],
+    [
+      -68.81,
+      9.324
+    ],
+    [
+      -66.81,
+      15.324
+    ],
+    [
+      -68.81,
+      153.324
+    ],
+    [
+      -62.81,
+      -170.676
+    ],
+    [
+      -60.81,
+      15.324
+    ],
+    [
+      -60.81,
+      99.324
+    ],
+    [
+      -62.81,
+      129.324
+    ],
+    [
+      -62.81,
+      153.324
+    ],
+    [
+      -54.81,
+      15.324
+    ],
+    [
+      -54.81,
+      99.324
+    ],
+    [
+      -56.81,
+      129.324
+    ],
+    [
+      -56.81,
+      153.324
+    ],
+    [
+      -48.81,
+      15.324
+    ],
+    [
+      -48.81,
+      75.324
+    ],
+    [
+      -50.81,
+      81.324
+    ],
+    [
+      -48.81,
+      99.324
+    ],
+    [
+      -48.81,
+      111.324
+    ],
+    [
+      -48.81,
+      123.324
+    ],
+    [
+      -50.81,
+      129.324
+    ],
+    [
+      -48.81,
+      135.324
+    ],
+    [
+      -48.81,
+      147.324
+    ],
+    [
+      -50.81,
+      153.324
+    ],
+    [
+      -42.81,
+      15.324
+    ],
+    [
+      -42.81,
+      75.324
+    ],
+    [
+      -44.81,
+      81.324
+    ],
+    [
+      -42.81,
+      99.324
+    ],
+    [
+      -44.81,
+      105.324
+    ],
+    [
+      -42.81,
+      111.324
+    ],
+    [
+      -44.81,
+      117.324
+    ],
+    [
+      -42.81,
+      123.324
+    ],
+    [
+      -44.81,
+      129.324
+    ],
+    [
+      -42.81,
+      135.324
+    ],
+    [
+      -44.81,
+      141.324
+    ],
+    [
+      -42.81,
+      147.324
+    ],
+    [
+      -44.81,
+      153.324
+    ],
+    [
+      -44.81,
+      165.324
+    ],
+    [
+      -44.81,
+      177.324
+    ],
+    [
+      -36.81,
+      -80.676
+    ],
+    [
+      -36.81,
+      -44.676
+    ],
+    [
+      -36.81,
+      -32.676
+    ],
+    [
+      -38.81,
+      21.324
+    ],
+    [
+      -38.81,
+      33.324
+    ],
+    [
+      -38.81,
+      45.324
+    ],
+    [
+      -30.81,
+      -176.676
+    ],
+    [
+      -30.81,
+      -164.676
+    ],
+    [
+      -30.81,
+      -152.676
+    ],
+    [
+      -32.81,
+      -134.676
+    ],
+    [
+      -32.81,
+      -122.676
+    ],
+    [
+      -32.81,
+      -110.676
+    ],
+    [
+      -6.81,
+      63.324
+    ],
+    [
+      -6.81,
+      111.324
+    ],
+    [
+      -6.81,
+      123.324
+    ],
+    [
+      -6.81,
+      135.324
+    ],
+    [
+      -8.81,
+      153.324
+    ],
+    [
+      -8.81,
+      165.324
+    ],
+    [
+      -0.81,
+      -68.676
+    ],
+    [
+      -2.81,
+      -50.676
+    ],
+    [
+      -2.81,
+      -38.676
+    ],
+    [
+      -2.81,
+      -26.676
+    ],
+    [
+      -0.81,
+      -20.676
+    ],
+    [
+      -0.81,
+      15.324
+    ],
+    [
+      -2.81,
+      45.324
+    ],
+    [
+      -0.81,
+      75.324
+    ],
+    [
+      -0.81,
+      111.324
+    ],
+    [
+      -2.81,
+      141.324
+    ],
+    [
+      -2.81,
+      165.324
+    ],
+    [
+      5.19,
+      -176.676
+    ],
+    [
+      5.19,
+      -164.676
+    ],
+    [
+      5.19,
+      -152.676
+    ],
+    [
+      3.19,
+      -146.676
+    ],
+    [
+      5.19,
+      -140.676
+    ],
+    [
+      3.19,
+      -134.676
+    ],
+    [
+      5.19,
+      -128.676
+    ],
+    [
+      3.19,
+      -122.676
+    ],
+    [
+      5.19,
+      -116.676
+    ],
+    [
+      3.19,
+      -110.676
+    ],
+    [
+      5.19,
+      -104.676
+    ],
+    [
+      3.19,
+      -98.676
+    ],
+    [
+      5.19,
+      -92.676
+    ],
+    [
+      3.19,
+      -86.676
+    ],
+    [
+      5.19,
+      -80.676
+    ],
+    [
+      5.19,
+      -20.676
+    ],
+    [
+      3.19,
+      45.324
+    ],
+    [
+      5.19,
+      75.324
+    ],
+    [
+      5.19,
+      111.324
+    ],
+    [
+      3.19,
+      141.324
+    ],
+    [
+      3.19,
+      165.324
+    ],
+    [
+      9.19,
+      -158.676
+    ],
+    [
+      9.19,
+      -134.676
+    ],
+    [
+      11.19,
+      -104.676
+    ],
+    [
+      11.19,
+      -80.676
+    ],
+    [
+      11.19,
+      -20.676
+    ],
+    [
+      9.19,
+      45.324
+    ],
+    [
+      11.19,
+      75.324
+    ],
+    [
+      11.19,
+      111.324
+    ],
+    [
+      9.19,
+      141.324
+    ],
+    [
+      9.19,
+      165.324
+    ],
+    [
+      15.19,
+      -158.676
+    ],
+    [
+      15.19,
+      -134.676
+    ],
+    [
+      17.19,
+      -104.676
+    ],
+    [
+      17.19,
+      -80.676
+    ],
+    [
+      17.19,
+      -20.676
+    ],
+    [
+      15.19,
+      45.324
+    ],
+    [
+      17.19,
+      75.324
+    ],
+    [
+      17.19,
+      111.324
+    ],
+    [
+      15.19,
+      141.324
+    ],
+    [
+      15.19,
+      165.324
+    ],
+    [
+      21.19,
+      -158.676
+    ],
+    [
+      21.19,
+      -134.676
+    ],
+    [
+      23.19,
+      -104.676
+    ],
+    [
+      23.19,
+      -80.676
+    ],
+    [
+      23.19,
+      -20.676
+    ],
+    [
+      21.19,
+      45.324
+    ],
+    [
+      23.19,
+      75.324
+    ],
+    [
+      23.19,
+      111.324
+    ],
+    [
+      21.19,
+      141.324
+    ],
+    [
+      23.19,
+      147.324
+    ],
+    [
+      21.19,
+      153.324
+    ],
+    [
+      23.19,
+      159.324
+    ],
+    [
+      21.19,
+      165.324
+    ],
+    [
+      23.19,
+      171.324
+    ],
+    [
+      21.19,
+      177.324
+    ],
+    [
+      27.19,
+      -158.676
+    ],
+    [
+      29.19,
+      -80.676
+    ],
+    [
+      29.19,
+      -20.676
+    ],
+    [
+      29.19,
+      15.324
+    ],
+    [
+      27.19,
+      21.324
+    ],
+    [
+      29.19,
+      27.324
+    ],
+    [
+      27.19,
+      33.324
+    ],
+    [
+      29.19,
+      39.324
+    ],
+    [
+      27.19,
+      45.324
+    ],
+    [
+      27.19,
+      81.324
+    ],
+    [
+      27.19,
+      105.324
+    ],
+    [
+      27.19,
+      117.324
+    ],
+    [
+      27.19,
+      129.324
+    ],
+    [
+      27.19,
+      141.324
+    ],
+    [
+      27.19,
+      153.324
+    ],
+    [
+      27.19,
+      165.324
+    ],
+    [
+      35.19,
+      -80.676
+    ],
+    [
+      35.19,
+      -20.676
+    ],
+    [
+      35.19,
+      15.324
+    ],
+    [
+      33.19,
+      21.324
+    ],
+    [
+      35.19,
+      27.324
+    ],
+    [
+      33.19,
+      33.324
+    ],
+    [
+      35.19,
+      39.324
+    ],
+    [
+      33.19,
+      45.324
+    ],
+    [
+      41.19,
+      -80.676
+    ],
+    [
+      41.19,
+      -44.676
+    ],
+    [
+      41.19,
+      -32.676
+    ],
+    [
+      41.19,
+      -20.676
+    ],
+    [
+      39.19,
+      -14.676
+    ],
+    [
+      39.19,
+      33.324
+    ],
+    [
+      41.19,
+      39.324
+    ],
+    [
+      39.19,
+      45.324
+    ],
+    [
+      47.19,
+      -80.676
+    ],
+    [
+      45.19,
+      -50.676
+    ],
+    [
+      47.19,
+      -44.676
+    ],
+    [
+      45.19,
+      -38.676
+    ],
+    [
+      47.19,
+      -32.676
+    ],
+    [
+      45.19,
+      -26.676
+    ],
+    [
+      47.19,
+      -20.676
+    ],
+    [
+      45.19,
+      -14.676
+    ],
+    [
+      45.19,
+      33.324
+    ],
+    [
+      47.19,
+      39.324
+    ],
+    [
+      45.19,
+      45.324
+    ],
+    [
+      53.19,
+      -80.676
+    ],
+    [
+      51.19,
+      -50.676
+    ],
+    [
+      53.19,
+      -44.676
+    ],
+    [
+      51.19,
+      -38.676
+    ],
+    [
+      53.19,
+      -32.676
+    ],
+    [
+      51.19,
+      -26.676
+    ],
+    [
+      53.19,
+      -20.676
+    ],
+    [
+      51.19,
+      -14.676
+    ],
+    [
+      53.19,
+      27.324
+    ],
+    [
+      51.19,
+      45.324
+    ],
+    [
+      57.19,
+      -50.676
+    ],
+    [
+      57.19,
+      21.324
+    ],
+    [
+      59.19,
+      27.324
+    ],
+    [
+      57.19,
+      45.324
+    ],
+    [
+      63.19,
+      21.324
+    ],
+    [
+      65.19,
+      27.324
+    ],
+    [
+      63.19,
+      45.324
+    ],
+    [
+      69.19,
+      21.324
+    ],
+    [
+      71.19,
+      27.324
+    ],
+    [
+      69.19,
+      45.324
+    ],
+    [
+      75.19,
+      21.324
+    ],
+    [
+      77.19,
+      27.324
+    ],
+    [
+      75.19,
+      45.324
+    ],
+    [
+      83.19,
+      -152.676
+    ],
+    [
+      81.19,
+      21.324
+    ],
+    [
+      83.19,
+      27.324
+    ],
+    [
+      81.19,
+      45.324
+    ],
+    [
+      87.19,
+      -14.676
+    ],
+    [
+      87.19,
+      21.324
+    ],
+    [
+      89.19,
+      27.324
+    ],
+    [
+      87.19,
+      45.324
+    ],
+    [
+      93.19,
+      -146.676
+    ],
+    [
+      95.19,
+      -128.676
+    ],
+    [
+      95.19,
+      -116.676
+    ],
+    [
+      93.19,
+      -14.676
+    ],
+    [
+      93.19,
+      21.324
+    ],
+    [
+      95.19,
+      27.324
+    ],
+    [
+      93.19,
+      45.324
+    ],
+    [
+      101.19,
+      -128.676
+    ],
+    [
+      99.19,
+      -122.676
+    ],
+    [
+      99.19,
+      -14.676
+    ],
+    [
+      99.19,
+      21.324
+    ],
+    [
+      101.19,
+      27.324
+    ],
+    [
+      99.19,
+      45.324
+    ],
+    [
+      107.19,
+      -128.676
+    ],
+    [
+      105.19,
+      -14.676
+    ],
+    [
+      105.19,
+      21.324
+    ],
+    [
+      107.19,
+      27.324
+    ],
+    [
+      105.19,
+      45.324
+    ],
+    [
+      113.19,
+      -128.676
+    ],
+    [
+      111.19,
+      -14.676
+    ],
+    [
+      111.19,
+      21.324
+    ],
+    [
+      113.19,
+      27.324
+    ],
+    [
+      111.19,
+      45.324
+    ],
+    [
+      117.19,
+      -14.676
+    ],
+    [
+      117.19,
+      21.324
+    ],
+    [
+      119.19,
+      27.324
+    ],
+    [
+      117.19,
+      45.324
+    ],
+    [
+      123.19,
+      -14.676
+    ],
+    [
+      123.19,
+      21.324
+    ],
+    [
+      125.19,
+      27.324
+    ],
+    [
+      123.19,
+      45.324
+    ],
+    [
+      131.19,
+      -92.676
+    ],
+    [
+      131.19,
+      -68.676
+    ],
+    [
+      129.19,
+      -14.676
+    ],
+    [
+      129.19,
+      21.324
+    ],
+    [
+      131.19,
+      27.324
+    ],
+    [
+      129.19,
+      45.324
+    ],
+    [
+      137.19,
+      -92.676
+    ],
+    [
+      137.19,
+      -68.676
+    ],
+    [
+      135.19,
+      -14.676
+    ],
+    [
+      135.19,
+      21.324
+    ],
+    [
+      137.19,
+      27.324
+    ],
+    [
+      135.19,
+      45.324
+    ],
+    [
+      143.19,
+      -68.676
+    ],
+    [
+      141.19,
+      -14.676
+    ],
+    [
+      141.19,
+      21.324
+    ],
+    [
+      143.19,
+      27.324
+    ],
+    [
+      141.19,
+      45.324
+    ],
+    [
+      147.19,
+      -14.676
+    ],
+    [
+      147.19,
+      21.324
+    ],
+    [
+      149.19,
+      27.324
+    ],
+    [
+      147.19,
+      45.324
+    ],
+    [
+      153.19,
+      -14.676
+    ],
+    [
+      153.19,
+      21.324
+    ],
+    [
+      155.19,
+      27.324
+    ],
+    [
+      159.19,
+      -14.676
+    ],
+    [
+      159.19,
+      21.324
+    ],
+    [
+      161.19,
+      27.324
+    ]
+  ],
+  "audit": {
+    "sourceTracks": 1411,
+    "overlaps": 0,
+    "clearance": 5,
+    "sourceRoadsUnchanged": true,
+    "bridgeUnderside": 6.55,
+    "piersAvoidTraffic": true
+  }
+}

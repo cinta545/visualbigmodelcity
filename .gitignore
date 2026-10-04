@@ -33,3 +33,6 @@ assets/characters/rocketbox/*.tga
 assets/characters/rocketbox/Male_Adult_*.png
 __pycache__/
 *.pyc
+
+# Historical local density comparison, superseded by landmark layout QA
+scripts/check-changchun-density.cjs
