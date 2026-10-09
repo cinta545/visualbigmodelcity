@@ -14,9 +14,10 @@ export function clipToSpan(points,axis,min,max){
 }
 // The map supplies crosswalk edges, not individual paint stripes. Keep those edges
 // unchanged and use a repeating paint texture inside their bounded polygon.
-export function addCrosswalks(scene,ways){
+export function addCrosswalks(scene,ways,{color='#e6e2d7',inlaid=false}={}){
  const canvas=document.createElement('canvas');canvas.width=32;canvas.height=2;
- const ctx=canvas.getContext('2d');ctx.fillStyle='#e6e2d7';ctx.fillRect(0,0,16,2);
+ const ctx=canvas.getContext('2d');ctx.fillStyle=color;ctx.fillRect(0,0,16,2);
+ if(inlaid){ctx.fillStyle='#8f917f';ctx.fillRect(0,0,16,1);}
  const texture=new THREE.CanvasTexture(canvas);texture.wrapS=texture.wrapT=THREE.RepeatWrapping;texture.repeat.set(1/1.1,1);texture.anisotropy=8;texture.encoding=THREE.sRGBEncoding;
  const material=new THREE.MeshStandardMaterial({map:texture,alphaTest:.5,roughness:.94,polygonOffset:true,polygonOffsetFactor:-1});
  for(const direction of ['N','S','E','W']){

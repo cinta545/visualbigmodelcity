@@ -34,6 +34,12 @@ function surfaceMaps(kind){
    value=242+grain*5+broad*6;height=175+grain*7;rough=185+broad*18+grain*6;
   }else if(kind==='paint'){
    value=244+grain*4+broad*2;height=170+grain*6;rough=219+grain*9;
+  }else if(kind==='wood'){
+   const fibre=Math.sin(x*.52+Math.sin(y*.024)*2+Math.sin(x*.037)*3);
+   value=228+fibre*15+grain*6+broad*8;height=165+fibre*12+grain*8;rough=224+fibre*10;
+  }else if(kind==='slate'){
+   const tileX=(x+(Math.floor(y/48)%2)*32)%64,tileY=y%48,seam=tileX<2||tileY<3;
+   value=seam?167:228+grain*10+broad*8;height=seam?70:180+tileY*.5;rough=224+grain*12;
   }
   const i=(y*size+x)*4;
   for(const [k,v]of [[0,value],[1,height],[2,rough]])images[k].data.set([v,v,v,255],i);
@@ -44,7 +50,7 @@ function surfaceMaps(kind){
 }
 export function prepareLandmarkMaterials(root){
  root.traverse(o=>{
-  const material=o.material,kind=material?.userData.landmarkSurface;
+  const material=o.material,kind=material?.userData?.landmarkSurface;
   if(!kind||material.map)return;
   [material.map,material.bumpMap,material.roughnessMap]=surfaceMaps(kind);
   material.bumpScale=kind==='brick'?.009:kind==='stone'?.004:kind==='glaze'?.0015:.002;

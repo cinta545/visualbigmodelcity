@@ -6,6 +6,34 @@ function inRing(p,ring){
  }
  return inside;
 }
+export function continuationPoint(axis,station,fraction=0){
+ const [a,b]=axis.points,L=Math.hypot(b[0]-a[0],b[1]-a[1]),d=[(b[0]-a[0])/L,(b[1]-a[1])/L],n=[-d[1],d[0]];
+ const p=axis.alignment;
+ let left=-axis.width/2,right=axis.width/2;
+ if(p){let t=Math.max(0,Math.min(1,(station-p.start)/(p.end-p.start)));t=t*t*(3-2*t);left=p.left*(1-t)+left*t;right=p.right*(1-t)+right*t;}
+ const offset=(left+right)/2+fraction*(right-left);
+ return [a[0]+d[0]*station+n[0]*offset,a[1]+d[1]*station+n[1]*offset];
+}
+export function onSurveyRoad(config,p){
+ const g=config.roadSurface||config.road,polygons=g.type==='Polygon'?[g.coordinates]:g.coordinates;
+ return polygons.some(rings=>inRing(p,rings[0])&&!rings.slice(1).some(r=>inRing(p,r)));
+}
+export function continuationPaint(config){
+ const result=[];
+ for(const axis of config.extensionAxes||[]){
+  const [a,b]=axis.points,L=Math.hypot(b[0]-a[0],b[1]-a[1]);
+  for(const fraction of [-.25,-.12/axis.width,.12/axis.width,.25]){
+   const yellow=Math.abs(fraction)<.1;
+   for(let s=axis.alignment?.start||0;s<L;s+=.5){
+    if(!yellow&&((s%8)+8)%8>=4)continue;
+    const p=continuationPoint(axis,s,fraction),q=continuationPoint(axis,Math.min(s+.5,L),fraction);
+    if(onSurveyRoad(config,p)||onSurveyRoad(config,q)||!onRoad(config,p)||!onRoad(config,q))continue;
+    result.push({a:p,b:q,color:yellow?'yellow':'white',width:.12});
+   }
+  }
+ }
+ return result;
+}
 export function onRoad(config,p){
  return [config.roadSurface||config.road,config.extension].some(g=>{
   const polygons=g.type==='Polygon'?[g.coordinates]:g.coordinates;

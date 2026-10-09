@@ -14,10 +14,17 @@ import {buildDistrict} from './city-district.mjs';
 import {textPanel} from './district/materials.js';
 import {sampleTrack,sampleSignals,upperBound} from './sind-clock.mjs';
 import {flowAt,loopTime} from './city-flow.mjs';
-import {prepareObservation,observationOpacity,observationHull} from './city-observation.mjs';
+import {prepareObservation,observationOpacity} from './city-observation.mjs';
 import {motorTypes} from './sind-prediction.mjs';
 import {overviewView} from './city-view.mjs';
 import {createCityDashboard} from './city-dashboard.mjs';
+import {createNightSky,nightFog} from './chongqing-night.mjs';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
+import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
+import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
+import {SSAOPass} from 'three/addons/postprocessing/SSAOPass.js';
+import {ShaderPass} from 'three/addons/postprocessing/ShaderPass.js';
+import {GammaCorrectionShader} from 'three/addons/shaders/GammaCorrectionShader.js';
 const $=id=>document.getElementById(id),scene=new THREE.Scene();
 scene.background=new THREE.Color(0xc4dbe5);scene.fog=new THREE.Fog(0xc4dbe5,260,620);
 const renderer=new THREE.WebGLRenderer({canvas:$('scene'),antialias:true,powerPreference:'high-performance'});
@@ -28,6 +35,11 @@ const daylight=createDaylight(renderer),legacyEnvironment=scene.environment;
 const hemisphere=new THREE.HemisphereLight(0xdceeff,0x8d9580,.5);scene.add(hemisphere);
 const sun=new THREE.DirectionalLight(0xfff0d7,1.35);sun.castShadow=true;sun.shadow.mapSize.set(4096,4096);Object.assign(sun.shadow.camera,{left:-155,right:155,top:155,bottom:-155,near:1,far:420});sun.shadow.normalBias=.025;scene.add(sun,sun.target);
 const camera=new THREE.PerspectiveCamera(48,1,.1,1300),controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.maxPolarAngle=Math.PI/2-.01;controls.minDistance=1.5;controls.maxDistance=440;
+let nightSky=null;
+const composer=new EffectComposer(renderer),renderPass=new RenderPass(scene,camera),bloomPass=new UnrealBloomPass(new THREE.Vector2(innerWidth,innerHeight),.18,.35,.9),gammaPass=new ShaderPass(GammaCorrectionShader);
+const contactShadows=new SSAOPass(scene,camera,innerWidth,innerHeight);
+contactShadows.kernelRadius=3;contactShadows.minDistance=.001;contactShadows.maxDistance=.025;contactShadows.enabled=false;
+composer.addPass(renderPass);composer.addPass(contactShadows);composer.addPass(bloomPass);composer.addPass(gammaPass);
 const objects=new Map(),pools=new Map(),pickable=[],cache=new Map(),clocks=new Map();
 const selection=new THREE.BoxHelper(new THREE.Object3D(),0x88c9bb);selection.visible=false;scene.add(selection);
 let followState={};
@@ -90,15 +102,24 @@ function updateHUD(){
 }
 function setViews(config,featured){
  const [x,y]=config.center,c=[x,0,-y],b=featured.bounds,bx=(b[0]+b[2])/2,bz=-(b[1]+b[3])/2,side=featured.front==='north'?-1:1;
- views={overview:config.quarterTramRail?{p:[x+25,110,-y+140],t:[x+15,0,-y-20]}:overviewView(config),junction:{p:[x+46,32,-y+51],t:[x,1,-y]},overhead:{p:[x,225,-y+.1],t:c},sample:{p:[bx+30,15,bz+side*35],t:[bx,6,bz]},street:{p:[bx+8,1.7,bz+side*18],t:[bx-9,2,bz+side*11]}};
+ views={overview:config.city==='chongqing'?{p:[x+105,132,-y+212],t:[x+5,12,-y+8]}:config.quarterTramRail?{p:[x+25,110,-y+140],t:[x+15,0,-y-20]}:overviewView(config),junction:{p:[x+46,32,-y+51],t:[x,1,-y]},overhead:{p:[x,225,-y+.1],t:c},sample:config.city==='chongqing'?{p:[bx+75,65,bz+120],t:[bx,30,bz]}:{p:[bx+30,15,bz+side*35],t:[bx,6,bz]},street:config.city==='chongqing'?{p:[bx+9,3,bz+36],t:[bx,13,bz+12]}:{p:[bx+8,1.7,bz+side*18],t:[bx-9,2,bz+side*11]}};
+ if(config.xianQuarter){
+  const a=config.xianQuarter.angle,cs=Math.cos(a),sn=Math.sin(a),world=(u,v,h)=>[x+cs*u-sn*v,h,-y-sn*u-cs*v];
+  // A long lens fills the frame without enlarging the foreground wards excessively.
+  views.overview={p:world(0,-720,415),t:world(0,-10,0),fov:10};
+  views.overhead={p:world(0,-.1,320),t:world(0,0,0)};
+  const ward=config.xianQuarter.wards.find(w=>w.kind==='changle'),[wx,wy]=ward.origin;
+  views.sample={p:[wx+sn*70,52,-wy+cs*70],t:[wx,8,-wy]};
+  views.street={p:[wx+sn*38,2.1,-wy+cs*38],t:[wx,6,-wy+cs*2]};
+ }
 }
-function view(name,instant=false){if(!views[name])return;following=false;const v=views[name];if(instant){camera.position.fromArray(v.p);controls.target.fromArray(v.t);controls.update();}else transition={start:performance.now(),p:camera.position.clone(),t:controls.target.clone(),endP:new THREE.Vector3(...v.p),endT:new THREE.Vector3(...v.t)};document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===name));}
-function renderScene(){if(current?.district.landmarkLabels)current.district.landmarkLabels.visible=camera.position.y>30;renderer.render(scene,camera);}
+function view(name,instant=false){if(!views[name])return;following=false;const v=views[name];if(instant){camera.fov=v.fov||48;camera.updateProjectionMatrix();camera.position.fromArray(v.p);controls.target.fromArray(v.t);controls.update();}else transition={start:performance.now(),p:camera.position.clone(),t:controls.target.clone(),fov:camera.fov,endFov:v.fov||48,endP:new THREE.Vector3(...v.p),endT:new THREE.Vector3(...v.t)};document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===name));}
+function renderScene(){const near=['chongqing','xian'].includes(current?.config.city)&&camera.position.y>30?2:.1;if(camera.near!==near){camera.near=near;camera.updateProjectionMatrix();}if(current?.district.landmarkLabels)current.district.landmarkLabels.visible=camera.position.y>30;if(current?.config.city==='chongqing')composer.render();else renderer.render(scene,camera);}
 function thumbnails(){
- const size=renderer.getSize(new THREE.Vector2()),ratio=renderer.getPixelRatio(),aspect=camera.aspect;renderer.setPixelRatio(1);renderer.setSize(280,160,false);camera.aspect=280/160;camera.updateProjectionMatrix();const auto=renderer.shadowMap.autoUpdate;renderer.shadowMap.autoUpdate=false;
+ const size=renderer.getSize(new THREE.Vector2()),ratio=renderer.getPixelRatio(),aspect=camera.aspect,fov=camera.fov;renderer.setPixelRatio(1);renderer.setSize(280,160,false);composer.setPixelRatio(1);composer.setSize(280,160);camera.aspect=280/160;camera.updateProjectionMatrix();const auto=renderer.shadowMap.autoUpdate;renderer.shadowMap.autoUpdate=false;
  const p=camera.position.clone(),t=controls.target.clone(),thumb=document.createElement('canvas');thumb.width=280;thumb.height=160;const ctx=thumb.getContext('2d');
- for(const b of document.querySelectorAll('[data-view]')){const v=views[b.dataset.view];camera.position.fromArray(v.p);controls.target.fromArray(v.t);controls.update();renderScene();ctx.drawImage(renderer.domElement,0,0,280,160);b.querySelector('img').src=thumb.toDataURL('image/jpeg',.8);}
- renderer.setPixelRatio(ratio);renderer.setSize(size.x,size.y,false);camera.aspect=aspect;camera.updateProjectionMatrix();renderer.shadowMap.autoUpdate=auto;camera.position.copy(p);controls.target.copy(t);controls.update();renderScene();
+ for(const b of document.querySelectorAll('[data-view]')){const v=views[b.dataset.view];camera.fov=v.fov||48;camera.updateProjectionMatrix();camera.position.fromArray(v.p);controls.target.fromArray(v.t);controls.update();renderScene();ctx.drawImage(renderer.domElement,0,0,280,160);b.querySelector('img').src=thumb.toDataURL('image/jpeg',.8);}
+ renderer.setPixelRatio(ratio);renderer.setSize(size.x,size.y,false);composer.setPixelRatio(ratio);composer.setSize(size.x,size.y);camera.aspect=aspect;camera.fov=fov;camera.updateProjectionMatrix();renderer.shadowMap.autoUpdate=auto;camera.position.copy(p);controls.target.copy(t);controls.update();renderScene();
 }
 async function json(url){const r=await fetch(url);if(!r.ok)throw Error('城市数据加载失败');return r.json();}
 async function loadCity(entry){
@@ -106,24 +127,36 @@ async function loadCity(entry){
  try{
   await loadHumanAssets();if(token!==request)return;
   let cached=cache.get(entry.id);if(!cached){const [config,data]=await Promise.all([json(entry.scene),json(entry.tracks)]);if(token!==request)return;
+   const alignment=(await json('/data/sind/cities/road-alignment.json'))[config.city];if(token!==request)return;
+   if(alignment){config.extension=alignment.extension;config.alignedFootways=alignment.footways;config.extensionAxes=config.extensionAxes.map((axis,i)=>({...axis,alignment:alignment.profiles[i]}));}
    if(config.city==='changchun'){const quarter=await json('/data/sind/cities/changchun-quarter.json');if(token!==request)return;config.buildings=quarter.buildings;config.quarterGreenLand=quarter.greenLand;config.quarterGroves=quarter.groves;config.quarterTramRail=quarter.tramRail;config.quarterTramRailHeight=quarter.tramRailHeight;config.quarterTramPiers=quarter.tramPiers;config.quarterCourtyardPlanting=quarter.courtyardPlanting;config.quarterLayout=true;}
+   if(config.city==='chongqing'){const quarter=await json('/data/sind/cities/chongqing-quarter.json');if(token!==request)return;config.buildings=quarter.buildings;config.cableway=quarter.cableway;config.bridge=quarter.bridge;config.mountains=quarter.mountains;config.scenicRail=quarter.scenicRail;config.terrain=quarter.terrain;config.quarterLayout=true;}
+   if(config.city==='xian'){const quarter=await json('/data/sind/cities/xian-quarter.json');if(token!==request)return;config.xianQuarter=quarter;config.signalBindings=quarter.signalDisplayBindings||config.signalBindings;config.buildings=quarter.wards;config.paving=quarter.paving;config.quarterLayout=true;}
+   if(config.city==='tianjin'){config.tianjinHeritagePlan=await json('/data/sind/cities/tianjin-heritage.json');if(token!==request)return;}
    for(const t of data.tracks){t.presentationStatic=config.city==='chongqing'&&isLongStatic(t);t.observationSegments=prepareObservation(t);t.distance=new Float32Array(t.samples.length);for(let i=1;i<t.samples.length;i++){const a=t.samples[i-1],b=t.samples[i];t.distance[i]=t.distance[i-1]+(b[0]-a[0]>250?0:Math.hypot(b[1]-a[1],b[2]-a[2]));}}
    const observedRadius=data.tracks.reduce((r,t)=>t.samples.reduce((v,s)=>Math.max(v,Math.hypot(s[1]-config.center[0],s[2]-config.center[1])+(t.type==='pedestrian'?.4:Math.hypot(t.length,t.width)/2)),r),0);const district=buildDistrict(scene,config,observedRadius),labels=new THREE.Group();district.root.add(labels);labels.visible=false;
    for(const a of config.approaches){const [x,y]=a.center;textPanel(labels,a.name,x,2.5,-y,7,1.3,{background:'#163342',color:'#d8f7ed'});}
-   const hull=observationHull(data.tracks),boundaryPoints=hull.map(p=>new THREE.Vector3(p[0],.095,-p[1]));if(boundaryPoints.length){boundaryPoints.push(boundaryPoints[0].clone());const boundary=new THREE.Line(new THREE.BufferGeometry().setFromPoints(boundaryPoints),new THREE.LineDashedMaterial({color:0x5d9c8c,transparent:true,opacity:.8,dashSize:1.2,gapSize:.7}));boundary.computeLineDistances();district.root.add(boundary);}
    cached={config,data,district,labels,hideParked:config.city==='chongqing',start:config.city==='chongqing'?busyStart(data.tracks,config.durationMs):0};cache.set(entry.id,cached);
   }
   if(token!==request)return;if(current)clocks.set(current.config.city,time);release();for(const c of cache.values())c.district.root.visible=false;current=cached;current.district.root.visible=true;
-  const refined=usesRefinedPresentation(entry.id);scene.background=refined?daylight.sky:new THREE.Color(0xc4dbe5);scene.environment=refined?daylight.environment:legacyEnvironment;
-  renderer.toneMappingExposure=refined?.83:.72;hemisphere.intensity=refined?.38:.5;sun.intensity=refined?1.7:1.35;sun.shadow.normalBias=refined?.008:.025;sun.shadow.bias=refined?-.00006:0;
-  const shadowSpan=refined?105:155;Object.assign(sun.shadow.camera,{left:-shadowSpan,right:shadowSpan,top:shadowSpan,bottom:-shadowSpan});sun.shadow.camera.updateProjectionMatrix();
+  const refined=usesRefinedPresentation(entry.id),night=entry.id==='chongqing';
+  contactShadows.enabled=night;renderPass.enabled=!night;
+  if(night&&!nightSky)nightSky=createNightSky(renderer);
+  scene.background=entry.id==='xian'?new THREE.Color(0xe5d6bd):night?nightSky.sky:refined?daylight.sky:new THREE.Color(0xc4dbe5);
+  scene.environment=night?nightSky.environment:refined?daylight.environment:legacyEnvironment;
+  controls.maxDistance=entry.id==='xian'?1200:440;
+  scene.fog=night?new THREE.Fog(nightFog.color,nightFog.near,nightFog.far):new THREE.Fog(entry.id==='xian'?0xe5d6bd:0xc4dbe5,entry.id==='xian'?1100:260,entry.id==='xian'?1800:620);
+  renderer.toneMappingExposure=night?1.2:refined?.83:.72;hemisphere.intensity=night?.85:refined?.38:.5;sun.intensity=night?.8:refined?1.7:1.35;sun.color.setHex(night?0xcad4e2:0xfff0d7);hemisphere.color.setHex(night?0xb0bac7:0xdceeff);hemisphere.groundColor.setHex(night?0x535953:0x8d9580);sun.shadow.normalBias=entry.id==='xian'?.055:night?.06:refined?.008:.025;sun.shadow.bias=entry.id==='xian'?-.00018:night?-.0003:refined?-.00006:0;
+  const shadowSpan=entry.id==='xian'?190:refined?105:155;Object.assign(sun.shadow.camera,{left:-shadowSpan,right:shadowSpan,top:shadowSpan,bottom:-shadowSpan});sun.shadow.camera.updateProjectionMatrix();
   time=clocks.get(entry.id)??current.start;$('parked-visibility').hidden=entry.id!=='chongqing';$('parked-visibility').setAttribute('aria-pressed',String(!current.hideParked));$('parked-visibility').textContent=current.hideParked?'显示长期静止车辆':'隐藏长期静止车辆';const initial=new URLSearchParams(location.search).get('start');if(initial&&!clocks.size)time=loopTime(Number(initial)||0,current.config.durationMs);
-  selected=null;following=false;transition=null;selection.visible=false;dashboard.reset();$('object').hidden=true;$('city-name').textContent=entry.name;
+  selected=null;following=false;transition=null;selection.visible=false;dashboard.reset();$('object').hidden=true;$('city-name').textContent=entry.name;$('weather-note').textContent=night?'真实记录循环回放 · 山城静谧夜景':'真实记录循环回放 · 晴朗白天';
+  document.body.dataset.city=entry.id;
   document.querySelectorAll('[data-city]').forEach(b=>b.classList.toggle('active',b.dataset.city===entry.id));
   $('approaches').innerHTML='<div class="caption">进口方向<span style="float:right">近六十秒 / 累计</span></div>'+current.config.approaches.map(a=>`<div class="direction" id="approach-${a.id}"><span>${a.name}</span><em>—</em><div class="bar"><i></i></div></div>`).join('');
   $('signals').innerHTML=current.config.signalLabels.map((s,i)=>`<span class="signal" id="signal-${i}"><i></i>${s} · <b></b></span>`).join('');
   $('flow-layer').setAttribute('aria-pressed',String(current.labels.visible));
-  const [x,y]=current.config.center;sun.position.set(x-80,180,-y+95);sun.target.position.set(x,0,-y);if(refined){if(!current.reflection)current.reflection=daylight.capture(scene,current.config.center);scene.environment=current.reflection.texture;}setViews(current.config,current.district.featured);view('overview',true);lastHUD=-1e6;updateParticipants();updateHUD();$('loading').hidden=true;last=performance.now();thumbnails();
+  if(entry.id==='xian'){sun.color.setHex(0xffe4bf);sun.intensity=1.55;hemisphere.color.setHex(0xece5d7);hemisphere.groundColor.setHex(0xa28c70);hemisphere.intensity=.48;renderer.toneMappingExposure=.78;}
+  const [x,y]=current.config.center;sun.position.set(x-80,entry.id==='xian'?130:180,-y+95);sun.target.position.set(x,0,-y);if(refined){if(!current.reflection)current.reflection=daylight.capture(scene,current.config.center,night?nightSky.environment:daylight.environment);scene.environment=current.reflection.texture;}setViews(current.config,current.district.featured);view('overview',true);lastHUD=-1e6;updateParticipants();updateHUD();$('loading').hidden=true;last=performance.now();thumbnails();
   const expected=current;setTimeout(()=>{if(current===expected&&!transition)thumbnails();},1800);
  }catch(e){if(token===request){$('loading').hidden=false;$('loading').textContent=e.message;}console.error(e);}
 }
@@ -135,12 +168,12 @@ $('parked-visibility').onclick=()=>{if(!current)return;current.hideParked=!curre
 $('dim-static').onclick=()=>{dimStatic=!dimStatic;$('dim-static').setAttribute('aria-pressed',String(dimStatic));if(current)updateParticipants();};
 $('toggle-charts').onclick=()=>{const hidden=document.body.classList.toggle('charts-hidden');$('toggle-charts').setAttribute('aria-pressed',String(!hidden));};
 $('home-prediction-model').onchange=()=>{lastHUD=-1e6;if(current)updateHUD();};
-$('follow').onclick=()=>{const g=objects.get(selected);if(!g)return;transition=null;following=true;followState={};};
+$('follow').onclick=()=>{const g=objects.get(selected);if(!g)return;transition=null;camera.fov=48;camera.updateProjectionMatrix();following=true;followState={};};
 $('focus-moving').onclick=()=>{const active=[...objects.values()].filter(g=>g.visible&&motorTypes.includes(g.userData.track.type)).map(g=>({g,s:sampleTrack(g.userData.track,time)})).filter(o=>o.s&&Math.hypot(o.s[3],o.s[4])>=.5).sort((a,b)=>Math.hypot(b.s[3],b.s[4])-Math.hypot(a.s[3],a.s[4]));if(!active.length)return;selected=active[0].g.userData.track.id;$('object').hidden=false;$('follow').click();lastHUD=-1e6;updateHUD();};
-$('fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{}};
+$('fullscreen').onclick=()=>{const focused=document.body.classList.toggle('scene-focused');$('fullscreen').setAttribute('aria-pressed',String(focused));$('fullscreen').textContent=focused?'恢复面板':'全屏';};
 $('capture').onclick=()=>{renderScene();renderer.domElement.toBlob(blob=>{if(!blob)return;const a=document.createElement('a'),url=URL.createObjectURL(blob);a.href=url;a.download=`${current?.config.name||'城市'}交通.png`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});};
 let down;renderer.domElement.addEventListener('pointerdown',e=>{transition=null;following=false;down=[e.clientX,e.clientY];});
 renderer.domElement.addEventListener('pointerup',e=>{if(!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>5)return;const ray=new THREE.Raycaster();ray.setFromCamera(new THREE.Vector2(e.clientX/innerWidth*2-1,1-e.clientY/innerHeight*2),camera);const hit=ray.intersectObjects(pickable.filter(g=>g.visible&&g.userData.opacity>.05),true)[0];if(hit){let g=hit.object;while(g&&!g.userData.track)g=g.parent;selected=g.userData.track.id;$('object').hidden=false;lastHUD=-1e6;updateHUD();}});
-function resize(){renderer.setSize(innerWidth,innerHeight,false);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();}addEventListener('resize',resize);resize();
-function animate(now){requestAnimationFrame(animate);const dt=Math.min(200,now-last);last=now;if(current){if(playing)time=loopTime(time+dt,current.config.durationMs);updateParticipants();updateHUD();}if(transition){const f=Math.min(1,(now-transition.start)/850),ease=f*f*(3-2*f);camera.position.lerpVectors(transition.p,transition.endP,ease);controls.target.lerpVectors(transition.t,transition.endT,ease);if(f===1)transition=null;}if(following&&objects.get(selected)?.visible)followVehicle(camera,controls.target,objects.get(selected),dt/1000,followState);controls.update();if(current)focusDaylightShadow(sun,camera,controls.target);renderScene();}requestAnimationFrame(animate);
+function resize(){renderer.setSize(innerWidth,innerHeight,false);composer.setSize(innerWidth,innerHeight);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();}addEventListener('resize',resize);resize();
+function animate(now){requestAnimationFrame(animate);const dt=Math.min(200,now-last);last=now;if(current){if(playing)time=loopTime(time+dt,current.config.durationMs);updateParticipants();updateHUD();}if(transition){const f=Math.min(1,(now-transition.start)/850),ease=f*f*(3-2*f);camera.fov=THREE.MathUtils.lerp(transition.fov,transition.endFov,ease);camera.updateProjectionMatrix();camera.position.lerpVectors(transition.p,transition.endP,ease);controls.target.lerpVectors(transition.t,transition.endT,ease);if(f===1)transition=null;}if(following&&objects.get(selected)?.visible)followVehicle(camera,controls.target,objects.get(selected),dt/1000,followState);controls.update();if(current)focusDaylightShadow(sun,camera,controls.target);if(current?.district.cableway)current.district.cableway.update(time/1000);renderScene();}requestAnimationFrame(animate);
 try{const catalog=await json('/data/sind/cities/catalog.json');for(const c of catalog){const b=document.createElement('button');b.textContent=c.name;b.dataset.city=c.id;b.onclick=()=>loadCity(c);$('cities').append(b);}await loadCity(catalog.find(c=>c.id===new URLSearchParams(location.search).get('city'))||catalog[0]);}catch(e){$('loading').textContent=e.message;console.error(e);}

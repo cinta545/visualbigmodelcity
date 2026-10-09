@@ -128,7 +128,7 @@ function tree(root,x,z){
 
 export function createMappedSignal(scene,binding){
  const [x,y]=binding.position,[sx,sy]=binding.stopLineCenter;
- const root=new THREE.Group();root.position.set(x,0,-y);scene.add(root);
+ const root=new THREE.Group();root.position.set(x,0,-y);root.scale.setScalar(binding.displayScale||1);scene.add(root);
  const steel=mat(0x929b98,.32,.72),black=mat(0x202b2a,.68);
  cylinder(root,0,2.2,0,.09,4.4,steel,20);
  box(root,0,.16,0,.42,.32,.42,mat(0x9eaaa1));
@@ -142,6 +142,6 @@ export function createMappedSignal(scene,binding){
   const hood=new THREE.Mesh(new THREE.CylinderGeometry(.185,.185,.32,24,1,true,0,Math.PI*1.35),black);
   hood.rotation.x=Math.PI/2;hood.position.set(0,4.48-i*.46,.24);face.add(hood);
  }
- textPanel(face,'灯'+binding.name.match(/\d+/)[0],0,3.04,.11,.48,.24,{font:115,background:'#42514b'});
- return {id:Number(binding.name.match(/\d+/)[0]),bulbs};
+ textPanel(face,binding.stateUnbound?'待核验':'灯'+binding.name.match(/\d+/)[0],0,3.04,.11,.48,.24,{font:115,background:'#42514b'});
+ return {id:binding.stateUnbound?null:Number(binding.name.match(/\d+/)[0]),bulbs};
 }

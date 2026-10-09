@@ -6,6 +6,9 @@ import {mergeBufferGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
 const paint=new THREE.MeshPhysicalMaterial({color:0xd9dfdf,metalness:.52,roughness:.26,clearcoat:1,clearcoatRoughness:.16});
 const material=(color,roughness,metalness=0)=>new THREE.MeshStandardMaterial({color,roughness,metalness});
 const glass=material(0x263c49,.12,.45),rubber=material(0x171a1c,.86),trim=material(0x252a2d,.48),alloy=material(0xc4cbd0,.24,.85),disc=material(0x777b7d,.6,.72),red=material(0x961e24,.22),lens=material(0xd9e3e5,.16,.35),plate=material(0x36667e,.52);
+// Head and tail lamps self-illuminate so every vehicle reads instantly after dark.
+red.emissive=new THREE.Color(0xff2a20);red.emissiveIntensity=2.6;
+lens.emissive=new THREE.Color(0xfff3d8);lens.emissiveIntensity=2.4;
 glass.side=THREE.DoubleSide;
 const cabinGlass=new THREE.MeshStandardMaterial({color:0x607680,roughness:.12,metalness:.08,transparent:true,opacity:.44,depthWrite:false,side:THREE.DoubleSide,envMapIntensity:.7});
 function mesh(g,geo,mat,p=[0,0,0]){const m=new THREE.Mesh(geo,mat);m.position.fromArray(p);m.castShadow=m.receiveShadow=true;g.add(m);return m;}
@@ -157,5 +160,6 @@ function sedan(){const g=new THREE.Group();
  combine(g);const wheels=[];for(const x of [-1.43,1.43])for(const z of [-.85,.85]){const w=wheel();w.position.set(x,.355,z);g.add(w);wheels.push(w);}
  g.userData={wheels,wheelRadius:.355,length:4.6,detailProfile:'city-refined'};return g;
 }
-export function createRefinedVehicle(type='car'){if(!['car','bus','truck'].includes(type))throw new Error('Unsupported vehicle type');if(!templates.has(type))templates.set(type,({car:sedan,bus,truck})[type]());const template=templates.get(type),g=template.clone(true);g.userData={...template.userData,wheels:g.children.filter(c=>c.userData.isWheel)};return g;}
+export function createRefinedVehicle(type='car'){if(!['car','bus','truck'].includes(type))throw new Error('Unsupported vehicle type');if(!templates.has(type))templates.set(type,({car:sedan,bus,truck})[type]());const template=templates.get(type),g=template.clone(true);g.userData={...template.userData,wheels:g.children.filter(c=>c.userData.isWheel)};
+ return g;}
 export function createRefinedCar(){return createRefinedVehicle('car');}

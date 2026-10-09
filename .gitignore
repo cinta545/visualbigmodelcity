@@ -36,3 +36,6 @@ __pycache__/
 
 # Historical local density comparison, superseded by landmark layout QA
 scripts/check-changchun-density.cjs
+
+# Superseded local camera exploration
+scripts/night-verify.cjs

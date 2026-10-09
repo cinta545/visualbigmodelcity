@@ -8,3 +8,9 @@
 #risk-candidates button[aria-pressed="true"]{border-color:#d4ac77;background:#c19c6b18}
 
 #parked-visibility{font-size:11px;width:100%;margin-top:8px}
+
+body.scene-focused #traffic-charts,body.scene-focused #flow-panel,body.scene-focused #object,body.scene-focused .view-dock{display:none!important}
+.glass{background:rgba(32,48,43,.60);border-color:#ffffff20;box-shadow:0 8px 24px #101b2318;backdrop-filter:blur(12px)}
+body.scene-focused .tools{bottom:24px}
+body.scene-focused .hint{bottom:76px}
+body.scene-focused .credit{bottom:24px}
