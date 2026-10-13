@@ -1,3 +1,4 @@
+import {windowReveal,roofServices,masonryFacade,lowHipRoof} from './city-building-detail.mjs';
 import {addGrass,addFineFoliage} from './changchun-planting.mjs';
 import {landmarkMaterial,prepareLandmarkMaterials,landmarkSurfaceUV} from './changchun-landmark-materials.mjs';
 import * as THREE from 'three';
@@ -12,33 +13,57 @@ export function changchunContextProfile(index){
  return {park:parkPlots.has(index),height:index<16?8.4+(index%3)*2.8:index<27?11.2+(index%3)*2.8:16.8+(index%4)*2.8};
 }
 function window(root,x,y,z,w=1.02,h=1.45){
- box(root,x,y,z,w+.16,h+.18,.10,stone);box(root,x,y,z+.07,w,h,.035,glass);
- box(root,x,y,z+.10,.042,h,.04,stone);box(root,x,y+.05,z+.10,w,.038,.04,stone);
- box(root,x,y-h/2-.10,z+.10,w+.25,.12,.28,stone);
+ windowReveal(root,x,y,z,w,h,stone,glass,1,.24);
 }
 export function changchunContextBuilding(parent,b,index){
  const profile=b.quarterRole?{park:b.quarterRole==='park',height:b.height}:changchunContextProfile(index);if(profile.park)return;
  const root=new THREE.Group(),h=profile.height,w=b.quarterRole?b.bounds[2]-b.bounds[0]-1:index<16?20:19,d=b.quarterRole?Math.max(8,b.bounds[3]-b.bounds[1]-4):13;
  const color=[0xb19d82,0xa58970,0xc2b7a0,0xa9ada1][index%4],wall=landmarkMaterial(color,.9,index%4<2?'brick':'plaster');
- const body=box(root,0,h/2,0,w,h,d,wall);body.geometry=body.geometry.toNonIndexed();body.geometry.scale(w,h,d);body.scale.set(1,1,1);landmarkSurfaceUV(body.geometry);box(root,0,.42,0,w+.2,.84,d+.2,stone);
+ // A recessed interior and four pierced masonry walls replace the solid building block.
+ box(root,0,h/2,0,w-1.1,h,d-1.1,wall);box(root,0,.42,0,w+.2,.84,d+.2,stone);
  for(const side of [-1,1]){
   const facade=new THREE.Group();facade.rotation.y=side<0?Math.PI:0;root.add(facade);
+  const shell=new THREE.Group();shell.position.z=d/2;facade.add(shell);const openings=[];
+  for(let y=4.7;y<h-.8;y+=2.8)for(let x=-w/2+1.4;x<w/2-1;x+=2.05)openings.push({x,y,width:1.02,height:1.45});
+  for(let x=-w/2+1.65;x<w/2-1;x+=2.75)openings.push({x,y:1.94,width:1.95,height:2.20});
+  landmarkSurfaceUV(masonryFacade(shell,w,h,openings,wall).geometry);
   for(let y=4.7;y<h-.8;y+=2.8){for(let x=-w/2+1.4;x<w/2-1;x+=2.05)window(facade,x,y,d/2+.04);box(facade,0,y-1.15,d/2+.09,w,.10,.22,stone);}
   for(let x=-w/2+1.65;x<w/2-1;x+=2.75){window(facade,x,1.94,d/2+.07,1.95,2.20);box(facade,x,3.18,d/2+.43,2.35,.12,.8,roof);}
  }
  for(const side of [-1,1]){
   const facade=new THREE.Group();facade.position.x=side*w/2;facade.rotation.y=side*Math.PI/2;root.add(facade);
+  const openings=[];for(let y=4.7;y<h-.8;y+=2.8)for(let x=-d/2+1.5;x<d/2-1;x+=2.2)openings.push({x,y,width:1.02,height:1.45});
+  landmarkSurfaceUV(masonryFacade(facade,d,h,openings,wall).geometry);
   for(let y=4.7;y<h-.8;y+=2.8)for(let x=-d/2+1.5;x<d/2-1;x+=2.2)window(facade,x,y,.035);
  }
  for(const yy of [3.5,h-.25,h+.12])box(root,0,yy,0,w+.35,.17,d+.35,stone);
- if(h<13){
+ if(w>13&&index%3!==2){
+  // Two storeys of projecting glazed bays break the flat street elevation.
+  for(const y of [4.7,7.5].filter(y=>y<h-1)){
+   const bay=new THREE.Group();bay.position.set(0,y-1.15,d/2+.78);root.add(bay);
+   masonryFacade(bay,3.6,2.3,[{x:0,y:1.15,width:2.8,height:1.65}],wall,.32);
+   windowReveal(bay,0,1.15,.025,2.8,1.65,stone,glass,1,.23);
+   for(const side of [-1,1])box(bay,side*1.72,1.15,-.40,.16,2.3,.8,wall);
+   box(bay,0,.06,-.32,3.85,.20,1.05,stone);box(bay,0,2.28,-.32,3.85,.18,1.05,stone);
+  }
+ }
+ if(h<13&&index%3===0){
+  lowHipRoof(root,0,h+.15,0,w+.6,d+1,roof,{rise:1.3,ridgeRatio:.22});
+ }else if(h<13&&index%3===1){
   const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute([-w/2-.3,h,-d/2-.5, w/2+.3,h,-d/2-.5, w/2+.3,h+1.5,0,-w/2-.3,h+1.5,0,-w/2-.3,h,d/2+.5,w/2+.3,h,d/2+.5],3));geometry.setIndex([0,2,1,0,3,2,3,5,2,3,4,5,0,4,3,1,2,5]);geometry.computeVertexNormals();const mesh=new THREE.Mesh(geometry,roof);mesh.castShadow=mesh.receiveShadow=true;root.add(mesh);
  }else box(root,0,h+.22,0,w+.5,.24,d+.5,roof);
+ if(h<13&&index%3===1&&index%2===0){
+  const attic=new THREE.Group();attic.position.set(0,h+.55,d*.24);root.add(attic);
+  for(const side of [-1,1])box(attic,side*1.51,.67,-.52,.18,1.35,1.05,wall);
+  masonryFacade(attic,3.2,1.35,[{x:0,y:.67,width:1.45,height:.84}],wall,.25);
+  windowReveal(attic,0,.67,.025,1.45,.84,stone,glass,1,.18);
+  for(const side of [-1,1])box(attic,side*.84,1.61,-.35,1.90,.16,1.7,roof).rotation.z=side*-.45;
+ }
  const labels=index===6?['光影书屋','春城影像馆','胶片咖啡']:index===7?['汽车文化工坊','城市书房','老街茶馆']:['丁香书店','街角咖啡','春城小馆'];
  for(let j=0;j<(w<15?1:3);j++)textPanel(root,labels[j],w<15?0:(j-1)*w*.30,3.50,d/2+.20,Math.min(3.8,w*.3),.38,{background:'#4b5b4f',foreground:'#ede0c5',font:140,proportional:true});
+ roofServices(root,0,h,0,w,d,{heritage:h<13});
  prepareLandmarkMaterials(root);
- for(const xx of [-w/2+.25,w/2-.25])cylinder(root,xx,h/2,d/2+.24,.045,h,roof,8);
- if(h<13){box(root,-5,h+.8,-2,.9,1.6,.9,wall);box(root,-5,h+1.64,-2,1.06,.15,1.06,stone);}
+ if(h<13&&w>12){const chimneyX=-w*.28,chimneyZ=-d*.18;box(root,chimneyX,h+1.1,chimneyZ,.65,2.2,.65,wall);box(root,chimneyX,h+2.24,chimneyZ,.82,.13,.82,stone);}
  batchStatic(root);const [x0,y0,x1,y1]=b.bounds;root.position.set((x0+x1)/2,0,-(y0+y1)/2);if(b.front==='north')root.rotation.y=Math.PI;parent.add(root);
  root.userData.changchunContext={height:h,designed:true};
 }

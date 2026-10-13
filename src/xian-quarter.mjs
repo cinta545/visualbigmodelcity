@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {createCityWater} from './city-water.mjs';
 import {box,cylinder,mat,textPanel} from './district/materials.js';
 import {landmarkMaterial,prepareLandmarkMaterials} from './changchun-landmark-materials.mjs';
 import {mergeStaticByMaterial} from './chongqing-night.mjs';
@@ -48,7 +49,7 @@ function courtyardBench(root,x,z,angle=0){
 function dailyLife(root,kind){
  const points={changle:[[-8,29],[8,31],[-16,20],[15,22]],qujiang:[[-31,33],[31,32],[-37,-15],[26,-33]],pagoda:[[-5,12],[-5,18],[-7,27],[1,29]],bell:[[-6,0],[-2,3],[-7,10],[0,12],[-2,23],[2,26],[7,33],[9,35]]}[kind];
  const visitors=new THREE.Group();visitors.name='街区静态访客 · 场景装饰';visitors.userData.noMerge=true;visitors.userData.sceneryOnly=true;root.add(visitors);
- for(const [i,p] of points.entries()){const person=createHumanWalker(i%2);person.position.set(p[0],.12,p[1]);person.rotation.y=i*.9;visitors.add(person);}
+ for(const [i,p] of points.entries()){const person=createHumanWalker(i%8);person.position.set(p[0],.12,p[1]);person.rotation.y=i*.9;visitors.add(person);}
  if(kind==='changle'){
   for(const side of [-1,1]){bed(root,side*25,18,4,10);courtyardBench(root,side*25,32);}
  }else if(kind==='qujiang'){
@@ -137,10 +138,28 @@ function hall(root,x,z,w,d,h,{tiers=1,name='',base=1}={}){
  }
  for(let tier=0;tier<tiers;tier++){
   const yy=base+tier*(h+2.2),ww=w*(1-tier*.14),dd=d*(1-tier*.16);
-  box(root,x,yy+h/2,z,ww*.86,h,dd*.70,plaster);
+  // Build a timber hall with open verandas instead of hiding all joinery in a solid block.
+  for(const side of [-1,1])box(root,x+side*ww*.415,yy+h/2,z,.30,h,dd*.70,plaster);
+  box(root,x,yy+.04,z,ww*.86,.12,dd*.86,stone);
+  box(root,x,yy+h-.08,z,ww*.86,.16,dd*.80,wood);
+  // Side verandas give the hall a continuous inhabited perimeter under the roof.
+  for(const side of [-1,1]){
+   box(root,x+side*ww*.46,yy+.10,z,ww*.10,.20,dd*.86,stone);
+   box(root,x+side*ww*.48,yy+h-.20,z,.22,.30,dd*.88,red);
+   for(let zz=-dd*.36;zz<=dd*.36;zz+=Math.max(2.2,dd/5)){
+    cylinder(root,x+side*ww*.48,yy+h/2,z+zz,.15,h,red,10);
+    box(root,x+side*ww*.48,yy+.16,z+zz,.44,.32,.44,stone);
+   }
+  }
+  for(const side of [-1,1]){
+   box(root,x,yy+.18,z+side*dd*.40,ww*.90,.28,dd*.10,wood);
+   for(let bx=-ww*.40;bx<=ww*.40;bx+=2.4)box(root,x+bx,yy+h-.27,z,.15,.30,dd*.80,wood);
+  }
   box(root,x,yy+.18,z+dd*.39,ww,.28,.55,red);
   for(const side of [-1,1]){
    box(root,x,yy+h-.15,z+side*dd*.43,ww,.45,.4,red);
+   // Closely spaced exposed rafters beneath the eaves cast a continuous shadow band.
+   for(let rx=-ww*.46;rx<=ww*.46;rx+=.8){const timber=box(root,x+rx,yy+h+.04,z+side*dd*.40,.10,.15,dd*.22,wood);timber.rotation.x=side*.11;}
    const count=Math.max(4,Math.round(ww/3.2));
    for(let i=0;i<=count;i++){
     const xx=x-ww*.44+i*ww*.88/count;cylinder(root,xx,yy+h/2,z+side*dd*.43,.17,h,red,10);
@@ -148,10 +167,19 @@ function hall(root,x,z,w,d,h,{tiers=1,name='',base=1}={}){
     // Layered timber brackets and a stone plinth keep columns readable nearby.
     box(root,xx,yy+h-.36,z+side*dd*.46,.85,.13,.55,red);
     box(root,xx,yy+h-.23,z+side*dd*.47,1.12,.12,.8,wood);
+    // Paired stepped bracket arms carry the projecting eave in three visible layers.
+    for(const arm of [-1,1]){
+     box(root,xx+arm*.26,yy+h-.47,z+side*dd*.45,.18,.15,.38,red);
+     box(root,xx+arm*.38,yy+h-.33,z+side*dd*.46,.25,.13,.56,wood);
+     box(root,xx+arm*.47,yy+h-.20,z+side*dd*.47,.28,.10,.73,red);
+    }
     box(root,xx,yy+.27,z+side*dd*.43,.4,.12,.4,stone);
-    if(i<count){const mid=xx+ww*.44/count;box(root,mid,yy+h*.5,z+side*dd*.355,ww*.78/count,h*.74,.12,wood);
+    if(i<count){const mid=xx+ww*.44/count;box(root,mid,yy+h*.5,z+side*dd*.355,ww*.78/count,h*.74,.12,dark);
      for(let k=0;k<4;k++)box(root,mid-(ww*.3/count)+k*ww*.2/count,yy+h*.6,z+side*dd*.365,.06,h*.52,.08,gold);
      box(root,mid,yy+h*.37,z+side*dd*.37,ww*.76/count,.07,.09,red);
+     // Horizontal lattice rails and lower timber panels distinguish doors from columns.
+     for(let row=0;row<4;row++)box(root,mid,yy+h*(.44+row*.09),z+side*dd*.377,ww*.73/count,.035,.055,wood);
+     box(root,mid,yy+h*.21,z+side*dd*.37,ww*.68/count,h*.21,.06,red);
     }
    }
   }
@@ -302,11 +330,8 @@ function park(root){
  enclosure(root,'曲江坊','garden',-1);box(root,0,.07,0,80,.05,80,green);
  const shape=new THREE.Shape();shape.moveTo(-26,-29);shape.bezierCurveTo(-39,-10,-35,15,-21,29);shape.bezierCurveTo(-5,37,28,34,31,17);shape.bezierCurveTo(40,-4,28,-31,12,-33);shape.bezierCurveTo(-1,-38,-16,-35,-26,-29);
  for(const [x,z,r] of [[-14,14,9],[16,-14,8],[10,20,7]]){const hole=new THREE.Path();hole.absarc(x,-z,r,0,Math.PI*2,true);shape.holes.push(hole);cylinder(root,x,.17,z,r+.6,.25,stone,32);cylinder(root,x,.32,z,r,.18,green,32);pavilion(root,x,z,9);}
- const canvas=document.createElement('canvas');canvas.width=canvas.height=256;const ctx=canvas.getContext('2d'),pixels=ctx.createImageData(256,256);
- for(let y=0;y<256;y++)for(let x=0;x<256;x++){const i=(y*256+x)*4;pixels.data[i]=128+Math.sin((x+y)*Math.PI/16)*13;pixels.data[i+1]=128+Math.cos(y*Math.PI/16)*13;pixels.data[i+2]=255;pixels.data[i+3]=255;}ctx.putImageData(pixels,0,0);
- const normal=new THREE.CanvasTexture(canvas);normal.wrapS=normal.wrapT=THREE.RepeatWrapping;normal.repeat.set(.045,.045);
- const water=new THREE.MeshPhysicalMaterial({color:0x6c9992,roughness:.25,metalness:.18,clearcoat:1,clearcoatRoughness:.22,envMapIntensity:.7,normalMap:normal,normalScale:new THREE.Vector2(.16,.16)});
- const lake=mesh(root,new THREE.ShapeGeometry(shape,32),water);lake.rotation.x=-Math.PI/2;lake.position.y=.18;lake.castShadow=false;
+ const bottom=mesh(root,new THREE.ShapeGeometry(shape,32),mat(0x46594b,1));bottom.rotation.x=-Math.PI/2;bottom.position.y=.103;bottom.castShadow=false;
+ const lake=createCityWater(new THREE.ShapeGeometry(shape,32),{color:0x306e69});root.add(lake);lake.rotation.x=-Math.PI/2;lake.position.y=.18;
  const shore=shape.getPoints(48),edge=[];
  const bank=(i,offset)=>{const p=shore[i],a=shore[(i+shore.length-2)%(shore.length-1)],b=shore[(i+1)%(shore.length-1)],dx=b.x-a.x,dz=-(b.y-a.y),length=Math.hypot(dx,dz);let nx=-dz/length,nz=dx/length;if(nx*p.x-nz*p.y<0){nx=-nx;nz=-nz;}return [p.x+nx*offset,.23,-p.y+nz*offset];};
  for(let i=1;i<shore.length;i++){const a=bank(i-1,0),b=bank(i,0),c=bank(i,1.6),d=bank(i-1,1.6);edge.push(...a,...c,...b,...a,...d,...c);}
@@ -327,7 +352,15 @@ function park(root){
  for(let i=0;i<15;i++){const a=i*2.399,x=Math.cos(a)*32,z=Math.sin(a)*29;const rock=mesh(root,new THREE.IcosahedronGeometry(1,1),stone);rock.position.set(x,.55,z);rock.scale.set(1.4,.8,1.1);}
  culturalStele(root,22,32,'曲江流饮');
  const stream=new THREE.CatmullRomCurve3([new THREE.Vector3(-31,.22,24),new THREE.Vector3(-24,.22,30),new THREE.Vector3(-15,.22,28),new THREE.Vector3(-7,.22,33)]);
- const ribbon=mesh(root,new THREE.TubeGeometry(stream,32,.5,6,false),water);ribbon.scale.y=.15;ribbon.position.y=.2;ribbon.castShadow=false;
+ // A horizontal strip keeps the stream at the lake level. Scaling a tube also
+ // scaled its centreline height and made the old stream float above the bank.
+ const vertices=[],indices=[],samples=stream.getPoints(48);
+ for(let i=0;i<samples.length;i++){const p=samples[i],a=samples[Math.max(0,i-1)],b=samples[Math.min(samples.length-1,i+1)],dx=b.x-a.x,dz=b.z-a.z,L=Math.hypot(dx,dz);
+  vertices.push(p.x-dz/L*.5,-p.z-dx/L*.5,0,p.x+dz/L*.5,-p.z+dx/L*.5,0);
+  if(i)indices.push((i-1)*2,i*2,(i-1)*2+1,i*2,i*2+1,(i-1)*2+1);
+ }
+ const streamGeometry=new THREE.BufferGeometry();streamGeometry.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));streamGeometry.setIndex(indices);streamGeometry.computeVertexNormals();
+ const ribbon=createCityWater(streamGeometry,{color:0x306e69,resolution:256});ribbon.rotation.x=-Math.PI/2;ribbon.position.y=.18;root.add(ribbon);
  for(const [x,z] of [[-28,29],[-18,33],[-10,31]]){box(root,x,.3,z,2,.6,.8,stone);}
 }
 function outerCourtyard(root,index){

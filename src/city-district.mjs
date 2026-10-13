@@ -3,7 +3,7 @@ import {addXianQuarter,xianStoneRoad} from './xian-quarter.mjs';
 import {addTianjinHeritage} from './tianjin-heritage.mjs';
 import {landmarkMaterial,prepareLandmarkMaterials} from './changchun-landmark-materials.mjs';
 import {addScenicRail,addLandmarkLabels} from './changchun-scenic-rail.mjs';
-import {unifiedRoadMarkings,continuationPaint} from './city-road-continuation.mjs';
+import {unifiedRoadMarkings,markingRibbons,insideRoadSeam} from './city-road-continuation.mjs';
 import {grassSurfaceMaterial,addFineFoliage} from './changchun-planting.mjs';
 import {changchunContextBuilding,changchunLandscape} from './changchun-city-context.mjs';
 import {createChangchunLandmark,changchunLandmarks} from './changchun-landmarks.mjs';
@@ -27,20 +27,32 @@ export function buildDistrict(scene,config,observedRadius=Infinity){
  addSurface(root,config.terrain?.upperPaving||config.paving,night?nightPavingMaterial():groundMaterial('paving',.28,.28),-.015);
  if(config.xianQuarter?.greenEdges)addSurface(root,config.xianQuarter.greenEdges,grassSurfaceMaterial(),.025);
  if(config.quarterGreenLand)addSurface(root,config.quarterGreenLand,grassSurfaceMaterial(),.024);
- const refined=usesRefinedPresentation(config.city),asphalt=config.xianQuarter?xianStoneRoad():groundMaterial('asphalt',refined?.5:.22,refined?.5:.22);if(!config.xianQuarter){asphalt.color.setHex(night?0x23262e:0xa1a6a8);if(refined)refineRoadMaterial(asphalt);}addSurface(root,config.roadSurface||config.road,asphalt);addSurface(root,config.extension,asphalt,-.008);
+ const refined=usesRefinedPresentation(config.city),asphalt=config.xianQuarter?xianStoneRoad():groundMaterial('asphalt',refined?.5:.22,refined?.5:.22);if(!config.xianQuarter){asphalt.color.setHex(night?0x23262e:0xa1a6a8);if(refined)refineRoadMaterial(asphalt);}
+ if(config.displayRoad)addSurface(root,config.displayRoad,asphalt);
+ else {addSurface(root,config.roadSurface||config.road,asphalt);addSurface(root,config.extension,asphalt);}
  const lines=new THREE.Group();root.add(lines);
- if(config.xianQuarter?.sceneryRoads)addSurface(root,config.xianQuarter.sceneryRoads,asphalt,-.008);
+ if(!config.displayRoad&&config.xianQuarter?.sceneryRoads)addSurface(root,config.xianQuarter.sceneryRoads,asphalt);
  // Road paint remains non-emissive at night.
  const white=config.xianQuarter?mat(0xaaa995):night?mat(0x929daa):mat(0xf3efdf),curb=night?mat(0x687581):mat(0xc8c8b9);
  if(config.alignedFootways)addSurface(root,config.alignedFootways,night?mat(0x49505e):groundMaterial('paving',.28,.28),.006);
  for(const way of config.ways){
-  if((config.city==='changchun'||night)&&['line_thin','line_thick'].includes(way.tags.type))continue;
+  // One display marking path covers survey and continuation; no second seam alignment.
+  if(['line_thin','line_thick'].includes(way.tags.type))continue;
   if(!['curbstone','line_thin','line_thick','stop_line','guard_rail'].includes(way.tags.type))continue;
   const isCurb=way.tags.type==='curbstone',rail=way.tags.type==='guard_rail';
+  if(isCurb&&config.alignedCurbs)continue;
   for(let i=1;i<way.points.length;i++){
    const a=way.points[i-1],b=way.points[i],angle=Math.atan2(b[1]-a[1],b[0]-a[0]),length=Math.hypot(b[0]-a[0],b[1]-a[1]);if(length<.001)continue;
-   const dashed=way.tags.subtype==='dashed';for(let start=0;start<length;start+=dashed?5:length+1){const len=dashed?Math.min(2.6,length-start):length,mid=start+len/2;box(lines,a[0]+Math.cos(angle)*mid,rail?.7:isCurb?.08:.032,-a[1]-Math.sin(angle)*mid,len,rail?.18:isCurb?.18:.025,way.tags.type==='stop_line'?.34:isCurb?.18:.11,isCurb?curb:white,angle);}
+   const dashed=way.tags.subtype==='dashed',step=isCurb&&config.roadSeams?.5:dashed?5:length+1;
+   for(let start=0;start<length;start+=step){const len=Math.min(isCurb&&config.roadSeams?.5:dashed?2.6:length,length-start),mid=start+len/2,x=a[0]+Math.cos(angle)*mid,y=a[1]+Math.sin(angle)*mid;
+    if(isCurb&&insideRoadSeam(config,[x,y]))continue;
+    const m=box(lines,x,rail?.7:isCurb?.08:.032,-y,len,rail?.18:isCurb?.18:.025,way.tags.type==='stop_line'?.34:isCurb?.18:.11,isCurb?curb:white,angle);if(!rail&&!isCurb)m.castShadow=false;
+   }
   }
+ }
+ if(config.alignedCurbs){
+  const g=config.alignedCurbs,paths=g.type==='LineString'?[g.coordinates]:g.type==='MultiLineString'?g.coordinates:[];
+  for(const path of paths)for(let i=1;i<path.length;i++){const a=path[i-1],b=path[i],len=Math.hypot(b[0]-a[0],b[1]-a[1]);if(len>.001)box(lines,(a[0]+b[0])/2,.08,-(a[1]+b[1])/2,len,.16,.18,curb,Math.atan2(b[1]-a[1],b[0]-a[0]));}
  }
  for(const axis of config.extensionAxes||[]){const [a,b]=axis.points,angle=Math.atan2(b[1]-a[1],b[0]-a[0]),length=Math.hypot(b[0]-a[0],b[1]-a[1]),dx=Math.cos(angle),dy=Math.sin(angle);
   // Add the scenery's outer footways only beyond all observed actor positions.
@@ -48,15 +60,11 @@ export function buildDistrict(scene,config,observedRadius=Infinity){
    for(const side of [-1,1]){const offset=side*(axis.width/2+.17);box(lines,x-dy*offset,.08,-y-dx*offset,len,.16,.3,curb,angle);const walk=side*(axis.width/2+1.5);box(lines,x-dy*walk,.035,-y-dx*walk,len,.07,2.4,night?mat(0x49505e):mat(0xb6b6a8),angle);}
   }
  }
- if(config.city!=='changchun'){
-  const yellow=night?mat(0xb8a068):mat(0xd5b86d);
-  for(const s of continuationPaint(config))box(lines,(s.a[0]+s.b[0])/2,.027,-(s.a[1]+s.b[1])/2,Math.hypot(s.b[0]-s.a[0],s.b[1]-s.a[1]),.02,s.width,s.color==='yellow'?yellow:white,Math.atan2(s.b[1]-s.a[1],s.b[0]-s.a[0]));
- }
- if(config.city==='changchun'){
-  const yellow=mat(0xe3b943);
-  for(const segment of unifiedRoadMarkings(config)){
-   const {a,b,width,color}=segment,len=Math.hypot(b[0]-a[0],b[1]-a[1]);
-   box(lines,(a[0]+b[0])/2,.032,-(a[1]+b[1])/2,len,.025,width,color==='yellow'?yellow:white,Math.atan2(b[1]-a[1],b[0]-a[0]));
+ {
+  const yellow=config.xianQuarter?mat(0xb0a17b):mat(night?0xb8a068:0xe3b943);
+  for(const ribbon of markingRibbons(unifiedRoadMarkings(config))){
+   const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(ribbon.positions,3));geometry.setIndex(ribbon.indices);geometry.computeVertexNormals();
+   const mesh=new THREE.Mesh(geometry,ribbon.color==='yellow'?yellow:white);mesh.receiveShadow=true;mesh.castShadow=false;lines.add(mesh);
   }
  }
  batchStatic(lines);addCrosswalks(root,config.ways,config.xianQuarter?{color:'#b7b9a6',inlaid:true}:{});

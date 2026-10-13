@@ -35,7 +35,7 @@ const historyPositions=new THREE.BufferAttribute(new Float32Array(12000),3);hist
 historyLine.renderOrder=10;scene.add(historyLine);
 const selectedBox=new THREE.BoxHelper(new THREE.Object3D(),0xd4a327);selectedBox.visible=false;scene.add(selectedBox);
 const forecastGeometry=new THREE.BufferGeometry();
-const forecastPositions=new THREE.BufferAttribute(new Float32Array(93),3);forecastGeometry.setAttribute('position',forecastPositions);forecastGeometry.setDrawRange(0,0);
+const forecastPositions=new THREE.BufferAttribute(new Float32Array(153),3);forecastGeometry.setAttribute('position',forecastPositions);forecastGeometry.setDrawRange(0,0);
 const forecastLine=new THREE.Line(forecastGeometry,new THREE.LineBasicMaterial({color:0x168ee8,depthTest:false}));forecastLine.renderOrder=11;scene.add(forecastLine);
 function drawForecast(points){forecastPositions.array.fill(0);points.forEach((p,i)=>forecastPositions.setXYZ(i,p[1],.18,-p[2]));forecastPositions.needsUpdate=true;forecastGeometry.setDrawRange(0,points.length);forecastGeometry.computeBoundingSphere();forecastLine.visible=points.length>0;}
 const riskGeometry=new THREE.BufferGeometry(),riskPositions=new THREE.BufferAttribute(new Float32Array(12),3);
@@ -143,7 +143,7 @@ let down;
 renderer.domElement.addEventListener('pointerdown',e=>down=[e.clientX,e.clientY]);
 renderer.domElement.addEventListener('pointerup',e=>{if(!data||!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>5)return;const ray=new THREE.Raycaster();ray.setFromCamera(new THREE.Vector2(e.clientX/innerWidth*2-1,1-e.clientY/innerHeight*2),camera);const hit=ray.intersectObjects(pickable.filter(g=>g.visible),true)[0];if(hit){let g=hit.object;while(g&&!g.userData.track)g=g.parent;selectObject(g?.userData.track.id);}});
 function resize(){renderer.setSize(innerWidth,innerHeight,false);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();}window.addEventListener('resize',resize);resize();view('overview');
-function animate(now){requestAnimationFrame(animate);const dt=Math.min(now-last,200);last=now;if(data&&playing){time=Math.min(time+dt*Number($('speed').value),clipEnd??data.meta.durationMs);if(clipEnd!==null&&time>=clipEnd){playing=false;clipEnd=null;$('play').textContent='播放';}if(time===data.meta.durationMs){playing=false;$('play').textContent='重播';}update();}controls.update();renderer.render(scene,camera);}requestAnimationFrame(animate);
+function animate(now){requestAnimationFrame(animate);const dt=Math.max(0,Math.min(now-last,200));last=now;if(data&&playing){time=Math.min(time+dt*Number($('speed').value),clipEnd??data.meta.durationMs);if(clipEnd!==null&&time>=clipEnd){playing=false;clipEnd=null;$('play').textContent='播放';}if(time===data.meta.durationMs){playing=false;$('play').textContent='重播';}update();}controls.update();renderer.render(scene,camera);}requestAnimationFrame(animate);
 try{
  [data,site,baseline,surface,pavements]=await Promise.all(['/data/sind/replay.json','/shared/sind-visual-site.json','/data/sind/scene-baseline.json','/data/sind/road-surface.json','/data/sind/pavements.json'].map(async url=>{const r=await fetch(url);if(!r.ok)throw Error(`数据加载失败 ${r.status}: ${url}`);return r.json();}));
  if(baseline.fixedFurnitureCollidingTracks.length)throw Error('场景碰撞检查未通过');

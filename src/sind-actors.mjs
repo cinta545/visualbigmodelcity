@@ -30,7 +30,7 @@ export function createVulnerableActor(type,{rider=true}={}){
   root.userData.limbs=limbs;return root;
  }
  const motor=type==='motorcycle',tricycle=type==='tricycle',paint=material(motor?0x526a71:tricycle?0x7b8a78:0xb18549),wheels=[];
- const radius=motor?.29:.32;
+ const radius=motor?.29:.32,gripX=motor||tricycle?.43:.49;root.userData.handlebarX=gripX;
  const positions=tricycle?[[-.62,radius,-.4],[-.62,radius,.4],[.64,radius,0]]:[[-.65,radius,0],[.65,radius,0]];
  for(const position of positions){
   const wheel=new THREE.Group();wheel.position.set(...position);root.add(wheel);
@@ -45,10 +45,10 @@ export function createVulnerableActor(type,{rider=true}={}){
   }
   wheels.push(wheel);
  }
- for(const [a,b]of [[[-.65,radius,0],[-.15,.85,0]],[[-.15,.85,0],[0,.38,0]],[[0,.38,0],[-.65,radius,0]],[[-.15,.85,0],[.45,.9,0]],[[.45,.9,0],[0,.38,0]],[[.45,.9,0],[.65,radius,0]],[[.45,.9,0],[.49,1.1,0]]])bar(root,a,b,motor?.045:.025,paint);
- bar(root,[.49,1.1,-.25],[.49,1.1,.25],.02,metal);
+ for(const [a,b]of [[[-.65,radius,0],[-.15,.85,0]],[[-.15,.85,0],[0,.38,0]],[[0,.38,0],[-.65,radius,0]],[[-.15,.85,0],[.45,.9,0]],[[.45,.9,0],[0,.38,0]],[[.45,.9,0],[.65,radius,0]],[[.45,.9,0],[gripX,1.1,0]]])bar(root,a,b,motor?.045:.025,paint);
+ bar(root,[gripX,1.1,-.25],[gripX,1.1,.25],.02,metal);
  if(!motor&&!tricycle)box(root,[.35,.08,.22],[-.18,.96,0],rubber);
- for(const side of [-1,1]){bar(root,[.45,.9,side*.055],[.65,radius,side*.055],motor?.027:.017,metal);bar(root,[.49,1.1,side*.17],[.49,1.1,side*.27],.026,rubber);}
+ for(const side of [-1,1]){bar(root,[.45,.9,side*.055],[.65,radius,side*.055],motor?.027:.017,metal);bar(root,[gripX,1.1,side*.17],[gripX,1.1,side*.27],.026,rubber);}
  for(const x of [-.65,.65]){const fender=mesh(root,new THREE.TorusGeometry(radius+.042,.019,6,28,Math.PI),paint,[x,radius,0]);fender.scale.z=motor?3.2:1.6;}
  bar(root,[-.33,.93,0],[-.43,.88,0],.017,metal);rounded(root,[.027,.037,.062],[-.44,.88,0],material(0xa92e28));
  if(!motor&&!tricycle){
@@ -62,7 +62,7 @@ export function createVulnerableActor(type,{rider=true}={}){
  // Rider pose is a visual approximation; motion still comes exclusively from data.
  bar(root,[-.18,1.05,0],[.08,1.38,0],.13,shirt);face(root,[.16,1.57,0],motor);
  for(const side of [-1,1]){
-  bar(root,[.02,1.33,side*.16],[.25,1.13,side*.20],.047,shirt);bar(root,[.25,1.13,side*.20],[.49,1.1,side*.23],.035,shirt);rounded(root,[.042,.037,.035],[.49,1.1,side*.23],skin);
+  bar(root,[.02,1.33,side*.16],[.25,1.13,side*.20],.047,shirt);bar(root,[.25,1.13,side*.20],[gripX,1.1,side*.23],.035,shirt);rounded(root,[.042,.037,.035],[gripX,1.1,side*.23],skin);
   const thigh=bar(root,[-.17,1,side*.11],[.18,.7,side*.14],.065,trousers);
   const shin=bar(root,[.18,.7,side*.14],[0,.43,side*.15],.05,trousers);
   const shoe=box(root,[.22,.075,.1],[.04,.42,side*.15],rubber);

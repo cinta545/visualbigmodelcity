@@ -1,3 +1,5 @@
+> 本文为历史存档。旧轨迹预测与模型选择功能已移除，当前方法见 [论文模型说明](stdg-lstm-implementation.md)。
+
 ## 四城可视化首页（当前入口）
 
 首页现为四城真实记录循环回放，带方向通过量、截图视角卡片与车辆跟随。交通圆环、方向流量、趋势、风险概览和车辆预测现已融合首页；原完整研究工具仍保留于 `/analysis.html`。车辆在真实观测段边缘柔和淡出，不补造延伸行驶。运行 `npm start`，访问 `http://127.0.0.1:4173/`。数据边界、流量口径和验证命令见 [四城数字可视化说明](docs/city-visualization.md)。
@@ -8,11 +10,9 @@
 
 执行 `npm start` 后访问 http://127.0.0.1:4173；执行 `npm test` 运行验证。默认服务不启动仿真引擎、数据库或调度写接口。
 
-计划、进度及本轮限制详见 [真实数据项目计划](docs/real-data-project-plan.md) 和 [素材授权](assets/LICENSES.md)。当前仍为视觉初稿；恒速/恒加速度预测基线已接入，风险候选分析已接入，录像导出尚未实现。`npm run sind:prepare` 重新转换并审查场景，需要 Python 的 pyproj 3.8.0 和 shapely 2.1.2。
+计划、进度及本轮限制详见 [真实数据项目计划](docs/real-data-project-plan.md) 和 [素材授权](assets/LICENSES.md)。当前仍为视觉初稿；当前轨迹预测已统一为论文模型，风险候选分析已接入，录像导出尚未实现。`npm run sind:prepare` 重新转换并审查场景，需要 Python 的 pyproj 3.8.0 和 shapely 2.1.2。
 
 首页右上角“数据与对象”已接入真实指标、ID/类型检索、当前时刻/整段记录筛选、对象定位与首次观测跳转、过去 10 秒历史轨迹和 CSV 下载。统计范围为整个采集区域；汽车类均速仅覆盖轿车、公交和货车，低速数量不作为排队长度。CSV 为选中对象过去 10 秒的原始观测，不含未来数据。浏览器验收可执行 `node scripts/analysis-check.cjs`。
-
-选中机动车后可切换恒速 CV / 恒加速度 CA，蓝线显示未来 3 秒预测，并显示 1/2/3 秒端点误差及下载预测 CSV。预测从最新已到达采样点开始；未来真值仅用于离线误差核对。`node scripts/evaluate-sind-baselines.mjs` 生成同起点比较报告 `data/sind/baseline-evaluation.json`；`node scripts/prediction-check.cjs` 验证页面与导出。
 
 “风险候选”标签显示未来 3 秒恒速包络接触候选，区分追尾、交叉方向、行人/非机动车交互及当前重叠。点击可定位双方并展示外推位置，支持导出当前候选 CSV。该分析没有事故标签验证，不是事故概率。方法、假设与复现步骤见 [风险基线说明](docs/sind-risk-baseline.md)。
 
@@ -20,13 +20,7 @@
 
 复核工具现支持 JSON 备份恢复：校验源数据 SHA256、事件配置、风险配置与事件 ID；默认保留已有记录，选择覆盖策略并应用后才替换。CSV 用于分析，JSON 用于恢复。事件类别筛选和类别涉及数量已接入；阈值敏感性面板显示 12 组 TTC 上限/合并间隔组合，报告随 `npm run sind:events` 生成。浏览器验收：`node scripts/review-backup-check.cjs`。
 
-新增“交通指标 → 研究评估报告（离线）”：展示 CV/CA 的 ADE/FDE，支持速度分层、预测起点平均与对象等权平均，下载报告与逐起点误差。`npm run sind:evaluate` 从 `shared/research-datasets.json` 执行评估。当前只有 development 样例，尚无独立训练/验证/测试集或训练模型；详细口径见 [研究评估准备](docs/research-evaluation.md)。
-
 已主动下载长春、重庆、西安公开样例至 `data/sind-public`，哈希与基础质量检查完成，尚未接入评估清单或替换天津首页。完整数据仍需官方申请，详见 [数据获取记录](docs/sind-data-access.md)。复现：`python scripts/download-sind-public.py`、`python scripts/audit-sind-public.py`。
-
-四城市公开样例的第一轮研究已完成：972,997 行、2,757 条轨迹，486,176 行预测评估明细。首页离线报告支持按城市、车型和方向变化分层，天津回放不变。见 [四城市研究结果](docs/multicity-research-results.md)。运行 `npm run sind:public:prepare`、`npm run sind:evaluate`、`node scripts/report-sind-multicity.mjs` 复现。
-
-第二轮已加入 DCA（衰减加速度）与 CTRV（恒转率），支持三维预测和离线四模型比较。结果见 [四基线研究](docs/four-baselines-results.md)，协议见 [固定参数](docs/four-baselines-protocol.md)。运行 `npm run sind:evaluate` 后执行 `node scripts/report-sind-four-baselines.mjs` 生成本轮报告。下方旧进度说明保留历史上下文；当前风险仍固定使用 CV。
 
 以下为历史仿真系统说明，仅存档参考，不属于当前真实数据项目的已实现能力。
 

@@ -169,11 +169,291 @@
       "bytes": 478395,
       "sha256": "2df56390d069f322e43eeebf2bdff6f0f911769805d29c6e9595cc19f3420f36",
       "distributed": false
+    },
+    {
+      "file": "Female_Adult_01.fbx",
+      "bytes": 609152,
+      "sha256": "8cbaf86576004b96469bc80df123b97fef788f4a7bb3f3eaa616fcfaf55698a3",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_01/Export/Female_Adult_01.fbx",
+      "sourceGitBlobSHA1": "59e6c03fa86691cda806ef5d5b040e462c0fb9c1"
+    },
+    {
+      "file": "f001_body_color.jpg",
+      "bytes": 204921,
+      "sha256": "0db826a49e35f5d838d987a46116e6918147e72bcb8e11d65b26cd365b7e0d7e",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_01/Textures/f001_body_color.tga",
+      "sourceGitBlobSHA1": "25852db0db1f44a0de0643ce1e09c88aef587e6f"
+    },
+    {
+      "file": "f001_body_normal.jpg",
+      "bytes": 184998,
+      "sha256": "be78edcb80f47283c2d99a00160abdca8c514cc5b2477a14c0bca0d8ebfca025",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_01/Textures/f001_body_normal.tga",
+      "sourceGitBlobSHA1": "345ba24adc6d429a1e0967c0010588b88892be46"
+    },
+    {
+      "file": "f001_head_color.jpg",
+      "bytes": 194064,
+      "sha256": "84a18593ec18769c7e2ad06beb96a63988153589ad9058b700a9b09b5467e2c5",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_01/Textures/f001_head_color.tga",
+      "sourceGitBlobSHA1": "0cdc62ab47da3dca01aff0bb179159865a559c63"
+    },
+    {
+      "file": "f001_head_normal.jpg",
+      "bytes": 158760,
+      "sha256": "fa5f54774c4cf1f05798a1aad478d6a2fe4b6b1ae8677f8c8658ec619b2b5a17",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_01/Textures/f001_head_normal.tga",
+      "sourceGitBlobSHA1": "6de1fb458c746154713e8c34039add24f4ba9f6d"
+    },
+    {
+      "file": "f001_opacity_color.png",
+      "bytes": 836785,
+      "sha256": "9e55156047c937b1033626a901db230f9701455bdaf38f6c46a8adc56c792d39",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_01/Textures/f001_opacity_color.tga",
+      "sourceGitBlobSHA1": "de21a9e69c88e539da6a5050eaceadd026e99b62"
+    },
+    {
+      "file": "Female_Adult_05.fbx",
+      "bytes": 594160,
+      "sha256": "fffbb46af5f0f0323abad47f04f6067ec6f8757a345d5e53804601bbb77feca4",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_05/Export/Female_Adult_05.fbx",
+      "sourceGitBlobSHA1": "274cecdf013dc574f9739f24ed52c31b19f45f0b"
+    },
+    {
+      "file": "f005_body_color.jpg",
+      "bytes": 286867,
+      "sha256": "8fd515d3cb4b426c825e83f04572b36edd6ab275011ddf1a9d5574098622e469",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_05/Textures/f005_body_color.tga",
+      "sourceGitBlobSHA1": "9d5cbf117974d4b0d72f5c7a5dd690d2da0713f3"
+    },
+    {
+      "file": "f005_body_normal.jpg",
+      "bytes": 181947,
+      "sha256": "56275275e5a1cc3412b0ab683e418e78415165a50acfaa02aa6a9d9b4394394c",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_05/Textures/f005_body_normal.tga",
+      "sourceGitBlobSHA1": "37d064fd445d3e8e2ecf152bdfa05f36e4345c65"
+    },
+    {
+      "file": "f005_head_color.jpg",
+      "bytes": 152347,
+      "sha256": "fa90a1230b660d8b16f4293b1877d7faece0dbc812a033efc1b4260905c19a58",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_05/Textures/f005_head_color.tga",
+      "sourceGitBlobSHA1": "7cf9fba106546281fba14bb9d67c4234e45b069c"
+    },
+    {
+      "file": "f005_head_normal.jpg",
+      "bytes": 112022,
+      "sha256": "86b0d2376d4049307663e3cebb29df55f106ca9f0f26ae95fd4c0938edb48299",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_05/Textures/f005_head_normal.tga",
+      "sourceGitBlobSHA1": "25be0c99e1231b421a4eb0eacb22d13cdc669a2f"
+    },
+    {
+      "file": "f005_opacity_color.png",
+      "bytes": 1194607,
+      "sha256": "49d9aac8aaa7a381d777a0963c0ef0f4309be67773d1013893b93be129e59abd",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_05/Textures/f005_opacity_color.tga",
+      "sourceGitBlobSHA1": "7c94e9b9b0bad515023e5e3509a58c874bce29d6"
+    },
+    {
+      "file": "Male_Adult_03.fbx",
+      "bytes": 513728,
+      "sha256": "7064a9f50c95975c6d64ab0c5f5504364bad4ac987750728d0b5f1788fd59dcf",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Male_Adult_03/Export/Male_Adult_03.fbx",
+      "sourceGitBlobSHA1": "9e81e1cee43804851693c7874840e4f76f762126"
+    },
+    {
+      "file": "m004_body_color.jpg",
+      "bytes": 246695,
+      "sha256": "05753f14490e2cd419c661c6816fbdf5377144ac0613ae30e88b223dcda2ec05",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Male_Adult_03/Textures/m004_body_color.tga",
+      "sourceGitBlobSHA1": "6c74391f617e383371c9cd77775ebbae16998f8e"
+    },
+    {
+      "file": "m004_body_normal.jpg",
+      "bytes": 188555,
+      "sha256": "618b33cc86214985636367f41a408c4e554b756a4357b288ed7ab43565c77b5a",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Male_Adult_03/Textures/m004_body_normal.tga",
+      "sourceGitBlobSHA1": "c1ae5c98e3d11d7266fff2e0cd693869da21e3a9"
+    },
+    {
+      "file": "m004_head_color.jpg",
+      "bytes": 197750,
+      "sha256": "4bbf843e273090b5dd6ff06472b05d3bd54d25155b629d8e3cc7492dcb2db39a",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Male_Adult_03/Textures/m004_head_color.tga",
+      "sourceGitBlobSHA1": "bc8c4b56be8bef30ea204ea772451a03457a9d85"
+    },
+    {
+      "file": "m004_head_normal.jpg",
+      "bytes": 200105,
+      "sha256": "de047c45880c59cb0801f8bbec4533471e66935a0bc4f84b93e82d0a6fa6ae4e",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Male_Adult_03/Textures/m004_head_normal.tga",
+      "sourceGitBlobSHA1": "01cbe98b0d29bfe9b5c8949800e199234014453f"
+    },
+    {
+      "file": "m004_opacity_color.png",
+      "bytes": 904779,
+      "sha256": "5b51e9062044fa809f73129bd7259b3e420b018b3952f0e89db905022a9d970d",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Male_Adult_03/Textures/m004_opacity_color.tga",
+      "sourceGitBlobSHA1": "7a705836b26da41fbd46d5cf41835bcff82b1e0d"
+    },
+    {
+      "file": "Female_Adult_13.fbx",
+      "bytes": 605168,
+      "sha256": "cbfa41f09859179bba873d70bd075ce910d298fce8b2a74e4920049b33f0402b",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_13/Export/Female_Adult_13.fbx",
+      "sourceGitBlobSHA1": "a1299e19788000dab993077e33911ec4511eefb0"
+    },
+    {
+      "file": "f019_body_color.jpg",
+      "bytes": 181502,
+      "sha256": "efb90784c43c41c40ced4fa9ac8c9a019b2a8355ca6b59f9d8fc7136230eb485",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_13/Textures/f019_body_color.tga",
+      "sourceGitBlobSHA1": "8ac627d95db5125cabacd38568669aa3b9d674cb"
+    },
+    {
+      "file": "f019_body_normal.jpg",
+      "bytes": 164239,
+      "sha256": "a49cca7cfa4b19e8e1961bbeecc39fe0ef54feb0b37a26b5e9a2b7a1b4cab4c6",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_13/Textures/f019_body_normal.tga",
+      "sourceGitBlobSHA1": "4aacf70a5ba0e22c00e096583c8e17a5ba87e724"
+    },
+    {
+      "file": "f019_head_color.jpg",
+      "bytes": 185663,
+      "sha256": "0d23627e869423170f317b1885a8338bab315f7cd36f49cb5e852bd8095d357d",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_13/Textures/f019_head_color.tga",
+      "sourceGitBlobSHA1": "446c2b74e64e073325486113038ee8990aaadb23"
+    },
+    {
+      "file": "f019_head_normal.jpg",
+      "bytes": 128100,
+      "sha256": "1ff411c39979aa15ebe06d17ee3d4660ad113523ec32a52ec5c834e75dbd5291",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_13/Textures/f019_head_normal.tga",
+      "sourceGitBlobSHA1": "d196909a1dbf74c794fec8ead417979bfbe3d6c8"
+    },
+    {
+      "file": "f019_opacity_color.png",
+      "bytes": 1030333,
+      "sha256": "91c837ba718ed66f6cdddf789700b443f6607212e32c2cf97cafc0dc0b256dce",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Adults/Female_Adult_13/Textures/f019_opacity_color.tga",
+      "sourceGitBlobSHA1": "55a9e142e667e6c01d5001e6fba7b46413aaf2dd"
+    },
+    {
+      "file": "Male_Child_01.fbx",
+      "bytes": 506912,
+      "sha256": "ec3b257289dbd4ddeccc1921c25350ad31ed2489a1cb6e88f61c3ccf88d64359",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Children/Male_Child_01/Export/Male_Child_01.fbx",
+      "sourceGitBlobSHA1": "c203ce7399bc611f71e2cf7fe418e3706aa92fee"
+    },
+    {
+      "file": "cm001_body_color.jpg",
+      "bytes": 194541,
+      "sha256": "1069842610877d4067ab570e075c24ef1fe06f7fafd0ec858b0e266b3eede23e",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Children/Male_Child_01/Textures/cm001_body_color.tga",
+      "sourceGitBlobSHA1": "afee29cc2289eb1403cbe6e6a68c26b8d7618c31"
+    },
+    {
+      "file": "cm001_body_normal.jpg",
+      "bytes": 183731,
+      "sha256": "836f92a89f135a1c33a3a55d5d96e6a6eb702e3bc733298a9a789aa86bdcf453",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Children/Male_Child_01/Textures/cm001_body_normal.tga",
+      "sourceGitBlobSHA1": "2961be0dd27769dc438a48a6f06bec06868c9ba5"
+    },
+    {
+      "file": "cm001_head_color.jpg",
+      "bytes": 124124,
+      "sha256": "273a2614f907c914769a7b7a494d22e25ebba78cf8ae495a949c8803b1a40137",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Children/Male_Child_01/Textures/cm001_head_color.tga",
+      "sourceGitBlobSHA1": "aa7d4cb1931eab13a6227562038b1ecb34110dbb"
+    },
+    {
+      "file": "cm001_head_normal.jpg",
+      "bytes": 145516,
+      "sha256": "3485d271d15b822905db9c230d1df8d49b5c68e4f65454fe3d9215b07643f2ff",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Children/Male_Child_01/Textures/cm001_head_normal.tga",
+      "sourceGitBlobSHA1": "9c72c998d9e4e7704ae15ac2dbfd38a9fdc6fbc2"
+    },
+    {
+      "file": "Female_Child_01.fbx",
+      "bytes": 521968,
+      "sha256": "d75e13afa7302117d60a2513b1f7de81f48fcb609f7a807b49434333c6ea0949",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Children/Female_Child_01/Export/Female_Child_01.fbx",
+      "sourceGitBlobSHA1": "24882ec1809ae617788ccc63c686479a5fea67e4"
+    },
+    {
+      "file": "cf001_body_color.jpg",
+      "bytes": 150133,
+      "sha256": "63a383d60dd43d5111c10d3a81076034a3857c908a4d20d3ae755436bde6358b",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Children/Female_Child_01/Textures/cf001_body_color.tga",
+      "sourceGitBlobSHA1": "ef91edfdcbc95ef6a26e5b3fa4b4f4f8388b0348"
+    },
+    {
+      "file": "cf001_body_normal.jpg",
+      "bytes": 138031,
+      "sha256": "39ad000c989d098a526c248025e8470173cedcdf9b7cec326bcf29e8a6e30113",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Children/Female_Child_01/Textures/cf001_body_normal.tga",
+      "sourceGitBlobSHA1": "96f031026568aa1f48383b16e0b58335254104f4"
+    },
+    {
+      "file": "cf001_head_color.jpg",
+      "bytes": 172364,
+      "sha256": "e5fd176a1001984a24b29c1f689b1a7b85856291ebdeb9e0d2d252d32fb78e86",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Children/Female_Child_01/Textures/cf001_head_color.tga",
+      "sourceGitBlobSHA1": "611ce1b19a1a12207b3ee1dc0a467e95af0e59c3"
+    },
+    {
+      "file": "cf001_head_normal.jpg",
+      "bytes": 180729,
+      "sha256": "7cb79b1d669ee9e570f3eaef25cbd85859925ed400283d89a3b3f4c032af8899",
+      "distributed": true,
+      "sourcePath": "Assets/Avatars/Children/Female_Child_01/Textures/cf001_head_normal.tga",
+      "sourceGitBlobSHA1": "ad8667341cdffcd78ad6f02468a869eefc09a283"
     }
   ],
   "characters": [
     "Assets/Avatars/Adults/Male_Adult_01",
     "Assets/Avatars/Adults/Male_Adult_02"
   ],
-  "distributionNote": "Runtime assets are distributed; original TGA textures and character preview PNGs are retained locally or retrievable from the pinned repository. Per-file distributed flags identify packaged files."
+  "distributionNote": "Runtime assets are distributed; original TGA textures and character preview PNGs are retained locally or retrievable from the pinned repository. Per-file distributed flags identify packaged files.",
+  "diversityAvatars": [
+    "Female_Adult_01",
+    "Female_Adult_05",
+    "Male_Adult_03",
+    "Female_Adult_13",
+    "Male_Child_01",
+    "Female_Child_01"
+  ]
 }

@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {lowHipRoof} from './city-building-detail.mjs';
 import {mergeBufferGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
 import {box,cylinder,mat,batchStatic,textPanel} from './district/materials.js';
 import {pedestrianPavingMaterial} from './city-paving.mjs';
@@ -223,8 +224,7 @@ export function chongqingNightCity(parent,buildings){
    }
    // Deep eaves and a small pitched roof distinguish the older streets.
    if(b.variant%3===0){
-    const roof=new THREE.Mesh(new THREE.ConeGeometry(1,1,4),landmarkMaterial(0x3f4749,.9,'slate'));
-    roof.scale.set(w*.74,1.7,d*.74);roof.position.set(x,h+1.2,z);roof.rotation.y=Math.PI/4;roof.castShadow=true;fabric.add(roof);
+    lowHipRoof(fabric,x,h+1.17,z,w+.24,d+.24,landmarkMaterial(0x3f4749,.9,'slate'));
    }
   }
   box(fabric,x,h+.22,z,w+.35,.45,d+.35,0x141821);
@@ -259,8 +259,9 @@ export function chongqingNightCity(parent,buildings){
   box(fabric,x-w*.25,h+.8,z,3,1.2,2.3,mat(0x55616d,.86));
   if(b.variant%3===0){box(fabric,x+w*.18,h+1.1,z-d*.2,w*.40,2.2,d*.42,mat(0x58616a,.86));}
   if(b.variant%11===0&&h>24){
-   const crown=new THREE.Mesh(new THREE.ConeGeometry(Math.min(w,d)*.32,3.6,4),mat(0x38484c,.82,.1));
-   crown.position.set(x,h+2.6,z);crown.rotation.y=Math.PI/4;crown.castShadow=true;fabric.add(crown);
+   // Ordinary infill has a restrained stepped equipment enclosure, not a spire.
+   box(fabric,x,h+1.9,z,w*.40,1.2,d*.40,mat(0x38484c,.82,.1));
+   box(fabric,x,h+2.55,z,w*.44,.16,d*.44,trim);
   }
   if(b.kind==='office'){
    for(const dx of [-w*.26,w*.26]){

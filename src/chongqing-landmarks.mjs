@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {fitLandmarkToPlot} from './city-building-detail.mjs';
 import {box,cylinder,mat} from './district/materials.js';
 import {landmarkMaterial,prepareLandmarkMaterials} from './changchun-landmark-materials.mjs';
 import {glowBox,neonSign,neonStrip,metreUV,mergeStaticByMaterial,nightFacade} from './chongqing-night.mjs';
@@ -23,11 +24,19 @@ function lantern(root,x,y,z,r=.24,color=0xff5040){
  box(root,x,y-r-.06,z,r*1.4,.1,r*1.4,woodDark);
 }
 function pyramidRoof(root,x,z,y,w,d,rise,material=tile){
- const side=Math.max(w,d),geometry=new THREE.ConeGeometry(side/Math.SQRT2,rise,4,1).toNonIndexed();
- geometry.computeVertexNormals();geometry.userData.owned=true;
- const mesh=new THREE.Mesh(geometry,material);mesh.rotation.y=Math.PI/4;
- mesh.scale.set(w/side,1,d/side);mesh.position.set(x,y+rise/2,z);
- mesh.castShadow=mesh.receiveShadow=true;root.add(mesh);
+ // A hipped tile roof with a ridge reads as architecture instead of a cone.
+ const vertices=[x-w/2,y+.12,z-d/2,x+w/2,y+.12,z-d/2,x+w/2,y+.12,z+d/2,x-w/2,y+.12,z+d/2,x-w*.22,y+rise,z,x+w*.22,y+rise,z];
+ const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));geometry.setIndex([0,4,5,0,5,1,1,5,2,2,5,4,2,4,3,3,4,0]);geometry.computeVertexNormals();geometry.userData.owned=true;
+ material.side=THREE.DoubleSide;const mesh=new THREE.Mesh(geometry,material);mesh.castShadow=mesh.receiveShadow=true;root.add(mesh);
+ box(root,x,y+rise+.04,z,w*.46,.12,.16,material);
+ for(const side of [-1,1]){
+  box(root,x,y-.06,z+side*(d/2-.10),w,.18,.22,woodDark);
+  for(let xx=-w*.44;xx<=w*.44;xx+=.7){
+   const a=new THREE.Vector3(x+xx,y+.16,z+side*d/2),b=new THREE.Vector3(x+THREE.MathUtils.clamp(xx,-w*.22,w*.22),y+rise+.045,z),direction=b.clone().sub(a);
+   const roll=new THREE.Mesh(new THREE.CylinderGeometry(.025,.025,direction.length(),5),material);roll.position.copy(a.add(b).multiplyScalar(.5));roll.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),direction.normalize());roll.castShadow=roll.receiveShadow=true;root.add(roll);
+  }
+ }
+
 }
 function facadeWall(root,x,y,z,w,h,d,kind,ox=0,oy=0){
  const geometry=metreUV(new THREE.BoxGeometry(w,h,d),[24,20],ox,oy);
@@ -55,18 +64,26 @@ function hongya(root){
   // Chunky stilt posts carry a cantilevered gallery in front of each storey.
   for(let i=0;i<7;i++)cylinder(root,-w/2+1.2+i*(w-2.4)/6,y-1.15,zc+d/2-.4,.24,2.4,woodDark,6);
   box(root,0,y-.05,zc+d/2+.7,w,.35,2.2,woodDark);
-  box(root,0,y+1.35,zc,w,2.7,d,wood);
+  // Set each timber storey behind the gallery so the balconies have usable depth.
+  box(root,0,y+1.35,zc-.42,w,2.7,d-.84,wood);
   box(root,0,y-.28,zc,w+.6,.4,d+2.6,tile);
   // Five discrete lit windows per tier — colour without a glare band.
   for(let i=0;i<5;i++){
-   const wx=-w*.36+i*w*.18,wz=zc+d/2+.06,ww=w*.13;
+   const wx=-w*.36+i*w*.18,wz=zc+d/2-.78,ww=w*.13;
    glowBox(root,wx,y+1.5,wz,ww,1.8,.1,0xffb35c,1.6);
    for(const dx of [-ww/2,0,ww/2])box(root,wx+dx,y+1.5,wz+.07,.07,1.9,.10,woodDark);
    box(root,wx,y+1.42,wz+.08,ww,.07,.12,woodDark);
+   box(root,wx,y+2.48,wz+.13,ww+.24,.16,.25,woodDark);
   }
   if(tier%2===0)for(const xx of [-w*.32,0,w*.32])pyramidRoof(root,xx,zc+d/2+.4,y+2.72,w*.36,3.2,.85);
   for(let i=0;i<4;i++)cylinder(root,-w/2+.9+i*(w-1.8)/3,y+.65,zc+d/2+1.6,.08,1.3,woodDark,4);
   box(root,0,y+1.25,zc+d/2+1.6,w,.1,.1,woodDark);
+  box(root,0,y+.35,zc+d/2+1.6,w,.09,.09,woodDark);
+  for(let xx=-w/2+.35;xx<w/2;xx+=.55)box(root,xx,y+.80,zc+d/2+1.6,.055,.95,.065,woodDark);
+  for(const side of [-1,1]){
+   box(root,side*(w/2-.15),y+1.25,zc+d/2+.4,.09,.10,2.4,woodDark);
+   for(let zz=zc+d/2-.65;zz<zc+d/2+1.6;zz+=.5)box(root,side*(w/2-.15),y+.80,zz,.065,.95,.055,woodDark);
+  }
   // Strings of oversized red lanterns — the silhouette Hongyadong is known for.
   for(const lx of [-w/2+.9,-w*.22,w*.22,w/2-.9])lantern(root,lx,y+1.75,zc+d/2+1.2,.45);
   glowBox(root,0,y+.12,zc+d/2+.7,w,.12,.1,0xffd9a0,1.1);
@@ -78,6 +95,10 @@ function hongya(root){
  glowBox(root,0,24.75,6.9,18,.14,.12,0xffd76e,1.5);
  for(const lx of [-8.5,-2.9,2.9,8.5])lantern(root,lx,26.2,7,.5);
  // A small gilded shrine crowns the cliff itself.
+ box(root,0,30.55,-6.5,5.3,.3,4.5,rock);
+ box(root,0,32.05,-6.5,3.6,2.7,2.8,wood);
+ for(const xx of [-2.1,2.1])for(const zz of [-8.1,-4.9])cylinder(root,xx,32.05,zz,.11,2.8,woodDark,8);
+ for(const xx of [-.9,.9]){glowBox(root,xx,32.15,-5.06,.95,1.5,.08,0xffc68a,.5);box(root,xx,32.15,-4.99,.035,1.55,.055,woodDark);}
  pyramidRoof(root,0,-6.5,33.5,4.8,4,1.6);
  cylinder(root,0,34.9,-6.5,.12,1.8,tileGold,8);lantern(root,0,36.2,-6.5,.4);
  neonSign(root,'洪崖洞',-11.4,13,6.6,1.5,8,{color:gold,vertical:true,rotation:Math.PI/2});
@@ -349,7 +370,7 @@ export function createChongqingLandmark(parent,b){
  // Vertical boost lifts low monuments without distorting their neon lettering planes.
  if(boost!==1)root.traverse(o=>{if(o.isMesh&&o.geometry.type==='PlaneGeometry')o.scale.y/=boost;});
  mergeStaticByMaterial(root,scale,scale*boost);
- root.scale.set(scale,scale*boost,scale);
+ fitLandmarkToPlot(root,{...b,rotation:0},{horizontal:scale,vertical:scale*boost});
  root.position.set((x0+x1)/2,0,-(y0+y1)/2);
  if(b.front==='north')root.rotation.y=Math.PI;
  // Present the crafted facades toward the default southern bird's-eye camera.

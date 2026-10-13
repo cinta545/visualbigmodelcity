@@ -1,9 +1,9 @@
 import * as THREE from 'three';
+import {createCityWater} from './city-water.mjs';
 import {box,cylinder} from './district/materials.js';
 import {landmarkMaterial} from './changchun-landmark-materials.mjs';
 
 const stone=landmarkMaterial(0xd9d3bf,.86,'stone'),blue=landmarkMaterial(0x345970,.62,'glaze'),bronze=landmarkMaterial(0x667263,.6,'paint'),gold=landmarkMaterial(0xb99851,.68,'glaze');
-const water=new THREE.MeshStandardMaterial({color:0x456c77,roughness:.23,metalness:.25});
 function rod(root,a,b,r,m=stone){
  const p=new THREE.Vector3(...a),q=new THREE.Vector3(...b),delta=q.clone().sub(p);
  const mesh=new THREE.Mesh(new THREE.CylinderGeometry(r,r,delta.length(),10),m);
@@ -46,7 +46,9 @@ function fence(root,a,b){
  for(const h of [.25,.83])rod(root,[a[0],a[1]+h,a[2]],[b[0],b[1]+h,b[2]],.045);
 }
 export function watersidePavilion(root){
- box(root,0,.08,-.7,17,.16,12.5,stone);box(root,0,.17,-.7,16.4,.05,11.9,water);
+ box(root,0,.08,-.7,17,.16,12.5,stone);
+ box(root,0,.17,-.7,16.4,.025,11.9,new THREE.MeshStandardMaterial({color:0x415751,roughness:.98}));
+ const pool=createCityWater(new THREE.PlaneGeometry(16.4,11.9),{resolution:512,color:0x558f99});pool.rotation.x=-Math.PI/2;pool.position.set(0,.205,-.7);root.add(pool);
  cylinder(root,-2,.47,-1,3.35,.68,blue,8);cylinder(root,-2,.83,-1,3.55,.16,stone,8);
  // Octagonal pavilion with pale wall panels and arched window tracery.
  for(let i=0;i<8;i++){

@@ -12,8 +12,10 @@ export function createDaylight(renderer){
  return {sky,environment:fallback.texture,capture(scene,center,environment=fallback.texture){
   const target=new THREE.WebGLCubeRenderTarget(256,{type:THREE.HalfFloatType,generateMipmaps:true,minFilter:THREE.LinearMipmapLinearFilter});
   const probe=new THREE.CubeCamera(.3,800,target);probe.position.set(center[0],2.6,-center[1]);
-  const previous=scene.environment;scene.environment=environment;
-  try{probe.update(renderer,scene);const result=pmrem.fromCubemap(target.texture);return result;}finally{scene.environment=previous;target.dispose();}
+  const previous=scene.environment,waterSurfaces=[];scene.environment=environment;
+  // A cube probe must not trigger nested planar reflections into its cube faces.
+  scene.traverse(o=>{if(o.isWater){waterSurfaces.push([o,o.visible]);o.visible=false;}});
+  try{probe.update(renderer,scene);const result=pmrem.fromCubemap(target.texture);return result;}finally{scene.environment=previous;for(const [o,visible]of waterSurfaces)o.visible=visible;target.dispose();}
  }};
 }
 

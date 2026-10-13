@@ -22,4 +22,4 @@
 
 ## Microsoft Rocketbox character sample
 
-Copyright (c) 2020 Microsoft. MIT License. Source: https://github.com/microsoft/Microsoft-Rocketbox at commit 0943055db6ec570bcef9f2c8b41c9e5467c808f9. Full license: `characters/rocketbox/LICENSE.md`. Characters Male_Adult_01 and Male_Adult_02 and original neutral walking/idle animation. Textures converted to 1024px JPEG/PNG; source TGA retained locally and excluded from the version 2 distribution. Files and hashes: `characters/rocketbox/provenance.json`.
+Copyright (c) 2020 Microsoft. MIT License. Source: https://github.com/microsoft/Microsoft-Rocketbox at commit 0943055db6ec570bcef9f2c8b41c9e5467c808f9. Full license: `characters/rocketbox/LICENSE.md`. Characters Male_Adult_01/02/03, Female_Adult_01/05/13, Male_Child_01 and Female_Child_01, with original neutral walking/idle animation. Textures converted to 1024px JPEG/PNG; source TGA retained locally and excluded from the version 2 distribution. Files and hashes: `characters/rocketbox/provenance.json`.

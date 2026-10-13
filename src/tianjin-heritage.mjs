@@ -1,3 +1,4 @@
+import {roofServices,masonryFacade} from './city-building-detail.mjs';
 import * as THREE from 'three';
 import {box,cylinder,mat,textPanel} from './district/materials.js';
 import {landmarkMaterial,prepareLandmarkMaterials} from './changchun-landmark-materials.mjs';
@@ -19,6 +20,8 @@ function entrance(root,z,wood=timber){
   rod(root,[x+(x<0?.2:-.2),.98,z+.16],[x+(x<0?.2:-.2),1.22,z+.16],.023,gold);
  }
  box(root,0,2.42,z+.07,1.55,.12,.19,stone);
+ box(root,0,.08,z+.18,1.55,.12,.42,stone);
+ for(const side of [-1,1])box(root,side*.73,1.22,z+.06,.09,2.38,.17,stone);
 }
 function planter(root,x,z,width=1.4){
  box(root,x,.24,z,width,.48,.6,stone);box(root,x,.49,z,width-.12,.045,.48,timber);
@@ -40,9 +43,14 @@ function shopfront(root,x,z,label){
 }
 function mesh(root,geometry,material,x=0,y=0,z=0){const m=new THREE.Mesh(geometry,material);m.position.set(x,y,z);m.castShadow=m.receiveShadow=true;root.add(m);return m;}
 function rod(root,a,b,r,material=stone){const p=new THREE.Vector3(...a),q=new THREE.Vector3(...b),v=q.clone().sub(p);const m=mesh(root,new THREE.CylinderGeometry(r,r,v.length(),8),material);m.position.copy(p.add(q).multiplyScalar(.5));m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),v.normalize());}
-function arch(root,x,y,z,w,h,trim=stone){
+function arch(root,x,y,z,w,h,trim=stone,inset=0){
  const r=w/2,shoulder=h-r,shape=new THREE.Shape();shape.moveTo(-r,0);shape.lineTo(r,0);shape.lineTo(r,shoulder);shape.absarc(0,shoulder,r,0,Math.PI,false);shape.lineTo(-r,0);
- mesh(root,new THREE.ShapeGeometry(shape,14),dark,x,y,z);
+ const recess=new THREE.Mesh(new THREE.ExtrudeGeometry(shape,{depth:.07,bevelEnabled:false,curveSegments:14}),dark);recess.position.set(x,y,z-.035-inset);recess.castShadow=recess.receiveShadow=true;root.add(recess);
+ // The arch has a real stone reveal and a shadowed inner edge.
+ for(const side of [-1,1])box(root,x+side*(r+.04),y+shoulder/2,z+.085,.10,shoulder,.20,trim);
+ box(root,x,y-.02,z+.12,w+.26,.10,.32,trim);
+ for(const dx of [-w*.27,w*.27])box(root,x+dx,y+shoulder*.48,z+.025-inset,.035,shoulder*.90,.025,timber);
+ box(root,x,y+shoulder*.53,z+.028-inset,w-.12,.035,.035,timber);
  rod(root,[x-r,y,z+.04],[x-r,y+shoulder,z+.04],.075,trim);rod(root,[x+r,y,z+.04],[x+r,y+shoulder,z+.04],.075,trim);
  for(let i=0;i<12;i++){const a=i*Math.PI/12,b=(i+1)*Math.PI/12;rod(root,[x+Math.cos(a)*r,y+shoulder+Math.sin(a)*r,z+.04],[x+Math.cos(b)*r,y+shoulder+Math.sin(b)*r,z+.04],.075,trim);}
  for(let i=0;i<9;i++){
@@ -50,13 +58,20 @@ function arch(root,x,y,z,w,h,trim=stone){
   block.rotation.z=a-Math.PI/2;
  }
  box(root,x,y+h+.04,z+.1,.22,.22,.23,trim);
- box(root,x,y+h*.43,z+.05,.05,h*.82,.05,trim);box(root,x,y+h*.48,z+.05,w,.055,.05,trim);
+ // A projecting cornice has an underside shadow and a drip edge, instead of a flat stripe.
+ box(root,x,y+h+.23,z+.07,w+.34,.09,.19,cream);
+ box(root,x,y+h+.30,z+.14,w+.44,.065,.31,trim);
+ box(root,x,y-.17,z+.21,w+.18,.026,.025,timber);
+ box(root,x,y+h*.43,z+.05-inset,.05,h*.82,.05,trim);box(root,x,y+h*.48,z+.05-inset,w,.055,.05,trim);
  box(root,x,y-.08,z+.08,w+.3,.16,.3,trim);
 }
 function hip(root,x,z,w,d,y,rise,material=tile){
  const v=[x-w/2,y,z-d/2,x+w/2,y,z-d/2,x+w/2,y,z+d/2,x-w/2,y,z+d/2,x-w*.22,y+rise,z,x+w*.22,y+rise,z];
  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(v,3));g.setIndex([0,4,5,0,5,1,1,5,2,2,5,4,2,4,3,3,4,0]);g.computeVertexNormals();material.side=THREE.DoubleSide;mesh(root,g,material);
  for(const side of [-1,1])box(root,x,y,z+side*d/2,w,.18,.22,stone);
+ for(const side of [-1,1]){
+  box(root,x,y-.14,z+side*(d/2-.06),w,.075,.13,iron);
+ }
  rod(root,[x-w*.22,y+rise,z],[x+w*.22,y+rise,z],.1,material);
  for(const side of [-1,1])for(let xx=-w*.44;xx<=w*.44;xx+=.62){
   const ridgeX=x+THREE.MathUtils.clamp(xx,-w*.22,w*.22);
@@ -69,12 +84,19 @@ function balcony(root,x,y,z,w){
  for(const side of [-1,1])rod(root,[x+side*(w/2-.45),y-.65,z-.32],[x+side*(w/2-.45),y,z+.4],.12,stone);
 }
 function frontage(root,w,d,floors,material=brick){
- const h=floors*3.3;box(root,0,h/2,0,w,h,d,material);
+ const h=floors*3.3;box(root,0,h/2,0,w-1.2,h,d-1.2,material);
+ // Set the glazed arch behind an actual opening cut in each street-facing wall.
+ for(const [width,depth,angle] of [[w,d,0],[w,d,Math.PI],[d,w,Math.PI/2],[d,w,-Math.PI/2]]){
+  const face=new THREE.Group();face.rotation.y=angle;root.add(face);const shell=new THREE.Group();shell.position.z=depth/2;face.add(shell);
+  const openings=[];for(let floor=0;floor<floors;floor++)for(let x=-width/2+1.8;x<width/2-1;x+=3.6)openings.push({x,y:floor*3.3+1.65,width:1.5,height:2.2,arched:true});
+  masonryFacade(shell,width,h,openings,material,.40);
+ }
+ roofServices(root,0,h,0,w,d,{heritage:true});
  for(let floor=0;floor<floors;floor++){
   const y=floor*3.3;
   for(const side of [-1,1]){
    const face=new THREE.Group();face.rotation.y=side<0?Math.PI:0;root.add(face);
-   for(let x=-w/2+1.8;x<w/2-1;x+=3.6)arch(face,x,y+.55,d/2+.025,1.5,2.2);
+   for(let x=-w/2+1.8;x<w/2-1;x+=3.6)arch(face,x,y+.55,d/2+.025,1.5,2.2,stone,.24);
    box(face,0,y+3.24,d/2+.08,w+.3,.17,.25,stone);
    box(face,0,y+3.06,d/2+.14,w+.5,.13,.38,cream);
    for(const x of [-w/2,w/2]){
@@ -82,7 +104,7 @@ function frontage(root,w,d,floors,material=brick){
     box(face,x,y+2.95,d/2+.18,.5,.2,.26,stone);
    }
   }
-  for(const side of [-1,1]){const face=new THREE.Group();face.position.x=side*w/2;face.rotation.y=side*Math.PI/2;root.add(face);for(let x=-d/2+1.8;x<d/2-1;x+=3.6)arch(face,x,y+.55,.025,1.5,2.2);}
+  for(const side of [-1,1]){const face=new THREE.Group();face.position.x=side*w/2;face.rotation.y=side*Math.PI/2;root.add(face);for(let x=-d/2+1.8;x<d/2-1;x+=3.6)arch(face,x,y+.55,.025,1.5,2.2,stone,.24);}
  }
  for(const x of [-w/2,w/2])box(root,x,h/2,d/2+.12,.35,h,.24,stone);
  box(root,0,.2,0,w+.4,.4,d+.4,stone);box(root,0,h+.15,0,w+.6,.3,d+.6,stone);
@@ -235,7 +257,28 @@ export function addTianjinHeritage(parent,config){
   if(i<4){builders[i](local);local.name=kinds[i];local.userData.heritageKind=kinds[i];root.userData.tianjinHeritage.push(kinds[i]);}
   else{
    const ww=Math.min(18,w-2),dd=Math.min(14,d-2),floors=2+i%3,h=frontage(local,ww,dd,floors,i%3===0?cream:brick);
-   hip(local,0,0,ww+1,dd+1,h+.3,2.2);
+   // A few mansards, low hipped roofs and flat terraces share the same cornice.
+   const roofType=i%4;
+   if(roofType!==2)hip(local,0,0,ww+1,dd+1,h+.3,roofType===0?1.25:roofType===1?2.1:1.65);
+   else{
+    box(local,0,h+.36,0,ww+.6,.16,dd+.6,stone);
+    for(const side of [-1,1]){box(local,0,h+.67,side*dd/2,ww,.55,.18,cream);box(local,side*ww/2,h+.67,0,.18,.55,dd,cream);}
+   }
+   if(i%3!==2&&roofType!==2){
+    // A raised central attic and a projecting corner bay vary the roofline and frontage.
+    const attic=new THREE.Group();attic.position.set(0,h+.9,dd*.27);local.add(attic);
+    box(attic,0,.65,-.5,3.2,1.3,1.4,cream);arch(attic,0,.1,.23,1.5,1.1);
+    hip(attic,0,-.5,3.8,2.1,1.3,.8);
+    const bayX=ww*.32;
+    for(let floor=1;floor<floors;floor++){
+     const yy=floor*3.3,bay=new THREE.Group();bay.position.set(bayX,yy,dd/2+.88);local.add(bay);
+     masonryFacade(bay,2.6,3,[{x:0,y:1.58,width:1.5,height:2.2,arched:true}],cream,.30);
+     for(const side of [-1,1])box(bay,side*1.2,1.5,-.45,.2,3,.9,cream);
+     arch(local,bayX,yy+.48,dd/2+.91,1.5,2.2);
+     for(const side of [-1,1])box(local,bayX+side*1.22,yy+1.5,dd/2+.93,.16,3,.18,stone);
+     box(local,bayX,yy+3.02,dd/2+.43,2.95,.16,1.2,stone);
+    }
+   }
    if(i%3===1)balcony(local,0,3.3,dd/2+.6,ww*.5);
    if(i%5===0){cylinder(local,ww/2-2,h+.5,dd/2-2,1.5,1.3,cream,16);dome(local,ww/2-2,dd/2-2,h+1.1,1.6);}
    if(i%4===0){

@@ -10,7 +10,7 @@ const glass=material(0x263c49,.12,.45),rubber=material(0x171a1c,.86),trim=materi
 red.emissive=new THREE.Color(0xff2a20);red.emissiveIntensity=2.6;
 lens.emissive=new THREE.Color(0xfff3d8);lens.emissiveIntensity=2.4;
 glass.side=THREE.DoubleSide;
-const cabinGlass=new THREE.MeshStandardMaterial({color:0x607680,roughness:.12,metalness:.08,transparent:true,opacity:.44,depthWrite:false,side:THREE.DoubleSide,envMapIntensity:.7});
+const cabinGlass=new THREE.MeshStandardMaterial({color:0x607680,roughness:.12,metalness:.08,transparent:true,opacity:.28,depthWrite:false,side:THREE.DoubleSide,envMapIntensity:.7});
 function mesh(g,geo,mat,p=[0,0,0]){const m=new THREE.Mesh(geo,mat);m.position.fromArray(p);m.castShadow=m.receiveShadow=true;g.add(m);return m;}
 function box(g,p,s,m,r=.02){return mesh(g,new RoundedBoxGeometry(...s,2,r),m,p);}
 function line(g,points,m,r=.008){return mesh(g,new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points.map(p=>new THREE.Vector3(...p))),Math.max(8,points.length*4),r,4,false),m);}
@@ -49,18 +49,22 @@ function heavyWheel(){
 function archBody(g,left,right,bottom,top,width,axles,m){
  const s=new THREE.Shape();s.moveTo(left,bottom);s.lineTo(left,top);s.lineTo(right,top);s.lineTo(right,bottom);
  for(const x of [...axles].sort((a,b)=>b-a)){s.lineTo(x+.55,bottom);for(let i=0;i<=24;i++){const a=i*Math.PI/24;s.lineTo(x+.55*Math.cos(a),bottom+.55*Math.sin(a));}}
- s.lineTo(left,bottom);s.closePath();mesh(g,new THREE.ExtrudeGeometry(s,{depth:width-.06,bevelEnabled:true,bevelSegments:3,steps:1,bevelSize:.03,bevelThickness:.03}),m,[0,0,-width/2+.03]);
+ s.lineTo(left,bottom);s.closePath();for(const sign of [-1,1])mesh(g,new THREE.ExtrudeGeometry(s,{depth:.07,bevelEnabled:true,bevelSegments:2,steps:1,bevelSize:.015,bevelThickness:.015}),m,[0,0,sign*(width/2-.055)-.035]);
 }
 function fleetWheels(g,axles,z){const wheels=[];for(const x of axles)for(const sign of [-1,1]){const w=heavyWheel();w.position.set(x,.48,sign*z);g.add(w);wheels.push(w);}return wheels;}
 function bus(){const g=new THREE.Group(),axles=[-3.1,3.5];
  archBody(g,-5.48,5.48,.48,1.22,2.46,axles,paint);
- box(g,[0,2.09,0],[10.96,1.77,2.46],paint,.13);
+ box(g,[5.45,1.04,0],[.10,1.16,2.46],paint,.035);box(g,[-5.45,.86,0],[.10,.74,2.46],paint,.025);
+ // Hollow upper cabin: glass must reveal the seated driver, not a painted box.
+ box(g,[0,3.00,0],[10.96,.16,2.46],paint,.06);
+ box(g,[-5.43,2.09,0],[.10,1.77,2.46],paint,.035);
+ for(const sign of [-1,1]){box(g,[0,1.42,sign*1.20],[10.96,.40,.10],paint,.025);box(g,[0,2.86,sign*1.20],[10.96,.20,.10],paint,.025);}
  box(g,[0,.44,0],[9.9,.20,1.96],trim,.04);
  box(g,[-1.4,3.08,0],[2.9,.20,1.75],cargoPaint,.08);
  for(let x=-2.4;x<-.4;x+=.18)box(g,[x,3.189,0],[.06,.008,1.30],trim,.003);
  for(const sign of [-1,1]){
-  const z=sign*1.243;box(g,[-.08,2.19,z],[10.15,1.22,.025],trim,.055);
-  for(let x=-4.46;x<4.8;x+=1.14){if(sign>0&&(Math.abs(x-4.65)<.6||Math.abs(x+.75)<.6))continue;box(g,[x,2.21,sign*1.265],[1.025,1.03,.018],glass,.027);box(g,[x,2.52,sign*1.279],[1.02,.018,.014],alloy,.002);}
+  const z=sign*1.243;for(const y of [1.64,2.76])box(g,[-.08,y,z],[10.15,.055,.025],trim,.008);
+  for(let x=-4.46;x<4.8;x+=1.14){if(sign>0&&(Math.abs(x-4.65)<.6||Math.abs(x+.75)<.6))continue;box(g,[x,2.21,sign*1.265],[1.025,1.03,.018],cabinGlass,.027);box(g,[x,2.52,sign*1.279],[1.02,.018,.014],alloy,.002);}
   box(g,[0,1.39,z],[10.68,.18,.02],fleetStripe,.008);
   for(const x of [-4.9,-1.9,.8,4.9]){box(g,[x,.82,sign*1.264],[.12,.045,.022],amber,.009);}
   for(const x of [-4.65,-1.8,.35])line(g,[[x,1.2,sign*1.266],[x,.64,sign*1.266]],trim,.004);
@@ -68,9 +72,13 @@ function bus(){const g=new THREE.Group(),axles=[-3.1,3.5];
   line(g,[[5.15,2.74,sign*1.17],[5.58,2.75,sign*1.36],[5.60,2.39,sign*1.39]],trim,.025);
   box(g,[5.6,2.32,sign*1.39],[.16,.31,.15],trim,.03);box(g,[5.507,2.32,sign*1.39],[.013,.245,.106],glass,.008);
  }
+ for(const sign of [-1,1])box(g,[5.39,2.20,sign*1.20],[.18,1.24,.10],paint,.015);
+ box(g,[5.16,2.21,-1.265],[.36,1.03,.018],cabinGlass,.012);
  // Right-hand passenger doors; painted lower panels and independent glazed leaves.
  for(const x of [4.65,-.75]){box(g,[x,1.54,1.284],[1.12,2.02,.04],trim,.018);for(const dx of [-.275,.275]){box(g,[x+dx,1.84,1.311],[.51,1.36,.016],glass,.012);box(g,[x+dx,.73,1.314],[.51,.35,.018],paint,.008);}box(g,[x,.54,1.30],[1.06,.075,.11],alloy,.009);}
- box(g,[5.493,2.20,0],[.027,1.24,2.16],trim,.07);box(g,[5.513,2.19,0],[.019,1.10,2.03],glass,.045);
+ for(const y of [1.62,2.78])box(g,[5.493,y,0],[.027,.065,2.16],trim,.015);
+ for(const z of [-1.055,1.055])box(g,[5.493,2.20,z],[.027,1.24,.065],trim,.015);
+ box(g,[5.513,2.19,0],[.019,1.10,2.03],cabinGlass,.045);
  box(g,[5.49,2.85,0],[.035,.19,1.62],trim,.03);
  for(const z of [-.52,.50])line(g,[[5.532,1.69,z-.23],[5.535,2.09,z+.10]],trim,.011);
  box(g,[-5.49,2.24,0],[.028,.89,2.02],glass,.05);
@@ -82,10 +90,16 @@ function bus(){const g=new THREE.Group(),axles=[-3.1,3.5];
 function truck(){const g=new THREE.Group(),axles=[-2.03,2.27];
  box(g,[0,.60,0],[6.66,.23,1.85],trim,.04);
  archBody(g,1.10,3.46,.49,1.18,2.22,[2.27],paint);
- box(g,[2.29,1.71,0],[2.35,1.19,2.22],paint,.15);
- box(g,[3.478,1.83,0],[.026,.70,1.94],trim,.06);box(g,[3.494,1.85,0],[.014,.60,1.81],glass,.04);
+ box(g,[3.44,.95,0],[.10,1.04,2.22],paint,.035);
+ for(const sign of [-1,1])box(g,[2.29,1.32,sign*1.065],[2.35,.42,.10],paint,.035);
+ box(g,[2.29,2.27,0],[2.35,.12,2.22],paint,.06);
+ box(g,[1.17,1.87,0],[.11,.76,2.22],paint,.035);
+ for(const sign of [-1,1])for(const x of [1.35,2.94,3.40])box(g,[x,1.89,sign*1.08],[.10,.75,.08],paint,.015);
+ for(const y of [1.52,2.16])box(g,[3.478,y,0],[.026,.045,1.94],trim,.012);
+ for(const z of [-.95,.95])box(g,[3.478,1.83,z],[.026,.70,.045],trim,.012);
+ box(g,[3.494,1.85,0],[.014,.60,1.81],cabinGlass,.04);
  for(const sign of [-1,1]){
-  box(g,[2.14,1.87,sign*1.125],[1.48,.65,.018],glass,.04);
+  box(g,[2.14,1.87,sign*1.125],[1.48,.65,.018],cabinGlass,.04);box(g,[3.17,1.87,sign*1.125],[.35,.65,.018],cabinGlass,.018);
   line(g,[[1.34,2.18,sign*1.14],[1.34,1.09,sign*1.14],[2.94,1.09,sign*1.14]],trim,.005);
   box(g,[1.59,1.42,sign*1.139],[.23,.045,.028],trim,.01);
   box(g,[1.58,.78,sign*1.17],[.48,.075,.27],alloy,.009);
@@ -115,7 +129,11 @@ function sedan(){const g=new THREE.Group();
  // The lower silhouette has actual wheel openings instead of tyres intersecting a box.
  const s=new THREE.Shape();s.moveTo(-2.3,.39);s.lineTo(-2.3,.77);s.quadraticCurveTo(-2.2,.99,-1.83,1.02);s.lineTo(-1.38,1.04);s.lineTo(1.26,1.04);s.quadraticCurveTo(2.22,1.02,2.3,.79);s.lineTo(2.3,.39);s.lineTo(1.84,.39);
  for(const center of [1.43,-1.43]){if(center<0)s.lineTo(center+.41,.39);for(let i=0;i<=24;i++){const a=i*Math.PI/24;s.lineTo(center+.41*Math.cos(a),.39+.41*Math.sin(a));}}s.lineTo(-2.3,.39);s.closePath();
- mesh(g,new THREE.ExtrudeGeometry(s,{depth:1.66,bevelEnabled:true,bevelSegments:3,steps:1,bevelSize:.045,bevelThickness:.05,curveSegments:16}),paint,[0,0,-.83]);
+ for(const sign of [-1,1])mesh(g,new THREE.ExtrudeGeometry(s,{depth:.07,bevelEnabled:true,bevelSegments:3,steps:1,bevelSize:.025,bevelThickness:.02,curveSegments:16}),paint,[0,0,sign*.83-.035]);
+ box(g,[-.10,.395,0],[2.60,.07,1.58],trim,.02);
+ box(g,[2.28,.61,0],[.07,.42,1.66],paint,.04);box(g,[-2.28,.63,0],[.07,.46,1.66],paint,.04);
+ quad(g,[[-2.3,.85,.80],[-1.48,1.04,.80],[-1.48,1.04,-.80],[-2.3,.85,-.80]],paint);
+ box(g,[1.80,.78,0],[.91,.30,1.53],trim,.025);
  box(g,[0,.33,0],[3.98,.12,1.46],trim,.04);
  const hoodPoints=[],hoodUV=[],hoodIndices=[];
  for(let i=0;i<=16;i++){const t=.04+i/16*.81,x=(1-t)*(1-t)*1.26+2*(1-t)*t*2.22+t*t*2.3,y=(1-t)*(1-t)*1.04+2*(1-t)*t*1.02+t*t*.79;
@@ -148,18 +166,52 @@ function sedan(){const g=new THREE.Group();
  for(const x of [-2.35,2.35])box(g,[x,.65,0],[.022,.115,.43],plate,.008);
  box(g,[-2.29,.415,0],[.06,.09,1.35],trim,.024);
  const interior=new THREE.Group();interior.name='vehicle-near-detail';g.add(interior);
- const upholstery=material(0x303536,.93);
- for(const x of [-.72,.15])for(const z of [-.39,.39]){
-  box(interior,[x,1.075,z],[.43,.22,.47],upholstery,.06);
-  box(interior,[x-.16,1.235,z],[.13,.31,.44],upholstery,.045);
-  box(interior,[x-.16,1.405,z],[.13,.15,.23],upholstery,.04);
- }
+ for(const z of [-.39,.39])seat(interior,.15,.72,z,.45,.40);
+ for(const z of [-.46,0,.46])seat(interior,-.72,.72,z,.38,.40);
  box(interior,[.88,1.08,0],[.34,.13,1.4],trim,.04);
- const steering=mesh(interior,new THREE.TorusGeometry(.125,.016,8,24),trim,[.68,1.2,-.38]);steering.rotation.y=Math.PI/2;
+ steeringAssembly(interior,[.52,1.2,-.38],[.88,1.07,-.38],.125);
  combine(interior);
  combine(g);const wheels=[];for(const x of [-1.43,1.43])for(const z of [-.85,.85]){const w=wheel();w.position.set(x,.355,z);g.add(w);wheels.push(w);}
  g.userData={wheels,wheelRadius:.355,length:4.6,detailProfile:'city-refined'};return g;
 }
-export function createRefinedVehicle(type='car'){if(!['car','bus','truck'].includes(type))throw new Error('Unsupported vehicle type');if(!templates.has(type))templates.set(type,({car:sedan,bus,truck})[type]());const template=templates.get(type),g=template.clone(true);g.userData={...template.userData,wheels:g.children.filter(c=>c.userData.isWheel)};
+const seatFabric=material(0x343c41,.96),seatInset=material(0x4a5458,.98);
+function steeringAssembly(g,center,mount,radius){
+ const [x,y,z]=center;
+ const rim=mesh(g,new THREE.TorusGeometry(radius,.016,8,32),trim,center);rim.rotation.y=Math.PI/2;
+ // Keep the grip plane unchanged; connect its hub to the dashboard through a shrouded column.
+ line(g,[center,mount],trim,.035);
+ box(g,mount,[.14,.115,.14],trim,.025);
+ const hub=mesh(g,new THREE.CylinderGeometry(radius*.31,radius*.34,.065,16),trim,center);hub.rotation.z=Math.PI/2;
+ for(const angle of [Math.PI/6,Math.PI*5/6,Math.PI*3/2]){
+  line(g,[[x,y,z],[x,y+Math.sin(angle)*radius*.91,z+Math.cos(angle)*radius*.91]],trim,.018);
+ }
+ box(g,[x-.037,y,z],[.014,radius*.34,radius*.45],seatInset,.012);
+}
+function seat(g,x,y,z,width=.48,height=.54){
+ // Thin shaped cushions, tilted back, separate headrest and exposed supports.
+ const cushion=box(g,[x,y,z],[.44,.105,width],seatFabric,.04);cushion.rotation.z=-.035;
+ box(g,[x+.015,y+.052,z],[.34,.024,width-.065],seatInset,.012);
+ const back=box(g,[x-.28,y+height*.51,z],[.085,height,width-.018],seatFabric,.035);back.rotation.z=.13;
+ const inset=box(g,[x-.23,y+height*.50,z],[.023,height*.78,width-.08],seatInset,.012);inset.rotation.z=.13;
+ for(const dz of [-width*.23,width*.23]){
+  line(g,[[x-.31,y+height-.015,z+dz],[x-.34,y+height+.09,z+dz]],alloy,.007);
+  line(g,[[x-.13,y-.06,z+dz],[x-.14,y-.24,z+dz],[x+.14,y-.24,z+dz]],trim,.012);
+ }
+ box(g,[x-.34,y+height+.14,z],[.105,.135,width*.58],seatFabric,.035);
+}
+function heavyInterior(g,type){
+ const interior=new THREE.Group();interior.name='vehicle-near-detail';g.add(interior);const bus=type==='bus',x=bus?4.38:2.1,y=bus?1.38:1.26,z=bus?-.68:-.52;
+ box(interior,[bus?0:2.27,bus?.96:.84,0],[bus?10.6:2.10,.08,bus?2.26:2.05],trim,.018);
+ seat(interior,x,y,z);
+ if(bus){
+  // Two pairs per row, a continuous central aisle and clearance at the doors.
+  for(let row=0;row<9;row++){const px=-4.25+row*.86;for(const pz of [-.95,-.50,.50,.95]){if(pz>0&&Math.abs(px+.75)<.65)continue;seat(interior,px,1.40,pz,.40,.47);}}
+  for(const px of [-3.5,-1.8,.1,2.5])line(interior,[[px,1.0,.28],[px,2.78,.28]],alloy,.014);
+  line(interior,[[-4.5,2.78,.28],[3.7,2.78,.28]],alloy,.015);
+ }else{seat(interior,x,y,.52);box(interior,[x,.99,0],[.7,.23,.27],trim,.035);}
+ steeringAssembly(interior,[bus?4.86:2.73,bus?1.88:1.72,z],[bus?5.28:3.17,bus?1.62:1.48,z],.15);
+ box(interior,[bus?5.28:3.17,bus?1.62:1.48,0],[.28,.18,bus?2.0:1.8],trim,.035);combine(interior);
+}
+export function createRefinedVehicle(type='car'){if(!['car','bus','truck'].includes(type))throw new Error('Unsupported vehicle type');if(!templates.has(type)){const shell=({car:sedan,bus,truck})[type]();if(type!=='car')heavyInterior(shell,type);templates.set(type,shell);}const template=templates.get(type),g=template.clone(true);g.userData={...template.userData,wheels:g.children.filter(c=>c.userData.isWheel)};
  return g;}
 export function createRefinedCar(){return createRefinedVehicle('car');}

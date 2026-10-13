@@ -28,6 +28,8 @@ function surfaceMaps(kind){
    const joint=edge<2,bevel=edge<4;
    value=joint?177:224+tones[row*4+col]*26+grain*12-(bevel?8:0);
    height=joint?65:bevel?115:190+grain*28;rough=joint?250:229+grain*14;
+  }else if(kind==='plaster'){
+   value=239+grain*8+broad*13;height=165+grain*13+broad*5;rough=238+grain*9+broad*7;
   }else if(kind==='stone'){
    value=236+grain*20+broad*4;height=165+grain*38;rough=244+grain*10;
   }else if(kind==='glaze'){

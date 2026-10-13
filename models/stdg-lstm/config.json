@@ -1,0 +1,6 @@
+{
+  "version": "stdg-lstm-sind-v1",
+  "paper": {"historySeconds": 3, "forecastSeconds": 5, "encoderHidden": 64, "decoderHidden": 128, "learningRate": 0.001, "batchSize": 64, "split": [0.7, 0.1, 0.2]},
+  "implementationChoices": {"stepSeconds": 0.1, "embedding": 32, "modes": 6, "particles": 64, "gridLateralCells": 9, "gridLongitudinalCells": 25, "cellMeters": 4, "neighbors": 16, "associationMeters": 30, "dependencyForwardMeters": 45, "dependencyLateralMeters": 3.5, "smoothWeight": 0.1, "nllWeight": 0.05, "epochs": 20, "patience": 5, "seed": 20261009, "windowStrideSeconds": 2, "maxTrainingWindows": 12000, "maxValidationWindows": 2000, "maxTestWindows": 2000},
+  "scope": "Independent paper-structured implementation on SinD; not original author code or a reproduction of reported NGSIM scores. Temporal scene splits with full 8-second window containment prevent overlapping histories/futures across splits."
+}

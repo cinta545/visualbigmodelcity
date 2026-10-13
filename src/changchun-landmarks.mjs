@@ -1,3 +1,4 @@
+import {windowReveal,fitLandmarkToPlot} from './city-building-detail.mjs';
 import {mergeBufferGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
 import * as THREE from 'three';
 import {box,cylinder,mat,textPanel} from './district/materials.js';
@@ -21,10 +22,7 @@ export const changchunLandmarks={
 const stone=landmarkMaterial(0xd8c6a3,.87,'stone'),cream=landmarkMaterial(0xe0d6ba,.88,'plaster'),brick=landmarkMaterial(0x987253,.9,'brick'),dark=mat(0x324447,.42,.15),green=landmarkMaterial(0x315c4e,.67,'glaze'),yellow=landmarkMaterial(0xc99932,.59,'glaze'),red=landmarkMaterial(0x863b31,.78,'paint'),slate=landmarkMaterial(0x41494a,.73,'glaze'),plinth=landmarkMaterial(0xb7ac92,.93,'stone');
 function bar(root,a,b,r,material){const from=new THREE.Vector3(...a),to=new THREE.Vector3(...b),d=to.clone().sub(from);const mesh=new THREE.Mesh(new THREE.CylinderGeometry(r,r,d.length(),8),material);mesh.position.copy(from.add(to).multiplyScalar(.5));mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());mesh.castShadow=mesh.receiveShadow=true;root.add(mesh);}
 function windowBay(root,x,y,z,w,h,frame=stone){
- const sign=z<0?-1:1;
- box(root,x,y,z,w+.16,h+.16,.13,frame);box(root,x,y,z+sign*.075,w,h,.035,dark);
- box(root,x,y,z+sign*.10,.045,h,.035,frame);box(root,x,y+.1,z+sign*.10,w,.045,.035,frame);
- box(root,x,y-h/2-.1,z+sign*.13,w+.26,.09,.28,frame);
+ windowReveal(root,x,y,z,w,h,frame,dark,z<0?-1:1);
 }
 function windows(root,x0,x1,levels,z,w=.48,h=1.04,frame=stone){
  const count=Math.max(2,Math.floor((x1-x0)/1.12));for(const y of levels)for(let i=0;i<count;i++)windowBay(root,x0+(i+.5)*(x1-x0)/count,y,z,w,h,frame);
@@ -216,7 +214,8 @@ export function createChangchunLandmark(parent,b){
  const ownedGeometry=new Set(remove.filter(o=>o.geometry.type!=='BoxGeometry').map(o=>o.geometry));
  for(const o of remove)o.removeFromParent();for(const geometry of ownedGeometry)geometry.dispose();
  for(const [material,geometries]of groups){const mesh=new THREE.Mesh(mergeBufferGeometries(geometries,false),material);mesh.castShadow=mesh.receiveShadow=!material.transparent;root.add(mesh);for(const g of geometries)g.dispose();}
- const [x0,y0,x1,y1]=b.bounds;const scale=Math.min((x1-x0)/24,(y1-y0)/20);root.scale.set(scale,scale*(b.verticalBoost||1),scale);
+ const [x0,y0,x1,y1]=b.bounds;const scale=Math.min((x1-x0)/24,(y1-y0)/20);
+ fitLandmarkToPlot(root,b,{horizontal:scale,vertical:scale*(b.verticalBoost||1)});
  root.position.set((x0+x1)/2,b.baseHeight||0,-(y0+y1)/2);if(b.front==='north')root.rotation.y=Math.PI;if(b.rotation!==undefined)root.rotation.y=b.rotation;
  root.userData.landmark={...spec,designedPlacement:true};parent.add(root);return root;
 }

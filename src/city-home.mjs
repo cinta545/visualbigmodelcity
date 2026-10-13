@@ -1,7 +1,9 @@
+import {caseClock} from './city-risk-cases.mjs';
 import {updateVehicleDetail,followVehicle,focusDaylightShadow} from './city-render-quality.mjs';
+import {attachCityNavigation} from './city-camera-navigation.mjs';
 import {humanVariantForTrack} from './city-human-appearance.mjs';
 import './sind-color.mjs';
-import {loadHumanAssets,createHumanWalker,attachHumanRider,posedBounds} from './city-humans.mjs';
+import {loadHumanAssets,createHumanWalker,createHumanDriver,attachHumanRider,posedBounds} from './city-humans.mjs';
 import {isLongStatic,busyStart} from './city-presentation.mjs';
 import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
@@ -41,40 +43,54 @@ const contactShadows=new SSAOPass(scene,camera,innerWidth,innerHeight);
 contactShadows.kernelRadius=3;contactShadows.minDistance=.001;contactShadows.maxDistance=.025;contactShadows.enabled=false;
 composer.addPass(renderPass);composer.addPass(contactShadows);composer.addPass(bloomPass);composer.addPass(gammaPass);
 const objects=new Map(),pools=new Map(),pickable=[],cache=new Map(),clocks=new Map();
-const selection=new THREE.BoxHelper(new THREE.Object3D(),0x88c9bb);selection.visible=false;scene.add(selection);
+const selection=new THREE.BoxHelper(new THREE.Object3D(),0x72dcd7);selection.visible=false;scene.add(selection);
 let followState={};
-let current=null,time=0,last=performance.now(),playing=true,selected=null,following=false,transition=null,request=0,lastHUD=-1,views={},dimStatic=false,vehicleFilter=null,activeRisk=null;
+let current=null,time=0,last=performance.now(),playing=true,selected=null,following=false,transition=null,request=0,lastHUD=-1,views={},vehicleFilter=null,activeRisk=null,caseEntry=null;
 const names={car:'轿车',bus:'公交车',truck:'货车',pedestrian:'行人',bicycle:'自行车',motorcycle:'摩托车',tricycle:'三轮车'};
-const forecastGeometry=new THREE.BufferGeometry(),forecastLine=new THREE.Line(forecastGeometry,new THREE.LineBasicMaterial({color:0x55b9b0,depthTest:false}));forecastLine.renderOrder=12;forecastLine.visible=false;scene.add(forecastLine);
-const forecastBuffer=new THREE.BufferAttribute(new Float32Array(93),3);forecastGeometry.setAttribute('position',forecastBuffer);forecastGeometry.setDrawRange(0,0);
+const forecastGeometry=new THREE.BufferGeometry(),forecastLine=new THREE.Line(forecastGeometry,new THREE.LineBasicMaterial({color:0x72dcd7,depthTest:false}));forecastLine.renderOrder=12;forecastLine.visible=false;scene.add(forecastLine);
+const forecastBuffer=new THREE.BufferAttribute(new Float32Array(153),3);forecastGeometry.setAttribute('position',forecastBuffer);forecastGeometry.setDrawRange(0,0);
 function drawForecast(points){forecastLine.visible=points.length>0;points.forEach((p,i)=>forecastBuffer.setXYZ(i,p[1],.2,-p[2]));forecastBuffer.needsUpdate=true;forecastGeometry.setDrawRange(0,points.length);if(points.length)forecastGeometry.computeBoundingSphere();}
-const riskMarkers=[0,1].map(()=>{const mesh=new THREE.Mesh(new THREE.RingGeometry(1.1,1.4,36),new THREE.MeshBasicMaterial({color:0xdfab71,side:THREE.DoubleSide,depthTest:false}));mesh.rotation.x=-Math.PI/2;mesh.visible=false;mesh.renderOrder=11;scene.add(mesh);return mesh;});
+const truthGeometry=new THREE.BufferGeometry(),truthBuffer=new THREE.BufferAttribute(new Float32Array(153),3);truthGeometry.setAttribute('position',truthBuffer);truthGeometry.setDrawRange(0,0);
+const truthLine=new THREE.Line(truthGeometry,new THREE.LineBasicMaterial({color:0xf2ede2,depthTest:false}));truthLine.visible=false;truthLine.renderOrder=13;scene.add(truthLine);
+function drawTruth(points){truthLine.visible=points.length>1;points.forEach((p,i)=>truthBuffer.setXYZ(i,p[1],.26,-p[2]));truthBuffer.needsUpdate=true;truthGeometry.setDrawRange(0,points.length);if(points.length)truthGeometry.computeBoundingSphere();}
+// Broken corner targets identify predicted contact centres without covering the road.
+const riskMarkers=[0,1].map(()=>{
+ const points=[],r=1.25,l=.48;
+ for(const x of [-1,1])for(const z of [-1,1])points.push(x*r,0,z*(r-l),x*r,0,z*r,x*r,0,z*r,x*(r-l),0,z*r);
+ points.push(-.2,0,0,.2,0,0,0,0,-.2,0,0,.2,0,0,0,0,.85,0,-.16,.85,0,.16,.85,0);
+ const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(points,3));
+ const marker=new THREE.LineSegments(geometry,new THREE.LineBasicMaterial({color:0x72dcd7,transparent:true,opacity:.95,depthTest:false,depthWrite:false}));marker.visible=false;marker.renderOrder=14;marker.userData.annotation='contact-target';scene.add(marker);return marker;
+});
 const riskPathsGeometry=new THREE.BufferGeometry(),riskPathsBuffer=new THREE.BufferAttribute(new Float32Array(12),3);riskPathsGeometry.setAttribute('position',riskPathsBuffer);riskPathsGeometry.setDrawRange(0,0);
-const riskPaths=new THREE.LineSegments(riskPathsGeometry,new THREE.LineBasicMaterial({color:0xe1ab6a,depthTest:false}));riskPaths.renderOrder=11;riskPaths.visible=false;scene.add(riskPaths);
-const riskBoxes=[0,1].map(()=>{const box=new THREE.BoxHelper(new THREE.Object3D(),0xe1ab6a);box.visible=false;box.material.transparent=true;scene.add(box);return box;});
+const riskPaths=new THREE.LineSegments(riskPathsGeometry,new THREE.LineDashedMaterial({color:0x4eaebc,depthTest:false,dashSize:.8,gapSize:.45}));riskPaths.renderOrder=11;riskPaths.visible=false;scene.add(riskPaths);
+const riskBoxes=[0,1].map(()=>{const box=new THREE.BoxHelper(new THREE.Object3D(),0x72dcd7);box.visible=false;box.material.transparent=true;scene.add(box);return box;});
 function updateRiskBoxes(){riskBoxes.forEach((box,i)=>{const object=activeRisk&&objects.get([activeRisk.a.id,activeRisk.b.id][i]);box.visible=!!object&&object.visible;if(object){box.setFromObject(object);box.material.opacity=object.userData.opacity;}});}
 function drawRisk(event,focus){
  activeRisk=event;riskPaths.visible=!!event;$('risk-inspection').hidden=!event;
  riskMarkers.forEach((m,i)=>{m.visible=!!event;if(event)m.position.set(event.centers[i][0],.17,-event.centers[i][1]);});
- if(event){const states=[event.a,event.b];states.forEach((s,i)=>{riskPathsBuffer.setXYZ(i*2,s.p[0],.21,-s.p[1]);riskPathsBuffer.setXYZ(i*2+1,s.p[0]+s.v[0]*3,.21,-s.p[1]-s.v[1]*3);});riskPathsBuffer.needsUpdate=true;riskPathsGeometry.setDrawRange(0,4);riskPathsGeometry.computeBoundingSphere();
- $('risk-inspection-text').textContent=`${names[event.a.type]} ${event.a.id.split('/').at(-1)} ↔ ${names[event.b.type]} ${event.b.id.split('/').at(-1)}\n预计 ${event.ttcS.toFixed(2)} 秒后包络接触\n橙线：双方恒速预测 · 圆环：接触时中心`;
- if(focus){selected=event.a.type==='pedestrian'||event.a.type==='bicycle'?event.b.id:event.a.id;$('object').hidden=false;const x=(event.a.p[0]+event.b.p[0])/2,z=-(event.a.p[1]+event.b.p[1])/2,span=Math.hypot(event.a.p[0]-event.b.p[0],event.a.p[1]-event.b.p[1]);following=false;transition=null;controls.target.set(x,0,z);camera.position.set(x+Math.max(23,span*.7),Math.max(28,span),z+Math.max(27,span*.7));lastHUD=-1e6;}}
+ if(event){const states=[event.a,event.b];states.forEach((s,i)=>{riskPathsBuffer.setXYZ(i*2,s.p[0],.21,-s.p[1]);riskPathsBuffer.setXYZ(i*2+1,s.p[0]+s.v[0]*3,.21,-s.p[1]-s.v[1]*3);});riskPathsBuffer.needsUpdate=true;riskPathsGeometry.setDrawRange(0,4);riskPathsGeometry.computeBoundingSphere();riskPaths.computeLineDistances();
+ $('risk-inspection-text').textContent=`${names[event.a.type]} ${event.a.id.split('/').at(-1)} ↔ ${names[event.b.type]} ${event.b.id.split('/').at(-1)}\n预计 ${event.ttcS.toFixed(2)} 秒后接近\n蓝色虚线：预计行进方向 · 靶标：接近位置`;
+ if(focus){camera.fov=48;camera.updateProjectionMatrix();selected=event.a.type==='pedestrian'||event.a.type==='bicycle'?event.b.id:event.a.id;$('object').hidden=false;document.body.classList.add('vehicle-selected');const x=(event.a.p[0]+event.b.p[0])/2,z=-(event.a.p[1]+event.b.p[1])/2,span=Math.hypot(event.a.p[0]-event.b.p[0],event.a.p[1]-event.b.p[1]);following=false;transition=null;controls.target.set(x,0,z);camera.position.set(x+Math.max(23,span*.7),Math.max(28,span),z+Math.max(27,span*.7));lastHUD=-1e6;}}
  updateRiskBoxes();
 }
-const dashboard=createCityDashboard({forecast:drawForecast,risk:drawRisk,filter:type=>{vehicleFilter=type;const g=objects.get(selected);if(type&&g?.userData.track.type!==type){selected=null;following=false;selection.visible=false;$('object').hidden=true;drawForecast([]);}if(type)drawRisk(null,false);if(current&&objects.size)updateParticipants();lastHUD=-1e6;}});
+const dashboard=createCityDashboard({forecast:drawForecast,truth:drawTruth,risk:drawRisk,
+ case:(entry,event)=>{caseEntry=entry;if(entry){time=entry.anchorMs;playing=false;selected=entry.focusId;updateParticipants();drawRisk(event,true);selected=entry.focusId;$('object').hidden=false;document.body.classList.add('vehicle-selected');$('scene').dataset.caseId=entry.id;}else{delete $('scene').dataset.caseId;drawRisk(null,false);drawTruth([]);}lastHUD=-1e6;$('play').textContent=playing?'暂停':'继续';},
+ caseSeek:(next,play)=>{if(!caseEntry)return;time=caseClock(next,0,caseEntry);playing=play;$('play').textContent=play?'暂停':'继续';lastHUD=-1e6;updateParticipants();updateHUD();},
+ filter:type=>{vehicleFilter=type;const g=objects.get(selected);if(type&&g?.userData.track.type!==type){selected=null;following=false;selection.visible=false;$('object').hidden=true;document.body.classList.remove('vehicle-selected');drawForecast([]);}if(type)drawRisk(null,false);if(current&&objects.size)updateParticipants();lastHUD=-1e6;}});
 
 function createParticipant(track){
- const humanSample=['pedestrian','bicycle','motorcycle','tricycle'].includes(track.type),humanVariant=humanVariantForTrack(track.id);
- const poolKey=humanSample?'human-'+track.type+'-'+humanVariant:usesRefinedPresentation(current.config.city)&&['car','bus','truck'].includes(track.type)?'refined-'+track.type:track.type;
+ const humanSample=['pedestrian','bicycle','motorcycle','tricycle'].includes(track.type),humanVariant=humanVariantForTrack(track.id,track.type);
+ const poolKey=humanSample?'human-'+track.type+'-'+humanVariant:usesRefinedPresentation(current.config.city)&&['car','bus','truck'].includes(track.type)?'refined-'+track.type+'-'+humanVariant:track.type;
  const pool=pools.get(poolKey)||[];let g=pool.pop();
  if(!g){
   const visual=humanSample?(track.type==='pedestrian'?createHumanWalker(humanVariant):attachHumanRider(createVulnerableActor(track.type,{rider:false}),humanVariant,track.type)):poolKey.startsWith('refined-')?createRefinedVehicle(track.type):['car','bus','truck'].includes(track.type)?createVehicle({id:track.id,subType:track.type,displayLabel:'城市公交'},pickable.length):createVulnerableActor(track.type);
+  if(poolKey.startsWith('refined-')){const driver=createHumanDriver(track.type,humanVariant),detail=visual.children.find(o=>o.name==='vehicle-near-detail');detail.add(driver);visual.userData.driverAsset=driver.userData.driverAsset;}
   const bounds=humanSample?posedBounds(visual):new THREE.Box3().setFromObject(visual,true),size=bounds.getSize(new THREE.Vector3()),center=bounds.getCenter(new THREE.Vector3());
   visual.position.set(-center.x,-bounds.min.y,-center.z);
   const paints=new Set(),clones=new Map(),fadeMaterials=[];visual.traverse(o=>{if(!o.material)return;const clone=original=>{if(!clones.has(original)){const copy=original.clone();copy.transparent=true;clones.set(original,copy);fadeMaterials.push({material:copy,opacity:original.opacity,depthWrite:original.depthWrite});if(copy.isMeshPhysicalMaterial)paints.add(copy);}return clones.get(original);};o.material=Array.isArray(o.material)?o.material.map(clone):clone(o.material);});
   g=new THREE.Group();g.add(visual);g.userData={...visual.userData,nominalSize:size,paints,fadeMaterials,poolKey};scene.add(g);pickable.push(g);
  }
- g.scale.set(1,poolKey==='refined-truck'?THREE.MathUtils.clamp(track.length/7,.74,1.14):1,1);
+ g.scale.set(1,poolKey.startsWith('refined-truck-')?THREE.MathUtils.clamp(track.length/7,.74,1.14):1,1);
  if(track.type!=='pedestrian'){g.scale.x=track.length/g.userData.nominalSize.x;g.scale.z=track.width/g.userData.nominalSize.z;}
  const palette=[0xe4e2d8,0x486777,0x9eaaa9,0x333e46,0x857367];
  let hash=0;for(const ch of track.id)hash=(hash*31+ch.charCodeAt(0))>>>0;
@@ -85,9 +101,9 @@ function createParticipant(track){
 function release(){for(const g of objects.values()){g.visible=false;const type=g.userData.poolKey;if(!pools.has(type))pools.set(type,[]);pools.get(type).push(g);}objects.clear();}
 function updateParticipants(){
  for(const [id,g]of objects)if(!sampleTrack(g.userData.track,time)){g.visible=false;objects.delete(id);const type=g.userData.poolKey;if(!pools.has(type))pools.set(type,[]);pools.get(type).push(g);}
- for(const track of current.data.tracks){const s=sampleTrack(track,time);if(!s)continue;const g=objects.get(track.id)||createParticipant(track),speed=Math.hypot(s[3],s[4]),opacity=observationOpacity(track.observationSegments,time)*(dimStatic&&speed<.5?.18:1);const inspecting=selected===track.id||!!activeRisk&&[activeRisk.a.id,activeRisk.b.id].includes(track.id);g.visible=opacity>.005&&(!vehicleFilter||track.type===vehicleFilter)&&(!current.hideParked||!track.presentationStatic||inspecting);g.userData.opacity=opacity;for(const entry of g.userData.fadeMaterials){entry.material.opacity=entry.opacity*opacity;entry.material.depthWrite=opacity>.98&&entry.depthWrite;}g.position.set(s[1],0,-s[2]);g.rotation.y=track.type==='pedestrian'?Math.atan2(s[4],s[3]):s[5];const k=Math.max(0,upperBound(track.samples,time)-1),a=track.samples[k];const distance=camera.position.distanceTo(g.position),near=updateVehicleDetail(g,distance,inspecting),now=performance.now();if(g.visible&&(near||now-g.userData.lastPoseTime>=100)){animateActor(g,track.distance[k]+Math.hypot(s[1]-a[1],s[2]-a[2]),Math.hypot(s[3],s[4]));g.userData.lastPoseTime=now;}}
+ for(const track of current.data.tracks){const s=sampleTrack(track,time);if(!s)continue;const g=objects.get(track.id)||createParticipant(track),opacity=observationOpacity(track.observationSegments,time);const inspecting=selected===track.id||!!activeRisk&&[activeRisk.a.id,activeRisk.b.id].includes(track.id);g.visible=opacity>.005&&(!vehicleFilter||track.type===vehicleFilter)&&(!current.hideParked||!track.presentationStatic||inspecting);g.userData.opacity=opacity;for(const entry of g.userData.fadeMaterials){entry.material.opacity=entry.opacity*opacity;entry.material.depthWrite=opacity>.98&&entry.depthWrite;}g.position.set(s[1],0,-s[2]);g.rotation.y=track.type==='pedestrian'?Math.atan2(s[4],s[3]):s[5];const k=Math.max(0,upperBound(track.samples,time)-1),a=track.samples[k];const distance=camera.position.distanceTo(g.position),near=updateVehicleDetail(g,distance,inspecting),now=performance.now();if(g.visible&&(near||now-g.userData.lastPoseTime>=100)){animateActor(g,track.distance[k]+Math.hypot(s[1]-a[1],s[2]-a[2]),Math.hypot(s[3],s[4]));g.userData.lastPoseTime=now;}}
  const object=objects.get(selected);selection.visible=!!object&&object.visible;if(object){selection.material.transparent=true;selection.material.opacity=object.userData.opacity;selection.setFromObject(object);}
- else if(selected){selected=null;following=false;$('object').hidden=true;drawForecast([]);}
+ else if(selected){selected=null;following=false;$('object').hidden=true;document.body.classList.remove('vehicle-selected');drawForecast([]);}
  if(activeRisk&&(!objects.has(activeRisk.a.id)||!objects.has(activeRisk.b.id)))drawRisk(null,false);updateRiskBoxes();
 }
 function updateHUD(){
@@ -126,9 +142,9 @@ async function loadCity(entry){
  const token=++request;$('loading').hidden=false;$('loading').textContent=`正在加载${entry.name}的道路与街区…`;
  try{
   await loadHumanAssets();if(token!==request)return;
-  let cached=cache.get(entry.id);if(!cached){const [config,data]=await Promise.all([json(entry.scene),json(entry.tracks)]);if(token!==request)return;
+  let cached=cache.get(entry.id);if(!cached){const [config,data,caseManifest]=await Promise.all([json(entry.scene),json(entry.tracks),json('/data/sind/cities/risk-cases.json')]);if(token!==request)return;
    const alignment=(await json('/data/sind/cities/road-alignment.json'))[config.city];if(token!==request)return;
-   if(alignment){config.extension=alignment.extension;config.alignedFootways=alignment.footways;config.extensionAxes=config.extensionAxes.map((axis,i)=>({...axis,alignment:alignment.profiles[i]}));}
+   if(alignment){config.extension=alignment.extension;config.displayRoad=alignment.displayRoad;config.roadSeams=alignment.seams;config.alignedCurbs=alignment.curbs;config.alignedFootways=alignment.footways;config.extensionAxes=config.extensionAxes.map((axis,i)=>({...axis,alignment:alignment.profiles[i]}));}
    if(config.city==='changchun'){const quarter=await json('/data/sind/cities/changchun-quarter.json');if(token!==request)return;config.buildings=quarter.buildings;config.quarterGreenLand=quarter.greenLand;config.quarterGroves=quarter.groves;config.quarterTramRail=quarter.tramRail;config.quarterTramRailHeight=quarter.tramRailHeight;config.quarterTramPiers=quarter.tramPiers;config.quarterCourtyardPlanting=quarter.courtyardPlanting;config.quarterLayout=true;}
    if(config.city==='chongqing'){const quarter=await json('/data/sind/cities/chongqing-quarter.json');if(token!==request)return;config.buildings=quarter.buildings;config.cableway=quarter.cableway;config.bridge=quarter.bridge;config.mountains=quarter.mountains;config.scenicRail=quarter.scenicRail;config.terrain=quarter.terrain;config.quarterLayout=true;}
    if(config.city==='xian'){const quarter=await json('/data/sind/cities/xian-quarter.json');if(token!==request)return;config.xianQuarter=quarter;config.signalBindings=quarter.signalDisplayBindings||config.signalBindings;config.buildings=quarter.wards;config.paving=quarter.paving;config.quarterLayout=true;}
@@ -136,7 +152,7 @@ async function loadCity(entry){
    for(const t of data.tracks){t.presentationStatic=config.city==='chongqing'&&isLongStatic(t);t.observationSegments=prepareObservation(t);t.distance=new Float32Array(t.samples.length);for(let i=1;i<t.samples.length;i++){const a=t.samples[i-1],b=t.samples[i];t.distance[i]=t.distance[i-1]+(b[0]-a[0]>250?0:Math.hypot(b[1]-a[1],b[2]-a[2]));}}
    const observedRadius=data.tracks.reduce((r,t)=>t.samples.reduce((v,s)=>Math.max(v,Math.hypot(s[1]-config.center[0],s[2]-config.center[1])+(t.type==='pedestrian'?.4:Math.hypot(t.length,t.width)/2)),r),0);const district=buildDistrict(scene,config,observedRadius),labels=new THREE.Group();district.root.add(labels);labels.visible=false;
    for(const a of config.approaches){const [x,y]=a.center;textPanel(labels,a.name,x,2.5,-y,7,1.3,{background:'#163342',color:'#d8f7ed'});}
-   cached={config,data,district,labels,hideParked:config.city==='chongqing',start:config.city==='chongqing'?busyStart(data.tracks,config.durationMs):0};cache.set(entry.id,cached);
+   cached={config,data,cases:caseManifest.cities[entry.id],district,labels,hideParked:config.city==='chongqing',start:config.city==='chongqing'?busyStart(data.tracks,config.durationMs):0};cache.set(entry.id,cached);
   }
   if(token!==request)return;if(current)clocks.set(current.config.city,time);release();for(const c of cache.values())c.district.root.visible=false;current=cached;current.district.root.visible=true;
   const refined=usesRefinedPresentation(entry.id),night=entry.id==='chongqing';
@@ -149,7 +165,7 @@ async function loadCity(entry){
   renderer.toneMappingExposure=night?1.2:refined?.83:.72;hemisphere.intensity=night?.85:refined?.38:.5;sun.intensity=night?.8:refined?1.7:1.35;sun.color.setHex(night?0xcad4e2:0xfff0d7);hemisphere.color.setHex(night?0xb0bac7:0xdceeff);hemisphere.groundColor.setHex(night?0x535953:0x8d9580);sun.shadow.normalBias=entry.id==='xian'?.055:night?.06:refined?.008:.025;sun.shadow.bias=entry.id==='xian'?-.00018:night?-.0003:refined?-.00006:0;
   const shadowSpan=entry.id==='xian'?190:refined?105:155;Object.assign(sun.shadow.camera,{left:-shadowSpan,right:shadowSpan,top:shadowSpan,bottom:-shadowSpan});sun.shadow.camera.updateProjectionMatrix();
   time=clocks.get(entry.id)??current.start;$('parked-visibility').hidden=entry.id!=='chongqing';$('parked-visibility').setAttribute('aria-pressed',String(!current.hideParked));$('parked-visibility').textContent=current.hideParked?'显示长期静止车辆':'隐藏长期静止车辆';const initial=new URLSearchParams(location.search).get('start');if(initial&&!clocks.size)time=loopTime(Number(initial)||0,current.config.durationMs);
-  selected=null;following=false;transition=null;selection.visible=false;dashboard.reset();$('object').hidden=true;$('city-name').textContent=entry.name;$('weather-note').textContent=night?'真实记录循环回放 · 山城静谧夜景':'真实记录循环回放 · 晴朗白天';
+  selected=null;following=false;transition=null;selection.visible=false;dashboard.reset();dashboard.setCases(current.cases);$('object').hidden=true;document.body.classList.remove('vehicle-selected');$('city-name').textContent=entry.name;$('weather-note').textContent=night?'山城静谧夜景':'晴朗白天';
   document.body.dataset.city=entry.id;
   document.querySelectorAll('[data-city]').forEach(b=>b.classList.toggle('active',b.dataset.city===entry.id));
   $('approaches').innerHTML='<div class="caption">进口方向<span style="float:right">近六十秒 / 累计</span></div>'+current.config.approaches.map(a=>`<div class="direction" id="approach-${a.id}"><span>${a.name}</span><em>—</em><div class="bar"><i></i></div></div>`).join('');
@@ -161,19 +177,18 @@ async function loadCity(entry){
  }catch(e){if(token===request){$('loading').hidden=false;$('loading').textContent=e.message;}console.error(e);}
 }
 document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>view(b.dataset.view));
-$('play').onclick=()=>{playing=!playing;$('play').textContent=playing?'暂停':'继续';lastHUD=-1e6;if(current)updateHUD();};
+$('play').onclick=()=>{if(caseEntry&&time>=caseEntry.anchorMs+5000)time=caseEntry.anchorMs;playing=!playing;$('play').textContent=playing?'暂停':'继续';lastHUD=-1e6;if(current)updateHUD();};
 $('reset').onclick=()=>view('overview');$('flow-layer').onclick=()=>{if(!current)return;current.labels.visible=!current.labels.visible;$('flow-layer').setAttribute('aria-pressed',String(current.labels.visible));};
-$('dismiss').onclick=()=>{selected=null;following=false;selection.visible=false;$('object').hidden=true;drawForecast([]);};
+$('dismiss').onclick=()=>{dashboard.exitCase();selected=null;following=false;selection.visible=false;$('object').hidden=true;document.body.classList.remove('vehicle-selected');drawForecast([]);};
 $('parked-visibility').onclick=()=>{if(!current)return;current.hideParked=!current.hideParked;$('parked-visibility').setAttribute('aria-pressed',String(!current.hideParked));$('parked-visibility').textContent=current.hideParked?'显示长期静止车辆':'隐藏长期静止车辆';updateParticipants();lastHUD=-1e6;updateHUD();};
-$('dim-static').onclick=()=>{dimStatic=!dimStatic;$('dim-static').setAttribute('aria-pressed',String(dimStatic));if(current)updateParticipants();};
 $('toggle-charts').onclick=()=>{const hidden=document.body.classList.toggle('charts-hidden');$('toggle-charts').setAttribute('aria-pressed',String(!hidden));};
-$('home-prediction-model').onchange=()=>{lastHUD=-1e6;if(current)updateHUD();};
 $('follow').onclick=()=>{const g=objects.get(selected);if(!g)return;transition=null;camera.fov=48;camera.updateProjectionMatrix();following=true;followState={};};
-$('focus-moving').onclick=()=>{const active=[...objects.values()].filter(g=>g.visible&&motorTypes.includes(g.userData.track.type)).map(g=>({g,s:sampleTrack(g.userData.track,time)})).filter(o=>o.s&&Math.hypot(o.s[3],o.s[4])>=.5).sort((a,b)=>Math.hypot(b.s[3],b.s[4])-Math.hypot(a.s[3],a.s[4]));if(!active.length)return;selected=active[0].g.userData.track.id;$('object').hidden=false;$('follow').click();lastHUD=-1e6;updateHUD();};
+$('focus-moving').onclick=()=>{dashboard.exitCase();const active=[...objects.values()].filter(g=>g.visible&&motorTypes.includes(g.userData.track.type)).map(g=>({g,s:sampleTrack(g.userData.track,time)})).filter(o=>o.s&&Math.hypot(o.s[3],o.s[4])>=.5).sort((a,b)=>Math.hypot(b.s[3],b.s[4])-Math.hypot(a.s[3],a.s[4]));if(!active.length)return;selected=active[0].g.userData.track.id;$('object').hidden=false;document.body.classList.add('vehicle-selected');$('follow').click();lastHUD=-1e6;updateHUD();};
 $('fullscreen').onclick=()=>{const focused=document.body.classList.toggle('scene-focused');$('fullscreen').setAttribute('aria-pressed',String(focused));$('fullscreen').textContent=focused?'恢复面板':'全屏';};
 $('capture').onclick=()=>{renderScene();renderer.domElement.toBlob(blob=>{if(!blob)return;const a=document.createElement('a'),url=URL.createObjectURL(blob);a.href=url;a.download=`${current?.config.name||'城市'}交通.png`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});};
+const navigation=attachCityNavigation({camera,controls,canvas:renderer.domElement,scene,onManual:()=>{transition=null;following=false;},onFocus:(eye,target)=>{transition={start:performance.now(),p:camera.position.clone(),t:controls.target.clone(),fov:camera.fov,endFov:camera.fov,endP:eye,endT:target};document.querySelectorAll('[data-view]').forEach(b=>b.classList.remove('active'));}});
 let down;renderer.domElement.addEventListener('pointerdown',e=>{transition=null;following=false;down=[e.clientX,e.clientY];});
-renderer.domElement.addEventListener('pointerup',e=>{if(!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>5)return;const ray=new THREE.Raycaster();ray.setFromCamera(new THREE.Vector2(e.clientX/innerWidth*2-1,1-e.clientY/innerHeight*2),camera);const hit=ray.intersectObjects(pickable.filter(g=>g.visible&&g.userData.opacity>.05),true)[0];if(hit){let g=hit.object;while(g&&!g.userData.track)g=g.parent;selected=g.userData.track.id;$('object').hidden=false;lastHUD=-1e6;updateHUD();}});
+renderer.domElement.addEventListener('pointerup',e=>{if(e.button!==0||!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>5)return;const ray=new THREE.Raycaster();ray.setFromCamera(new THREE.Vector2(e.clientX/innerWidth*2-1,1-e.clientY/innerHeight*2),camera);const hit=ray.intersectObjects(pickable.filter(g=>g.visible&&g.userData.opacity>.05),true)[0];if(hit){let g=hit.object;while(g&&!g.userData.track)g=g.parent;dashboard.exitCase();selected=g.userData.track.id;$('object').hidden=false;document.body.classList.add('vehicle-selected');lastHUD=-1e6;updateHUD();}});
 function resize(){renderer.setSize(innerWidth,innerHeight,false);composer.setSize(innerWidth,innerHeight);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();}addEventListener('resize',resize);resize();
-function animate(now){requestAnimationFrame(animate);const dt=Math.min(200,now-last);last=now;if(current){if(playing)time=loopTime(time+dt,current.config.durationMs);updateParticipants();updateHUD();}if(transition){const f=Math.min(1,(now-transition.start)/850),ease=f*f*(3-2*f);camera.fov=THREE.MathUtils.lerp(transition.fov,transition.endFov,ease);camera.updateProjectionMatrix();camera.position.lerpVectors(transition.p,transition.endP,ease);controls.target.lerpVectors(transition.t,transition.endT,ease);if(f===1)transition=null;}if(following&&objects.get(selected)?.visible)followVehicle(camera,controls.target,objects.get(selected),dt/1000,followState);controls.update();if(current)focusDaylightShadow(sun,camera,controls.target);if(current?.district.cableway)current.district.cableway.update(time/1000);renderScene();}requestAnimationFrame(animate);
+function animate(now){requestAnimationFrame(animate);const dt=Math.max(0,Math.min(200,now-last));last=now;if(current){if(playing){time=caseEntry?caseClock(time,dt,caseEntry):loopTime(time+dt,current.config.durationMs);if(caseEntry&&time>=caseEntry.anchorMs+5000){playing=false;$('play').textContent='继续';}}updateParticipants();updateHUD();}if(transition){const f=Math.min(1,(now-transition.start)/850),ease=f*f*(3-2*f);camera.fov=THREE.MathUtils.lerp(transition.fov,transition.endFov,ease);camera.updateProjectionMatrix();camera.position.lerpVectors(transition.p,transition.endP,ease);controls.target.lerpVectors(transition.t,transition.endT,ease);if(f===1)transition=null;}if(following&&objects.get(selected)?.visible)followVehicle(camera,controls.target,objects.get(selected),dt/1000,followState);navigation.update(dt/1000);controls.update();if(current)focusDaylightShadow(sun,camera,controls.target);if(current?.district.cableway)current.district.cableway.update(time/1000);renderScene();}requestAnimationFrame(animate);
 try{const catalog=await json('/data/sind/cities/catalog.json');for(const c of catalog){const b=document.createElement('button');b.textContent=c.name;b.dataset.city=c.id;b.onclick=()=>loadCity(c);$('cities').append(b);}await loadCity(catalog.find(c=>c.id===new URLSearchParams(location.search).get('city'))||catalog[0]);}catch(e){$('loading').textContent=e.message;console.error(e);}

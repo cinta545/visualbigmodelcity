@@ -36,7 +36,10 @@ for city in ['tianjin','changchun','chongqing','xian']:
         right=[point(s,edges(s)[1]) for s in stations]
         strip=Polygon(left+right[::-1]); assert strip.is_valid
         # Replace only the display extension's join, leaving the surveyed surface intact.
-        cut=Polygon([point(start,-70),point(end,-70),point(end,70),point(start,70)])
+        # A 140 m wide cut also reached the perpendicular road on skewed
+        # intersections, leaving holes far beyond this approach's join.
+        margin=max(abs(lo),abs(hi),half)+3
+        cut=Polygon([point(start,-margin),point(end,-margin),point(end,margin),point(start,margin)])
         cuts.append(cut); strips.append(strip.difference(road))
         profiles.append(dict(start=start,end=end,left=lo,right=hi))
     result=unary_union([extension.difference(unary_union(cuts)),*strips])
@@ -50,10 +53,12 @@ for city in ['tianjin','changchun','chongqing','xian']:
         envelopes.append((LineString(points) if len(points)>1 else Point(points[0])).buffer(radius+.3))
     observed=unary_union(envelopes)
     if extension.difference(result.union(road)).intersects(observed):
-        result=result.union(extension)
-        joined=result.union(road)
-        rounded=joined.buffer(6,join_style='round').buffer(-6,join_style='round')
-        result=result.union(rounded.intersection(unary_union(cuts)).difference(road))
+        # Preserve only asphalt needed by recorded actors. Restoring the entire
+        # old extension also restored its displaced rectangular shoulders.
+        result=result.union(extension.intersection(observed.buffer(.2)))
+    joined=result.union(road)
+    rounded=joined.buffer(8,join_style='round').buffer(-8,join_style='round')
+    result=result.union(rounded.intersection(unary_union(cuts)).difference(road))
     assert extension.difference(result.union(road)).intersection(observed).area<1e-6
     if result.geom_type=='GeometryCollection':
         result=unary_union([g for g in result.geoms if g.geom_type in ['Polygon','MultiPolygon']])
@@ -67,7 +72,23 @@ for city in ['tianjin','changchun','chongqing','xian']:
     elif city=='xian':
         buildings=json.loads((ROOT/'data/sind/cities/xian-quarter.json').read_text(encoding='utf8'))['wards']
     assert all(not additions.intersects(shape(b['footprint']) if 'footprint' in b else box(*b['bounds'])) for b in buildings),city
-    footways=result.buffer(2.4,join_style='round').difference(result.union(road))
-    plans[city]=dict(extension=mapping(result),footways=mapping(footways),profiles=profiles)
+    display=road.union(result)
+    if city=='xian':
+        scenery=shape(json.loads((ROOT/'data/sind/cities/xian-quarter.json').read_text(encoding='utf8'))['sceneryRoads'])
+        display=display.union(scenery)
+    # Cut seams from the final surface, so curbs and sidewalks cannot retain a
+    # second independently aligned edge, or cross an extended Xi'an road.
+    seams=unary_union(cuts)
+    footways=display.buffer(2.4,join_style='round').difference(display).intersection(seams.buffer(3))
+    curbs=display.boundary.intersection(seams)
+    retained=[]
+    for way in config['ways']:
+        if way['tags'].get('type')!='curbstone':continue
+        line=LineString(way['points']).difference(seams).intersection(display.boundary.buffer(.35))
+        if not line.is_empty:retained.append(line)
+    curbs=unary_union([curbs,*retained])
+    if curbs.geom_type=='GeometryCollection':
+        curbs=unary_union([g for g in curbs.geoms if g.geom_type in ['LineString','MultiLineString']])
+    plans[city]=dict(extension=mapping(result),displayRoad=mapping(display),footways=mapping(footways),seams=mapping(seams),curbs=mapping(curbs),profiles=profiles)
     print(city,[(round(p['left'],2),round(p['right'],2)) for p in profiles])
 (ROOT/'data/sind/cities/road-alignment.json').write_text(json.dumps(plans,separators=(',',':')),encoding='utf8')

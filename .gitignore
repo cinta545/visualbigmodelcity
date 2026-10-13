@@ -39,3 +39,11 @@ scripts/check-changchun-density.cjs
 
 # Superseded local camera exploration
 scripts/night-verify.cjs
+
+# Training intermediates; retain the validated runtime checkpoint
+models/stdg-lstm/*.pt
+!models/stdg-lstm/checkpoint.pt
+models/stdg-lstm/training-progress.json
+
+# Local presentation build scratch directories
+.chart-data-*/
